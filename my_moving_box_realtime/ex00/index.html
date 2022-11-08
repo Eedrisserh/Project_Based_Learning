@@ -1,0 +1,26 @@
+<html>
+    <div id="my_box_realtime" style= "background-color: red; position: absolute; right: 70; bottom: 
+    70; min-width: 100px; min-height: 100px"></div>
+    <script type= "text/javascript">
+    // Assigned the style of the div element to a variable
+    var box_style = document.getElementById("my_box_realtime").style;
+    // Initializing the starting position of the box
+    var x = 100;
+    // calling the setInterval and creating a function to be passed + the interval in ms
+    function my_box()
+    {
+        // decrementing x so that the position changes at the giving interval
+        x -= 1;
+        // Increamenting x changes the box direction of movement
+        box_style.bottom = x + "px";
+        // bottom and right coordinates inherited from x in pixels
+        box_style.right = x + "px";
+        if (x == 0)
+        {
+             clearInterval(box);
+        }
+    }
+    var box = setInterval(my_box, 80);
+
+    </script>
+</html>
