@@ -5,7 +5,8 @@
   color: #999;" >Not loaded</div>
   <script type="text/javascript">
     box = document.getElementById("my_bouncing_box");
-    box.textContent = 'Eedrisserh';
+    box.textContent = 'dodo-ibr_i';
+    
     // var sec = document.createElement('SECTION');
     // sec.style.height = window.innerHeight + 'px';
     // sec.style.width = window.innerWidth + 'px';
@@ -30,19 +31,15 @@ setInterval( () =>
     if (xpos + box.clientWidth >= window.innerWidth || xpos <= 0)
     {
         xspeed = -xspeed;
-        console.log("This is xspeed: "+xspeed);
     }
     if (ypos + box.clientHeight >= window.innerHeight || ypos <= 0)
     {
         yspeed = -yspeed;
-        console.log("This is yspeed: "+yspeed);
-    
     }
 
     xpos += xspeed;
     ypos += yspeed;
-    // xpos ++;
-    // ypos ++;
+ 
     update_pos();
 }, 17);
 
@@ -54,6 +51,5 @@ window.addEventListener('resize', ()=> //This ensures that the box restart movem
     sec.style.height = window.innerHeight + 'px';
     sec.style.width = window.innerWidth + 'px';
 })
-    console.log("This is Element_Height: "+ Element.clientHeight+"\nThis is Element_Width: "+Element.clientWidth);
   </script>
   </html>
