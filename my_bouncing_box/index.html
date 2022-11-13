@@ -1,0 +1,59 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px;
+  position: absolute; left: 0px; top: 0px; min-width: 100px;
+  min-height: 100px; text-align: center; font-weight: bold;
+  color: #999;" >Not loaded</div>
+  <script type="text/javascript">
+    box = document.getElementById("my_bouncing_box");
+    box.textContent = 'dodo-ibr_i';
+    // var sec = document.createElement('SECTION');
+    // sec.style.height = window.innerHeight + 'px';
+    // sec.style.width = window.innerWidth + 'px';
+    // sec.style.position = 'relative';
+    // document.body.appendChild(sec);
+    // sec.appendChild(box);
+    
+
+    let xpos = 10;
+    let ypos = 10;
+    let xspeed = 2;
+    let yspeed = 2;
+
+function update_pos()
+{
+    box.style.left = xpos + "px";
+    box.style.top = ypos + "px";
+}
+
+setInterval( () =>
+{
+    if (xpos + box.clientWidth >= window.innerWidth || xpos <= 0)
+    {
+        xspeed = -xspeed;
+        console.log("This is xspeed: "+xspeed);
+    }
+    if (ypos + box.clientHeight >= window.innerHeight || ypos <= 0)
+    {
+        yspeed = -yspeed;
+        console.log("This is yspeed: "+yspeed);
+    
+    }
+
+    xpos += xspeed;
+    ypos += yspeed;
+    // xpos ++;
+    // ypos ++;
+    update_pos();
+}, 17);
+
+window.addEventListener('resize', ()=> //This ensures that the box restart movement whenever the screen resizes to
+{
+    xpos = 10;
+    ypos = 10;
+
+    sec.style.height = window.innerHeight + 'px';
+    sec.style.width = window.innerWidth + 'px';
+})
+    console.log("This is Element_Height: "+ Element.clientHeight+"\nThis is Element_Width: "+Element.clientWidth);
+  </script>
+  </html>
