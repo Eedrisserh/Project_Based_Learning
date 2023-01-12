@@ -1,4 +1,4 @@
-# Welcome to My First Backend
+# --------------> My First Backend <--------------
 ***
 
 ## Task
@@ -19,6 +19,7 @@ node app.js
 ```
 
 ### The Core Team
+* Idriss Ibrahim Dodo <edrissebraheem@gmail.com>
 
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
