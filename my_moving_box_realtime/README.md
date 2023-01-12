@@ -1,10 +1,10 @@
-# Welcome to My Moving Box Realtime
+# --------------> My Moving Box Realtime <--------------
 ***
 
 ## Task
 The task is to write a script by which the div box moves down diagonally to the bottom corner.
 ## Description
-We used the setInterval to create a recursive process for moving the box.
+I used the setInterval to create a recursive process for moving the box.
 ## Installation
 None
 ## Usage
@@ -13,6 +13,7 @@ my_box argument1 argument2
 ```
 
 ### The Core Team
+* Idriss Ibrahim Dodo <edrissebraheem@gmail.com>
 
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
