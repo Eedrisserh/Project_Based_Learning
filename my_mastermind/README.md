@@ -1,4 +1,4 @@
-# Welcome to My Mastermind
+# --------------> My Mastermind <--------------
 ***
 
 ## Task
@@ -31,6 +31,7 @@ The game supports the following command-line arguments:
 Have fun playing the game!
 
 ### The Core Team
+* Idriss Ibrahim Dodo <edrissebraheem@gmail.com>
 
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
