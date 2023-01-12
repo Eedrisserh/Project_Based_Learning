@@ -1,4 +1,4 @@
-# Welcome to My Bouncing Box
+# --------------> My Bouncing Box <--------------
 ***
 
 ## Task
@@ -19,6 +19,7 @@ the box hit the screen boader.
 ```
 
 ### The Core Team
+* Idriss Ibrahim Dodo
 
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
