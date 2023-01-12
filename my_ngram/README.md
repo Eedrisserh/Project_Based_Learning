@@ -1,4 +1,4 @@
-# Welcome to My Ngram
+# --------------> My Ngram <--------------
 ***
 
 ## Task
@@ -47,6 +47,7 @@ Order will be alphanumerical.
 ```
 
 ### The Core Team
+* Idriss Ibrahim Dodo <edrissebraheem@gmail.com>
 
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar SV -- Software Engineering School</a></i></span>
