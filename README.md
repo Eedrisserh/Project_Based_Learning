@@ -3,4 +3,4 @@ This repo consist of the projects that I have done, or collaborated with colleag
 
 
 ## Author
-** Idriss Ibrahim Dodo <edrissebraheem@gmail.com>
+* Idriss Ibrahim Dodo <edrissebraheem@gmail.com>
