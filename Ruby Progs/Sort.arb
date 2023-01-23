@@ -1,0 +1,18 @@
+def my_is_sort(param_1)
+    return true if param_1.nil? || param_1.empty?
+        if (param_1[0] > param_1[1])
+            (1...param_1.length - 1).each do |i| #The ... means the range will not include the last element
+                if (param_1[i] < param_1[i + 1])
+                    return false
+                end
+            end
+
+        elsif (param_1[0] < param_1[1])
+            (1...param_1.length - 1).each do |i| #But .. will include the last element
+                if (param_1[i] > param_1[i + 1])
+                    return false
+                end
+            end
+        end
+    return true
+end

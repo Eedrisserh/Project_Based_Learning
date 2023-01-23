@@ -1,0 +1,11 @@
+def my_csv_parser(param_1, param_2)
+    rows = param_1.split("\n") # split each string into arrays using the \n separator
+
+    index = 0
+    columns = []
+    while(index < rows.size)
+        columns << (rows[index].split(param_2)) #split each char into individual elements
+        index = index.next
+    end
+    return columns
+end

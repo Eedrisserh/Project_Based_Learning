@@ -1,0 +1,13 @@
+def my_upcase(param_1)
+    #return param_1.upcase
+    # or 
+    result = ""
+    param_1.each_char do |char| #each_char iterates through each character in the string
+        if(char >= "a" && char <= "z")
+            result += (char.ord - 32).chr #ord converts the char to its equivalent ascii or unicode value
+        else
+            result += char
+        end
+    end
+    return result
+ end

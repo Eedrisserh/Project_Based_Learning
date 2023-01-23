@@ -1,0 +1,28 @@
+def my_counter(hash, key, value)
+    if !hash[key].include?(value) then hash[key][value] = 1
+    else
+    hash[key][value] += 1
+    end
+end
+def my_data_process(param_1)
+    my_hash = {"Gender" =>{}, "Email" =>{}, "Age" =>{}, "City" =>{}, "Device" =>{}, "Order At" =>{}}
+    param_1[1..-1].each do |line|
+        arr = line.split(",")
+        my_counter(my_hash, "Gender", arr[0])
+        my_counter(my_hash, "Email", arr[4])
+        my_counter(my_hash, "Age", arr[5])
+        my_counter(my_hash, "City", arr[6])
+        my_counter(my_hash, "Device", arr[7])
+        my_counter(my_hash, "Order At", arr[9])
+    end
+    puts(my_hash)
+end
+
+
+input = ["Gender,FirstName,LastName,UserName,Email,Age,City,Device,Coffee Quantity,Order At", 
+    "Male,Carl,Wilderman,carl,yahoo.com,21->40,Seattle,Safari iPhone,2,afternoon", 
+    "Male,Marvin,Lind,marvin,hotmail.com,66->99,Detroit,Chrome Android,2,afternoon", 
+    "Female,Shanelle,Marquardt,shanelle,hotmail.com,21->40,Las Vegas,Chrome,1,afternoon", 
+    "Female,Lavonne,Romaguera,lavonne,yahoo.com,66->99,Seattle,Chrome,2,morning", 
+    "Male,Derick,McLaughlin,derick,hotmail.com,41->65,Chicago,Chrome Android,1,afternoon"]
+my_data_process(input)

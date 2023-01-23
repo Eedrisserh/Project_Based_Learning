@@ -1,0 +1,51 @@
+require 'date'
+def age_converter(age)
+        if (age <= 20)
+                return "1->20"
+        elsif (age >= 21 && age <=40)
+                return "21->40"
+        elsif (age >= 41 && age <=65)
+                return "41->65"
+        else 
+                return "66->99"
+        end
+end
+
+def date_time_converter(date_time)
+        date_time = DateTime.parse(date_time)
+        if (date_time.hour < 12)
+                return "morning"
+        elsif (date_time.hour >= 12 && date_time.hour <= 18)
+                return "afternoon"
+        else
+                return "evening"
+        end
+end
+
+def my_data_transform(param_1)
+        line_counter = 0
+        output = []
+       
+        for line in param_1.split("\n")
+                temp = line.split(",")
+
+                if (line_counter > 0 && line.size > 0)
+                        temp[4] = temp[4].split("@")[1]
+                        temp[5] = age_converter(temp[5].to_i)
+                        temp[-1] = date_time_converter(temp[-1])
+                end
+                # File.open("CSV.txt", "a") do |file|   This code creates and save to a file using append method "a"
+                #         file << line
+                #         file << "\n\n"
+                #         file << temp
+                #         file << "\n\n"
+                end
+                output << temp.join(",")
+                line_counter += 1
+       end
+       puts(output)              
+end
+
+input = "Gender,FirstName,LastName,UserName,Email,Age,City,Device,Coffee Quantity,Order At\nMale,Carl,Wilderman,carl,wilderman_carl@yahoo.com,29,Seattle,Safari iPhone,2,2020-03-06 16:37:56\nMale,Marvin,Lind,marvin,marvin_lind@hotmail.com,77,Detroit,Chrome Android,2,2020-03-02 13:55:51\nFemale,Shanelle,Marquardt,shanelle,marquardt.shanelle@hotmail.com,21,Las Vegas,Chrome,1,2020-03-05 17:53:05\nFemale,Lavonne,Romaguera,lavonne,romaguera.lavonne@yahoo.com,81,Seattle,Chrome,2,2020-03-04 10:33:53\nMale,Derick,McLaughlin,derick,mclaughlin.derick@hotmail.com,47,Chicago,Chrome Android,1,2020-03-05 15:19:48\n"
+
+       my_data_transform(input)
