@@ -1,0 +1,10 @@
+def Ord_alphlong(str)
+  word = str.split(' ')
+  sorted = word.sort_by {|word| [word.length, word.downcase]}
+  grouped = sorted.chunk_while {|word, next_word| word.length == next_word.length}.to_a
+  result = grouped.map { |group| group.join('')}.join('^')
+end
+
+str = "After all this time Always said Snape"
+
+puts(Ord_alphlong(str).inspect)

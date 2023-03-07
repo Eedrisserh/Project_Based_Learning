@@ -1,0 +1,9 @@
+class MySqliteRequest
+    attr_accessor :dbase
+
+    def initialize(dbase)
+        @dbase = dbase
+    end
+
+    def from(table_name)
+        table_name = @dbase

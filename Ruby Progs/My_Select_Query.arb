@@ -3,17 +3,16 @@ require 'csv'
 class MySelectQuery
   def initialize(content) #constant function to be called whenever a new object is created
     @data = CSV.parse(content, headers: true) #transform the csv into a list with the first line being the header
-  end
+  end #@data is an instance variable and can be accessed through the class 
 
-  def where(column, criteria)
+  def where(column, criteria) #defining a new method for the search query
     result = []
-    @data.filter do |row|
-      if row[column] == criteria
-        p "This is row: #{row}"
-        result.push(row.to_h.values.join(','))
+    @data.filter do |row| #Loop through the rows of the list and find a row that matches the below if condition
+      if row[column] == criteria # if for eg the name has been found
+        result.push(row.to_h.values.join(',')) #convert the row to hash, and join the values of the hash to form am array of string
       end
     end
-    result
+    result #return the result
   end
 end
 

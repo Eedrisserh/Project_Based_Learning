@@ -1,0 +1,20 @@
+# def capitalize(param_1)
+#     word = param_1.split(' ')
+#     caps = word.map { |word| word.capitalize}.join(' ') #This code should work normally anywhere except in Qwasar :)-  
+# end
+
+#Qwasar requirement 
+def capitalize(param_1)
+    words = param_1.split(/(\W+)/) #the regex here split the array using any none-word xter, hence reserving the original form of the array when joining back.
+    capitalized_words = words.map { |word| word.match(/\w+/) ? word.capitalize : word }
+   # capitalized_words = words.map { |word| word.capitalize } This will also work since capitalized method ignores any non upper case characters
+
+# Join the capitalized words back together into a string
+output_string = capitalized_words.join
+
+# Return the output string
+return output_string
+end
+
+str =  "     Okay, this is the last 1239809147801 but not    the least    t"
+puts capitalize(str).inspect

@@ -1,0 +1,94 @@
+require 'sqlite3'
+
+class User
+    attr_accessor :id, :firstname, :lastname, :age, :password, :email
+
+    def initialize (firstname, lastname, age, password , email)
+        @firstname = firstname
+        @lastname = lastname
+        @age = age 
+        @password = password 
+        @email = email
+    end
+
+    def self.connect()
+        begin
+            db = SQLite3::Database.open 'db.sql'
+            db.results_as_hash = true
+            db.execute <<-SQL 
+            CREATE TABLE IF NOT EXISTS users(
+                id INTEGER PRIMARY KEY,
+                firstname TEXT,
+                lastname TEXT,
+                age INT,
+                email TEXT,
+                password TEXT);
+                SQL
+            db
+        rescue SQLite3::Exception => e
+            p "Error Ocurred: "
+            p e
+        end
+    end 
+
+    def self.create(user_info)
+        firstname = user_info[:firstname]
+        lastname = user_info[:lastname]
+        age = user_info[:age] 
+        password = user_info[:password] 
+        email = user_info[:email]
+        
+
+        db = self.connect
+        
+        db.execute("INSERT INTO users(firstname, lastname, age, password, email) VALUES(?,?,?,?,?)", [firstname, lastname, age, password, email])
+        result = User.new(firstname, lastname, age, password, email)
+        result.id = db.last_insert_row_id
+        db.close
+        result
+    end 
+
+    def self.find(user_id) 
+        db = self.connect
+        result = db.execute("SELECT * FROM users WHERE id = ?", user_id).first
+        db.close #result returns an array of hashes where each element of the array is a hash containing key[field name] and value[field item]
+
+        if result.nil?
+            raise "User with ID #{user_id} not found"
+        else
+            # either use .first or result[0]["firstname"] ...
+            new_user = User.new(result["firstname"], result["lastname"], result["age"], result["password"], result["email"])
+            new_user.id = user_id
+        end
+        db.close
+        new_user
+    end
+     
+    def self.all()
+        db = self.connect()
+        result = db.execute ("SELECT * FROM users")
+        db.close
+        result
+    end 
+
+    def self.update(user_id, attribute, value)
+        db = self.connect
+        db.execute("UPDATE users SET #{attribute} = ? WHERE id = ? ", value, user_id)
+        self.find(user_id)
+        db.close
+    end
+
+    def self.destroy(user_id)
+        db=self.connect()
+        deleted_user=db.execute "DELETE FROM users WHERE id=#{user_id}"
+        db.close
+        deleted_user 
+    end 
+
+    def self.authenticate(email, password)
+        db = self.connect
+        result = db.execute "SELECT * FROM users WHERE email = ? AND password = ?", email, password
+        db.close
+        result 
+    end
+end

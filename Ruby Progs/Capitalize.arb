@@ -1,0 +1,22 @@
+def my_capitalize(str)
+    start = nil
+
+    str.each_char.with_index do |chr, index|
+        if chr != ' '
+            start = index
+            break
+        end
+    end
+    
+    if str.nil?
+        return str
+    else
+        str[start] = str[start].upcase
+        (start + 1...str.length).each do |index|
+            str[index] = str[index].downcase
+        end
+    end
+    str
+end
+
+puts my_capitalize("  idRiSS iBraHiM")
