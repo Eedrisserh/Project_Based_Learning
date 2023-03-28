@@ -1,0 +1,39 @@
+##
+##
+## QWASAR.IO -- str_maxlenoc
+# Write a function that takes an array of strings and returns
+# the longest string that appears in every parameter's strings. If more that one
+# string qualifies, it will return the one that appears first in the first
+# parameter. Note that the empty string technically appears in any string.
+##
+## @param {String[]} param_1
+## @param {Integer} param_2
+##
+## @return {string}
+##
+
+def str_maxlenoc(param_1, param_2)
+    common_substrings = []
+
+    param_1[0].length.times do |i|
+      param_1[0].length.times do |j|
+        if param_1.all? { |str| str.include?(param_1[0][i..j]) }
+          common_substrings << param_1[0][i..j]
+        end
+      end
+    end
+end
+
+
+arr = ["xoxAoxo", "xoxAox", "oxAox"]
+
+common_substrings = []
+
+arr[0].length.times do |i|
+  arr[0].length.times do |j|
+    if arr.all? { |str| str.include?(arr[0][i..j]) }
+      common_substrings << arr[0][i..j]
+    end
+  end
+end
+puts "Common substrings: #{common_substrings.uniq.join(',')}"

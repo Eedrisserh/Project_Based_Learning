@@ -1,0 +1,53 @@
+require 'sinatra'
+require_relative 'my_user_model.rb'
+
+
+get '/' do
+   @users=User.all()
+   erb :index
+end
+
+get '/users' do
+    User.all.map{|col| col.slice("firstname", "lastname", "age", "email")}.to_json
+end
+
+post '/users' do
+    expected_params = [:firstname, :lastname, :age, :password, :email]
+    if params.slice(*expected_params).length == expected_params.length
+        create_user = User.create(params)
+        new_user = User.find(create_user.id)
+        user={:firstname=>new_user.firstname,:lastname=>new_user.lastname,:age=>new_user.age,:password=>new_user.password,:email=>new_user.email}.to_json
+    end 
+end 
+
+post '/sign_in' do
+    verify_user = User.authenticate(params[:email], params[:password])
+  
+    if verify_user.any?
+      session[:user_id] = verify_user.first["id"]
+      verify_user.first.to_json
+    else
+      status 401
+    end 
+  end
+  
+put '/users' do
+
+    User.update(session[:user_id] , 'password', params[:password])
+    user=User.find(session[:user_id])
+    status 200
+    user_info={:firstname=>user.firstname,:lastname=>user.lastname,:age=>user.age,:password=>user.password,:email=>user.email}.to_json
+end
+
+delete '/sign_out' do
+    session[:user_id] = nil if session[:user_id]
+    status 204
+end
+
+delete '/users' do
+    status 204
+end
+
+set :bind, '0.0.0.0'
+set :port, 8080
+enable :sessions
