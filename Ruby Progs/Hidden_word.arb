@@ -1,0 +1,24 @@
+# Function checks if param_1 is found in param_2 
+# in the order of its appearance
+# You may add .downcase for case sensitivity check.
+
+
+  def hidenp(param_1, param_2)
+    idx1, idx2 = 0, 0
+    
+    while idx1 < param_1.length and idx2 < param_2.size
+        if param_1[idx1] == param_2[idx2]
+            idx1 += 1
+        end
+        idx2 += 1
+        
+        if idx2 == param_2.length and idx1 < param_1.length
+            return 0
+        end
+      end
+      (idx1 == param_1.length) ? 1 : 0
+    end
+    
+    a = "abc" 
+    b = "2ltr5c3.sse"
+    print(hidenp(a, b))

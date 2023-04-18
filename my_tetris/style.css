@@ -1,0 +1,22 @@
+#Tetris {
+    margin-left: 100px;
+    margin-top: 20px;
+    border: 2px solid black;
+}
+#NextTetro {
+    margin-left: 100px;
+    border: 2px solid black;
+}
+#score{
+    display: inline-flex;
+    flex-direction: row;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: xx-large;
+    margin-top: 0px;
+}
+#controls{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    margin-top: 0px;
+}

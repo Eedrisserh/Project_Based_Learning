@@ -1,0 +1,26 @@
+def str_maxlenoc(param_1, param_2)
+    longest_substring = ""
+    longest_length = 0
+  
+    # Set the first string in the array as the initial longest substring
+    longest_substring = param_1[0]
+  
+    # Iterate over each character in the longest substring
+    longest_substring.size.times do |i|
+      # Check all substrings starting from the current character
+      longest_substring.size.times do |j|
+        substring = longest_substring[i..j]
+  
+        # Check if the substring appears in every string in the input array
+        if param_1.all? { |str| str.include?(substring) }
+          if substring.size > longest_length
+            longest_substring = substring
+            longest_length = substring.size
+          end
+        end
+      end
+    end
+  
+    longest_substring
+  end
+puts str_maxlenoc(["bonjour", "salut", "bonjour", "bonjour"], 4)  

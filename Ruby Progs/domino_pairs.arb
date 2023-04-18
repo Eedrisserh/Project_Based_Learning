@@ -1,0 +1,30 @@
+# def number_of_equivalent_domino_pairs(param_1)
+#     count = 0
+ 	
+#   param_1.each_with_index do |row1, i|
+#     param_1.each_with_index do |row2, j|
+#          
+#       if ( i != j)
+#         if (row1[0] == row2[0] and row1[1] == row2[1]) or (row1[0] == row2[1] and row1[1] == row2[0])
+#           		count += 1
+#           	end
+#         end
+#        	end
+#      end
+#      return count > 0 ? count / 2 : 0
+# end
+def number_of_equivalent_domino_pairs(param_1)
+    count = 0
+       
+    param_1.each_with_index do |row1, i|
+      param_1[(i + 1).. -1].each do |row2| #This is to avoid duplicate counting of elements
+        if (row1[0] == row2[0] and row1[1] == row2[1]) or (row1[0] == row2[1] and row1[1] == row2[0])
+          count += 1
+        end
+      end
+    end
+    
+    return count
+  end
+
+puts((number_of_equivalent_domino_pairs([[1,2],[2,1],[4,3],[3,4],[5,6]])))

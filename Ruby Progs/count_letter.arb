@@ -1,0 +1,17 @@
+def count_letter(str)
+    counts = {}
+    
+    str.each_char do |char|
+      if (char.ord >= 65 && char.ord <= 90) || (char.ord >= 97 && char.ord <= 122)
+        char = char.downcase
+        if counts[char] == nil
+            counts[char] = 0
+        end
+        counts[char] += 1
+      end
+    end
+    
+    counts_str = counts.map { |key, value| "#{value}#{key}" }
+  end
+
+puts(count_letter("My Hyze 47y 7.")  )

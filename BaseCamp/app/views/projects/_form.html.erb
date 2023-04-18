@@ -24,7 +24,7 @@
 
     <div class="area form-group">
     <% form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id, id: :project_user_id, class: "form-control", value: current_user.first_name%>
+    <%= form.text_field :user_id, id: :project_user_id, class: "form-control", value: current_user.first_name, hidden: "true"%>
 
 
   </div>

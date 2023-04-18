@@ -1,0 +1,17 @@
+def find_pivot(arr)
+    left_sum = 0
+    right_sum = arr.sum
+  
+    arr.each_with_index do |num, i|
+      right_sum -= num
+      if left_sum == right_sum
+        return i
+      end
+      left_sum += num
+    end
+  
+    return -1
+  end
+  
+  input = [7, 9, 8] 
+  puts find_pivot(input)

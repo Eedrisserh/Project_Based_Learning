@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Tetris Game</title>
+    </head>
+    <body>
+        <div>
+            <div style="text-align: center; font-family: Georgia; font-size:xx-large;"><em>Tetris Game </em></div><br>
+            <canvas id="Tetris" width="200" height="400"></canvas>
+            <canvas id="NextTetro" width="80" height="80"></canvas>
+
+            <div id="controls">
+                <div> MOVE LEFT = ARROW LEFT</div>
+                <div> MOVE RIGHT = ARROW RIGHT</div>
+                <div> MOVE DOWN = ARROW DOWN</div>
+                <div> ROTATE = ARROW UP</div>
+                <div> HARD DROP = SPACE BAR</div>
+            </div>
+        </div>
+        <div>
+            Score : <div id="score">0</div>
+        </div>
+        
+        <script src="tetrominoes.js"></script>
+        <script src="controllers.js"></script>
+        <script src="tetris.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </body>
+</html>
