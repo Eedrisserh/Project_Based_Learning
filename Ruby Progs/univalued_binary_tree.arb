@@ -1,0 +1,25 @@
+Definition for a binary tree node.
+class TreeNode
+    attr_accessor :val, :left, :right
+    def initialize(val)
+        @val   = val
+        @left  = nil
+        @right = nil
+    end
+
+    def univalued_binary_tree(param_1)
+        return true if param_1.nil?
+
+        val = param_1.val
+        queue = [param_1]
+
+        while !queue.empty?
+            node = queue.shift
+            return false if node.val != val
+            queue.push(node.left) if node.left
+            queue.push(node.right) if node.right
+        end
+
+        return true
+    end
+end

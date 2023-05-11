@@ -1,26 +1,22 @@
+# Write a function that takes an array of strings and returns
+# the longest string that appears in every parameter's strings. If more that one
+# string qualifies, it will return the one that appears first in the first
+# parameter. Note that the empty string technically appears in any string.
+
 def str_maxlenoc(param_1, param_2)
-    longest_substring = ""
-    longest_length = 0
-  
-    # Set the first string in the array as the initial longest substring
-    longest_substring = param_1[0]
-  
-    # Iterate over each character in the longest substring
-    longest_substring.size.times do |i|
-      # Check all substrings starting from the current character
-      longest_substring.size.times do |j|
-        substring = longest_substring[i..j]
-  
-        # Check if the substring appears in every string in the input array
-        if param_1.all? { |str| str.include?(substring) }
-          if substring.size > longest_length
-            longest_substring = substring
-            longest_length = substring.size
-          end
-        end
-      end
+  return "" if param_1.empty? || param_2 == 0
+
+  shortest_str = param_1.min_by(&:size)
+
+  shortest_str.length.downto(1) do |len| #creates enumerator from length down to 1 which will be passed to chars.each_cons
+    shortest_str.chars.each_cons(len) do |sub_str|  #chars.each_cons iterates over each consecutive sequence of size(len) elements in the string
+      return sub_str.join if param_1.all? { |str| str.include?(sub_str.join) } #this checks if sub_str appears in all the elements and returns it.
     end
-  
-    longest_substring
   end
-puts str_maxlenoc(["bonjour", "salut", "bonjour", "bonjour"], 4)  
+
+  ""
+end
+input = ["xoxAoxo", "xoxAox", "oxAox"]
+
+
+ puts str_maxlenoc(input, 4)  
