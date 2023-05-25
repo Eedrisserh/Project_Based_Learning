@@ -1,0 +1,22 @@
+<%if !user_signed_in?%>
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 70vh;">
+    <h1>Welcome to BaseCamp</h1>
+    <div class="row mt-4">
+
+      
+      <div class="col-sm-6 mb-2">
+        <%= link_to "Log in",  user_session_path, class: "btn btn-dark btn-block" %>
+      </div>
+
+      <div class="col-sm-6">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary btn-block" %>
+      </div>
+    </div>
+  </div>
+<%else%>
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 15vh;">
+    <h1>Welcome to BaseCamp</h1>
+    <div class="row mt-4">
+    <p><em>You are logged in as <%= link_to current_user.email%></p>
+    </div>
+<%end%>

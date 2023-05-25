@@ -1,0 +1,33 @@
+<div class="table-responsive">
+  <table class="table">
+    <tbody>
+      <tr class="table-bordered table-striped ">
+        <td><strong>First Name</td>
+        <td><%= @user.first_name %></td>
+      </tr>
+      <tr class="table-bordered table-striped r">
+        <td><strong>Last Name</td>
+        <td><%= @user.last_name %></td>
+      </tr>
+      <tr class="table-bordered table-striped ">
+        <td><strong>Email</td>
+        <td><%= @user.email %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="btn-group">
+  <%=link_to "Edit", edit_user_path(@user), class: "btn btn-primary"%>&emsp;
+  <%= button_to "Delete Account", user_path(@user), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, remote: true, class: "btn btn-danger"%>&emsp;
+<%= link_to "Cancel", root_path, class: "btn btn-success" %></div>
+
+
+<script>
+  // handle the success response from the server
+  function handleDeleteSuccess() {
+    Turbo.visit('/logout');
+  }
+
+  // listen for the click event on the delete button
+  document.getElementById('delete-user').addEventListener('ajax:success', handleDeleteSuccess);
+</script>

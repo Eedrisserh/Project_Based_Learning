@@ -1,0 +1,50 @@
+<div classname="header" style="display:flex; justify-content: space-between; align-items: center">
+	<h1>Projects</h1>
+<%= link_to "New project", new_project_path, class: "btn btn-primary" %>
+</div>
+
+<table class="table table-hover table-bordered  table-striped ">
+  <thead class="table-secondary">
+    <tr>
+      <th scope="col">Project Title</th>
+      <th scope="col">Project Description</th>
+      <th scope="col">Attachment</th>
+      <th scope="col">Author</th>
+      <th scope="col">Modify</th>
+    </tr>
+  </thead>
+  <tbody>
+<div id="projects">
+  <% @projects.each do |project| %>
+   <tr>
+   
+  <td><%= project.project_title %></td>
+  <td><%= truncate(project.project_content, length:120) %></td>
+  <td>
+      <%if project.attachment.attached?%>
+        <%= link_to project.attachment.filename, project.attachment.url, target: "_blank"%>
+      <%end%>
+  </td>
+
+  <td><%= User.find_by(id: project.user_id) ? User.find(project.user_id).first_name + ' ' + User.find(project.user_id).last_name : 'Deleted user' %></td>
+
+  <td>
+    <div class="btn-group" role="group" aria-label="Project actions">
+      <%= link_to "Show", project, class:"btn btn-success"%>&emsp;
+       <%if current_user.id == project.user_id || current_user.role == 1%>
+      <%= link_to "Edit", edit_project_path(project), class:"btn btn-secondary"%>&emsp;
+      <%= button_to "Delete", project, method: :delete, class:"btn btn-danger"%>
+      
+      <%end%>
+
+    </div>
+  </td>
+</tr>
+
+</div>
+   </tbody>
+      
+  <% end %>
+</table>
+
+<%= link_to "New project", new_project_path, class: "btn btn-primary" %>

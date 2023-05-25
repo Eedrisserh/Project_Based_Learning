@@ -1,0 +1,50 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li> 
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="area form-group">
+    <%= form.label :project_title, style: "display: block" %>
+    <%= form.text_area :project_title, rows: 1, cols: 90, class: "form-control", placeholder: "Project title" %>
+  </div>
+
+  <div class="area form-group">
+    <%= form.label :project_content, style: "display: block" %>
+    <%= form.text_area :project_content, rows: 10, cols: 90, class: "form-control", placeholder: "Project Description" %>
+  </div>
+
+  <div class="area form-group">
+		<% form.label :user_id, style: "display: block" %>
+		<%= form.text_field :user_id, id: :project_user_id, class: "form-control", value: current_user.first_name, hidden: "true" %>
+		<% if project.attachment.attached? %>
+		File: <%= project.attachment.filename %>
+		<% end %>
+  </div>
+
+  
+  <div class="attach" style="display:flex; justify-content: space-between">
+		<div class="area form-group">
+		<%= form.label :Attachment%>
+		<%= form.file_field :attachment, class: "form-control", accept: ".jpg, .jpeg, .png, .txt, .pdf" %>
+    </div>
+
+    <% if project.attachment.attached? %>
+		<div class="area form-group">
+			<%= form.check_box :remove_attachment %>
+			<%= form.label :remove_attachment, "Remove Attachment"%>
+		</div>
+    <% end %>
+  </div>
+
+<div classname="last" style="display: flex; justify-content: space-between">
+    <%= form.submit class: "btn btn-success" %>
+
+<% end %>

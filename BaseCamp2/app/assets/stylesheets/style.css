@@ -1,0 +1,31 @@
+/* Styles for message content container */
+.message-content-container {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px ridge rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for reply container */
+  .reply-container {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for reply actions */
+  .reply-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Styles for form actions */
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
