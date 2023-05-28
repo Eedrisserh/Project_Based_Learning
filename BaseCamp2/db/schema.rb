@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_24_111328) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_26_132118) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -63,7 +63,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_111328) do
     t.integer "message_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", default: 1, null: false
     t.index ["message_id"], name: "index_replies_on_message_id"
+    t.index ["user_id"], name: "index_replies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,4 +88,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_24_111328) do
   add_foreign_key "messages", "messages", column: "parent_message_id"
   add_foreign_key "messages", "users"
   add_foreign_key "replies", "messages"
+  add_foreign_key "replies", "users"
 end

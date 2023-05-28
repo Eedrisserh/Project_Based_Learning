@@ -2,7 +2,6 @@
 
 <%= form_with(model: [@message, @reply], url: message_reply_path(@message, @reply), method: :patch) do |form| %>
   <div class="form-group">
-    <%= form.label :content %>
     <%= form.text_area :content, class: "form-control" %>
   </div>
 

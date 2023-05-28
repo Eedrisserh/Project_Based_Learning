@@ -24,11 +24,11 @@ class MessagesController < ApplicationController
 	end
   
 	def update
-	  if @message.update(message_params)
-		redirect_to message_path(@message), notice: "Message was successfully updated."
-	  else
-		render :edit, status: :unprocessable_entity
-	  end
+		if @message.update(message_params)
+			redirect_to message_path(@message), notice: "Message was successfully updated."
+		else
+			render :edit, status: :unprocessable_entity
+		end
 	end
   
 	def destroy
@@ -49,17 +49,22 @@ class MessagesController < ApplicationController
 	private
   
 	def message_params
-	  params.require(:message).permit(:content)
+		params.require(:message).permit(:content)
 	end
-  
+
 	def set_message
-	  @message = Message.find(params[:id])
+		@message = Message.find_by(id: params[:id])
+		
+		if @message.nil?
+		  redirect_to messages_path, notice: "The requested message could not be found."
+		end
 	end
+	  
   
 	def valid_user
-	  unless current_user.role == 1
+		unless current_user.role == 1
 		redirect_to messages_path, notice: "Unauthorized access"
-	  end
+		end
 	end
   
-  end
+end

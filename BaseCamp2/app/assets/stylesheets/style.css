@@ -5,14 +5,18 @@
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
   }
   
   /* Styles for reply container */
   .reply-container {
+    display:block;
     background-color: rgba(0, 0, 0, 0.05);
-    border: 1px solid black;
-    padding: 10px 20px;
-    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 10px 25px;
+    margin-bottom: 1px;
+    font-style: italic;
   }
   
   /* Styles for reply actions */
@@ -22,10 +26,26 @@
     align-items: center;
   }
   
-  /* Styles for form actions */
+  .reply-actions a,
+  .reply-actions button {
+    visibility: hidden;
+  }
+  
+  .reply-actions:hover a,
+  .reply-actions:hover button {
+    visibility: visible;
+  }
+
   .actions {
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+  .delete-link {
+    background: none;
+    border: none;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
   }
   

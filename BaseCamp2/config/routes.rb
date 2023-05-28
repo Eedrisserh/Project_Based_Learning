@@ -6,7 +6,8 @@ Rails.application.routes.draw do
     resources :replies, only: [:create, :update, :edit, :destroy] do
       delete '/', to: 'replies#destroy', on: :collection
     end
-  end    
+  end
+  
   delete '/replies/:id', to: 'replies#destroy', as: 'destroy_reply'
 
   get '/users', to: 'users#index'
