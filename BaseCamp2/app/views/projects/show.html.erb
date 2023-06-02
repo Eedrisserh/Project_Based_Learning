@@ -4,16 +4,17 @@
     <p><%= @project.project_content %></p>
     <br>
       <%if @project.attachment.attached?%>
-        <%= link_to "View Attachment", @project.attachment, class: "btn btn-success"%>
+        <%= link_to "View Attachment", @project.attachment, class: "btn btn-success", target: "_blank"%>
       <%end%>
     
-<div>
-  <br>
-  <%= link_to "Edit this project", edit_project_path(@project), class: "btn btn-primary" %>
+<div class="buttons" style="display: flex; justify-content: space-evenly; margin-top: 20px;">
+  <% if current_user.role == 1 || @project.user_id == current_user.id %>
+    <%= link_to "Edit this project", edit_project_path(@project), class: "btn btn-primary" %>
+    <%= button_to "Destroy this project", @project, method: :delete, class: "btn btn-danger" %>
+  <% end %>
   <%= link_to "Back to projects", projects_path, class: "btn btn-primary" %>
-
-  <%= button_to "Destroy this project", @project, method: :delete, class: "btn btn-danger"%>
 </div>
+
 
   </div>
 </div>

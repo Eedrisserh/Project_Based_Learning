@@ -86,9 +86,13 @@ class ProjectsController < ApplicationController
   end
 
   private
-    def set_project
-      @project = Project.find(params[:id])
+
+  def set_project
+    @project = Project.find_by(id: params[:id])
+    unless @project
+      redirect_to projects_path, notice: "Project not found"
     end
+  end
 
     def project_params
       params.require(:project).permit(:project_title, :project_content, :first_name, :attachment)

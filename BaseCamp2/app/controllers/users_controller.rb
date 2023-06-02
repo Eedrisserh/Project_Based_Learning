@@ -39,12 +39,18 @@ class UsersController < ApplicationController
     def update_role
         @user = User.find(params[:id])
         @user.update(role_params)
-        notice => 'Role updated successfully'
+        notice = 'Role updated successfully'
     end
 
     def show
-        @user = User.find(params[:id])
+        if params[:id] == 'sign_out'
+            sign_out
+            redirect_to root_path
+        else
+          @user = User.find(params[:id])
+        end
     end
+      
 
     def destroy
         @user = User.find(params[:id])
