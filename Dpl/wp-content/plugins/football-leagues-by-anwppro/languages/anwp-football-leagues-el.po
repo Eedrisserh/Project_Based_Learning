@@ -1,0 +1,5608 @@
+# Translation of Football Leagues in Greek
+# This file is distributed under the same license as the Football Leagues package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2020-06-29 12:00:03+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.3.1\n"
+"Language: el_GR\n"
+"Project-Id-Version: Football Leagues\n"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1020
+msgid "Hide Zeros"
+msgstr ""
+
+#: includes/class-anwpfl-helper.php:1474 includes/class-anwpfl-helper.php:1510
+msgid "Scores"
+msgstr ""
+
+#: admin/views/tools.php:118
+msgid "Referee Name"
+msgstr ""
+
+#: admin/views/tools.php:38
+msgid "referees"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:834
+msgid "No data text"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:487
+msgid "Initial Standing Table Data"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:595
+msgid "Use Plyr player for all video types (YouTube, Vimeo, custom)"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:594
+msgid "Use YouTube player for own video and Plyr player for Vimeo and custom videos"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:593
+msgid "Use YouTube player only (Vimeo and custom videos will be ignored)"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:588
+msgid "Video Player"
+msgstr ""
+
+#: includes/class-anwpfl-text.php:943 templates/player/player-stats.php:171
+msgid "Totals"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:586
+msgid "Special Status"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:515
+msgid "None"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:506
+msgid "Time To Be Defined"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:505 includes/class-anwpfl-text.php:268
+#: templates/match/match--card-a.php:100 templates/match/match--modern.php:102
+#: templates/match/match--simple.php:120 templates/match/match--slim.php:290
+#: templates/match/match.php:203
+msgid "Match Postponed"
+msgstr ""
+
+#: class-anwp-football-leagues.php:1327
+msgid "Country/Nationality"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:545
+msgid "Missed"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:541
+#: includes/shortcodes/class-anwpfl-shortcode.php:588
+msgid "Header"
+msgstr ""
+
+#: includes/class-anwpfl-helper.php:1355 includes/class-anwpfl-helper.php:1436
+#: includes/class-anwpfl-helper.php:1515
+msgid "nothing found"
+msgstr ""
+
+#: class-anwp-football-leagues.php:1344
+msgid "Insert"
+msgstr ""
+
+#: class-anwp-football-leagues.php:1343
+msgid "Cancel"
+msgstr ""
+
+#: class-anwp-football-leagues.php:1334
+msgid "Selected Values"
+msgstr ""
+
+#: class-anwp-football-leagues.php:1299
+msgid "start typing name or title ..."
+msgstr ""
+
+#: admin/views/shortcodes-builder.php:31
+#: includes/shortcodes/class-anwpfl-shortcode.php:154
+#: includes/shortcodes/class-anwpfl-shortcode.php:1318
+msgid "Player Data"
+msgstr ""
+
+#: admin/views/shortcodes-builder.php:30
+#: includes/shortcodes/class-anwpfl-shortcode.php:153
+msgid "Player Card"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:893
+msgid "Columns in Blocks Layout"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:873
+msgid "Show Header"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:453
+msgid "Next match of the club"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:441
+msgid "Last finished match of the club"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:507
+msgid "Hide not used seasons in the Seasons Dropdown"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:506
+msgid "Hide not used seasons"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:148
+msgctxt "country"
+msgid "Timor-Leste"
+msgstr ""
+
+#: includes/class-anwpfl-competition.php:442
+msgid "clone Competition"
+msgstr ""
+
+#: includes/class-anwpfl-text.php:880 templates/player/player-missed.php:61
+msgid "Reason"
+msgstr ""
+
+#: includes/class-anwpfl-text.php:871 templates/player/player-missed.php:42
+msgid "Missed Matches"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:610
+msgid "Do you really want to delete Missing Player?"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:599 includes/class-anwpfl-text.php:403
+#: templates/match/match-missing.php:133 templates/match/match-missing.php:210
+#: templates/player/player-missed.php:106
+msgid "Suspended"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:569
+msgid "Select reason"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:522
+msgid "other"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:502 includes/class-anwpfl-text.php:421
+#: includes/shortcodes/class-anwpfl-shortcode.php:488
+#: templates/match/match-missing.php:61
+msgid "Missing Players"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:484 includes/class-anwpfl-text.php:412
+#: templates/match/match-missing.php:136 templates/match/match-missing.php:213
+#: templates/player/player-missed.php:109
+msgid "Injured"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:451
+msgid "Delete Missing Player"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:436
+msgid "Comment"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:399
+msgid "Add Missing Player"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:683
+msgid "Display in front end search results"
+msgstr ""
+
+#: includes/class-anwpfl-match.php:2073
+msgid "Outcome Text"
+msgstr ""
+
+#: includes/class-anwpfl-match.php:2058
+msgid "Points for away team"
+msgstr ""
+
+#: includes/class-anwpfl-match.php:2043
+msgid "Points for home team"
+msgstr ""
+
+#: includes/class-anwpfl-match.php:2023
+msgid "Outcome for away team"
+msgstr ""
+
+#: includes/class-anwpfl-match.php:2003
+msgid "Outcome for home team"
+msgstr ""
+
+#: includes/class-anwpfl-match.php:1603 includes/class-anwpfl-match.php:1985
+msgid "Custom Outcome"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:494
+msgid "Show Match Header"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:413
+msgid "Custom Title"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:280
+#: includes/widgets/class-anwpfl-widget-standing.php:111
+msgid "Show Notes"
+msgstr ""
+
+#: includes/class-anwpfl-standing.php:1011
+msgid "There are no available \"Round-Robin\" competitions."
+msgstr ""
+
+#: includes/class-anwpfl-competition.php:203
+#: includes/class-anwpfl-competition.php:460
+#: includes/class-anwpfl-standing.php:127
+msgid "Clone"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:1028
+msgid "Bottom Line Info"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:1009
+msgid "Show Stadium above Match date time (top left)"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:1001
+msgid "Match List"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:609
+msgid "Do you really want to delete Event?"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:577
+msgid "set default"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:556
+msgid "Save Event"
+msgstr ""
+
+#: includes/class-anwpfl-data.php:450
+msgid "Delete Event"
+msgstr ""
+
+#: includes/class-anwpfl-competition.php:2199
+msgid "Standings"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "AnWP Football Leagues"
+msgstr "AnWP Αγώνες Ποδοσφαίρου"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:120
+msgid "Include"
+msgstr "Περιλαμβάνω"
+
+#: includes/class-anwpfl-player.php:359
+msgid "Country of Birth"
+msgstr "Χώρα γέννησης"
+
+#: includes/class-anwpfl-options.php:1476
+msgid "Outcome Letters"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:1139
+msgid "Opposite club name in Latest Player Matches"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:830
+msgid "works only in \"slim\" layout"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:822
+msgid "Show Outcome for club ID"
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:368
+msgid "If this option is set, \"Competition\" option will be ignored."
+msgstr "Εάν αυτή η επιλογή έχει οριστεί, η επιλογή “Διοργάνωση” θα αγνοηθεί."
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:361
+msgid "Include Clubs"
+msgstr "Συμπεριλάβετε Σύλλογοι"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:274
+#: includes/widgets/class-anwpfl-widget-standing.php:105
+msgid "Alternative bottom link text"
+msgstr "Εναλλακτικό κείμενο κατώτατου συνδέσμου"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:269
+#: includes/widgets/class-anwpfl-widget-standing.php:99
+msgid "standing"
+msgstr "πίνακας βαθμολογίας"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:263
+#: includes/widgets/class-anwpfl-widget-standing.php:94
+msgid "Show link to"
+msgstr "Εμφάνιση συνδέσμου προς"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:259
+#: includes/widgets/class-anwpfl-widget-standing.php:88
+msgid "Eg.: \"1-5\" (show teams from 1 to 5 place), \"45\" - show table slice with specified team ID in the middle"
+msgstr "Π.χ .: “1-5” (εμφάνιση ομάδων από 1 έως 5 θέση), “45” - εμφάνιση κομμάτι πίνακα με καθορισμένο αναγνωριστικό ομάδας στη μέση"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:256
+#: includes/widgets/class-anwpfl-widget-standing.php:87
+msgid "Show Partial Data"
+msgstr "Εμφάνιση μερικών δεδομένων"
+
+#: includes/class-anwpfl-text.php:103
+msgid "Context"
+msgstr "Συμφραζόμενα"
+
+#: includes/class-anwpfl-text.php:102
+msgid "New"
+msgstr "Νέο"
+
+#: includes/class-anwpfl-text.php:94
+msgid "Search Text String"
+msgstr "Αναζήτηση κειμένου συμβολοσειράς"
+
+#: includes/class-anwpfl-text.php:57 includes/class-anwpfl-text.php:128
+msgid "Text Options"
+msgstr "Επιλογές κειμένου"
+
+#: includes/class-anwpfl-options.php:1526
+#: includes/class-anwpfl-options.php:1546
+#: includes/class-anwpfl-options.php:1566
+#: includes/class-anwpfl-options.php:1586
+#: includes/class-anwpfl-options.php:1606
+#: includes/class-anwpfl-options.php:1626
+#: includes/class-anwpfl-options.php:1646
+#: includes/class-anwpfl-options.php:1666
+msgid "column name"
+msgstr "όνομα στήλης"
+
+#: includes/class-anwpfl-options.php:1516
+#: includes/class-anwpfl-options.php:1536
+#: includes/class-anwpfl-options.php:1556
+#: includes/class-anwpfl-options.php:1576
+#: includes/class-anwpfl-options.php:1596
+#: includes/class-anwpfl-options.php:1616
+#: includes/class-anwpfl-options.php:1636
+#: includes/class-anwpfl-options.php:1656
+msgid "tooltip text"
+msgstr "εργαλείο κείμενο επεξήγησης"
+
+#: includes/class-anwpfl-options.php:904
+msgid "Custom Default Club Logo"
+msgstr "Προσαρμοσμένο προεπιλεγμένο λογότυπο Club"
+
+#: includes/class-anwpfl-options.php:887
+msgid "will be visible if club logo is not set"
+msgstr "θα είναι ορατό εάν δεν έχει οριστεί το λογότυπο του συλλόγου"
+
+#: includes/class-anwpfl-options.php:884
+msgid "Show default club logo"
+msgstr "Εμφάνιση λογότυπου συλλόγου"
+
+#: class-anwp-football-leagues.php:2215
+msgid "Plugin page at wp.org"
+msgstr "Σελίδα προσθηκών στο wp.org"
+
+#: class-anwp-football-leagues.php:2212
+msgid "Install plugin"
+msgstr "Εγκατάσταση πρόσθετου"
+
+#: class-anwp-football-leagues.php:2210
+msgid "Activate plugin"
+msgstr "Ενεργοποίηση plugin"
+
+#: includes/widgets/class-anwpfl-widget-video.php:79
+msgid "Fill to show video of the specified match"
+msgstr "Συμπληρώστε για να δείτε βίντεο του καθορισμένου αγώνα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:431
+#: includes/widgets/class-anwpfl-widget-video.php:78
+msgid "Match ID"
+msgstr "Αναγνωριστικό αγώνα"
+
+#: includes/widgets/class-anwpfl-widget-video.php:58
+msgctxt "widget default title"
+msgid "Video Review"
+msgstr "Βίντεο κριτική"
+
+#: includes/widgets/class-anwpfl-widget-video.php:35
+msgid "Show Last Match Video Review"
+msgstr "Εμφάνιση κριτικής βίντεο τελευταίου αγώνα"
+
+#: includes/class-anwpfl-match.php:1889
+msgid "Remove Video"
+msgstr "Κατάργηση βίντεο"
+
+#: includes/class-anwpfl-match.php:1888
+msgid "Add Another Video"
+msgstr "Προσθήκη άλλου βίντεο"
+
+#: includes/class-anwpfl-match.php:1887
+msgid "Additional Video"
+msgstr "Πρόσθετο βίντεο"
+
+#: includes/class-anwpfl-match.php:1885
+msgid "Additional videos"
+msgstr "Πρόσθετα βίντεο"
+
+#: includes/class-anwpfl-match.php:1842 includes/class-anwpfl-match.php:1947
+msgid "Video Description"
+msgstr "Περιγραφή βίντεο"
+
+#: includes/class-anwpfl-text.php:1420 templates/widget-birthday.php:37
+msgid "No Upcoming Birthdays"
+msgstr "Δεν υπάρχουν επερχόμενα γενέθλια"
+
+#: includes/class-anwpfl-text.php:646
+#: templates/player/player-birthday-card.php:81
+msgid "years"
+msgstr "ετών"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:97
+msgid "Group by date"
+msgstr "Ομαδοποιήστε κατά ημερομηνία"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:91
+msgid "Days after birthday"
+msgstr "Ημέρες μετά τα γενέθλια"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:85
+msgid "Days before birthday"
+msgstr "Ημέρες πριν από τα γενέθλια"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:79
+msgid "Players and Staff"
+msgstr "Παίκτες και προσωπικό"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:78
+msgid "Staff only"
+msgstr "Μόνο προσωπικό"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:77
+msgid "Players only"
+msgstr "Μόνο παίκτες"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:69
+msgid "Optional, leave empty for all"
+msgstr "Προαιρετικά, αφήστε κενό για όλους"
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:38
+msgid "Show Upcoming Birthdays."
+msgstr "Εμφάνιση επερχόμενων γενεθλίων."
+
+#: includes/widgets/class-anwpfl-widget-birthday.php:29
+msgid "FL Birthdays"
+msgstr "FL γενέθλια"
+
+#: includes/class-anwpfl-match.php:1743
+msgid "Role"
+msgstr "Ρόλος"
+
+#: includes/class-anwpfl-match.php:1735 includes/class-anwpfl-match.php:1891
+msgid "Are you sure you want to remove?"
+msgstr "Είστε βέβαιοι ότι θέλετε να καταργήσετε;"
+
+#: includes/class-anwpfl-match.php:1733
+msgid "Remove Referee"
+msgstr "Αφαιρέστε τον Διαιτητή"
+
+#: includes/class-anwpfl-match.php:1732
+msgid "Add Another Referee"
+msgstr "Προσθέστε Άλλο Διαιτητή"
+
+#: includes/class-anwpfl-match.php:1729
+msgid "Additional referees"
+msgstr "Πρόσθετοι διαιτητές"
+
+#: includes/class-anwpfl-match.php:296
+msgid "All Matchweeks"
+msgstr "Όλες οι αγωνιστικές"
+
+#: includes/class-anwpfl-match.php:263
+msgid "All Clubs"
+msgstr "Όλοι οι Σύλλογοι"
+
+#: includes/class-anwpfl-data.php:516
+msgid "not specified"
+msgstr "δεν διευκρινίζεται"
+
+#: includes/class-anwpfl-data.php:420
+msgid "Available placeholders"
+msgstr "Διαθέσιμες επιλογές κράτησης θέσης"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:811
+msgid "Exclude IDs"
+msgstr "Εξαίρεση αναγνωριστικών"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:807
+#: includes/shortcodes/class-anwpfl-shortcode.php:817
+msgid "comma-separated list of IDs"
+msgstr "διαχωρισμένη με κόμμα η λίστα IDs των διοργανώσεων"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:801
+msgid "Include IDs"
+msgstr "Συμπεριλάβετε αναγνωριστικά"
+
+#: includes/class-anwpfl-staff.php:295
+msgid "Additional Current Clubs"
+msgstr "Πρόσθετοι τρέχοντες σύλλογοι"
+
+#: includes/widgets/class-anwpfl-widget-last-match.php:100
+#: includes/widgets/class-anwpfl-widget-next-match.php:100
+msgid "Match IDs, separated by commas."
+msgstr "Αναγνωριστικά ομάδων, χωρισμένα με κόμματα."
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:721
+msgid "For example: \"1\" - till tomorrow (tomorrow not included)"
+msgstr "Για παράδειγμα: “1” - μέχρι το αύριο (αύριο δεν περιλαμβάνεται)"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:718
+msgid "Dynamic days filter to"
+msgstr "Δυναμικές ημέρες φιλτραρίσματος σε"
+
+#: includes/cmb2-fields/cmb-anwp-fl-custom-fields.php:52
+msgid "Dynamic custom fields not exist"
+msgstr "Δεν υπάρχουν δυναμικά προσαρμοσμένα πεδία"
+
+#: includes/class-anwpfl-options.php:1246
+#: includes/class-anwpfl-options.php:1259
+#: includes/class-anwpfl-options.php:1272
+#: includes/class-anwpfl-options.php:1285
+#: includes/class-anwpfl-options.php:1298
+msgid "Add field"
+msgstr "Προσθήκη πεδίου"
+
+#: includes/class-anwpfl-options.php:1235
+msgid "Set Dynamic Custom Fields for"
+msgstr "Σετ Δυναμικών προσαρμοσμένων πεδίων για"
+
+#: includes/class-anwpfl-club.php:670 includes/class-anwpfl-options.php:1817
+#: includes/class-anwpfl-player.php:560 includes/class-anwpfl-referee.php:362
+#: includes/class-anwpfl-stadium.php:414 includes/class-anwpfl-staff.php:513
+msgid "Dynamic Custom Fields"
+msgstr "Δυναμικά προσαρμοσμένα πεδία"
+
+#: includes/class-anwpfl-options.php:932
+msgid "Use monospace font-family"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:543
+msgid "club slug"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:542
+msgid "club title"
+msgstr "τίτλος συλλόγου"
+
+#: includes/class-anwpfl-options.php:537
+msgid "Match slug generated with"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:553
+msgid "E.g.: %club_home% - %club_away% %scores_home%:%scores_away% - %kickoff%"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:553
+msgid "Available placeholders: %club_home% - home club name,  %club_away% - away club name, %scores_home% - home scores, %scores_away% - away scores, %competition% - competition title, %kickoff% - kickoff date."
+msgstr ""
+
+#: includes/class-anwpfl-options.php:550
+msgid "Match title generation rules"
+msgstr ""
+
+#: class-anwp-football-leagues.php:995 class-anwp-football-leagues.php:1588
+#: class-anwp-football-leagues.php:2239
+msgctxt "admin menu title"
+msgid "Settings & Tools"
+msgstr "Ρυθμίσεις και εργαλεία"
+
+#: class-anwp-football-leagues.php:994
+msgctxt "admin page title"
+msgid "Settings & Tools"
+msgstr "Ρυθμίσεις και εργαλεία"
+
+#: includes/widgets/class-anwpfl-widget-last-match.php:92
+#: includes/widgets/class-anwpfl-widget-next-match.php:92
+msgid "Match link text"
+msgstr "Κείμενο συνδέσμου αγώνα"
+
+#: includes/widgets/class-anwpfl-widget-last-match.php:58
+msgctxt "widget default title"
+msgid "Last Match"
+msgstr "Τελευταίοι αγώνες"
+
+#: includes/widgets/class-anwpfl-widget-last-match.php:35
+msgid "Show Last Match."
+msgstr "Εμφάνιση τελευταίου αγώνα."
+
+#: includes/widgets/class-anwpfl-widget-last-match.php:26
+msgid "FL Last Match"
+msgstr "FL Τελευταίοι αγώνες"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:644
+msgid "Group ID"
+msgstr "Αναγνωριστικό ομάδας"
+
+#: includes/class-anwpfl-club.php:1305 includes/class-anwpfl-player.php:158
+#: includes/class-anwpfl-text.php:223 templates/club/club-header.php:170
+#: templates/player/player-header.php:234
+msgid "Social"
+msgstr "Κοινωνικά"
+
+#: includes/class-anwpfl-club.php:578 includes/class-anwpfl-player.php:495
+msgid "Instagram"
+msgstr "Instagram"
+
+#: includes/class-anwpfl-club.php:569 includes/class-anwpfl-player.php:486
+msgid "YouTube"
+msgstr "YouTube"
+
+#: includes/class-anwpfl-club.php:560 includes/class-anwpfl-player.php:477
+msgid "Facebook"
+msgstr "Facebook"
+
+#: includes/class-anwpfl-club.php:550 includes/class-anwpfl-player.php:467
+msgid "Twitter"
+msgstr "Twitter"
+
+#. Plugin URI of the plugin/theme
+msgid "https://anwppro.userecho.com/communities/1-football-leagues"
+msgstr "https://anwppro.userecho.com/communities/1-football-leagues"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1010
+msgid "Compact"
+msgstr "Σταθερό"
+
+#. Author URI of the plugin/theme
+msgid "https://anwp.pro"
+msgstr "https://anwp.pro"
+
+#. Author of the plugin/theme
+msgid "Andrei Strekozov <anwppro>"
+msgstr "Andrei Strekozov <anwppro>"
+
+#. Description of the plugin/theme
+msgid "Create and manage your own football club, competition, league or soccer news website. Knockout and round-robin stages, player profiles, standing tables and much more."
+msgstr "Δημιουργήστε και διαχειριστείτε το δικό σας ποδοσφαιρικό σύλλογο, τον ανταγωνισμό, το πρωτάθλημα ή την ιστοσελίδα ειδήσεων ποδοσφαίρου. Διαγράμματα αγώνων, γηπέδων, προφίλ παικτών, βαθμολογίες και πολλά άλλα."
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:144
+msgid "Choose from the most used %s"
+msgstr "Επιλέξτε από τα πιο χρησιμοποιημένα %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:143
+msgid "Add or remove %s"
+msgstr "Προσθήκη/αφαίρεση %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:142
+msgid "Separate %s with commas"
+msgstr "Διαχωρίζω %s με κόμματα"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:141
+msgid "Popular %s"
+msgstr "Δημοφιλής %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:137
+msgid "Parent %s"
+msgstr "Γονικό %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:133
+msgid "No %s found."
+msgstr "Δεν βρέθηκαν %s."
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:132
+msgid "New %s Name"
+msgstr "Νέο %s όνομα"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:130
+msgid "Update %s"
+msgstr "Ενημέρωση %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:84
+#: vendor/taxonomy-core/Taxonomy_Core.php:88
+#: vendor/taxonomy-core/Taxonomy_Core.php:92
+msgid "It is required to pass a single, plural and slug string to Taxonomy_Core"
+msgstr "απαιτείται να μεταβιβαστεί ένας μονός, πληθυντικός και συμβολοσειρά σε Taxonomy_Core"
+
+#: vendor/cpt-core/CPT_Core.php:305
+msgid "%s Title"
+msgstr "%s Τίτλος"
+
+#: vendor/cpt-core/CPT_Core.php:253
+msgid "%1$s %2$s restored from the Trash."
+msgid_plural "%1$s %3$s restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:252
+msgid "%1$s %2$s moved to the Trash."
+msgid_plural "%1$s %3$s moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:251
+msgid "%1$s %2$s permanently deleted."
+msgid_plural "%1$s %3$s permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:250
+msgid "%1$s %2$s not updated, somebody is editing it."
+msgid_plural "%1$s %3$s not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:249
+msgid "%1$s %2$s updated."
+msgid_plural "%1$s %3$s updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:231
+msgid "%1$s draft updated."
+msgstr "%1$s σχέδιο ενημερώθηκε."
+
+#. translators: Publish box date format, see http://php.net/date
+#: vendor/cpt-core/CPT_Core.php:230
+msgid "%1$s scheduled for: <strong>%2$s</strong>."
+msgstr "%1$s προγραμματισμενο για: <strong>%2$s</strong>."
+
+#: vendor/cpt-core/CPT_Core.php:228
+msgid "%1$s submitted."
+msgstr "%1$s υποβλήθηκαν."
+
+#: vendor/cpt-core/CPT_Core.php:227
+msgid "%1$s published."
+msgstr "%1$s δημοσιεύτηκε."
+
+#: vendor/cpt-core/CPT_Core.php:222
+msgid "%1$s draft updated. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+msgstr "%1$s Το πρόχειρο ενημερώθηκε. <a target=“_blank” href=“%2$s”>Προεπισκόπηση %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:221 vendor/cpt-core/CPT_Core.php:230
+msgid "M j, Y @ G:i"
+msgstr "j M Y @ G:i"
+
+#. translators: Publish box date format, see http://php.net/date
+#: vendor/cpt-core/CPT_Core.php:221
+msgid "%1$s scheduled for: <strong>%2$s</strong>. <a target=\"_blank\" href=\"%3$s\">Preview %1$s</a>"
+msgstr "%1$s προγραμματισμένο για: <strong>%2$s</strong>. <a target=“_blank” href=“%3$s”>Προεπισκόπηση %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:219
+msgid "%1$s submitted. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+msgstr "%1$s υποβλήθηκε.<a target=“_blank” href=“%2$s”>Προεπισκόπηση %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:218
+msgid "%1$s published. <a href=\"%2$s\">View %1$s</a>"
+msgstr "%1$s Δημοσιεύτηκε. <a href=“%2$s”>Προβολή %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:217
+msgid "%1$s updated. <a href=\"%2$s\">View %1$s</a>"
+msgstr "%1$s ενημερώθηκε. <a href=“%2$s”>Προβολή %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:212
+msgid "%1$s saved."
+msgstr "%1$s αποθηκεύονται."
+
+#. translators: %s: date and time of the revision
+#: vendor/cpt-core/CPT_Core.php:211
+msgid "%1$s restored to revision from %2$s"
+msgstr "%1$s αποκατασταθεί από την αναθεώρηση %2$s"
+
+#: vendor/cpt-core/CPT_Core.php:209 vendor/cpt-core/CPT_Core.php:226
+msgid "%1$s updated."
+msgstr "%1$s ενημερώθηκε."
+
+#: vendor/cpt-core/CPT_Core.php:208
+msgid "Custom field deleted."
+msgstr "Το προσαρμοσμένο πεδίο διαγράφηκε."
+
+#: vendor/cpt-core/CPT_Core.php:207
+msgid "Custom field updated."
+msgstr "Το προσαρμοσμένο πεδίο ενημερώθηκε."
+
+#: vendor/cpt-core/CPT_Core.php:157
+msgid "Filter %s list"
+msgstr "Φίλτρο %s λίστας"
+
+#: vendor/cpt-core/CPT_Core.php:156
+msgid "%s list navigation"
+msgstr "%s lπλοήγηση λίστας"
+
+#: vendor/cpt-core/CPT_Core.php:155
+msgid "%s list"
+msgstr "%s Λίστα"
+
+#: vendor/cpt-core/CPT_Core.php:154
+msgid "Uploaded to this %s"
+msgstr "Μεταφορτωμένο σε αυτό %s"
+
+#: vendor/cpt-core/CPT_Core.php:153
+msgid "Insert into %s"
+msgstr "Εισάγετε σε %s"
+
+#: vendor/cpt-core/CPT_Core.php:151 vendor/taxonomy-core/Taxonomy_Core.php:138
+msgid "Parent %s:"
+msgstr "Γονικό %s:"
+
+#: vendor/cpt-core/CPT_Core.php:150
+msgid "No %s found in Trash"
+msgstr "Δεν βρέθηκε τίποτα %s στον Κάδο απορριμμάτων"
+
+#: vendor/cpt-core/CPT_Core.php:149 vendor/taxonomy-core/Taxonomy_Core.php:134
+msgid "No %s"
+msgstr "Δεν βρέθηκε τίποτα %s"
+
+#: vendor/cpt-core/CPT_Core.php:148 vendor/taxonomy-core/Taxonomy_Core.php:126
+msgid "Search %s"
+msgstr "Αναζήτηση %s"
+
+#: vendor/cpt-core/CPT_Core.php:147 vendor/taxonomy-core/Taxonomy_Core.php:129
+msgid "View %s"
+msgstr "Προβολή %s"
+
+#: vendor/cpt-core/CPT_Core.php:146 vendor/taxonomy-core/Taxonomy_Core.php:127
+msgid "All %s"
+msgstr "Όλα %s"
+
+#: vendor/cpt-core/CPT_Core.php:145
+msgid "New %s"
+msgstr "Νέο %s"
+
+#: vendor/cpt-core/CPT_Core.php:144 vendor/taxonomy-core/Taxonomy_Core.php:128
+msgid "Edit %s"
+msgstr "Επεξεργασία %s"
+
+#: vendor/cpt-core/CPT_Core.php:142 vendor/cpt-core/CPT_Core.php:143
+#: vendor/taxonomy-core/Taxonomy_Core.php:131
+msgid "Add New %s"
+msgstr "Προσθήκη νέου %s"
+
+#: vendor/cpt-core/CPT_Core.php:77 vendor/cpt-core/CPT_Core.php:81
+#: vendor/cpt-core/CPT_Core.php:85
+msgid "It is required to pass a single, plural and slug string to CPT_Core"
+msgstr "Απαιτείται να μεταβιβαστεί μια μονή, πολλαπλή και συμβολοσειρά σε CPT_Core"
+
+#: includes/class-anwpfl-text.php:1375
+#: templates/shortcode-squad--blocks.php:118 templates/shortcode-squad.php:106
+msgid "On Loan"
+msgstr "Δανεικός"
+
+#: includes/class-anwpfl-text.php:1366 templates/shortcode-squad--blocks.php:92
+#: templates/shortcode-squad.php:76
+msgid "No players in the squad"
+msgstr "Δεν υπάρχουν παίκτες στην ομάδα"
+
+#: includes/class-anwpfl-text.php:1312
+#: templates/shortcode-players--small.php:64 templates/shortcode-players.php:67
+msgid "Rank"
+msgstr "Θέση"
+
+#: includes/class-anwpfl-text.php:1276 templates/shortcode-cards--mini.php:92
+#: templates/shortcode-cards.php:82
+msgctxt "points"
+msgid "Pts"
+msgstr "Βαθμ"
+
+#: includes/class-anwpfl-text.php:1240 includes/class-anwpfl-text.php:1348
+#: templates/shortcode-cards--mini.php:73 templates/shortcode-cards.php:65
+#: templates/shortcode-players--mini.php:62
+msgctxt "Rank"
+msgid "#"
+msgstr "Θ"
+
+#: includes/class-anwpfl-text.php:988 templates/player/player-stats.php:99
+msgid "Own Goals"
+msgstr "Αυτογκόλ"
+
+#: includes/class-anwpfl-text.php:970 templates/player/player-stats.php:89
+msgid "Goals (from penalty)"
+msgstr "Γκόλ με Πέναλτι"
+
+#: includes/class-anwpfl-text.php:961 templates/player/player-stats.php:83
+msgid "Clean Sheets"
+msgstr "Ανέπαφη Εστία"
+
+#: includes/class-anwpfl-text.php:925 templates/player/player-stats.php:64
+msgid "Substituted In"
+msgstr "Μπήκε ως αλλαγή"
+
+#: includes/class-anwpfl-text.php:916 templates/player/player-stats.php:59
+msgid "Started"
+msgstr "Ξεκίνησε βασικός"
+
+#: includes/class-anwpfl-text.php:907 templates/player/player-stats.php:54
+msgid "Played Matches"
+msgstr "Έπαιξε Αγώνες"
+
+#: includes/class-anwpfl-text.php:889 templates/player/player-stats.php:37
+msgid "Stats Totals"
+msgstr "Συνολικά Στατιστικά"
+
+#: includes/class-anwpfl-text.php:862 templates/player/player-matches.php:103
+msgid "Away"
+msgstr "‫Φιλοξενούμενος"
+
+#: includes/class-anwpfl-text.php:853 templates/player/player-matches.php:103
+msgid "Home"
+msgstr "Γηπεδούχος"
+
+#: includes/class-anwpfl-text.php:817 includes/class-anwpfl-text.php:952
+#: templates/player/player-matches.php:68 templates/player/player-stats.php:78
+msgid "Goals Conceded"
+msgstr "Γκολ που δέχτηκε"
+
+#: includes/class-anwpfl-text.php:808 includes/class-anwpfl-text.php:934
+#: templates/player/player-matches.php:64 templates/player/player-stats.php:68
+msgid "Minutes"
+msgstr "Λεπτά"
+
+#: includes/class-anwpfl-text.php:790 templates/player/player-matches.php:62
+msgid "Home /Away"
+msgstr "Γηπεδούχος/Φιλοξενούμενος"
+
+#: includes/class-anwpfl-text.php:781 templates/player/player-matches.php:61
+#: templates/player/player-missed.php:60
+msgid "Against"
+msgstr "Εναντίον"
+
+#: includes/class-anwpfl-text.php:772 templates/player/player-matches.php:60
+#: templates/player/player-missed.php:59
+msgid "For"
+msgstr "Για"
+
+#: includes/class-anwpfl-helper.php:1473 includes/class-anwpfl-helper.php:1509
+#: includes/class-anwpfl-text.php:763 templates/player/player-matches.php:59
+#: templates/player/player-missed.php:58
+msgid "Date"
+msgstr "Ημερομηνία"
+
+#: includes/class-anwpfl-text.php:304
+#: includes/widgets/class-anwpfl-widget-next-match.php:93
+#: templates/match/match.php:225
+msgid "- match preview -"
+msgstr "- Προεπισκόπηση αγώνα -"
+
+#: includes/class-anwpfl-text.php:637 templates/match/match-video.php:50
+msgid "Match Video"
+msgstr "Βίντεο αγώνα"
+
+#: includes/class-anwpfl-text.php:628 templates/match/match-summary.php:44
+msgid "Match Preview"
+msgstr "Προβολή αγώνα"
+
+#: includes/class-anwpfl-text.php:610 templates/match/match-substitutes.php:99
+#: templates/match/match-substitutes.php:167
+msgctxt "substitute event"
+msgid "In"
+msgstr "Μέσα"
+
+#: includes/class-anwpfl-text.php:601 templates/match/match-substitutes.php:86
+#: templates/match/match-substitutes.php:154
+msgctxt "substitute event"
+msgid "Out"
+msgstr "Έξω"
+
+#: includes/class-anwpfl-text.php:538 templates/match/match-stats.php:172
+msgid "Corners"
+msgstr "Κόρνερ"
+
+#: includes/class-anwpfl-text.php:520 templates/match/match-stats.php:132
+msgid "Shots on Target"
+msgstr "Σουτ στο στόχο"
+
+#: includes/class-anwpfl-text.php:502 templates/match/match-stats.php:82
+msgid "Match Statistics"
+msgstr "Στατιστικά αγώνα"
+
+#: includes/class-anwpfl-text.php:457
+#: templates/match/match-penalty_shootout.php:77
+#: templates/match/match-penalty_shootout.php:117
+msgctxt "penalty shootout"
+msgid "Missed"
+msgstr "Χαμένο"
+
+#: includes/class-anwpfl-text.php:448
+#: templates/match/match-penalty_shootout.php:75
+#: templates/match/match-penalty_shootout.php:115
+msgctxt "penalty shootout"
+msgid "Scored"
+msgstr "Σκόραρε"
+
+#: includes/class-anwpfl-text.php:430
+#: templates/match/match-missed_penalties.php:40
+msgid "Missed penalties"
+msgstr "Χαμένα Πέναλτι"
+
+#: includes/class-anwpfl-text.php:1195 templates/content-staff.php:203
+msgid "Career"
+msgstr "Καριέρα"
+
+#: includes/class-anwpfl-text.php:1132 templates/content-stadium.php:298
+msgid "Location"
+msgstr "Τοποθεσία"
+
+#: includes/class-anwpfl-text.php:1123 templates/content-stadium.php:271
+msgid "Stadium Gallery"
+msgstr "Φωτογραφίες γηπέδου"
+
+#: includes/class-anwpfl-text.php:718 includes/class-anwpfl-text.php:727
+#: includes/class-anwpfl-text.php:1033 includes/class-anwpfl-text.php:1186
+#: includes/class-anwpfl-text.php:1384 templates/content-referee.php:112
+#: templates/content-staff.php:156 templates/player/player-header.php:177
+#: templates/shortcode-squad--blocks.php:132
+#: templates/shortcode-squad--blocks.php:182
+#: templates/shortcode-squad--blocks.php:259 templates/shortcode-squad.php:117
+#: templates/shortcode-squad.php:161 templates/shortcode-squad.php:234
+msgid "Age"
+msgstr "Ηλικία"
+
+#: includes/class-anwpfl-text.php:709 includes/class-anwpfl-text.php:1024
+#: includes/class-anwpfl-text.php:1177 templates/content-referee.php:103
+#: templates/content-staff.php:147 templates/player/player-header.php:168
+msgid "Date Of Birth"
+msgstr "Ημερομηνία γέννησης"
+
+#: includes/class-anwpfl-text.php:700 includes/class-anwpfl-text.php:1015
+#: includes/class-anwpfl-text.php:1168 templates/content-referee.php:96
+#: templates/content-staff.php:140 templates/player/player-header.php:153
+msgid "Place Of Birth"
+msgstr "Τόπος γέννησης"
+
+#: includes/class-anwpfl-text.php:232 includes/class-anwpfl-text.php:367
+#: includes/class-anwpfl-text.php:754 includes/class-anwpfl-text.php:1114
+#: templates/club/club-latest.php:48 templates/content-stadium.php:228
+#: templates/match/match-latest.php:71 templates/player/player-matches.php:43
+msgid "Latest Matches"
+msgstr "Τελευταίοι αγώνες"
+
+#: includes/class-anwpfl-text.php:214 templates/club/club-header.php:126
+msgid "Club Kit"
+msgstr "Εξοπλισμός ομάδας"
+
+#: includes/class-anwpfl-text.php:142 includes/class-anwpfl-text.php:1105
+#: includes/shortcodes/class-anwpfl-shortcode.php:591
+#: templates/club/club-fixtures.php:55 templates/content-stadium.php:193
+msgid "Fixtures"
+msgstr "‫Πρόγραμμα"
+
+#: includes/class-anwpfl-text.php:295 templates/match/match--modern.php:88
+#: templates/match/match--simple.php:111 templates/match/match--slim.php:184
+#: templates/match/match--slim.php:277 templates/match/match.php:190
+msgctxt "on penalties"
+msgid "Penalties"
+msgstr "Πέναλτι"
+
+#: includes/class-anwpfl-text.php:286 templates/match/match--modern.php:85
+#: templates/match/match--simple.php:108 templates/match/match--slim.php:181
+#: templates/match/match--slim.php:274 templates/match/match.php:187
+msgctxt "Abbr: after extra time"
+msgid "AET"
+msgstr "Παράταση"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:80
+msgid "Exclude:"
+msgstr "Αποκλείω:"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:70
+msgid "- select table -"
+msgstr "- επιλέξτε πίνακα -"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:69
+msgid "Standing Table:"
+msgstr "Πίνακας βαθμολογίας:"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:64
+msgctxt "widget default title"
+msgid "Standing Table"
+msgstr "Πίνακας βαθμολογίας"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:41
+msgid "Show competition standing table."
+msgstr "Εμφάνιση βαθμολογίας."
+
+#: includes/widgets/class-anwpfl-widget-standing.php:32
+msgid "FL Standing Table"
+msgstr "FL Πίνακας βαθμολογίας"
+
+#: includes/widgets/class-anwpfl-widget-players.php:40
+msgid "Show Players (scorers or assists)."
+msgstr "Προβολή παικτών (σκόρερ ή ασσίστ)."
+
+#: includes/widgets/class-anwpfl-widget-players.php:31
+msgid "FL Players"
+msgstr "FL Παίκτες"
+
+#: includes/widgets/class-anwpfl-widget-player.php:96
+msgid "profile"
+msgstr "προφίλ"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:517
+#: includes/shortcodes/class-anwpfl-shortcode.php:1054
+#: includes/widgets/class-anwpfl-widget-player.php:66
+msgid "Player ID"
+msgstr "Αναγνωριστικό παίκτη"
+
+#: includes/widgets/class-anwpfl-widget-player.php:38
+msgid "Show Single Player."
+msgstr "Εμφάνιση ενός Παίκτη."
+
+#: includes/widgets/class-anwpfl-widget-player.php:29
+msgid "FL Player"
+msgstr "FL Παίχτης"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:268
+#: includes/widgets/class-anwpfl-widget-standing.php:98
+msgid "competition"
+msgstr ""
+
+#: includes/widgets/class-anwpfl-widget-next-match.php:58
+msgctxt "widget default title"
+msgid "Next Match"
+msgstr "Επόμενος Αγώνας"
+
+#: includes/widgets/class-anwpfl-widget-players.php:62
+#: includes/widgets/class-anwpfl-widget-standing.php:63
+msgid "Title:"
+msgstr "Τίτλος:"
+
+#: includes/widgets/class-anwpfl-widget-next-match.php:35
+msgid "Show Next Match."
+msgstr "Εμφάνιση επόμενου αγώνα."
+
+#: includes/widgets/class-anwpfl-widget-next-match.php:26
+msgid "FL Next Match"
+msgstr "FL Επόμενος Αγώνας"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:185
+msgid "Modern"
+msgstr "Μοντέρνο"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:110
+msgid "Comma separated list of options (if more than one)."
+msgstr "Λίστα με επιλογές που χωρίζονται με κόμματα (εάν υπάρχουν περισσότερες από μία)."
+
+#: includes/widgets/class-anwpfl-widget-matches.php:109
+msgid "Filter By Values"
+msgstr "Φιλτράρισμα βάσει τιμών"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:98
+msgid "Filter By"
+msgstr "Φιλτράρετε με"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:40
+msgid "Show Football Matches."
+msgstr "Εμφάνιση αγώνων ποδοσφαίρου."
+
+#: includes/widgets/class-anwpfl-widget-matches.php:31
+msgid "FL Matches"
+msgstr "FL Αγώνες"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:127
+#: includes/widgets/class-anwpfl-widget-last-match.php:86
+#: includes/widgets/class-anwpfl-widget-matches.php:175
+#: includes/widgets/class-anwpfl-widget-next-match.php:86
+msgid "Show Club Name"
+msgstr "Εμφάνιση του ονόματος ομάδας"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:114
+#: includes/widgets/class-anwpfl-widget-clubs.php:121
+#: includes/widgets/class-anwpfl-widget-standing.php:81
+msgid "Club IDs, separated by commas."
+msgstr "Αναγνωριστικά ομάδων, χωρισμένα με κόμματα."
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:113
+#: includes/widgets/class-anwpfl-widget-last-match.php:99
+#: includes/widgets/class-anwpfl-widget-next-match.php:99
+msgid "Exclude"
+msgstr "Αποκλείω"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:63
+msgctxt "widget default title"
+msgid "Clubs"
+msgstr "Σύλλογοι"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:40
+msgid "Show Football Clubs."
+msgstr "Εμφάνιση ποδοσφαιρικών συλλόγων."
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:31
+msgid "FL Clubs"
+msgstr "FL Σύλλογοι"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:178
+#: includes/widgets/class-anwpfl-widget-matches.php:156
+msgid "- select target page -"
+msgstr "- επιλέξτε τη σελίδα προορισμού -"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:177
+#: includes/widgets/class-anwpfl-widget-matches.php:155
+msgid "Bottom Link Target"
+msgstr "Κατώτατο σημείο σύνδεσης"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:171
+#: includes/widgets/class-anwpfl-widget-matches.php:149
+msgid "Bottom Link Text"
+msgstr "Κάτω κείμενο συνδέσμου"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:166
+msgid "Hide points"
+msgstr "Απόκρυψη πόντων"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:152
+msgid "Descending "
+msgstr "Φθίνουσα "
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:565
+#: includes/widgets/class-anwpfl-widget-birthday.php:66
+#: includes/widgets/class-anwpfl-widget-cards.php:105
+#: includes/widgets/class-anwpfl-widget-last-match.php:63
+#: includes/widgets/class-anwpfl-widget-players.php:107
+#: includes/widgets/class-anwpfl-widget-video.php:63
+msgid "Club ID"
+msgstr "Αναγνωριστικό Συλλόγου"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:90
+#: includes/widgets/class-anwpfl-widget-players.php:92
+msgid "- select league -"
+msgstr "- επιλέξτε πρωτάθλημα -"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:84
+#: includes/widgets/class-anwpfl-widget-players.php:86
+msgid "Include stats from secondary stages"
+msgstr "Συμπεριλάβετε στατιστικά από δευτερεύοντες φάσεις"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:77
+#: includes/widgets/class-anwpfl-widget-clubs.php:69
+#: includes/widgets/class-anwpfl-widget-last-match.php:71
+#: includes/widgets/class-anwpfl-widget-matches.php:69
+#: includes/widgets/class-anwpfl-widget-next-match.php:71
+#: includes/widgets/class-anwpfl-widget-players.php:79
+#: includes/widgets/class-anwpfl-widget-video.php:70
+msgid "- select competition -"
+msgstr "- επιλέξτε την διοργάνωση -"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:38
+msgid "Show Players or Clubs with Cards."
+msgstr "Εμφάνιση παικτών ή συλλόγων με κάρτες."
+
+#: includes/widgets/class-anwpfl-widget-cards.php:29
+msgid "FL Cards"
+msgstr "FL Κάρτες"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1223
+#: includes/widgets/class-anwpfl-widget-cards.php:160
+msgid "Hide with zero points"
+msgstr "Απόκρυψη μηδενικών πόντων"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1217
+#: includes/widgets/class-anwpfl-widget-cards.php:137
+msgid "Points for Yellow/Red card"
+msgstr "Πόντοι για κίτρινη/κόκκινη κάρτα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1211
+#: includes/widgets/class-anwpfl-widget-cards.php:143
+msgid "Points for Red card"
+msgstr "Πόντοι για κόκκινη κάρτα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1201
+#: includes/widgets/class-anwpfl-widget-cards.php:149
+msgid "Sort By Points"
+msgstr "Ταξινόμηση κατά πόντους"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1191
+#: includes/widgets/class-anwpfl-widget-cards.php:127
+msgid "Show Photo/Logo"
+msgstr "Εμφάνιση φωτογραφίας / λογότυπου"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1092
+#: includes/widgets/class-anwpfl-widget-player.php:74
+msgid "Separate line by \"|\", number and label - with \":\". E.q.: \"Goals: 8 | Assists: 5\""
+msgstr "Ξεχωριστή γραμμή με \"|\", αριθμό και ετικέτα - με \":\". Π.χ. .: \"Γκολ: 8 | Ασσίστ: 5\""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1089
+#: includes/widgets/class-anwpfl-widget-player.php:73
+msgid "Options Text"
+msgstr "Επιλογές κειμένου"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1083
+#: includes/widgets/class-anwpfl-widget-player.php:95
+msgid "Profile link text"
+msgstr "Κείμενο συνδέσμου προφιλ"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1073
+#: includes/widgets/class-anwpfl-widget-player.php:85
+msgid "Show Link to Profile"
+msgstr "Εμφάνιση συνδέσμου στο προφίλ"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1063
+#: includes/widgets/class-anwpfl-widget-player.php:79
+msgid "Show Club"
+msgstr "Εμφάνιση Ομάδας"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1036
+#: includes/shortcodes/class-anwpfl-shortcode.php:1238
+msgid "Mini"
+msgstr "Μίνι"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:1000
+#: includes/widgets/class-anwpfl-widget-players.php:129
+msgid "Show Photo"
+msgstr "Προβολή φωτογραφίας"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:996
+#: includes/shortcodes/class-anwpfl-shortcode.php:1187
+msgid "Increase number of players to the end of players with equal stats value."
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:989
+#: includes/shortcodes/class-anwpfl-shortcode.php:1180
+#: includes/widgets/class-anwpfl-widget-cards.php:117
+#: includes/widgets/class-anwpfl-widget-players.php:119
+msgid "Soft Limit"
+msgstr "Ελαστικό Όριο"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:983
+#: includes/shortcodes/class-anwpfl-shortcode.php:1174
+#: includes/widgets/class-anwpfl-widget-cards.php:111
+#: includes/widgets/class-anwpfl-widget-players.php:113
+msgid "Players Limit (0 - for all)"
+msgstr "Όριο παίκτη (0 - για όλους):"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:945
+#: includes/shortcodes/class-anwpfl-shortcode.php:1136
+msgid "Include stats from secondary stages. Works for multistage competitions only. You should set main stage ID in \"competition_id\" parameter."
+msgstr ""
+
+#: includes/class-anwpfl-text.php:835 includes/class-anwpfl-text.php:979
+#: includes/class-anwpfl-text.php:1294 includes/class-anwpfl-text.php:1303
+#: includes/shortcodes/class-anwpfl-shortcode.php:922
+#: includes/widgets/class-anwpfl-widget-players.php:72
+#: templates/player/player-matches.php:75 templates/player/player-stats.php:94
+#: templates/shortcode-players--mini.php:55
+#: templates/shortcode-players--small.php:56 templates/shortcode-players.php:59
+msgid "Assists"
+msgstr "Ασσίστ"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:921
+#: includes/widgets/class-anwpfl-widget-players.php:71
+msgid "Scorers"
+msgstr "Σκόρερς"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:917
+#: includes/shortcodes/class-anwpfl-shortcode.php:1108
+#: includes/widgets/class-anwpfl-widget-birthday.php:74
+#: includes/widgets/class-anwpfl-widget-cards.php:66
+#: includes/widgets/class-anwpfl-widget-players.php:68
+msgid "Type"
+msgstr "Τύπος"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:791
+msgid "Show Competition Logo"
+msgstr "Εμφάνιση Λογότυπου Διοργάνωσης"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:781
+#: includes/widgets/class-anwpfl-widget-matches.php:169
+msgid "Show match datetime"
+msgstr "Εμφάνιση ημερομηνία - ώρα  αγώνα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:771
+#: includes/widgets/class-anwpfl-widget-matches.php:163
+msgid "Show club logos"
+msgstr "Εμφάνιση λογότυπων συλλόγων"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:766
+#: includes/widgets/class-anwpfl-widget-matches.php:132
+msgid "Secondary"
+msgstr "Δευτερεύων"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:761
+#: includes/widgets/class-anwpfl-widget-matches.php:128
+msgid "Group By Header Style"
+msgstr "Ομαδοποίηση ανά στυλ κεφαλίδας"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:754
+#: includes/widgets/class-anwpfl-widget-matches.php:103
+#: includes/widgets/class-anwpfl-widget-matches.php:121
+msgid "Matchweek"
+msgstr "Αγωνιστική"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:753
+#: includes/widgets/class-anwpfl-widget-matches.php:120
+msgid "Month"
+msgstr "Μήνας"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:752
+#: includes/widgets/class-anwpfl-widget-matches.php:119
+msgid "Day"
+msgstr "Ημέρα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:747
+#: includes/widgets/class-anwpfl-widget-matches.php:115
+msgid "Group By"
+msgstr "Όμιλοι ανα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:742
+#: includes/shortcodes/class-anwpfl-shortcode.php:1205
+msgid "Descending"
+msgstr "Φθίνουσα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:741
+#: includes/shortcodes/class-anwpfl-shortcode.php:1206
+#: includes/widgets/class-anwpfl-widget-cards.php:153
+msgid "Ascending"
+msgstr "Αύξουσα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:736
+msgid "Sort By MatchWeek"
+msgstr "Ταξινόμηση ανά αγωνιστική"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:592
+#: includes/shortcodes/class-anwpfl-shortcode.php:731
+#: includes/widgets/class-anwpfl-widget-matches.php:143
+msgid "Latest"
+msgstr "Νεώτερο"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:730
+#: includes/widgets/class-anwpfl-widget-matches.php:142
+msgid "Oldest"
+msgstr "Παλαιότερο"
+
+#: class-anwp-football-leagues.php:1338
+#: includes/shortcodes/class-anwpfl-shortcode.php:267
+#: includes/shortcodes/class-anwpfl-shortcode.php:729
+#: includes/shortcodes/class-anwpfl-shortcode.php:740
+#: includes/shortcodes/class-anwpfl-shortcode.php:751
+#: includes/shortcodes/class-anwpfl-shortcode.php:825
+#: includes/widgets/class-anwpfl-widget-matches.php:101
+#: includes/widgets/class-anwpfl-widget-matches.php:118
+#: includes/widgets/class-anwpfl-widget-matches.php:141
+#: includes/widgets/class-anwpfl-widget-standing.php:97
+msgid "none"
+msgstr "κανένα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:725
+#: includes/widgets/class-anwpfl-widget-matches.php:138
+msgid "Sort By Date"
+msgstr "Ταξινόμηση κατά ημερομηνία"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:714
+msgid "For example: \"-2\" from 2 days ago and newer; \"2\" from the day after tomorrow and newer"
+msgstr "Για παράδειγμα: “-2” από 2 μέρες πριν και νεότερα. “2” από την αύριο μέχρι και νεότερη"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:711
+msgid "Dynamic days filter"
+msgstr "Δυναμικό φίλτρο ημερών"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:707
+msgid "comma-separated list of matchweeks or rounds to filter"
+msgstr "διαχωρισμένη με κόμμα λίστα αγώνων ή γύρων για φιλτράρισμα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:704
+msgid "Filter by Matchweeks or Round IDs"
+msgstr "Διαχωρισμένη με κόμμα λίστα αγώνων ή γύρων για φιλτράρισμα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:694
+msgid "Filter by Clubs"
+msgstr "Φιλτράρισμα ανά ομάδα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:682
+msgid "Filter by Stadium"
+msgstr "Φίλτρο ανά στάδιο"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:670
+#: includes/shortcodes/class-anwpfl-shortcode.php:677
+msgid "Format: YYYY-MM-DD. E.g.: 2019-04-21"
+msgstr "Μορφή: YYYY-MM-DD. π.χ.: 2019-04-21"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:661
+#: includes/widgets/class-anwpfl-widget-matches.php:92
+msgid "Matches Limit (0 - for all)"
+msgstr "Όριο Αγώνων (0 - για όλους)"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:654
+#: includes/widgets/class-anwpfl-widget-matches.php:84
+msgid "All"
+msgstr "Όλα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:650
+#: includes/widgets/class-anwpfl-widget-matches.php:81
+msgid "Match Type"
+msgstr "Τύπος αγώνα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:629
+msgid "Applied for multistage main stage competitions only."
+msgstr ""
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:622
+#: includes/shortcodes/class-anwpfl-shortcode.php:938
+#: includes/shortcodes/class-anwpfl-shortcode.php:1129
+#: includes/widgets/class-anwpfl-widget-matches.php:76
+msgid "Include matches from secondary stages"
+msgstr "Συμπεριλάβετε αγώνες από δευτερεύοντες φάσεις"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:484
+msgid "Missed Penalties"
+msgstr "Χαμένα Πέναλτι"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:482
+#: includes/shortcodes/class-anwpfl-shortcode.php:546
+msgid "Stats"
+msgstr "Στατιστικά"
+
+#: includes/class-anwpfl-text.php:331 includes/class-anwpfl-text.php:826
+#: includes/class-anwpfl-text.php:1285
+#: includes/shortcodes/class-anwpfl-shortcode.php:478
+#: templates/match/match-goals.php:66 templates/player/player-matches.php:72
+#: templates/shortcode-players--mini.php:55
+#: templates/shortcode-players--small.php:56 templates/shortcode-players.php:59
+msgid "Goals"
+msgstr "Γκολ"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:474
+#: includes/shortcodes/class-anwpfl-shortcode.php:537
+#: includes/shortcodes/class-anwpfl-shortcode.php:585
+msgid "Sections"
+msgstr "Τμήματα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:469
+msgid "Slim"
+msgstr "Λεπτό"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:403
+msgid "Title as a link"
+msgstr "Τίτλος ως σύνδεσμος"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:372
+msgid "Show club name"
+msgstr "Εμφάνιση ονόματος συλλόγου"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:345
+#: includes/widgets/class-anwpfl-widget-clubs.php:107
+msgid "Width value with units. Example: \"50px\" or \"3rem\"."
+msgstr "Πλάτος με μονάδες. Παράδειγμα: \"50px\" ή \"3rem\"."
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:342
+#: includes/widgets/class-anwpfl-widget-clubs.php:106
+msgid "Logo Width"
+msgstr "Πλάτος λογότυπου"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:338
+#: includes/widgets/class-anwpfl-widget-clubs.php:100
+msgid "Height value with units. Example: \"50px\" or \"3rem\"."
+msgstr "Τιμή ύψους με μονάδες. Παράδειγμα: \"50px\" ή \"3rem\"."
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:335
+#: includes/widgets/class-anwpfl-widget-clubs.php:99
+msgid "Logo Height"
+msgstr "Ύψος λογότυπου"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:330
+#: includes/widgets/class-anwpfl-widget-clubs.php:93
+msgid "6 Columns"
+msgstr "6 Στήλες"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:329
+#: includes/widgets/class-anwpfl-widget-clubs.php:92
+msgid "4 Columns"
+msgstr "4 Στήλες"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:328
+#: includes/widgets/class-anwpfl-widget-clubs.php:91
+msgid "3 Columns"
+msgstr "3 Στήλες"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:327
+#: includes/widgets/class-anwpfl-widget-clubs.php:90
+msgid "2 Columns"
+msgstr "2 Στήλες"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:326
+#: includes/widgets/class-anwpfl-widget-clubs.php:89
+msgid "Custom Height and Width"
+msgstr "Προσαρμοσμένο ύψος και πλάτος"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:317
+#: includes/widgets/class-anwpfl-widget-clubs.php:80
+msgid "Big"
+msgstr "Μεγάλο"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:316
+#: includes/shortcodes/class-anwpfl-shortcode.php:1035
+#: includes/widgets/class-anwpfl-widget-clubs.php:79
+msgid "Small"
+msgstr "Μικρό"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:312
+#: includes/widgets/class-anwpfl-widget-clubs.php:76
+msgid "Logo Size"
+msgstr "Μέγεθος Λογότυπου"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:251
+msgid "mini"
+msgstr "μίνι"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:250
+msgid "default"
+msgstr "προεπιλογή"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:236
+#: includes/shortcodes/class-anwpfl-shortcode.php:350
+msgid "Exclude Clubs"
+msgstr "Εξαίρεση Συλλόγων"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:172
+msgid "Insert Shortcode"
+msgstr "Εισαγωγή σύντομου κωδικού"
+
+#: includes/cmb2-fields/cmb-field-map.php:93
+msgid "Please insert Google Maps API Key in plugin settings."
+msgstr "Εισαγάγετε το κλειδί API των Χαρτών Google στις ρυθμίσεις του πρόσθετου."
+
+#: includes/cmb2-fields/cmb-field-map.php:85
+msgid "Address Search"
+msgstr "Αναζήτηση διευθύνσεων"
+
+#: includes/cmb2-fields/cmb-field-map.php:79
+msgid "Reset location"
+msgstr "Επαναφορά τοποθεσίας"
+
+#: includes/cmb2-fields/cmb-field-map.php:64
+msgid "Longitude"
+msgstr "Γεωγραφικό μήκος"
+
+#: includes/cmb2-fields/cmb-field-map.php:49
+msgid "Latitude"
+msgstr "Γεωγραφικό πλάτος"
+
+#: includes/cmb2-fields/cmb-field-map.php:45
+msgid "Set location"
+msgstr "Ορισμός τοποθεσίας"
+
+#: includes/class-anwpfl-standing.php:80
+msgid "Standing Table Title"
+msgstr "Τίτλος πίνακα Βαθμολογίας"
+
+#: includes/class-anwpfl-standing.php:63
+msgid "View Standing Table"
+msgstr "Προβολή πίνακα Βαθμολογίας"
+
+#: includes/class-anwpfl-standing.php:62
+msgid "New Standing Table"
+msgstr "Νέος πίνακας βαθμολογίας"
+
+#: includes/class-anwpfl-standing.php:61
+msgid "Edit Standing Table"
+msgstr "Επεξεργασία πίνακα βαθμολογίας"
+
+#: includes/class-anwpfl-standing.php:59 includes/class-anwpfl-standing.php:60
+msgid "Add New Standing Table"
+msgstr "Προσθήκη νέου πίνακα βαθμολογίας"
+
+#: includes/class-anwpfl-standing.php:48 includes/class-anwpfl-standing.php:58
+msgid "Standing Tables"
+msgstr "Πίνακες βαθμολογίας"
+
+#: includes/class-anwpfl-staff.php:436 includes/class-anwpfl-text.php:1231
+#: templates/content-staff.php:210
+msgid "To"
+msgstr "Έως"
+
+#: includes/class-anwpfl-staff.php:426 includes/class-anwpfl-text.php:1222
+#: templates/content-staff.php:209
+msgid "From"
+msgstr "Από"
+
+#: includes/class-anwpfl-staff.php:408
+msgid "Remove Entry"
+msgstr "Κατάργηση καταχώρησης"
+
+#: includes/class-anwpfl-staff.php:407
+msgid "Add Another Entry"
+msgstr "Προσθέστε μια άλλη καταχώρηση"
+
+#: includes/class-anwpfl-staff.php:406
+msgid "Entry {#}"
+msgstr "Καταχώρηση {#}"
+
+#: includes/class-anwpfl-staff.php:262
+msgid "Staff Info"
+msgstr "Πληροφορίες προσωπικού"
+
+#: includes/class-anwpfl-staff.php:197
+msgid "Staff History"
+msgstr "Ιστορικό Προσωπικού"
+
+#: includes/class-anwpfl-staff.php:68
+msgid "View Staff Member"
+msgstr "Εμφάνιση μέλους προσωπικού"
+
+#: includes/class-anwpfl-staff.php:67
+msgid "New Staff Member"
+msgstr "Νέο μέλος προσωπικού"
+
+#: includes/class-anwpfl-staff.php:66
+msgid "Edit Staff Member"
+msgstr "Επεξεργασία μέλους προσωπικού"
+
+#: includes/class-anwpfl-staff.php:64 includes/class-anwpfl-staff.php:65
+msgid "Add Staff Member"
+msgstr "Πρόσθεση μέλους επιτελείου"
+
+#: includes/class-anwpfl-options.php:786 includes/class-anwpfl-options.php:1280
+#: includes/class-anwpfl-staff.php:47 includes/class-anwpfl-staff.php:48
+#: includes/class-anwpfl-staff.php:63
+msgid "Staff"
+msgstr "Προσωπικό"
+
+#: includes/class-anwpfl-stadium.php:273
+msgid "Map"
+msgstr "Χάρτης"
+
+#: includes/class-anwpfl-stadium.php:264 includes/class-anwpfl-text.php:1087
+#: templates/content-stadium.php:104
+msgid "Surface"
+msgstr "Επιφάνεια"
+
+#: includes/class-anwpfl-stadium.php:255 includes/class-anwpfl-text.php:1078
+#: templates/content-stadium.php:97
+msgid "Opened"
+msgstr "Άνοιξε"
+
+#: includes/class-anwpfl-stadium.php:246 includes/class-anwpfl-text.php:1069
+#: templates/content-stadium.php:90
+msgid "Capacity"
+msgstr "Χωρητικότητα"
+
+#: includes/class-anwpfl-stadium.php:196
+msgid "Stadium Info"
+msgstr "Πληροφορίες Γηπέδου"
+
+#: includes/class-anwpfl-stadium.php:83
+msgid "Stadium Title"
+msgstr "Τίτλος Στάδιου"
+
+#: includes/class-anwpfl-stadium.php:66
+msgid "View Stadium"
+msgstr "Προβολή Σταδίου"
+
+#: includes/class-anwpfl-stadium.php:65
+msgid "New Stadium"
+msgstr "Νέο Στάδιο"
+
+#: includes/class-anwpfl-stadium.php:64
+msgid "Edit Stadium"
+msgstr "Επεξεργασία Σταδίου"
+
+#: includes/class-anwpfl-stadium.php:62 includes/class-anwpfl-stadium.php:63
+msgid "Add New Stadium"
+msgstr "Προσθήκη νέου σταδίου"
+
+#: includes/class-anwpfl-stadium.php:48 includes/class-anwpfl-stadium.php:61
+msgid "Stadiums"
+msgstr "Γήπεδα"
+
+#: includes/class-anwpfl-season.php:278
+msgid "Recommended season name is \"YYYY\" or \"YYYY-YYYY\"."
+msgstr "Το συνιστώμενο όνομα σεζόν είναι “ΕΕΕΕ” ή “ΕΕΕΕ-ΕΕΕΕ”."
+
+#: includes/class-anwpfl-season.php:60
+msgid "New Season Title"
+msgstr "Νέα Σεζόν Τίτλος"
+
+#: includes/class-anwpfl-season.php:59
+msgid "Add New Season"
+msgstr "Προσθήκης νέας Σεζόν"
+
+#: includes/class-anwpfl-season.php:58
+msgid "Update Season"
+msgstr "Ενημέρωση Σεζόν"
+
+#: includes/class-anwpfl-season.php:57
+msgid "View Season"
+msgstr "Προβολή Σεζόν"
+
+#: includes/class-anwpfl-season.php:56
+msgid "Edit Season"
+msgstr "Επεξεργασία Σεζόν"
+
+#: includes/class-anwpfl-competition.php:529
+#: includes/class-anwpfl-match.php:246 includes/class-anwpfl-season.php:55
+#: includes/class-anwpfl-standing.php:254
+msgid "All Seasons"
+msgstr "Όλες οι σεζόν"
+
+#: includes/class-anwpfl-season.php:54
+msgid "Search Seasons"
+msgstr "Αναζήτηση σεζόν"
+
+#: includes/class-anwpfl-season.php:45
+msgid "Seasons"
+msgstr "Σεζόν"
+
+#: admin/views/tools.php:126 includes/class-anwpfl-referee.php:246
+#: includes/class-anwpfl-staff.php:308 includes/class-anwpfl-staff.php:417
+#: includes/class-anwpfl-staff.php:572 includes/class-anwpfl-text.php:997
+#: includes/class-anwpfl-text.php:1150 includes/class-anwpfl-text.php:1204
+#: templates/content-referee.php:77 templates/content-staff.php:121
+#: templates/content-staff.php:208
+msgid "Job Title"
+msgstr "Τίτλος εργασίας"
+
+#: includes/class-anwpfl-referee.php:196
+msgid "Referee Info"
+msgstr "Πληροφορίες διαιτητή"
+
+#: includes/class-anwpfl-referee.php:85 includes/class-anwpfl-staff.php:85
+msgid "Name"
+msgstr "Όνομα"
+
+#: includes/class-anwpfl-referee.php:68
+msgid "View Referee"
+msgstr "Προβολή του διαιτητή"
+
+#: includes/class-anwpfl-referee.php:67
+msgid "New Referee"
+msgstr "Νέος Διαιτητής"
+
+#: includes/class-anwpfl-referee.php:66
+msgid "Edit Referee"
+msgstr "Επεξεργασία Διαιτητή"
+
+#: includes/class-anwpfl-referee.php:64 includes/class-anwpfl-referee.php:65
+msgid "Add Referee"
+msgstr "Προσθήκη Διαιτητή"
+
+#: includes/class-anwpfl-player.php:417 includes/class-anwpfl-referee.php:262
+#: includes/class-anwpfl-stadium.php:315 includes/class-anwpfl-staff.php:352
+msgid "Photo"
+msgstr "Φωτογραφία"
+
+#: includes/class-anwpfl-options.php:1145 includes/class-anwpfl-player.php:301
+#: includes/class-anwpfl-text.php:673 templates/player/player-header.php:120
+msgid "Full Name"
+msgstr "Πλήρες όνομα"
+
+#: includes/class-anwpfl-player.php:279
+msgid "Player Info"
+msgstr "Πληροφορίες παίκτη"
+
+#: includes/class-anwpfl-player.php:154 includes/class-anwpfl-referee.php:139
+#: includes/class-anwpfl-staff.php:205
+msgid "Bio"
+msgstr "Βιογραφικό"
+
+#: includes/class-anwpfl-player.php:77
+msgid "View Player"
+msgstr "Προβολή Παίκτη"
+
+#: includes/class-anwpfl-player.php:76
+msgid "New Player"
+msgstr "Νέος Παίκτης"
+
+#: includes/class-anwpfl-player.php:75
+msgid "Edit Player"
+msgstr "Επεξεργασία Παίκτη"
+
+#: includes/class-anwpfl-player.php:73 includes/class-anwpfl-player.php:74
+msgid "Add New Player"
+msgstr "Προσθήκη Νέου Παίκτη"
+
+#: includes/class-anwpfl-options.php:1747
+msgid "Recalculate Stats"
+msgstr "Επαναπροσδιορίστε Στατιστικά"
+
+#: includes/class-anwpfl-options.php:1220
+msgid "Google Map is used to locate stadiums. You can get key here - "
+msgstr "Ο Χάρτης Google χρησιμοποιείται για τον εντοπισμό σταδίων. Μπορείτε να πάρετε το κλειδί εδώ - "
+
+#: includes/class-anwpfl-options.php:1219
+msgid "Google Maps API Key"
+msgstr "Κλειδί API Χαρτών Google"
+
+#: includes/class-anwpfl-options.php:1315
+msgid "e.g. Matchday"
+msgstr "π.χ. Αγωνιστική"
+
+#: includes/class-anwpfl-options.php:1310
+msgid "You can override text strings listed below."
+msgstr "Μπορείτε να αντικαταστήσετε τις συμβολοσειρές κειμένου που αναφέρονται παρακάτω."
+
+#: includes/class-anwpfl-options.php:1184
+msgid "Rounds order"
+msgstr "Σειρά γύρων"
+
+#: includes/class-anwpfl-options.php:1176
+#: includes/class-anwpfl-options.php:1196
+msgid "Descending (30...1)"
+msgstr "Φθίνουσα (30 ... 1)"
+
+#: includes/class-anwpfl-options.php:1172
+#: includes/class-anwpfl-options.php:1192
+msgid "Ascending (1...30)"
+msgstr "Αύξουσα (1 ... 30)"
+
+#: includes/class-anwpfl-options.php:1165
+msgid "Matchweeks order"
+msgstr "Διάταξη αγωνιστικών"
+
+#: includes/class-anwpfl-options.php:1120
+msgid "Main photo caption"
+msgstr "Κεφαλίδα κύριας φωτογραφίας"
+
+#: includes/class-anwpfl-options.php:1105
+msgid "Default Player Photo"
+msgstr "Προεπιλεγμένη φωτογραφία παίκτη"
+
+#: includes/class-anwpfl-options.php:1097
+msgid "Player & Staff"
+msgstr "Παίκτης & Προσωπικό"
+
+#: includes/class-anwpfl-options.php:1073
+msgid "Finished matches"
+msgstr "Ολοκληρωμένοι Αγώνες"
+
+#: includes/class-anwpfl-options.php:1054
+msgid "Upcoming matches"
+msgstr "Προσεχείς αγώνες"
+
+#: includes/class-anwpfl-options.php:702 includes/class-anwpfl-options.php:721
+#: includes/class-anwpfl-options.php:740 includes/class-anwpfl-options.php:759
+#: includes/class-anwpfl-options.php:778 includes/class-anwpfl-options.php:797
+#: includes/class-anwpfl-options.php:816 includes/class-anwpfl-options.php:835
+#: includes/class-anwpfl-options.php:988 includes/class-anwpfl-options.php:1065
+#: includes/class-anwpfl-options.php:1084
+#: includes/class-anwpfl-options.php:1131
+msgid "Show"
+msgstr "Εμφάνιση"
+
+#: includes/class-anwpfl-options.php:698 includes/class-anwpfl-options.php:717
+#: includes/class-anwpfl-options.php:736 includes/class-anwpfl-options.php:755
+#: includes/class-anwpfl-options.php:774 includes/class-anwpfl-options.php:793
+#: includes/class-anwpfl-options.php:812 includes/class-anwpfl-options.php:831
+#: includes/class-anwpfl-options.php:984 includes/class-anwpfl-options.php:1061
+#: includes/class-anwpfl-options.php:1080
+#: includes/class-anwpfl-options.php:1127
+msgid "Hide"
+msgstr "Απόκρυψη"
+
+#: includes/class-anwpfl-options.php:977
+msgid "Flip Countdown in match fixture"
+msgstr "Αντίστροφη μέτρηση για τον επόμενο αγώνα"
+
+#: includes/class-anwpfl-options.php:945
+msgid "Use Club abbreviation in Mini layout (widget)"
+msgstr "Χρησιμοποιήστε τη συντομογραφία του συλλόγου στη διάταξη Mini (widget)"
+
+#: includes/class-anwpfl-options.php:824 includes/class-anwpfl-options.php:924
+#: includes/class-anwpfl-options.php:1508
+msgid "Standing"
+msgstr "Πίνακας Βαθμολογίας"
+
+#: includes/class-anwpfl-options.php:872
+msgid "The number of columns is responsive and will be decreased on small screens."
+msgstr "Ο αριθμός των στηλών ανταποκρίνεται και θα μειώνεται σε μικρές οθόνες."
+
+#: includes/class-anwpfl-options.php:869
+msgid "Squad Blocks Layout - Columns"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:862
+#: includes/shortcodes/class-anwpfl-shortcode.php:888
+msgid "Blocks"
+msgstr "Αποκλεισμός"
+
+#: includes/class-anwpfl-options.php:861
+msgid "Table (default)"
+msgstr "Πίνακας (προεπιλογή)"
+
+#: includes/class-anwpfl-options.php:856
+msgid "Squad Layout"
+msgstr "Διατάξη Σύνθεσης"
+
+#: includes/class-anwpfl-options.php:669
+msgid "E.g.: \"H:i\""
+msgstr "Π.χ.: “H:i”"
+
+#: includes/class-anwpfl-options.php:668
+msgid "<a target=\"_blank\" href=\"https://codex.wordpress.org/Formatting_Date_and_Time\">Time formatting</a>"
+msgstr "<a target=\"_blank\" href=\"https://codex.wordpress.org/Formatting_Date_and_Time\">Μορφοποίηση Ώρας</a>"
+
+#: includes/class-anwpfl-options.php:666
+msgid "Custom Match Time format"
+msgstr "Προσαρμοσμένη μορφή χρόνου αγώνα"
+
+#: includes/class-anwpfl-options.php:660
+msgid "E.g.: \"l, F j\""
+msgstr "Π.χ.: “l, F j”"
+
+#: includes/class-anwpfl-options.php:659
+msgid "<a target=\"_blank\" href=\"https://codex.wordpress.org/Formatting_Date_and_Time\">Date formatting</a>"
+msgstr "<a target=\"_blank\" href=\"https://codex.wordpress.org/Formatting_Date_and_Time\">ΤΜορφοποίηση ημερομηνίας</a>"
+
+#: includes/class-anwpfl-options.php:655
+msgid "Custom Match Date format"
+msgstr "Προσαρμοσμένη μορφή ημερομηνίας αγώνα"
+
+#: includes/class-anwpfl-options.php:636
+msgid "Hide post title for Match and Competition"
+msgstr "Απόκρυψη τίτλου μετάδοσης για αγώνα και διαγωνισμό"
+
+#: includes/class-anwpfl-options.php:617
+msgid "Load alternative page layout (experimental)"
+msgstr "Φόρτωση εναλλακτικής διάταξης σελίδας (πειραματική)"
+
+#: includes/class-anwpfl-options.php:581 includes/class-anwpfl-options.php:938
+msgid "no"
+msgstr "όχι"
+
+#: includes/class-anwpfl-options.php:580 includes/class-anwpfl-options.php:937
+msgid "yes"
+msgstr "ναι"
+
+#: includes/class-anwpfl-options.php:575
+msgid "Load Bootstrap 4 CSS files"
+msgstr "Τοποθετήστε Bootstrap 4 αρχεία CSS"
+
+#: includes/class-anwpfl-options.php:568
+msgid "name"
+msgstr "όνομα"
+
+#: includes/class-anwpfl-options.php:566
+msgid "number"
+msgstr "αριθμός"
+
+#: includes/class-anwpfl-options.php:564
+msgid "Used on Match edit (for lineups and subs)"
+msgstr "Χρησιμοποιείται στην επεξεργασία αγώνων (για ενδεκάδες και αλλαγές)"
+
+#: includes/class-anwpfl-options.php:559
+msgid "Players dropdown sorting"
+msgstr "Παίκτες με αναπτυσσόμενη λίστα"
+
+#: includes/class-anwpfl-options.php:531
+msgid "E.g.: \"vs\""
+msgstr "Π.χ.: “ως”"
+
+#: includes/class-anwpfl-options.php:530
+msgid "Default \" - \" >> \"Team A - Team B\". Applied on Match save."
+msgstr "Προεπιλεγμένο “ - “ >> “Ομάδα Α - Ομάδα Β”. Εφαρμοσμένη στο Αγώνα αποθηκεύστε."
+
+#: includes/class-anwpfl-options.php:526
+msgid "Match title clubs separator"
+msgstr ""
+
+#: includes/class-anwpfl-options.php:495
+msgid "Active Season"
+msgstr "Ενεργή σεζόν"
+
+#: includes/class-anwpfl-options.php:479 includes/class-anwpfl-options.php:1817
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#. translators: %d: Matchweek number
+#: includes/class-anwpfl-options.php:458
+msgid "Matchweek %d"
+msgstr "Αγωνιστική %d"
+
+#: includes/class-anwpfl-options.php:409 includes/class-anwpfl-options.php:1683
+msgid "Service Links"
+msgstr "Συνδέσεις υπηρεσιών"
+
+#: includes/class-anwpfl-options.php:405
+msgid "Text Strings"
+msgstr "Επιλογές κειμένου"
+
+#: includes/class-anwpfl-options.php:397 includes/class-anwpfl-options.php:1209
+msgid "API Keys"
+msgstr "Κλειδί API"
+
+#: includes/class-anwpfl-options.php:273
+msgctxt "slug"
+msgid "table"
+msgstr "πίνακας"
+
+#: includes/class-anwpfl-options.php:262
+msgctxt "slug"
+msgid "stadium"
+msgstr "γήπεδο"
+
+#: includes/class-anwpfl-options.php:251
+msgctxt "slug"
+msgid "staff"
+msgstr "προσωπικό"
+
+#: includes/class-anwpfl-options.php:240
+msgctxt "slug"
+msgid "referee"
+msgstr "δαιτητής"
+
+#: includes/class-anwpfl-options.php:229
+msgctxt "slug"
+msgid "player"
+msgstr "παίκτης"
+
+#: includes/class-anwpfl-options.php:218
+msgctxt "slug"
+msgid "club"
+msgstr "σύλλογος"
+
+#: includes/class-anwpfl-options.php:207
+msgctxt "slug"
+msgid "competition"
+msgstr "διοργάνωση"
+
+#: includes/class-anwpfl-options.php:196
+msgctxt "slug"
+msgid "match"
+msgstr "αγώνας"
+
+#: includes/class-anwpfl-options.php:182
+msgid "FL Standing base"
+msgstr "FL Βάση Πίνακα βαθμολογίας"
+
+#: includes/class-anwpfl-options.php:174
+msgid "FL Stadium base"
+msgstr "FL Βάση Γηπέδων"
+
+#: includes/class-anwpfl-options.php:166
+msgid "FL Staff base"
+msgstr "FL Βάση προσωπικού"
+
+#: includes/class-anwpfl-options.php:158
+msgid "FL Referee base"
+msgstr "FL Βάση Διαιτητών"
+
+#: includes/class-anwpfl-options.php:150
+msgid "FL Player base"
+msgstr "FL Βάση Παικτών"
+
+#: includes/class-anwpfl-options.php:142
+msgid "FL Club base"
+msgstr "FL Βάση Συλλόγων"
+
+#: includes/class-anwpfl-options.php:134
+msgid "FL Competition base"
+msgstr "FL Βάση Διοργάνωσεις"
+
+#: includes/class-anwpfl-options.php:126
+msgid "FL Match base"
+msgstr "FL Βάση αγώνα"
+
+#: includes/class-anwpfl-options.php:77
+msgid "Football Leagues :: Settings"
+msgstr "Πρωτάθλημα Ποδοσφαίρου :: Ρυθμίσεις"
+
+#: includes/class-anwpfl-match.php:2440 includes/class-anwpfl-text.php:1474
+#: templates/match/match-missed_penalties.php:65
+#: templates/match/match-missed_penalties.php:105
+msgctxt "match event"
+msgid "Missed Penalty"
+msgstr "Χαμένο πέναλτι"
+
+#: includes/class-anwpfl-match.php:2435 includes/class-anwpfl-text.php:1465
+msgctxt "match event"
+msgid "Substitute"
+msgstr "Αλλαγή"
+
+#: includes/class-anwpfl-match.php:2432 includes/class-anwpfl-text.php:349
+#: includes/class-anwpfl-text.php:1456 templates/match/match-goals.php:95
+#: templates/match/match-goals.php:153
+msgctxt "match event"
+msgid "Goal (from penalty)"
+msgstr "Γκολ (με πέναλτι)"
+
+#: includes/class-anwpfl-match.php:2430 includes/class-anwpfl-text.php:340
+#: includes/class-anwpfl-text.php:1438 templates/match/match-goals.php:93
+#: templates/match/match-goals.php:151
+msgctxt "match event"
+msgid "Goal (own)"
+msgstr "Αυτογκόλ"
+
+#: includes/class-anwpfl-match.php:2427 includes/class-anwpfl-text.php:358
+#: includes/class-anwpfl-text.php:1447 templates/match/match-goals.php:97
+#: templates/match/match-goals.php:155
+msgctxt "match event"
+msgid "Goal"
+msgstr "Γκολ"
+
+#: includes/class-anwpfl-match.php:2194
+#: includes/shortcodes/class-anwpfl-shortcode.php:755
+#: includes/widgets/class-anwpfl-widget-matches.php:122
+msgid "Stage"
+msgstr "Φάσεις"
+
+#: includes/class-anwpfl-match.php:2138
+msgid "Kick Off Time"
+msgstr "Ώρα έναρξης"
+
+#: includes/class-anwpfl-match.php:1831 includes/class-anwpfl-match.php:1935
+msgid "Open Media Library"
+msgstr "Άνοιγμα βιβλιοθήκης πολυμέσων"
+
+#: includes/class-anwpfl-match.php:1826 includes/class-anwpfl-match.php:1930
+msgid "for Media Library"
+msgstr "για τη Βιβλιοθήκη πολυμέσων"
+
+#: includes/class-anwpfl-match.php:1822 includes/class-anwpfl-match.php:1926
+msgid "Video File"
+msgstr "Αρχείο βίντεο"
+
+#: includes/class-anwpfl-match.php:1816 includes/class-anwpfl-match.php:1919
+msgid "for Youtube or Vimeo"
+msgstr "για το Youtube ή το Vimeo"
+
+#: includes/class-anwpfl-match.php:1812 includes/class-anwpfl-match.php:1915
+msgid "Video ID (or URL)"
+msgstr "Αναγνωριστικό βίντεο (ή διεύθυνση URL)"
+
+#: includes/class-anwpfl-match.php:1805 includes/class-anwpfl-match.php:1907
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: includes/class-anwpfl-match.php:1804 includes/class-anwpfl-match.php:1906
+msgid "Youtube"
+msgstr "Youtube"
+
+#: includes/class-anwpfl-match.php:1803 includes/class-anwpfl-match.php:1905
+msgid "Media Library"
+msgstr "Βιβλιοθήκη πολυμέσων"
+
+#: includes/class-anwpfl-match.php:1802 includes/class-anwpfl-match.php:1904
+msgid "- select source -"
+msgstr "- επιλέξτε πηγή -"
+
+#: includes/class-anwpfl-match.php:1796 includes/class-anwpfl-match.php:1899
+msgid "Video Source"
+msgstr "Πηγή βίντεο"
+
+#: includes/class-anwpfl-match.php:1769 includes/class-anwpfl-text.php:619
+#: templates/match/match-summary.php:43
+msgid "Match Summary"
+msgstr "Σύνοψη αγώνα"
+
+#: includes/class-anwpfl-match.php:1708 includes/class-anwpfl-text.php:493
+#: templates/match/match-referees.php:150
+msgid "Fourth official"
+msgstr "Ιατρικό Προσωπικό"
+
+#: includes/class-anwpfl-match.php:1696
+msgid "Assistant 2"
+msgstr "Βοηθός 2"
+
+#: includes/class-anwpfl-match.php:1684
+msgid "Assistant 1"
+msgstr "Βοηθός 1"
+
+#: includes/class-anwpfl-match.php:1671 includes/class-anwpfl-match.php:1731
+#: includes/class-anwpfl-match.php:1752 includes/class-anwpfl-options.php:767
+#: includes/class-anwpfl-options.php:1032
+#: includes/class-anwpfl-options.php:1293 includes/class-anwpfl-referee.php:47
+#: includes/class-anwpfl-referee.php:48 includes/class-anwpfl-referee.php:63
+#: includes/class-anwpfl-text.php:250 includes/class-anwpfl-text.php:475
+#: templates/match/match--slim.php:334 templates/match/match-referees.php:75
+#: templates/match/match.php:96 templates/widget-next-match.php:136
+msgid "Referee"
+msgstr "Δαιτητής"
+
+#: includes/class-anwpfl-match.php:1599
+msgid "Match Duration"
+msgstr "Διάρκεια αγώνα"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:487
+#: includes/widgets/class-anwpfl-widget-video.php:26
+msgid "Video"
+msgstr "Βίντεο"
+
+#: includes/class-anwpfl-match.php:1591
+#: includes/shortcodes/class-anwpfl-shortcode.php:485
+msgid "Summary"
+msgstr "Περίληψη"
+
+#: includes/class-anwpfl-match.php:1587 includes/class-anwpfl-text.php:466
+#: includes/shortcodes/class-anwpfl-shortcode.php:483
+#: templates/match/match-referees.php:68
+msgid "Referees"
+msgstr "Διαιτητές"
+
+#: includes/class-anwpfl-match.php:900
+msgid "Old Structure"
+msgstr "Παλιά δομή"
+
+#: includes/class-anwpfl-match.php:897
+msgid "Save Match data on the next step to recalculate statistic."
+msgstr "Αποθήκευση στοιχείων αγώνα στο επόμενο βήμα για να υπολογίσετε εκ νέου στατιστικά στοιχεία."
+
+#: includes/class-anwpfl-match.php:896
+msgid "Use the Match Structure editing with caution."
+msgstr "Χρησιμοποιήστε την προσομοίωση της τροποποίησης της δομής αγώνα."
+
+#: includes/class-anwpfl-match.php:851
+msgid "You can edit Match structure from admin list."
+msgstr "Μπορείτε να επεξεργαστείτε τη δομή αγώνα από τη λίστα διαχειριστών."
+
+#: includes/class-anwpfl-match.php:806
+msgid "Please create squad players first."
+msgstr "Δημιουργήστε πρώτα τους παίκτες της ομάδας."
+
+#: includes/class-anwpfl-match.php:805
+msgid "There are no players in the Club Squads for match season."
+msgstr "Δεν υπάρχουν παίκτες στην σύνθεση του συλλόγου για την περίοδο αγώνα."
+
+#: includes/class-anwpfl-match.php:285
+#: includes/shortcodes/class-anwpfl-shortcode.php:674
+msgid "Date To"
+msgstr "Ημερομηνία μέχρι"
+
+#: includes/class-anwpfl-match.php:283
+#: includes/shortcodes/class-anwpfl-shortcode.php:667
+msgid "Date From"
+msgstr "Ημερομηνία από"
+
+#: includes/class-anwpfl-match.php:153
+msgid "Please re-save untrashed match to update statistics."
+msgstr "Αποθηκεύστε ξανά για να ενημερώσετε τα στατιστικά στοιχεία."
+
+#: includes/class-anwpfl-match.php:140
+msgid "Edit structure"
+msgstr "Επεξεργασία δομής"
+
+#: includes/class-anwpfl-match.php:69
+msgid "View Match"
+msgstr "Προβολή Αγώνα"
+
+#: includes/class-anwpfl-match.php:68
+msgid "New Match"
+msgstr "Νέος Αγώνας"
+
+#: includes/class-anwpfl-match.php:67
+msgid "Edit Match"
+msgstr "Επεξεργασία Αγώνα"
+
+#: includes/class-anwpfl-match.php:65 includes/class-anwpfl-match.php:66
+msgid "Add New Match"
+msgstr "Προσθήκη Νέου Αγώνα"
+
+#: includes/class-anwpfl-league.php:101
+msgid "select country"
+msgstr "επιλέξτε χώρα"
+
+#: includes/class-anwpfl-league.php:86
+msgid "League Info"
+msgstr "Πληροφορίες Πρωταθλήματος"
+
+#: includes/class-anwpfl-league.php:59
+msgid "New League Title"
+msgstr "Τίτλος Νέου Πρωταθλήματος"
+
+#: includes/class-anwpfl-league.php:58
+msgid "Add New League"
+msgstr "Προσθήκη Νέου Πρωταθλήματος"
+
+#: includes/class-anwpfl-league.php:57
+msgid "Update League"
+msgstr "Ενημέρωση Πρωταθλήματος"
+
+#: includes/class-anwpfl-league.php:56
+msgid "View League"
+msgstr "Προβολή Πρωταθλήματος"
+
+#: includes/class-anwpfl-league.php:55
+msgid "Edit League"
+msgstr "Επεξεργασία Πρωταθλήματος"
+
+#: includes/class-anwpfl-competition.php:501
+#: includes/class-anwpfl-league.php:54 includes/class-anwpfl-match.php:219
+#: includes/class-anwpfl-standing.php:226
+msgid "All Leagues"
+msgstr "Όλα τα Πρωταθλήματα"
+
+#: includes/class-anwpfl-league.php:53
+msgid "Search Leagues"
+msgstr "Αναζήτηση Πρωταθλήματος"
+
+#: includes/class-anwpfl-league.php:44
+msgid "Leagues"
+msgstr "Πρωταθλήματα"
+
+#: includes/class-anwpfl-helper.php:270
+msgid "Saving Data Error"
+msgstr "Σφάλμα κατά την αποθήκευση δεδομένων"
+
+#: includes/class-anwpfl-helper.php:269
+msgid "Successfully saved items"
+msgstr "Επιτυχής αποθήκευση στοιχείων"
+
+#: includes/class-anwpfl-data.php:754 includes/class-anwpfl-options.php:1450
+msgctxt "forward - player position Letter"
+msgid "f"
+msgstr "ε"
+
+#: includes/class-anwpfl-data.php:753 includes/class-anwpfl-options.php:1412
+msgctxt "midfielder - player position Letter"
+msgid "m"
+msgstr "μ"
+
+#: includes/class-anwpfl-data.php:752 includes/class-anwpfl-options.php:1374
+msgctxt "defender - player position Letter"
+msgid "d"
+msgstr "α"
+
+#: includes/class-anwpfl-data.php:751 includes/class-anwpfl-options.php:1336
+msgctxt "goalkeeper - player position Letter"
+msgid "g"
+msgstr "τ"
+
+#: includes/class-anwpfl-data.php:680 includes/class-anwpfl-options.php:1671
+msgctxt "Points - on standing page"
+msgid "Pt"
+msgstr "Πόντοι"
+
+#: includes/class-anwpfl-data.php:676 includes/class-anwpfl-options.php:1650
+msgid "GD"
+msgstr "Δ.Τ."
+
+#: includes/class-anwpfl-data.php:675 includes/class-anwpfl-options.php:1636
+#: includes/class-anwpfl-options.php:1640
+#: includes/class-anwpfl-options.php:1646
+msgid "Goal difference"
+msgstr "Διαφορά τερμάτων"
+
+#: includes/class-anwpfl-data.php:672 includes/class-anwpfl-options.php:1630
+msgid "GA"
+msgstr "Γκ. Κατ."
+
+#: includes/class-anwpfl-data.php:671 includes/class-anwpfl-options.php:1616
+#: includes/class-anwpfl-options.php:1620
+#: includes/class-anwpfl-options.php:1626
+msgid "Goals against"
+msgstr "Γκολ κατά"
+
+#: includes/class-anwpfl-data.php:668 includes/class-anwpfl-options.php:1610
+msgid "GF"
+msgstr "Γκ. Υπ."
+
+#: includes/class-anwpfl-data.php:667 includes/class-anwpfl-options.php:1596
+#: includes/class-anwpfl-options.php:1600
+#: includes/class-anwpfl-options.php:1606
+msgid "Goals for"
+msgstr "Γκολ υπέρ"
+
+#: includes/class-anwpfl-data.php:664 includes/class-anwpfl-options.php:1590
+msgctxt "Lost - on standing page"
+msgid "L"
+msgstr "Η"
+
+#: includes/class-anwpfl-data.php:660 includes/class-anwpfl-options.php:1570
+msgctxt "Drawn"
+msgid "D"
+msgstr "Ι"
+
+#: includes/class-anwpfl-data.php:656 includes/class-anwpfl-options.php:1550
+msgctxt "Won - on standing page"
+msgid "W"
+msgstr "Ν"
+
+#: includes/class-anwpfl-data.php:652 includes/class-anwpfl-options.php:1530
+msgctxt "Matches played - on standing page"
+msgid "M"
+msgstr "Α"
+
+#: includes/class-anwpfl-data.php:651 includes/class-anwpfl-options.php:1516
+#: includes/class-anwpfl-options.php:1520
+#: includes/class-anwpfl-options.php:1526
+msgid "Matches played"
+msgstr "Αγώνες που παίχτηκαν"
+
+#: includes/class-anwpfl-data.php:617 includes/class-anwpfl-match.php:1990
+#: includes/class-anwpfl-options.php:518 includes/class-anwpfl-options.php:628
+#: includes/class-anwpfl-options.php:647 includes/class-anwpfl-options.php:896
+#: includes/class-anwpfl-options.php:956 includes/class-anwpfl-options.php:1020
+#: includes/shortcodes/class-anwpfl-shortcode.php:283
+#: includes/shortcodes/class-anwpfl-shortcode.php:375
+#: includes/shortcodes/class-anwpfl-shortcode.php:408
+#: includes/shortcodes/class-anwpfl-shortcode.php:498
+#: includes/shortcodes/class-anwpfl-shortcode.php:627
+#: includes/shortcodes/class-anwpfl-shortcode.php:775
+#: includes/shortcodes/class-anwpfl-shortcode.php:785
+#: includes/shortcodes/class-anwpfl-shortcode.php:795
+#: includes/shortcodes/class-anwpfl-shortcode.php:878
+#: includes/shortcodes/class-anwpfl-shortcode.php:943
+#: includes/shortcodes/class-anwpfl-shortcode.php:994
+#: includes/shortcodes/class-anwpfl-shortcode.php:1005
+#: includes/shortcodes/class-anwpfl-shortcode.php:1015
+#: includes/shortcodes/class-anwpfl-shortcode.php:1025
+#: includes/shortcodes/class-anwpfl-shortcode.php:1068
+#: includes/shortcodes/class-anwpfl-shortcode.php:1078
+#: includes/shortcodes/class-anwpfl-shortcode.php:1134
+#: includes/shortcodes/class-anwpfl-shortcode.php:1185
+#: includes/shortcodes/class-anwpfl-shortcode.php:1196
+#: includes/shortcodes/class-anwpfl-shortcode.php:1228
+#: includes/widgets/class-anwpfl-widget-cards.php:121
+#: includes/widgets/class-anwpfl-widget-cards.php:131
+#: includes/widgets/class-anwpfl-widget-clubs.php:131
+#: includes/widgets/class-anwpfl-widget-player.php:89
+#: includes/widgets/class-anwpfl-widget-players.php:123
+#: includes/widgets/class-anwpfl-widget-players.php:133
+#: includes/widgets/class-anwpfl-widget-standing.php:115
+msgid "Yes"
+msgstr "Ναι"
+
+#: includes/class-anwpfl-data.php:616 includes/class-anwpfl-text.php:574
+#: templates/match/match-stats.php:252
+msgid "2d Yellow > Red Cards"
+msgstr "2η Κίτρινη > Κόκκινη κάρτα"
+
+#: includes/class-anwpfl-data.php:615
+msgid "2nd Yellow > Red"
+msgstr "2η Κίτρινη > Κόκκινη"
+
+#: includes/class-anwpfl-data.php:614 includes/class-anwpfl-text.php:565
+#: templates/match/match-stats.php:232
+msgid "Yellow Cards"
+msgstr "Κίτρινη Κάρτα"
+
+#: includes/class-anwpfl-data.php:613
+msgid "Yellow"
+msgstr "Κίτρινη"
+
+#: includes/class-anwpfl-data.php:612 includes/class-anwpfl-data.php:655
+#: includes/class-anwpfl-match.php:2008 includes/class-anwpfl-match.php:2028
+#: includes/class-anwpfl-options.php:1536
+#: includes/class-anwpfl-options.php:1540
+#: includes/class-anwpfl-options.php:1546
+msgid "Won"
+msgstr "Νίκη"
+
+#: includes/class-anwpfl-data.php:611
+msgid "Wins"
+msgstr "Νίκες"
+
+#: includes/class-anwpfl-data.php:608
+msgid "Do you really want to delete Round?"
+msgstr "Θέλετε πραγματικά να διαγράψετε το γύρο;"
+
+#: includes/class-anwpfl-data.php:607
+msgid "Use separate group"
+msgstr "Χρησιμοποίησε διαφορετικό όμιλο"
+
+#: includes/class-anwpfl-data.php:606
+msgid "Use Batch import tool for fast Clubs creation"
+msgstr "Χρησιμοποιήστε το εργαλείο εισαγωγής παρτίδων για γρήγορη δημιουργία συλλόγων"
+
+#: includes/class-anwpfl-data.php:605
+msgid "two-legged ties"
+msgstr "διπλοί αγώνες"
+
+#: includes/class-anwpfl-data.php:604
+msgid "Tutorial"
+msgstr "Εκπαιδευτικό υλικό"
+
+#: includes/class-anwpfl-data.php:603
+msgid "Toggle"
+msgstr "Εναλλαγή"
+
+#: includes/class-anwpfl-data.php:602
+msgid "Tips"
+msgstr "Συμβουλές"
+
+#: includes/class-anwpfl-data.php:600
+msgid "Tie"
+msgstr "Ισοπαλία"
+
+#: includes/class-anwpfl-data.php:598 includes/class-anwpfl-text.php:385
+#: includes/class-anwpfl-text.php:592
+#: includes/shortcodes/class-anwpfl-shortcode.php:481
+#: templates/match/match-lineups.php:181 templates/match/match-lineups.php:350
+#: templates/match/match-substitutes.php:51
+msgid "Substitutes"
+msgstr "Αλλαγές"
+
+#: includes/class-anwpfl-data.php:597
+msgid "Substitute"
+msgstr "Αλλαγές"
+
+#: includes/class-anwpfl-data.php:596
+msgid "Structure"
+msgstr "Δομή"
+
+#: includes/class-anwpfl-data.php:595
+msgid "Step"
+msgstr "Βήμα"
+
+#: includes/class-anwpfl-data.php:594 includes/class-anwpfl-match.php:196
+msgid "Status"
+msgstr "Κατάσταση"
+
+#: includes/class-anwpfl-data.php:593
+msgid "STATS"
+msgstr "Στατιστικά"
+
+#: includes/class-anwpfl-data.php:592
+msgid "... start typing name"
+msgstr "… ξεκινήστε να πληκτρολογείτε το όνομα"
+
+#: includes/class-anwpfl-data.php:591
+msgid "Standing Table Colors"
+msgstr "Χρώματα Πίνακα βαθμολογίας"
+
+#: includes/class-anwpfl-data.php:589
+msgid "Stage Title"
+msgstr "Τίτλος φάσης"
+
+#: includes/class-anwpfl-data.php:588
+msgid "Stage Order"
+msgstr "Σειρά φασεων"
+
+#: includes/class-anwpfl-data.php:587 includes/class-anwpfl-options.php:805
+#: includes/class-anwpfl-options.php:1033
+#: includes/class-anwpfl-options.php:1046
+#: includes/class-anwpfl-options.php:1267 includes/class-anwpfl-stadium.php:47
+#: includes/class-anwpfl-text.php:205 templates/club/club-header.php:117
+msgid "Stadium"
+msgstr "Γήπεδο"
+
+#: includes/class-anwpfl-data.php:585 includes/class-anwpfl-options.php:567
+msgid "squad"
+msgstr "συνθέσεις"
+
+#: includes/class-anwpfl-data.php:584
+msgid "single-leg ties"
+msgstr "μονοί αγώνες"
+
+#: includes/class-anwpfl-data.php:582
+msgid "Shots on Goal"
+msgstr "Σουτ για Γκολ"
+
+#: includes/class-anwpfl-data.php:581
+msgid "Show all clubs ignoring group structure (not recommended)"
+msgstr "Εμφάνιση όλων των συλλόγων που αγνοούν τη δομή ομάδας (δεν συνιστάται)"
+
+#: includes/class-anwpfl-data.php:580 includes/class-anwpfl-text.php:511
+#: templates/match/match-stats.php:111
+msgid "Shots"
+msgstr "Σουτ"
+
+#: includes/class-anwpfl-data.php:579
+msgid "Scored"
+msgstr "Σκόραρε"
+
+#: includes/class-anwpfl-data.php:578
+msgid "You can set statistics only for finished matches."
+msgstr "Ρυθμίζεις τα στατιστικά μετά το τέλος του αγώνα."
+
+#: includes/class-anwpfl-data.php:576
+msgid "Select two teams only."
+msgstr "Επιλέξτε δύο ομάδες μόνο."
+
+#: includes/class-anwpfl-data.php:575
+msgid "- select stage -"
+msgstr "- διάλεξτε φάση -"
+
+#: includes/class-anwpfl-data.php:574
+msgid "- select stadium -"
+msgstr "- επιλέξτε γήπεδο -"
+
+#: includes/class-anwpfl-data.php:573
+#: includes/widgets/class-anwpfl-widget-cards.php:98
+#: includes/widgets/class-anwpfl-widget-last-match.php:79
+#: includes/widgets/class-anwpfl-widget-next-match.php:79
+#: includes/widgets/class-anwpfl-widget-players.php:100
+msgid "- select season -"
+msgstr "- επιλέξτε σεζόν -"
+
+#: includes/class-anwpfl-data.php:572
+msgid "Select appropriate rules from the list below."
+msgstr "Επιλέξτε κατάλληλους κανόνες από την παρακάτω λίστα."
+
+#: includes/class-anwpfl-data.php:571
+msgid "Kick off time"
+msgstr "Ώρα έναρξης"
+
+#: includes/class-anwpfl-data.php:570
+msgid "Select Home and Away Clubs first."
+msgstr "Επιλέξτε πρώτα την γηπεδούχο ομάδα & Φιλοξενούμενη."
+
+#: includes/class-anwpfl-data.php:568
+msgid "Select event"
+msgstr "Επιλέξτε γεγονός"
+
+#: includes/class-anwpfl-data.php:567
+msgid "Select date"
+msgstr "Επιλέξτε ημερομηνία"
+
+#: includes/class-anwpfl-data.php:566
+msgid "Select Competition Group"
+msgstr "Διάλεξε όμιλο διοργάνωσεις"
+
+#: includes/class-anwpfl-data.php:565
+msgid "Select Competition & Clubs"
+msgstr "Επιλέξτε Διοργάνωση & Ομάδα"
+
+#: includes/class-anwpfl-data.php:564
+msgid "- select coach -"
+msgstr "- επιλέξτε προπονητή -"
+
+#: includes/class-anwpfl-data.php:563
+msgid "Select club"
+msgstr "Επιλέξτε ομάδα"
+
+#: includes/class-anwpfl-data.php:562
+msgid "Select and Continue"
+msgstr "Επιλέξτε και συνεχίστε"
+
+#: includes/class-anwpfl-data.php:561
+msgid "Select"
+msgstr "Επιλέξτε"
+
+#: class-anwp-football-leagues.php:1321
+#: includes/class-anwpfl-competition.php:447 includes/class-anwpfl-data.php:560
+#: includes/class-anwpfl-match.php:821 includes/class-anwpfl-match.php:910
+#: includes/class-anwpfl-match.php:2202 includes/class-anwpfl-season.php:44
+#: includes/shortcodes/class-anwpfl-shortcode.php:526
+#: includes/shortcodes/class-anwpfl-shortcode.php:574
+#: includes/shortcodes/class-anwpfl-shortcode.php:633
+#: includes/shortcodes/class-anwpfl-shortcode.php:852
+#: includes/shortcodes/class-anwpfl-shortcode.php:949
+#: includes/shortcodes/class-anwpfl-shortcode.php:1140
+#: includes/widgets/class-anwpfl-widget-cards.php:97
+#: includes/widgets/class-anwpfl-widget-last-match.php:78
+#: includes/widgets/class-anwpfl-widget-next-match.php:78
+#: includes/widgets/class-anwpfl-widget-players.php:99
+msgid "Season"
+msgstr "Σεζόν"
+
+#: includes/class-anwpfl-data.php:559
+msgid "Save & Continue"
+msgstr "Αποθήκευση & Συνέχεια"
+
+#: includes/class-anwpfl-data.php:557
+msgid "Save Squad"
+msgstr "Αποθήκευση σύνθεσης"
+
+#: includes/class-anwpfl-data.php:555
+msgid "Save changes"
+msgstr "Αποθήκευσε τις αλλαγές"
+
+#: includes/class-anwpfl-data.php:554
+msgid "Round-Robin Format"
+msgstr "Διαμόρφωση προγράμματος αγώνα"
+
+#: includes/class-anwpfl-data.php:552 includes/class-anwpfl-match.php:826
+#: includes/class-anwpfl-match.php:915 includes/class-anwpfl-match.php:2210
+msgid "Round"
+msgstr "Γύρος"
+
+#: includes/class-anwpfl-data.php:551 includes/class-anwpfl-match.php:197
+#: includes/class-anwpfl-text.php:799
+#: includes/shortcodes/class-anwpfl-shortcode.php:655
+#: includes/widgets/class-anwpfl-widget-matches.php:85
+#: templates/player/player-matches.php:63
+msgid "Result"
+msgstr "Αποτελέσματα"
+
+#: includes/class-anwpfl-data.php:550
+msgid "You can remove only empty Round. Delete all attached groups/pairs first."
+msgstr "Μπορείτε να καταργήσετε μόνο κενό γύρο. Διαγράψτε πρώτα όλες τις συνημμένες ομάδες / ζεύγη."
+
+#: includes/class-anwpfl-data.php:549
+msgid "Remove Group"
+msgstr "Κατάργηση ομάδας"
+
+#: includes/class-anwpfl-data.php:548 includes/class-anwpfl-text.php:583
+#: templates/match/match-stats.php:272
+msgid "Red Cards"
+msgstr "Κόκκινες Κάρτες"
+
+#: includes/class-anwpfl-data.php:547
+msgid "Red"
+msgstr "Κόκκινη"
+
+#: includes/class-anwpfl-data.php:546
+msgid "Click on arrows to change ranking rules order."
+msgstr "Πατήστε το βέλος για να αλλάξετε τη σειρά των κανόνων βαθμολογίας."
+
+#: includes/class-anwpfl-data.php:545
+msgid "Ranking rules are used to determine the position of the team in the Standing Table (from top to bottom)."
+msgstr "Οι κανονες βαθμολογίας χρησιμοποιούνται για να προσδιορίσουν τη θέση της ομάδας στη βαθμολογία (απο πάνω προς τα κάτω)"
+
+#: includes/class-anwpfl-data.php:544
+msgid "Ranking Rules"
+msgstr "Κανόνες βαθμολογίας"
+
+#: includes/class-anwpfl-data.php:543
+msgid "Quickly create players with \"Import Data\" Tool"
+msgstr "Δημιουργήστε γρήγορα παίκτες με το εργαλείο “Εισαγωγή δεδομένων”"
+
+#: includes/class-anwpfl-data.php:542
+msgid "Points for a win"
+msgstr "Πόντοι για νίκη"
+
+#: includes/class-anwpfl-data.php:541
+msgid "Points for a loss"
+msgstr "Πόντοι για ήττα"
+
+#: includes/class-anwpfl-data.php:540
+msgid "Points for a draw"
+msgstr "Πόντοι για ισοπαλία"
+
+#: includes/class-anwpfl-data.php:539 includes/class-anwpfl-data.php:679
+#: includes/class-anwpfl-options.php:1656
+#: includes/class-anwpfl-options.php:1660
+#: includes/class-anwpfl-options.php:1666
+msgid "Points"
+msgstr "Βαθμοί"
+
+#: includes/class-anwpfl-data.php:536
+msgid "Player Out"
+msgstr "Παίκτης εκτός"
+
+#: includes/class-anwpfl-data.php:535
+msgid "! player not in squad"
+msgstr "! παίκτης που δεν είναι στην σύνθεση"
+
+#: includes/class-anwpfl-data.php:533
+msgid "Player In"
+msgstr "Παίκτης εντός"
+
+#: includes/class-anwpfl-data.php:531
+msgid "Played"
+msgstr "Αγώνες"
+
+#: includes/class-anwpfl-data.php:530
+msgid "Place and Time"
+msgstr "Τόπος και Ώρα"
+
+#: includes/class-anwpfl-data.php:529
+msgid "Place"
+msgstr "Τόπος"
+
+#: includes/class-anwpfl-data.php:528 includes/class-anwpfl-text.php:439
+#: includes/class-anwpfl-text.php:1483
+#: includes/shortcodes/class-anwpfl-shortcode.php:486
+#: templates/match/match-penalty_shootout.php:42
+msgid "Penalty Shootout"
+msgstr "Εκτέλεση Πέναλτι"
+
+#: includes/class-anwpfl-data.php:527
+msgid "Penalty"
+msgstr "Πέναλτι"
+
+#: includes/class-anwpfl-data.php:526
+msgid "Own Goal"
+msgstr "Αυτογκόλ"
+
+#: includes/class-anwpfl-data.php:525
+msgctxt "Substitute"
+msgid "OUT"
+msgstr "ΕΚΤΟΣ"
+
+#: includes/class-anwpfl-data.php:524
+msgid "on trial"
+msgstr "σε δοκιμή"
+
+#: includes/class-anwpfl-data.php:523
+msgid "on loan"
+msgstr "δανεικός"
+
+#: includes/class-anwpfl-data.php:521 includes/class-anwpfl-text.php:547
+#: templates/match/match-stats.php:192
+msgid "Offsides"
+msgstr "Οφσάιντ"
+
+#: includes/class-anwpfl-data.php:520
+msgid "Official"
+msgstr "Επίσημος"
+
+#: includes/class-anwpfl-data.php:519
+msgid "Notes (below table)"
+msgstr "Σημειώσεις (κάτω από τον πίνακα)"
+
+#: includes/class-anwpfl-data.php:518
+msgid "No players found."
+msgstr "Δεν βρέθηκαν παίκτες."
+
+#: includes/class-anwpfl-data.php:517
+msgid "Number"
+msgstr "Αριθμός"
+
+#: includes/class-anwpfl-data.php:514 includes/class-anwpfl-match.php:1989
+#: includes/class-anwpfl-options.php:514 includes/class-anwpfl-options.php:624
+#: includes/class-anwpfl-options.php:643 includes/class-anwpfl-options.php:892
+#: includes/class-anwpfl-options.php:952 includes/class-anwpfl-options.php:1016
+#: includes/shortcodes/class-anwpfl-shortcode.php:284
+#: includes/shortcodes/class-anwpfl-shortcode.php:376
+#: includes/shortcodes/class-anwpfl-shortcode.php:407
+#: includes/shortcodes/class-anwpfl-shortcode.php:499
+#: includes/shortcodes/class-anwpfl-shortcode.php:626
+#: includes/shortcodes/class-anwpfl-shortcode.php:776
+#: includes/shortcodes/class-anwpfl-shortcode.php:786
+#: includes/shortcodes/class-anwpfl-shortcode.php:796
+#: includes/shortcodes/class-anwpfl-shortcode.php:877
+#: includes/shortcodes/class-anwpfl-shortcode.php:942
+#: includes/shortcodes/class-anwpfl-shortcode.php:993
+#: includes/shortcodes/class-anwpfl-shortcode.php:1004
+#: includes/shortcodes/class-anwpfl-shortcode.php:1014
+#: includes/shortcodes/class-anwpfl-shortcode.php:1024
+#: includes/shortcodes/class-anwpfl-shortcode.php:1067
+#: includes/shortcodes/class-anwpfl-shortcode.php:1077
+#: includes/shortcodes/class-anwpfl-shortcode.php:1133
+#: includes/shortcodes/class-anwpfl-shortcode.php:1184
+#: includes/shortcodes/class-anwpfl-shortcode.php:1195
+#: includes/shortcodes/class-anwpfl-shortcode.php:1227
+#: includes/widgets/class-anwpfl-widget-cards.php:120
+#: includes/widgets/class-anwpfl-widget-cards.php:130
+#: includes/widgets/class-anwpfl-widget-clubs.php:130
+#: includes/widgets/class-anwpfl-widget-player.php:88
+#: includes/widgets/class-anwpfl-widget-players.php:122
+#: includes/widgets/class-anwpfl-widget-players.php:132
+#: includes/widgets/class-anwpfl-widget-standing.php:114
+msgid "No"
+msgstr "Όχι"
+
+#: includes/class-anwpfl-data.php:513
+msgid "How To Setup Competition With Multiple Stages"
+msgstr "Πώς να εγκαταστήσετε διοργάνωση με πολλαπλά στάδια"
+
+#: includes/class-anwpfl-data.php:512
+msgid "Multistage Setup"
+msgstr "Ρύθμιση πολλαπλών βαθμίδων"
+
+#: includes/class-anwpfl-data.php:511
+msgid "Multistage Secondary"
+msgstr "Δευτερεύουσες πολλαπλές φάσεις"
+
+#: includes/class-anwpfl-data.php:510
+msgid "Multistage Main"
+msgstr "Κύριες πολλαπλές φάσεις"
+
+#: includes/class-anwpfl-data.php:509
+msgid "Multistage"
+msgstr "Πολαπλές φάσεις"
+
+#: includes/class-anwpfl-data.php:508
+msgctxt "Substitute"
+msgid "Missed Penalty"
+msgstr "Χαμένο πέναλτι"
+
+#: includes/class-anwpfl-data.php:507
+msgid "Minute"
+msgstr "Λεπτό"
+
+#: includes/class-anwpfl-data.php:504 includes/class-anwpfl-match.php:2213
+#: includes/class-anwpfl-options.php:1314
+msgid "MatchWeek"
+msgstr "Αγωνιστική"
+
+#: includes/class-anwpfl-data.php:503
+msgid "Match Setup"
+msgstr "Ρύθμιση αγώνα"
+
+#: includes/class-anwpfl-data.php:501
+msgid "Match Stats"
+msgstr "Στατιστικά αγώνα"
+
+#: includes/class-anwpfl-data.php:500
+msgid "Match Events"
+msgstr "Συμβάντα αγώνα"
+
+#: includes/class-anwpfl-data.php:499 includes/class-anwpfl-match.php:728
+#: includes/class-anwpfl-match.php:1654
+msgid "Match Data"
+msgstr "Δεδομένα αγώνα"
+
+#: includes/class-anwpfl-data.php:498
+msgid "match"
+msgstr "αγώνας"
+
+#: includes/class-anwpfl-data.php:497
+msgid "Main Stage ID"
+msgstr "Αναγνωριστικό κύριας φάσης"
+
+#: includes/class-anwpfl-data.php:496 includes/class-anwpfl-data.php:663
+#: includes/class-anwpfl-match.php:2010 includes/class-anwpfl-match.php:2030
+#: includes/class-anwpfl-options.php:1576
+#: includes/class-anwpfl-options.php:1580
+#: includes/class-anwpfl-options.php:1586
+msgid "Lost"
+msgstr "Ήττα"
+
+#: includes/class-anwpfl-data.php:495 includes/class-anwpfl-text.php:376
+#: includes/shortcodes/class-anwpfl-shortcode.php:480
+#: templates/match/match-lineups.php:82
+msgid "Line Ups"
+msgstr "Αρχική εντεκάδα"
+
+#: includes/class-anwpfl-data.php:494
+msgid "left club"
+msgstr "έφυγε από την ομάδα"
+
+#: includes/class-anwpfl-data.php:493 includes/class-anwpfl-league.php:43
+#: includes/class-anwpfl-match.php:816 includes/class-anwpfl-match.php:905
+#: includes/shortcodes/class-anwpfl-shortcode.php:960
+#: includes/shortcodes/class-anwpfl-shortcode.php:1151
+#: includes/widgets/class-anwpfl-widget-cards.php:89
+#: includes/widgets/class-anwpfl-widget-players.php:91
+msgid "League"
+msgstr "Πρωτάθλημα"
+
+#: includes/class-anwpfl-data.php:492
+msgid "Knockout Format"
+msgstr "Μορφή Νοκ Άουτ"
+
+#: includes/class-anwpfl-data.php:490
+msgid "Job"
+msgstr "Εργασία"
+
+#: includes/class-anwpfl-data.php:489
+msgid "ignore group structure"
+msgstr "αγνοήστε τη δομή ομάδας"
+
+#: includes/class-anwpfl-data.php:488
+msgid "Initial points"
+msgstr "Αρχική Πόντοι"
+
+#: includes/class-anwpfl-data.php:486
+msgid "inherit (from settings)"
+msgstr "αντιγραφή (απο ρυθμίσεις)"
+
+#: includes/class-anwpfl-data.php:485
+msgid "in club"
+msgstr "στην ομάδα"
+
+#: includes/class-anwpfl-data.php:483
+msgctxt "Substitute"
+msgid "IN"
+msgstr "ΕΝΤΟΣ"
+
+#: class-anwp-football-leagues.php:1309 includes/class-anwpfl-data.php:482
+#: includes/class-anwpfl-helper.php:1471 includes/class-anwpfl-helper.php:1507
+msgid "Home Club"
+msgstr "Γηπεδούχος ομάδα"
+
+#: includes/class-anwpfl-data.php:481 includes/class-anwpfl-text.php:259
+#: templates/match/match.php:118
+msgid "Half Time"
+msgstr "Ημίχρονο"
+
+#: includes/class-anwpfl-data.php:479 includes/class-anwpfl-standing.php:1249
+#: includes/class-anwpfl-standing.php:1453
+msgid "Group"
+msgstr "Ομάδα"
+
+#: includes/class-anwpfl-data.php:478
+msgid "Goals Scored"
+msgstr "Γκολ σκορ"
+
+#: includes/class-anwpfl-data.php:477
+msgid "Goals Difference"
+msgstr "Διαφορά τερμάτων"
+
+#: includes/class-anwpfl-data.php:476
+msgid "GOALS"
+msgstr "ΓΚΟΛ"
+
+#: includes/class-anwpfl-data.php:475
+msgid "Goal From Penalty"
+msgstr "Γκολ με Πέναλτι"
+
+#: includes/class-anwpfl-data.php:474
+msgid "Goal"
+msgstr "Γκολ"
+
+#: includes/class-anwpfl-data.php:473
+msgctxt "table - goals for"
+msgid "GF"
+msgstr "Γκ.Υπ."
+
+#: includes/class-anwpfl-data.php:471
+msgctxt "table - goals diff"
+msgid "GD"
+msgstr "Δ.Τ"
+
+#: includes/class-anwpfl-data.php:470
+msgctxt "table - goals against"
+msgid "GA"
+msgstr "Γκ.Κ."
+
+#: includes/class-anwpfl-data.php:469 includes/class-anwpfl-match.php:1960
+#: includes/class-anwpfl-text.php:277 templates/match/match.php:123
+#: templates/match/match.php:183
+msgid "Full Time"
+msgstr "Τελικό"
+
+#: includes/class-anwpfl-data.php:468
+msgid "from previous round"
+msgstr "από τον προηγούμενο γύρο"
+
+#: includes/class-anwpfl-data.php:467
+msgid "From Penalty"
+msgstr "Με Πέναλτι"
+
+#: includes/class-anwpfl-data.php:466
+msgid "Friendly"
+msgstr "Φιλικό"
+
+#: includes/class-anwpfl-data.php:465 includes/class-anwpfl-text.php:529
+#: templates/match/match-stats.php:152
+msgid "Fouls"
+msgstr "Φάουλ"
+
+#: includes/class-anwpfl-data.php:464 includes/class-anwpfl-match.php:198
+#: includes/shortcodes/class-anwpfl-shortcode.php:656
+#: includes/widgets/class-anwpfl-widget-matches.php:86
+msgid "Fixture"
+msgstr "Πρόγραμμα"
+
+#: includes/class-anwpfl-data.php:463
+msgid "Final Score"
+msgstr "Τελικό σκορ"
+
+#: includes/class-anwpfl-data.php:462
+msgid "filter competitions by active season"
+msgstr "φιλτράρετε τους αγώνες κατά την ενεργό περίοδο"
+
+#: includes/class-anwpfl-data.php:461
+msgid "Filter players by"
+msgstr "Φιλτράρετε τους παίκτες από"
+
+#: includes/class-anwpfl-data.php:460 includes/class-anwpfl-match.php:1970
+msgid "Extra Time"
+msgstr "Επιπλέον χρόνος"
+
+#: includes/class-anwpfl-data.php:459
+msgid "You can add events only for finished matches."
+msgstr "Μπορείτε να προσθέσετε συμβάντα μόνο για τελειωμένους αγώνες."
+
+#: includes/class-anwpfl-data.php:458
+msgid "Enable"
+msgstr "Ενεργοποίηση"
+
+#: includes/class-anwpfl-data.php:457
+msgid "Edit Squad"
+msgstr "Επεξεργασία σύνθεσης"
+
+#: includes/class-anwpfl-data.php:456
+msgid "Edit Number"
+msgstr "Επεξεργασία αριθμού"
+
+#: includes/class-anwpfl-data.php:455
+msgid "Edit Group Title"
+msgstr "Επεξεργασία τίτλου ομάδας"
+
+#: includes/class-anwpfl-data.php:454 includes/class-anwpfl-data.php:659
+#: includes/class-anwpfl-match.php:2009 includes/class-anwpfl-match.php:2029
+#: includes/class-anwpfl-options.php:1556
+#: includes/class-anwpfl-options.php:1560
+#: includes/class-anwpfl-options.php:1566
+msgid "Drawn"
+msgstr "Ισοπαλία"
+
+#: includes/class-anwpfl-data.php:452
+msgid "Disable"
+msgstr "Απενεργοποίηση"
+
+#: includes/class-anwpfl-data.php:449
+msgid "Delete Round"
+msgstr "Διαγραφή γύρου"
+
+#: includes/class-anwpfl-data.php:448
+msgid "Edit Player number"
+msgstr "Επεξεργασία αριθμού παίκτη"
+
+#: includes/class-anwpfl-data.php:446
+msgid "Current standing ranking rules"
+msgstr "Προσωρινοί κανόνες ισοβαθμίας"
+
+#: includes/class-anwpfl-data.php:445
+msgid "Create different types of Competitions"
+msgstr "Δημιουργήστε διαφορετικούς τύπους διαγωνισμών"
+
+#: includes/class-anwpfl-data.php:444 includes/class-anwpfl-match.php:750
+msgid "Please, create a Competition first."
+msgstr "Παρακαλούμε, δημιουργήστε πρώτα έναν διαγωνισμό."
+
+#: includes/class-anwpfl-data.php:443
+msgid "Corner Kicks"
+msgstr "Εκτέλεση κόρνερ"
+
+#: includes/class-anwpfl-data.php:442
+msgid "Confirm Delete"
+msgstr "Επιβεβαίωση διαγραφής"
+
+#: includes/class-anwpfl-data.php:441
+msgid "Competition Type"
+msgstr "Τύπος διαγωνισμού"
+
+#: includes/class-anwpfl-data.php:440
+msgid "Competition Status"
+msgstr "Κατάσταση διοργάνωσης"
+
+#: includes/class-anwpfl-data.php:439
+msgid "Used for Knockout matches. For example: order is used on the Player page in the list of latest matches grouped by competition"
+msgstr "Χρησιμοποιείται για αγώνες νοκ-άουτ. Παραδείγματος χάριν: η εντολή χρησιμοποιείται στη σελίδα του παίκτη στη λίστα των τελευταίων αγώνων που ομαδοποιούνται από τον ανταγωνισμό"
+
+#: includes/class-anwpfl-data.php:435
+msgid "Color by"
+msgstr "Χρώμα από"
+
+#: includes/class-anwpfl-data.php:434
+msgid "Color"
+msgstr "Χρώμα"
+
+#: includes/class-anwpfl-data.php:433 includes/class-anwpfl-text.php:394
+#: templates/match/match-lineups.php:246 templates/match/match-lineups.php:414
+msgid "Coach"
+msgstr "Προπονητής"
+
+#: includes/class-anwpfl-data.php:430
+msgid "Club Staff"
+msgstr "Προσωπικό του συλλόγου"
+
+#: includes/class-anwpfl-data.php:429
+msgid "Club initial points"
+msgstr "Αρχικοί πόντοι ομάδας"
+
+#: includes/class-anwpfl-competition.php:459 includes/class-anwpfl-data.php:427
+#: includes/shortcodes/class-anwpfl-shortcode.php:171
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#: includes/class-anwpfl-data.php:426
+msgid "Clear"
+msgstr "Καθαρισε"
+
+#: includes/class-anwpfl-data.php:425
+msgid "Card Type"
+msgstr "Τύπος Κάρτας"
+
+#: includes/class-anwpfl-data.php:424
+msgid "Card"
+msgstr "Κάρτα"
+
+#: includes/class-anwpfl-data.php:423
+msgid "Basic Info"
+msgstr "Βασικές Πληροφορίες"
+
+#: includes/class-anwpfl-data.php:422 includes/class-anwpfl-text.php:556
+#: templates/match/match-stats.php:212
+msgid "Ball Possession"
+msgstr "Κατοχή μπάλας"
+
+#: class-anwp-football-leagues.php:1315 includes/class-anwpfl-data.php:421
+#: includes/class-anwpfl-helper.php:1472 includes/class-anwpfl-helper.php:1508
+msgid "Away Club"
+msgstr "‎‫Φιλουξενούμενη ομάδ"
+
+#: includes/class-anwpfl-data.php:419
+msgid "Available rules"
+msgstr "Διαθέσιμοι κανόνες"
+
+#: includes/class-anwpfl-data.php:418
+msgid "Automatic Position Calculation"
+msgstr "Αυτόματος υπολογισμός θέσης"
+
+#: includes/class-anwpfl-data.php:417 includes/class-anwpfl-text.php:241
+#: templates/match/match.php:90
+msgid "Attendance"
+msgstr "Παρουσία"
+
+#: includes/class-anwpfl-data.php:416
+msgid "Attach to squad"
+msgstr "Προσάρτηση στην σύνθεση"
+
+#: includes/class-anwpfl-data.php:415
+msgid "Attach Player to Squad"
+msgstr "Εισαγωγή παίκτη στη σύνθεση"
+
+#: includes/class-anwpfl-data.php:414
+msgid "Attach Person to Staff"
+msgstr "Πρόσθεσε άτομο στο προσωπικό"
+
+#: includes/class-anwpfl-data.php:413
+msgid "Please, attach some clubs to the current Standing Table"
+msgstr "Παρακαλώ, επισυνάψτε κάποιους συλλόγους στον τρέχοντα Πίνακα"
+
+#: includes/class-anwpfl-data.php:412 includes/class-anwpfl-text.php:484
+#: includes/class-anwpfl-text.php:1429 templates/match/match-goals.php:116
+#: templates/match/match-goals.php:174 templates/match/match-referees.php:100
+#: templates/match/match-referees.php:125
+msgid "Assistant"
+msgstr "Ασσίστ"
+
+#: includes/class-anwpfl-data.php:411
+msgid "Are you sure?"
+msgstr "Είσαι σίγουρος;"
+
+#: includes/class-anwpfl-data.php:410
+msgid "For Example: \"Agg: 2-2; Team A won on penalties (5-3)\""
+msgstr "Για παράδειγμα: “Καν. Διαρκ.: 2-2, η ομάδα Α κέρδισε στα πέναλτι(5-3)”"
+
+#: includes/class-anwpfl-data.php:409
+msgid "Aggregate Text"
+msgstr "Συγκεντρωτικό Κείμενο"
+
+#: includes/class-anwpfl-data.php:408
+msgid "Additional Minute"
+msgstr "Πρόσθετα λεπτά"
+
+#: includes/class-anwpfl-data.php:407
+msgid "Add Table Color"
+msgstr "Προσθήκη χρώματος πίνακα"
+
+#: includes/class-anwpfl-data.php:406
+msgid "add/remove points"
+msgstr "προσθήκη/αφαίρεση πόντων"
+
+#: includes/class-anwpfl-data.php:405
+msgid "add/remove color"
+msgstr "προσθήκη/αφαίρεση χρώματος"
+
+#: includes/class-anwpfl-data.php:404
+msgid "- add player -"
+msgstr "προσθήκη παίκτη -"
+
+#: includes/class-anwpfl-data.php:403
+msgid "Add New Round"
+msgstr "Προσθήκης νέου γύρου"
+
+#: includes/class-anwpfl-data.php:402
+msgid "Add new group (tie)"
+msgstr "Πρόσθεσε νέο όμιλο"
+
+#: includes/class-anwpfl-data.php:401
+msgid "Add Match Event"
+msgstr "Προσθήκη συμβάντος αγώνα"
+
+#: includes/class-anwpfl-data.php:400
+msgid "Add Initial Points"
+msgstr "Πρόσθεσε αρχικούς πόντους"
+
+#: includes/class-anwpfl-data.php:398
+msgid "add event"
+msgstr "προσθήκη συμβάντος"
+
+#: includes/class-anwpfl-data.php:397
+msgid "You can add or remove clubs only on Competition page"
+msgstr "Μπορείς να προσθέσεις ή να διαγράψεις μόνο στη σελίδα διοργάνωσης"
+
+#: includes/class-anwpfl-data.php:380 includes/class-anwpfl-options.php:1500
+msgctxt "Lost - in club form"
+msgid "l"
+msgstr "η"
+
+#: includes/class-anwpfl-data.php:379 includes/class-anwpfl-options.php:1492
+msgctxt "Draw - in club form"
+msgid "d"
+msgstr "ι"
+
+#: includes/class-anwpfl-data.php:378 includes/class-anwpfl-options.php:1484
+msgctxt "Win - in club form"
+msgid "w"
+msgstr "ν"
+
+#: includes/class-anwpfl-data.php:374 includes/class-anwpfl-text.php:1510
+msgid "2nd Yellow > Red Card"
+msgstr "2η Κίτρινη > Κόκκινη κάρτα"
+
+#: includes/class-anwpfl-data.php:373 includes/class-anwpfl-text.php:1501
+msgid "Red Card"
+msgstr "Κόκκινη κάρτα"
+
+#: includes/class-anwpfl-data.php:372 includes/class-anwpfl-text.php:1492
+msgid "Yellow Card"
+msgstr "Κίτρινη κάρτα"
+
+#: includes/class-anwpfl-data.php:368 includes/class-anwpfl-options.php:1470
+msgid "Forwards"
+msgstr "Επιθετικοί"
+
+#: includes/class-anwpfl-data.php:367 includes/class-anwpfl-options.php:1432
+msgid "Midfielders"
+msgstr "Μέσοι"
+
+#: includes/class-anwpfl-data.php:366 includes/class-anwpfl-options.php:1394
+msgid "Defenders"
+msgstr "Αμυντικοί"
+
+#: includes/class-anwpfl-data.php:365 includes/class-anwpfl-options.php:1356
+msgid "Goalkeepers"
+msgstr "Τερματοφύλακες"
+
+#: includes/class-anwpfl-data.php:361 includes/class-anwpfl-options.php:1438
+#: includes/class-anwpfl-options.php:1460
+msgctxt "position"
+msgid "Forward"
+msgstr "Επιθετικός"
+
+#: includes/class-anwpfl-data.php:360 includes/class-anwpfl-options.php:1400
+#: includes/class-anwpfl-options.php:1422
+msgctxt "position"
+msgid "Midfielder"
+msgstr "Μέσος"
+
+#: includes/class-anwpfl-data.php:359 includes/class-anwpfl-options.php:1362
+#: includes/class-anwpfl-options.php:1384
+msgctxt "position"
+msgid "Defender"
+msgstr "Αμυντικός"
+
+#: includes/class-anwpfl-data.php:358 includes/class-anwpfl-options.php:1324
+#: includes/class-anwpfl-options.php:1346
+msgctxt "position"
+msgid "Goalkeeper"
+msgstr "Τερματοφύλακας"
+
+#: includes/class-anwpfl-data.php:344
+msgctxt "country"
+msgid "Wales"
+msgstr "Ουαλία"
+
+#: includes/class-anwpfl-data.php:343
+msgctxt "country"
+msgid "Scotland"
+msgstr "Σκωτία"
+
+#: includes/class-anwpfl-data.php:342
+msgctxt "country"
+msgid "Northern_Ireland"
+msgstr "Βόρεια Ιρλανδία"
+
+#: includes/class-anwpfl-data.php:341
+msgctxt "country"
+msgid "England"
+msgstr "Αγγλία"
+
+#: includes/class-anwpfl-data.php:334
+msgctxt "country"
+msgid "Zimbabwe"
+msgstr "Ζιμπάμπουε"
+
+#: includes/class-anwpfl-data.php:333
+msgctxt "country"
+msgid "Zambia"
+msgstr "Ζάμπια"
+
+#: includes/class-anwpfl-data.php:332
+msgctxt "country"
+msgid "Zaire"
+msgstr "Ζαϊρ"
+
+#: includes/class-anwpfl-data.php:331
+msgctxt "country"
+msgid "Yemen"
+msgstr "Υεμένη"
+
+#: includes/class-anwpfl-data.php:330
+msgctxt "country"
+msgid "Western Sahara"
+msgstr "Δυτική Σαχάρα"
+
+#: includes/class-anwpfl-data.php:329
+msgctxt "country"
+msgid "Wallis and Futuna Islands"
+msgstr "Νήσοι Wallis και Futuna"
+
+#: includes/class-anwpfl-data.php:328
+msgctxt "country"
+msgid "Virgin Islands (U.S.)"
+msgstr "Παρθένοι Νήσοι (ΗΠΑ)"
+
+#: includes/class-anwpfl-data.php:327
+msgctxt "country"
+msgid "Virgin Islands (British)"
+msgstr "Παρθένα νησιά (Βρετανικά)"
+
+#: includes/class-anwpfl-data.php:326
+msgctxt "country"
+msgid "Vietnam"
+msgstr "Βιετνάμ"
+
+#: includes/class-anwpfl-data.php:325
+msgctxt "country"
+msgid "Venezuela"
+msgstr "Βενεζουέλα"
+
+#: includes/class-anwpfl-data.php:324
+msgctxt "country"
+msgid "Vatican City State"
+msgstr "Βατικανό"
+
+#: includes/class-anwpfl-data.php:323
+msgctxt "country"
+msgid "Vanuatu"
+msgstr "Βανατού"
+
+#: includes/class-anwpfl-data.php:322
+msgctxt "country"
+msgid "Uzbekistan"
+msgstr "Ουσμπεκιστάν"
+
+#: includes/class-anwpfl-data.php:321
+msgctxt "country"
+msgid "Uruguay"
+msgstr "Ουρουγουάη"
+
+#: includes/class-anwpfl-data.php:320
+msgctxt "country"
+msgid "United States minor outlying islands"
+msgstr "Μικρά απομακρυσμένα νησιά των Ηνωμένων Πολιτειών"
+
+#: includes/class-anwpfl-data.php:319
+msgctxt "country"
+msgid "United States"
+msgstr "Ηνωμένες Πολιτείες"
+
+#: includes/class-anwpfl-data.php:318
+msgctxt "country"
+msgid "United Kingdom"
+msgstr "Ηνωμένο Βασίλειο"
+
+#: includes/class-anwpfl-data.php:317
+msgctxt "country"
+msgid "United Arab Emirates"
+msgstr "Ενωμένα Αραβικά Εμιράτα"
+
+#: includes/class-anwpfl-data.php:316
+msgctxt "country"
+msgid "Ukraine"
+msgstr "Ουκρανία"
+
+#: includes/class-anwpfl-data.php:315
+msgctxt "country"
+msgid "Uganda"
+msgstr "Ουγκάντα"
+
+#: includes/class-anwpfl-data.php:314
+msgctxt "country"
+msgid "Tuvalu"
+msgstr "Τουβαλού"
+
+#: includes/class-anwpfl-data.php:313
+msgctxt "country"
+msgid "Turks and Caicos Islands"
+msgstr "Νησιά Τερκς και Κέικος"
+
+#: includes/class-anwpfl-data.php:312
+msgctxt "country"
+msgid "Turkmenistan"
+msgstr "Τουρκμενιστάν"
+
+#: includes/class-anwpfl-data.php:311
+msgctxt "country"
+msgid "Turkey"
+msgstr "Τουρκία"
+
+#: includes/class-anwpfl-data.php:310
+msgctxt "country"
+msgid "Tunisia"
+msgstr "Τυνησία"
+
+#: includes/class-anwpfl-data.php:309
+msgctxt "country"
+msgid "Trinidad and Tobago"
+msgstr "Τρινιντάντ και Τομπάγκο"
+
+#: includes/class-anwpfl-data.php:308
+msgctxt "country"
+msgid "Tonga"
+msgstr "Τόνγκα"
+
+#: includes/class-anwpfl-data.php:307
+msgctxt "country"
+msgid "Tokelau"
+msgstr "Τοκελάου"
+
+#: includes/class-anwpfl-data.php:306
+msgctxt "country"
+msgid "Togo"
+msgstr "Τογκό"
+
+#: includes/class-anwpfl-data.php:305
+msgctxt "country"
+msgid "Thailand"
+msgstr "Ταϊλάνδη"
+
+#: includes/class-anwpfl-data.php:304
+msgctxt "country"
+msgid "Tanzania, United Republic of"
+msgstr "Ηνωμένη Δημοκρατία της Τανζανία"
+
+#: includes/class-anwpfl-data.php:303
+msgctxt "country"
+msgid "Tajikistan"
+msgstr "Τατζικιστάν"
+
+#: includes/class-anwpfl-data.php:302
+msgctxt "country"
+msgid "Taiwan"
+msgstr "Ταϊβάν"
+
+#: includes/class-anwpfl-data.php:301
+msgctxt "country"
+msgid "Syrian Arab Republic"
+msgstr "Αραβική Δημοκρατία της Συρίας"
+
+#: includes/class-anwpfl-data.php:300
+msgctxt "country"
+msgid "Switzerland"
+msgstr "Ελβετία"
+
+#: includes/class-anwpfl-data.php:299
+msgctxt "country"
+msgid "Sweden"
+msgstr "Σουηδία"
+
+#: includes/class-anwpfl-data.php:298
+msgctxt "country"
+msgid "Swaziland"
+msgstr "Σουαζιλάνδη"
+
+#: includes/class-anwpfl-data.php:297
+msgctxt "country"
+msgid "Svalbard and Jan Mayen Islands"
+msgstr "Νήσοι Σβάλμπαρντ και Γιαν Μάγεν"
+
+#: includes/class-anwpfl-data.php:296
+msgctxt "country"
+msgid "Suriname"
+msgstr "Σουρινάμ"
+
+#: includes/class-anwpfl-data.php:295
+msgctxt "country"
+msgid "Sudan"
+msgstr "Σουδάν"
+
+#: includes/class-anwpfl-data.php:294
+msgctxt "country"
+msgid "St. Pierre and Miquelon"
+msgstr "Σαιν-Πιερ και Μικελόν"
+
+#: includes/class-anwpfl-data.php:293
+msgctxt "country"
+msgid "St. Helena"
+msgstr "Νήσος Αγίας Ελένης"
+
+#: includes/class-anwpfl-data.php:292
+msgctxt "country"
+msgid "Sri Lanka"
+msgstr "Σρι Λάνκα"
+
+#: includes/class-anwpfl-data.php:291
+msgctxt "country"
+msgid "Spain"
+msgstr "Ισπανία"
+
+#: includes/class-anwpfl-data.php:290
+msgctxt "country"
+msgid "South Georgia South Sandwich Islands"
+msgstr "Νήσος Νοτίου Γεωργίας"
+
+#: includes/class-anwpfl-data.php:289
+msgctxt "country"
+msgid "South Sudan"
+msgstr "Νότιο Σουδάν"
+
+#: includes/class-anwpfl-data.php:288
+msgctxt "country"
+msgid "South Africa"
+msgstr "Νότια Αφρική"
+
+#: includes/class-anwpfl-data.php:287
+msgctxt "country"
+msgid "Somalia"
+msgstr "Σομαλία"
+
+#: includes/class-anwpfl-data.php:286
+msgctxt "country"
+msgid "Solomon Islands"
+msgstr "Νησιά του Σολομώντα"
+
+#: includes/class-anwpfl-data.php:285
+msgctxt "country"
+msgid "Slovenia"
+msgstr "Σλοβενία"
+
+#: includes/class-anwpfl-data.php:284
+msgctxt "country"
+msgid "Slovakia"
+msgstr "Σλοβακία"
+
+#: includes/class-anwpfl-data.php:283
+msgctxt "country"
+msgid "Singapore"
+msgstr "Σιγκαπούρη"
+
+#: includes/class-anwpfl-data.php:282
+msgctxt "country"
+msgid "Sierra Leone"
+msgstr "Σιέρρα Λεόνε"
+
+#: includes/class-anwpfl-data.php:281
+msgctxt "country"
+msgid "Seychelles"
+msgstr "Σεϋχέλλες"
+
+#: includes/class-anwpfl-data.php:280
+msgctxt "country"
+msgid "Serbia"
+msgstr "Σερβία"
+
+#: includes/class-anwpfl-data.php:279
+msgctxt "country"
+msgid "Senegal"
+msgstr "Σενεγάλη"
+
+#: includes/class-anwpfl-data.php:278
+msgctxt "country"
+msgid "Saudi Arabia"
+msgstr "Σαουδική Αραβία"
+
+#: includes/class-anwpfl-data.php:277
+msgctxt "country"
+msgid "Sao Tome and Principe"
+msgstr "Σάο Τομέ και Πρίνσιπε"
+
+#: includes/class-anwpfl-data.php:276
+msgctxt "country"
+msgid "San Marino"
+msgstr "Σαν Μαρίνο"
+
+#: includes/class-anwpfl-data.php:275
+msgctxt "country"
+msgid "Samoa"
+msgstr "Σαμόα"
+
+#: includes/class-anwpfl-data.php:274
+msgctxt "country"
+msgid "Saint Vincent and the Grenadines"
+msgstr "Άγιος Βικέντιος και Γρεναδίνες"
+
+#: includes/class-anwpfl-data.php:273
+msgctxt "country"
+msgid "Saint Lucia"
+msgstr "Αγία Λουκία"
+
+#: includes/class-anwpfl-data.php:272
+msgctxt "country"
+msgid "Saint Kitts and Nevis"
+msgstr "Άγιος Χριστόφορος και Νέβις"
+
+#: includes/class-anwpfl-data.php:271
+msgctxt "country"
+msgid "Rwanda"
+msgstr "Ρουάντα"
+
+#: includes/class-anwpfl-data.php:270
+msgctxt "country"
+msgid "Russian Federation"
+msgstr "Ρωσική ομοσπονδία"
+
+#: includes/class-anwpfl-data.php:269
+msgctxt "country"
+msgid "Romania"
+msgstr "Ρουμανία"
+
+#: includes/class-anwpfl-data.php:268
+msgctxt "country"
+msgid "Reunion"
+msgstr "Ρεϋνιόν"
+
+#: includes/class-anwpfl-data.php:267
+msgctxt "country"
+msgid "Qatar"
+msgstr "Κατάρ"
+
+#: includes/class-anwpfl-data.php:266
+msgctxt "country"
+msgid "Puerto Rico"
+msgstr "Πουέρτο Ρίκο"
+
+#: includes/class-anwpfl-data.php:265
+msgctxt "country"
+msgid "Portugal"
+msgstr "Πορτογαλία"
+
+#: includes/class-anwpfl-data.php:264
+msgctxt "country"
+msgid "Poland"
+msgstr "Πολωνία"
+
+#: includes/class-anwpfl-data.php:263
+msgctxt "country"
+msgid "Pitcairn"
+msgstr "Νήσοι Πίτκαιρν"
+
+#: includes/class-anwpfl-data.php:262
+msgctxt "country"
+msgid "Philippines"
+msgstr "Φιλιππίνες"
+
+#: includes/class-anwpfl-data.php:261
+msgctxt "country"
+msgid "Peru"
+msgstr "Περού"
+
+#: includes/class-anwpfl-data.php:260
+msgctxt "country"
+msgid "Paraguay"
+msgstr "Παραγουάη"
+
+#: includes/class-anwpfl-data.php:259
+msgctxt "country"
+msgid "Papua New Guinea"
+msgstr "Παπούα Νέα Γουινέα"
+
+#: includes/class-anwpfl-data.php:258
+msgctxt "country"
+msgid "Panama"
+msgstr "Παναμάς"
+
+#: includes/class-anwpfl-data.php:257
+msgctxt "country"
+msgid "Palestine"
+msgstr "Παλαιστίνη"
+
+#: includes/class-anwpfl-data.php:256
+msgctxt "country"
+msgid "Palau"
+msgstr "Παλάου"
+
+#: includes/class-anwpfl-data.php:255
+msgctxt "country"
+msgid "Pakistan"
+msgstr "Πακιστάν"
+
+#: includes/class-anwpfl-data.php:254
+msgctxt "country"
+msgid "Oman"
+msgstr "Ομάν"
+
+#: includes/class-anwpfl-data.php:253
+msgctxt "country"
+msgid "Norway"
+msgstr "Νορβηγία"
+
+#: includes/class-anwpfl-data.php:252
+msgctxt "country"
+msgid "Northern Mariana Islands"
+msgstr "Βόρειες Μαριάνες Νήσοι"
+
+#: includes/class-anwpfl-data.php:251
+msgctxt "country"
+msgid "Norfolk Island"
+msgstr "Νησί Νόρφολκ"
+
+#: includes/class-anwpfl-data.php:250
+msgctxt "country"
+msgid "Niue"
+msgstr "Νιούε"
+
+#: includes/class-anwpfl-data.php:249
+msgctxt "country"
+msgid "Nigeria"
+msgstr "Νιγηρία"
+
+#: includes/class-anwpfl-data.php:248
+msgctxt "country"
+msgid "Niger"
+msgstr "Νιγηρία"
+
+#: includes/class-anwpfl-data.php:247
+msgctxt "country"
+msgid "Nicaragua"
+msgstr "Νικαράγουα"
+
+#: includes/class-anwpfl-data.php:246
+msgctxt "country"
+msgid "New Zealand"
+msgstr "Νέα Ζηλανδία"
+
+#: includes/class-anwpfl-data.php:245
+msgctxt "country"
+msgid "New Caledonia"
+msgstr "Νέα Καληδονία"
+
+#: includes/class-anwpfl-data.php:244
+msgctxt "country"
+msgid "Netherlands Antilles"
+msgstr "Ολλανδικές Αντίλλες"
+
+#: includes/class-anwpfl-data.php:243
+msgctxt "country"
+msgid "Netherlands"
+msgstr "Ολλανδία"
+
+#: includes/class-anwpfl-data.php:242
+msgctxt "country"
+msgid "Nepal"
+msgstr "Νεπάλ"
+
+#: includes/class-anwpfl-data.php:241
+msgctxt "country"
+msgid "Nauru"
+msgstr "Ναουρού"
+
+#: includes/class-anwpfl-data.php:240
+msgctxt "country"
+msgid "Namibia"
+msgstr "Ναμίμπια"
+
+#: includes/class-anwpfl-data.php:239
+msgctxt "country"
+msgid "Myanmar"
+msgstr "Μιανμάρ"
+
+#: includes/class-anwpfl-data.php:238
+msgctxt "country"
+msgid "Mozambique"
+msgstr "Μοζαμβίκη"
+
+#: includes/class-anwpfl-data.php:237
+msgctxt "country"
+msgid "Morocco"
+msgstr "Μαρόκο"
+
+#: includes/class-anwpfl-data.php:236
+msgctxt "country"
+msgid "Montserrat"
+msgstr "Μοντσερράτ"
+
+#: includes/class-anwpfl-data.php:235
+msgctxt "country"
+msgid "Montenegro"
+msgstr "Μαυροβούνι"
+
+#: includes/class-anwpfl-data.php:234
+msgctxt "country"
+msgid "Mongolia"
+msgstr "Μογγολία"
+
+#: includes/class-anwpfl-data.php:233
+msgctxt "country"
+msgid "Monaco"
+msgstr "Μονακό"
+
+#: includes/class-anwpfl-data.php:232
+msgctxt "country"
+msgid "Moldova, Republic of"
+msgstr "Δημοκρατία της Μολδαβίας"
+
+#: includes/class-anwpfl-data.php:231
+msgctxt "country"
+msgid "Micronesia, Federated States of"
+msgstr "Ομόσπονδες Πολιτείες της Μικρονησίας"
+
+#: includes/class-anwpfl-data.php:230
+msgctxt "country"
+msgid "Mexico"
+msgstr "Μεξικό"
+
+#: includes/class-anwpfl-data.php:229
+msgctxt "country"
+msgid "Mayotte"
+msgstr "Μαγιότ"
+
+#: includes/class-anwpfl-data.php:228
+msgctxt "country"
+msgid "Mauritius"
+msgstr "Μαυρίκιος"
+
+#: includes/class-anwpfl-data.php:227
+msgctxt "country"
+msgid "Mauritania"
+msgstr "Μαυριτανία"
+
+#: includes/class-anwpfl-data.php:226
+msgctxt "country"
+msgid "Martinique"
+msgstr "Μαρτινίκη"
+
+#: includes/class-anwpfl-data.php:225
+msgctxt "country"
+msgid "Marshall Islands"
+msgstr "Νήσοι Μάρσαλ"
+
+#: includes/class-anwpfl-data.php:224
+msgctxt "country"
+msgid "Malta"
+msgstr "Μάλτα"
+
+#: includes/class-anwpfl-data.php:223
+msgctxt "country"
+msgid "Mali"
+msgstr "Μάλι"
+
+#: includes/class-anwpfl-data.php:222
+msgctxt "country"
+msgid "Maldives"
+msgstr "Μαλδίβες"
+
+#: includes/class-anwpfl-data.php:221
+msgctxt "country"
+msgid "Malaysia"
+msgstr "Μαλαισία"
+
+#: includes/class-anwpfl-data.php:220
+msgctxt "country"
+msgid "Malawi"
+msgstr "Μαλάουι"
+
+#: includes/class-anwpfl-data.php:219
+msgctxt "country"
+msgid "Madagascar"
+msgstr "Μαδαγασκάρη"
+
+#: includes/class-anwpfl-data.php:218
+msgctxt "country"
+msgid "Macedonia"
+msgstr "ΠΓΔΜ"
+
+#: includes/class-anwpfl-data.php:217
+msgctxt "country"
+msgid "Macau"
+msgstr "Μακάο"
+
+#: includes/class-anwpfl-data.php:216
+msgctxt "country"
+msgid "Luxembourg"
+msgstr "Λουξεμβούργο"
+
+#: includes/class-anwpfl-data.php:215
+msgctxt "country"
+msgid "Lithuania"
+msgstr "Λιθουανία"
+
+#: includes/class-anwpfl-data.php:214
+msgctxt "country"
+msgid "Liechtenstein"
+msgstr "Λιχτενστάιν"
+
+#: includes/class-anwpfl-data.php:213
+msgctxt "country"
+msgid "Libyan Arab Jamahiriya"
+msgstr "Λιβύη"
+
+#: includes/class-anwpfl-data.php:212
+msgctxt "country"
+msgid "Liberia"
+msgstr "Λιβερία"
+
+#: includes/class-anwpfl-data.php:211
+msgctxt "country"
+msgid "Lesotho"
+msgstr "Λεσότο"
+
+#: includes/class-anwpfl-data.php:210
+msgctxt "country"
+msgid "Lebanon"
+msgstr "Λίβανος"
+
+#: includes/class-anwpfl-data.php:209
+msgctxt "country"
+msgid "Latvia"
+msgstr "Λετονία"
+
+#: includes/class-anwpfl-data.php:208
+msgctxt "country"
+msgid "Lao People's Democratic Republic"
+msgstr "Λαϊκή Δημοκρατία του Λάος"
+
+#: includes/class-anwpfl-data.php:207
+msgctxt "country"
+msgid "Kyrgyzstan"
+msgstr "Κιργιζιστάν"
+
+#: includes/class-anwpfl-data.php:206
+msgctxt "country"
+msgid "Kuwait"
+msgstr "Κουβέιτ"
+
+#: includes/class-anwpfl-data.php:205
+msgctxt "country"
+msgid "Kosovo"
+msgstr "Κόσοβο"
+
+#: includes/class-anwpfl-data.php:204
+msgctxt "country"
+msgid "Korea, Republic of"
+msgstr "Δημοκρατία της Κορέας"
+
+#: includes/class-anwpfl-data.php:203
+msgctxt "country"
+msgid "Korea, Democratic People's Republic of"
+msgstr "Λαϊκή Δημοκρατία της Κορέας"
+
+#: includes/class-anwpfl-data.php:202
+msgctxt "country"
+msgid "Kiribati"
+msgstr "Κιριμπάτι"
+
+#: includes/class-anwpfl-data.php:201
+msgctxt "country"
+msgid "Kenya"
+msgstr "Κένυα"
+
+#: includes/class-anwpfl-data.php:200
+msgctxt "country"
+msgid "Kazakhstan"
+msgstr "Καζακστάν"
+
+#: includes/class-anwpfl-data.php:199
+msgctxt "country"
+msgid "Jordan"
+msgstr "Ιορδανία"
+
+#: includes/class-anwpfl-data.php:198
+msgctxt "country"
+msgid "Japan"
+msgstr "Ιαπωνία"
+
+#: includes/class-anwpfl-data.php:197
+msgctxt "country"
+msgid "Jamaica"
+msgstr "Τζαμάικα"
+
+#: includes/class-anwpfl-data.php:196
+msgctxt "country"
+msgid "Jersey"
+msgstr "Τζέρσεϋ"
+
+#: includes/class-anwpfl-data.php:195
+msgctxt "country"
+msgid "Ivory Coast"
+msgstr "Ακτή Ελεφαντοστού"
+
+#: includes/class-anwpfl-data.php:194
+msgctxt "country"
+msgid "Italy"
+msgstr "Ιταλία"
+
+#: includes/class-anwpfl-data.php:193
+msgctxt "country"
+msgid "Israel"
+msgstr "Ισραήλ"
+
+#: includes/class-anwpfl-data.php:192
+msgctxt "country"
+msgid "Ireland"
+msgstr "Ιρλανδία"
+
+#: includes/class-anwpfl-data.php:191
+msgctxt "country"
+msgid "Iraq"
+msgstr "Ιράκ"
+
+#: includes/class-anwpfl-data.php:190
+msgctxt "country"
+msgid "Iran (Islamic Republic of)"
+msgstr "Ιράν(Ισλαμική Δημοκρατία του)"
+
+#: includes/class-anwpfl-data.php:189
+msgctxt "country"
+msgid "Indonesia"
+msgstr "Ινδονησία"
+
+#: includes/class-anwpfl-data.php:188
+msgctxt "country"
+msgid "Isle of Man"
+msgstr "Νησί του Μαν"
+
+#: includes/class-anwpfl-data.php:187
+msgctxt "country"
+msgid "India"
+msgstr "Ινδία"
+
+#: includes/class-anwpfl-data.php:186
+msgctxt "country"
+msgid "Iceland"
+msgstr "Ισλανδία"
+
+#: includes/class-anwpfl-data.php:185
+msgctxt "country"
+msgid "Hungary"
+msgstr "Ουγγαρία"
+
+#: includes/class-anwpfl-data.php:184
+msgctxt "country"
+msgid "Hong Kong"
+msgstr "Χονγκ Κόνγκ"
+
+#: includes/class-anwpfl-data.php:183
+msgctxt "country"
+msgid "Honduras"
+msgstr "Ονδούρα"
+
+#: includes/class-anwpfl-data.php:182
+msgctxt "country"
+msgid "Heard and Mc Donald Islands"
+msgstr "Χερντ και οι ΜακΝτόναλντ Νήσοι"
+
+#: includes/class-anwpfl-data.php:181
+msgctxt "country"
+msgid "Haiti"
+msgstr "Αϊτή"
+
+#: includes/class-anwpfl-data.php:180
+msgctxt "country"
+msgid "Guyana"
+msgstr "Γουιάνα"
+
+#: includes/class-anwpfl-data.php:179
+msgctxt "country"
+msgid "Guinea-Bissau"
+msgstr "Γουινέα-Μπισάου"
+
+#: includes/class-anwpfl-data.php:178
+msgctxt "country"
+msgid "Guinea"
+msgstr "Γουινέα"
+
+#: includes/class-anwpfl-data.php:177
+msgctxt "country"
+msgid "Guatemala"
+msgstr "Γουατεμάλα"
+
+#: includes/class-anwpfl-data.php:176
+msgctxt "country"
+msgid "Guam"
+msgstr "Γκουάμ"
+
+#: includes/class-anwpfl-data.php:175
+msgctxt "country"
+msgid "Guadeloupe"
+msgstr "Γουαδελούπη"
+
+#: includes/class-anwpfl-data.php:174
+msgctxt "country"
+msgid "Grenada"
+msgstr "Γρενάδα"
+
+#: includes/class-anwpfl-data.php:173
+msgctxt "country"
+msgid "Greenland"
+msgstr "Γροιλανδία"
+
+#: includes/class-anwpfl-data.php:172
+msgctxt "country"
+msgid "Greece"
+msgstr "Ελλάδα"
+
+#: includes/class-anwpfl-data.php:171
+msgctxt "country"
+msgid "Guernsey"
+msgstr "Γκέρνσεϊ"
+
+#: includes/class-anwpfl-data.php:170
+msgctxt "country"
+msgid "Gibraltar"
+msgstr "Γριβραλτάρ"
+
+#: includes/class-anwpfl-data.php:169
+msgctxt "country"
+msgid "Ghana"
+msgstr "Γκάνα"
+
+#: includes/class-anwpfl-data.php:168
+msgctxt "country"
+msgid "Germany"
+msgstr "Γερμανία"
+
+#: includes/class-anwpfl-data.php:167
+msgctxt "country"
+msgid "Georgia"
+msgstr "Γερμανία"
+
+#: includes/class-anwpfl-data.php:166
+msgctxt "country"
+msgid "Gambia"
+msgstr "Γκάμπια"
+
+#: includes/class-anwpfl-data.php:165
+msgctxt "country"
+msgid "Gabon"
+msgstr "Γκαμπόν"
+
+#: includes/class-anwpfl-data.php:164
+msgctxt "country"
+msgid "French Southern Territories"
+msgstr "Γαλλικά Νότια και Ανταρκτικά Εδάφη"
+
+#: includes/class-anwpfl-data.php:163
+msgctxt "country"
+msgid "French Polynesia"
+msgstr "Γαλλική Πολυνησία"
+
+#: includes/class-anwpfl-data.php:162
+msgctxt "country"
+msgid "French Guiana"
+msgstr "Γαλλική Γουινέα"
+
+#: includes/class-anwpfl-data.php:161
+msgctxt "country"
+msgid "France, Metropolitan"
+msgstr "Μητροπολιτική Γαλλία"
+
+#: includes/class-anwpfl-data.php:160
+msgctxt "country"
+msgid "France"
+msgstr "Γαλλία"
+
+#: includes/class-anwpfl-data.php:159
+msgctxt "country"
+msgid "Finland"
+msgstr "Φινλανδία"
+
+#: includes/class-anwpfl-data.php:158
+msgctxt "country"
+msgid "Fiji"
+msgstr "Φίτζι"
+
+#: includes/class-anwpfl-data.php:157
+msgctxt "country"
+msgid "Faroe Islands"
+msgstr "Νησιά Φερόε"
+
+#: includes/class-anwpfl-data.php:156
+msgctxt "country"
+msgid "Falkland Islands (Malvinas)"
+msgstr "Φώκλαντς"
+
+#: includes/class-anwpfl-data.php:155
+msgctxt "country"
+msgid "Ethiopia"
+msgstr "Αιθιοπία"
+
+#: includes/class-anwpfl-data.php:154
+msgctxt "country"
+msgid "Estonia"
+msgstr "Εσθονία"
+
+#: includes/class-anwpfl-data.php:153
+msgctxt "country"
+msgid "Eritrea"
+msgstr "Ερυθρέα"
+
+#: includes/class-anwpfl-data.php:152
+msgctxt "country"
+msgid "Equatorial Guinea"
+msgstr "Ισημερινή Γουινέα"
+
+#: includes/class-anwpfl-data.php:151
+msgctxt "country"
+msgid "El Salvador"
+msgstr "Ελ Σαλβαδόρ"
+
+#: includes/class-anwpfl-data.php:150
+msgctxt "country"
+msgid "Egypt"
+msgstr "Αίγυπτος"
+
+#: includes/class-anwpfl-data.php:149
+msgctxt "country"
+msgid "Ecuador"
+msgstr "Εκουαδόρ"
+
+#: includes/class-anwpfl-data.php:147
+msgctxt "country"
+msgid "East Timor"
+msgstr "Ανατολικό Τιμόρ"
+
+#: includes/class-anwpfl-data.php:146
+msgctxt "country"
+msgid "Dominican Republic"
+msgstr "Δομινικανή Δημοκρατία"
+
+#: includes/class-anwpfl-data.php:145
+msgctxt "country"
+msgid "Dominica"
+msgstr "Ντομίνικα"
+
+#: includes/class-anwpfl-data.php:144
+msgctxt "country"
+msgid "Djibouti"
+msgstr "Τζιμπουτί"
+
+#: includes/class-anwpfl-data.php:143
+msgctxt "country"
+msgid "Denmark"
+msgstr "Δανία"
+
+#: includes/class-anwpfl-data.php:142
+msgctxt "country"
+msgid "Czech Republic"
+msgstr "Τσεχία"
+
+#: includes/class-anwpfl-data.php:141
+msgctxt "country"
+msgid "Cyprus"
+msgstr "Κύπρος"
+
+#: includes/class-anwpfl-data.php:140
+msgctxt "country"
+msgid "Curaçao"
+msgstr "Κουρασάο"
+
+#: includes/class-anwpfl-data.php:139
+msgctxt "country"
+msgid "Cuba"
+msgstr "Κούβα"
+
+#: includes/class-anwpfl-data.php:138
+msgctxt "country"
+msgid "Croatia (Hrvatska)"
+msgstr "Κροατία"
+
+#: includes/class-anwpfl-data.php:137
+msgctxt "country"
+msgid "Costa Rica"
+msgstr "Κόστα Ρίκα"
+
+#: includes/class-anwpfl-data.php:136
+msgctxt "country"
+msgid "Cook Islands"
+msgstr "Νησιά Κουκ"
+
+#: includes/class-anwpfl-data.php:135
+msgctxt "country"
+msgid "Democratic Republic of the Congo"
+msgstr "Λαϊκή Δημοκρατία του Κονγκό"
+
+#: includes/class-anwpfl-data.php:134
+msgctxt "country"
+msgid "Republic of the Congo"
+msgstr "Δημοκρατία του Κονγκό"
+
+#: includes/class-anwpfl-data.php:133
+msgctxt "country"
+msgid "Comoros"
+msgstr "Κόμορος"
+
+#: includes/class-anwpfl-data.php:132
+msgctxt "country"
+msgid "Colombia"
+msgstr "Κολομβία"
+
+#: includes/class-anwpfl-data.php:131
+msgctxt "country"
+msgid "Cocos (Keeling) Islands"
+msgstr "Νησιά Κόκος"
+
+#: includes/class-anwpfl-data.php:130
+msgctxt "country"
+msgid "Christmas Island"
+msgstr "Νησί Χριστουγέννων"
+
+#: includes/class-anwpfl-data.php:129
+msgctxt "country"
+msgid "China"
+msgstr "Κίνα"
+
+#: includes/class-anwpfl-data.php:128
+msgctxt "country"
+msgid "Chile"
+msgstr "Χιλή"
+
+#: includes/class-anwpfl-data.php:127
+msgctxt "country"
+msgid "Chad"
+msgstr "Τσαντ"
+
+#: includes/class-anwpfl-data.php:126
+msgctxt "country"
+msgid "Central African Republic"
+msgstr "Δημοκρατία Κεντρικής Αφρικής"
+
+#: includes/class-anwpfl-data.php:125
+msgctxt "country"
+msgid "Cayman Islands"
+msgstr "Νησιά Καϊμάν"
+
+#: includes/class-anwpfl-data.php:124
+msgctxt "country"
+msgid "Cape Verde"
+msgstr "Πράσινο Ακρωτήριο"
+
+#: includes/class-anwpfl-data.php:123
+msgctxt "country"
+msgid "Canada"
+msgstr "Καναδάς"
+
+#: includes/class-anwpfl-data.php:122
+msgctxt "country"
+msgid "Cameroon"
+msgstr "Καμερούν"
+
+#: includes/class-anwpfl-data.php:121
+msgctxt "country"
+msgid "Cambodia"
+msgstr "Καμπότζη"
+
+#: includes/class-anwpfl-data.php:120
+msgctxt "country"
+msgid "Burundi"
+msgstr "Μπουρουντί"
+
+#: includes/class-anwpfl-data.php:119
+msgctxt "country"
+msgid "Burkina Faso"
+msgstr "Μπουρκίνα Φάσο"
+
+#: includes/class-anwpfl-data.php:118
+msgctxt "country"
+msgid "Bulgaria"
+msgstr "Βουλγαρία"
+
+#: includes/class-anwpfl-data.php:117
+msgctxt "country"
+msgid "Brunei Darussalam"
+msgstr "Μπρουνάι Νταρουσαλάμ"
+
+#: includes/class-anwpfl-data.php:116
+msgctxt "country"
+msgid "British Indian Ocean Territory"
+msgstr "Βρετανικό έδαφος Ινδικού Ωκεανού"
+
+#: includes/class-anwpfl-data.php:115
+msgctxt "country"
+msgid "Brazil"
+msgstr "Βραζιλία"
+
+#: includes/class-anwpfl-data.php:114
+msgctxt "country"
+msgid "Bouvet Island"
+msgstr "Νήσος Μπουβέ"
+
+#: includes/class-anwpfl-data.php:113
+msgctxt "country"
+msgid "Botswana"
+msgstr "Μποτσουάνα"
+
+#: includes/class-anwpfl-data.php:112
+msgctxt "country"
+msgid "Bosnia and Herzegovina"
+msgstr "Βοσνία και Ερζεγοβίνη"
+
+#: includes/class-anwpfl-data.php:111
+msgctxt "country"
+msgid "Bolivia"
+msgstr "Βολιβία"
+
+#: includes/class-anwpfl-data.php:110
+msgctxt "country"
+msgid "Bhutan"
+msgstr "Μπουτάν"
+
+#: includes/class-anwpfl-data.php:109
+msgctxt "country"
+msgid "Bermuda"
+msgstr "Βερμούδες"
+
+#: includes/class-anwpfl-data.php:108
+msgctxt "country"
+msgid "Benin"
+msgstr "Μπενίν"
+
+#: includes/class-anwpfl-data.php:107
+msgctxt "country"
+msgid "Belize"
+msgstr "Μπελίζ"
+
+#: includes/class-anwpfl-data.php:106
+msgctxt "country"
+msgid "Belgium"
+msgstr "Βέλγιο"
+
+#: includes/class-anwpfl-data.php:105
+msgctxt "country"
+msgid "Belarus"
+msgstr "Λευκορωσία"
+
+#: includes/class-anwpfl-data.php:104
+msgctxt "country"
+msgid "Barbados"
+msgstr "Μπαρμπάντος"
+
+#: includes/class-anwpfl-data.php:103
+msgctxt "country"
+msgid "Bangladesh"
+msgstr "Μπανγκλαντές"
+
+#: includes/class-anwpfl-data.php:102
+msgctxt "country"
+msgid "Bahrain"
+msgstr "Μπαχρέιν"
+
+#: includes/class-anwpfl-data.php:101
+msgctxt "country"
+msgid "Bahamas"
+msgstr "Μπαχάμες"
+
+#: includes/class-anwpfl-data.php:100
+msgctxt "country"
+msgid "Azerbaijan"
+msgstr "Αζερμπαϊτζάν"
+
+#: includes/class-anwpfl-data.php:99
+msgctxt "country"
+msgid "Austria"
+msgstr "Αυστρία"
+
+#: includes/class-anwpfl-data.php:98
+msgctxt "country"
+msgid "Australia"
+msgstr "Αυστραλία"
+
+#: includes/class-anwpfl-data.php:97
+msgctxt "country"
+msgid "Aruba"
+msgstr "Αρούμπα"
+
+#: includes/class-anwpfl-data.php:96
+msgctxt "country"
+msgid "Armenia"
+msgstr "Αρμενία"
+
+#: includes/class-anwpfl-data.php:95
+msgctxt "country"
+msgid "Argentina"
+msgstr "Αργεντική"
+
+#: includes/class-anwpfl-data.php:94
+msgctxt "country"
+msgid "Antigua and Barbuda"
+msgstr "Αντίγκουα και Μπαρμπούντα"
+
+#: includes/class-anwpfl-data.php:93
+msgctxt "country"
+msgid "Antarctica"
+msgstr "Ανταρκτική"
+
+#: includes/class-anwpfl-data.php:92
+msgctxt "country"
+msgid "Anguilla"
+msgstr "Ανγκουίλα"
+
+#: includes/class-anwpfl-data.php:91
+msgctxt "country"
+msgid "Angola"
+msgstr "Ανγκόλα"
+
+#: includes/class-anwpfl-data.php:90
+msgctxt "country"
+msgid "Andorra"
+msgstr "Ανδόρα"
+
+#: includes/class-anwpfl-data.php:89
+msgctxt "country"
+msgid "American Samoa"
+msgstr "Αμερικανική Σαμόα"
+
+#: includes/class-anwpfl-data.php:88
+msgctxt "country"
+msgid "Algeria"
+msgstr "Αλγερία"
+
+#: includes/class-anwpfl-data.php:87
+msgctxt "country"
+msgid "Albania"
+msgstr "Αλβανία"
+
+#: includes/class-anwpfl-data.php:86
+msgctxt "country"
+msgid "Afghanistan"
+msgstr "Αφγανιστάν"
+
+#: includes/class-anwpfl-competition.php:2577
+msgid "How to Create Multistage Competition"
+msgstr "Πώς να δημιουργήσετε μία πολλαπλή διοργάνωση"
+
+#: includes/class-anwpfl-competition.php:2571
+msgid "How to Create Knockout Competition"
+msgstr "Πώς να δημιουργήσετε διοργάνωση νοκ-άουτ"
+
+#: includes/class-anwpfl-competition.php:2565
+msgid "How to Create Round-Robin Competition"
+msgstr "Πώς να δημιουργήσετε διαγωνισμό γύρων"
+
+#: includes/class-anwpfl-competition.php:2323
+msgid "!!! Error: Main Stage in Multistage competition is not set."
+msgstr "!!! Σφάλμα: Δεν έχει οριστεί ο κύριος φάκελος στην διοργάνωση πολλαπλών σταδίων."
+
+#: includes/class-anwpfl-competition.php:2292
+#: includes/class-anwpfl-competition.php:2317
+msgid "edit"
+msgstr "επεξεργασία"
+
+#: includes/class-anwpfl-competition.php:2269
+#: includes/class-anwpfl-options.php:1352
+#: includes/class-anwpfl-options.php:1390
+#: includes/class-anwpfl-options.php:1428
+#: includes/class-anwpfl-options.php:1466
+msgid "Multiple"
+msgstr "Πολλαπλός"
+
+#: includes/class-anwpfl-competition.php:2248
+#: includes/class-anwpfl-options.php:1342
+#: includes/class-anwpfl-options.php:1380
+#: includes/class-anwpfl-options.php:1418
+#: includes/class-anwpfl-options.php:1456
+msgid "Single"
+msgstr "Μονό"
+
+#: includes/class-anwpfl-competition.php:2245
+#: includes/class-anwpfl-competition.php:2302
+#: includes/class-anwpfl-data.php:601
+msgid "Ties"
+msgstr "Ισοπαλίες"
+
+#: includes/class-anwpfl-competition.php:2245
+#: includes/class-anwpfl-competition.php:2302
+#: includes/class-anwpfl-data.php:480
+msgid "Groups"
+msgstr "Ομάδες"
+
+#: includes/class-anwpfl-competition.php:2196
+msgid "Stages"
+msgstr "Φάσεις"
+
+#: includes/class-anwpfl-competition.php:2018
+msgid "Please, create a season and a league first!"
+msgstr "Παρακαλώ, δημιουργήστε πρώτα μια σεζόν και ένα πρωτάθλημα!"
+
+#: includes/class-anwpfl-competition.php:2007
+#: includes/class-anwpfl-data.php:558 includes/class-anwpfl-match.php:868
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: includes/class-anwpfl-competition.php:1959
+msgid "Related Tutorials"
+msgstr "Σχετικά Σεμινάρια"
+
+#: includes/class-anwpfl-competition.php:1950
+msgid "Competition Stages"
+msgstr "Στάδια Διοργάνωσης"
+
+#: includes/class-anwpfl-competition.php:754 includes/class-anwpfl-data.php:438
+msgid "Competition Order"
+msgstr "Σειρά διοργάνωσης"
+
+#: includes/class-anwpfl-competition.php:747
+msgid "Tabs"
+msgstr "Καρτέλες"
+
+#: includes/class-anwpfl-competition.php:746
+#: includes/class-anwpfl-options.php:1336
+#: includes/class-anwpfl-options.php:1346
+#: includes/class-anwpfl-options.php:1356
+#: includes/class-anwpfl-options.php:1374
+#: includes/class-anwpfl-options.php:1384
+#: includes/class-anwpfl-options.php:1394
+#: includes/class-anwpfl-options.php:1412
+#: includes/class-anwpfl-options.php:1422
+#: includes/class-anwpfl-options.php:1432
+#: includes/class-anwpfl-options.php:1450
+#: includes/class-anwpfl-options.php:1460
+#: includes/class-anwpfl-options.php:1470 includes/class-anwpfl-text.php:101
+#: includes/shortcodes/class-anwpfl-shortcode.php:468
+#: includes/shortcodes/class-anwpfl-shortcode.php:765
+#: includes/shortcodes/class-anwpfl-shortcode.php:887
+#: includes/shortcodes/class-anwpfl-shortcode.php:897
+#: includes/shortcodes/class-anwpfl-shortcode.php:1034
+#: includes/shortcodes/class-anwpfl-shortcode.php:1237
+#: includes/widgets/class-anwpfl-widget-matches.php:131
+#: includes/widgets/class-anwpfl-widget-matches.php:184
+msgid "Default"
+msgstr "Προεπιλογή"
+
+#: includes/class-anwpfl-competition.php:742
+msgid "Tabs - only for Multiple Stages or Rounds "
+msgstr "Καρτέλες - μόνο για πολλαπλά στάδια ή γύρους "
+
+#: includes/class-anwpfl-competition.php:738
+#: includes/shortcodes/class-anwpfl-shortcode.php:246
+#: includes/shortcodes/class-anwpfl-shortcode.php:322
+#: includes/shortcodes/class-anwpfl-shortcode.php:464
+#: includes/shortcodes/class-anwpfl-shortcode.php:883
+#: includes/shortcodes/class-anwpfl-shortcode.php:1030
+#: includes/shortcodes/class-anwpfl-shortcode.php:1233
+#: includes/widgets/class-anwpfl-widget-clubs.php:86
+#: includes/widgets/class-anwpfl-widget-matches.php:181
+msgid "Layout"
+msgstr "Διάταξη"
+
+#: includes/class-anwpfl-competition.php:691
+#: includes/class-anwpfl-competition.php:701
+msgid "Competition Logo"
+msgstr "Λογότυπο Διοργάνωσης"
+
+#: includes/class-anwpfl-competition.php:723
+msgid "Display Options"
+msgstr "Επιλογές οθόνης"
+
+#: includes/class-anwpfl-competition.php:634
+#: includes/class-anwpfl-options.php:393
+msgid "Display"
+msgstr "Απεικόνιση"
+
+#: includes/class-anwpfl-competition.php:119
+msgid "Competition Title"
+msgstr "Τίτλος Διοργάνωσης"
+
+#: includes/class-anwpfl-competition.php:104
+msgid "two-legged"
+msgstr "διπλοί αγώνες"
+
+#: includes/class-anwpfl-competition.php:103
+msgid "single-leg"
+msgstr "μονοί αγώνες"
+
+#: includes/class-anwpfl-competition.php:99 includes/class-anwpfl-data.php:447
+msgctxt "round robin format"
+msgid "Custom"
+msgstr "Προσαρμοσμένο"
+
+#: includes/class-anwpfl-competition.php:98 includes/class-anwpfl-data.php:453
+msgctxt "round robin format"
+msgid "Double"
+msgstr "Διπλό"
+
+#: includes/class-anwpfl-competition.php:97 includes/class-anwpfl-data.php:583
+msgctxt "round robin format"
+msgid "Single"
+msgstr "Μονό"
+
+#: includes/class-anwpfl-competition.php:93 includes/class-anwpfl-data.php:491
+msgid "Knockout"
+msgstr "Αγώνας νοκ αουτ"
+
+#: includes/class-anwpfl-competition.php:92 includes/class-anwpfl-data.php:553
+msgid "Round Robin"
+msgstr "Πρόγραμμα αγώνων"
+
+#: includes/class-anwpfl-competition.php:81
+msgid "View Competition"
+msgstr "Εμφάνιση ανταγωνιστή"
+
+#: includes/class-anwpfl-competition.php:80
+msgid "New Competition"
+msgstr "Νέος ανταγωνιστής"
+
+#: includes/class-anwpfl-competition.php:79
+msgid "Edit Competition"
+msgstr "Επεξεργασία Διοργάνωσης"
+
+#: includes/class-anwpfl-competition.php:77
+#: includes/class-anwpfl-competition.php:78
+msgid "Add New Competition"
+msgstr "Προσθέστε νέα διοργάνωση"
+
+#: includes/class-anwpfl-competition.php:76
+msgid "All Competitions"
+msgstr "Όλες οι διοργανώσεις"
+
+#: includes/class-anwpfl-competition.php:59
+msgid "Competitions"
+msgstr "Διοργανώσεις"
+
+#: includes/class-anwpfl-competition.php:58 includes/class-anwpfl-data.php:437
+#: includes/class-anwpfl-match.php:812 includes/class-anwpfl-match.php:901
+#: includes/class-anwpfl-match.php:2136 includes/class-anwpfl-options.php:729
+#: includes/class-anwpfl-options.php:1157
+#: includes/class-anwpfl-standing.php:1036
+#: includes/class-anwpfl-standing.php:1248 includes/class-anwpfl-text.php:898
+#: includes/shortcodes/class-anwpfl-shortcode.php:301
+#: includes/shortcodes/class-anwpfl-shortcode.php:393
+#: includes/shortcodes/class-anwpfl-shortcode.php:611
+#: includes/shortcodes/class-anwpfl-shortcode.php:756
+#: includes/shortcodes/class-anwpfl-shortcode.php:927
+#: includes/shortcodes/class-anwpfl-shortcode.php:1118
+#: includes/widgets/class-anwpfl-widget-cards.php:76
+#: includes/widgets/class-anwpfl-widget-clubs.php:68
+#: includes/widgets/class-anwpfl-widget-last-match.php:70
+#: includes/widgets/class-anwpfl-widget-matches.php:68
+#: includes/widgets/class-anwpfl-widget-next-match.php:70
+#: includes/widgets/class-anwpfl-widget-players.php:78
+#: includes/widgets/class-anwpfl-widget-video.php:69
+#: templates/player/player-stats.php:53
+msgid "Competition"
+msgstr "Διοργάνωση"
+
+#: includes/class-anwpfl-club.php:1317
+#: includes/class-anwpfl-competition.php:638
+#: includes/class-anwpfl-match.php:1607 includes/class-anwpfl-player.php:166
+#: includes/class-anwpfl-referee.php:147 includes/class-anwpfl-stadium.php:145
+#: includes/class-anwpfl-staff.php:213
+msgid "Bottom Content"
+msgstr "Κάτω περιεχόμενο"
+
+#: includes/class-anwpfl-club.php:1313 includes/class-anwpfl-options.php:401
+#: includes/class-anwpfl-player.php:162 includes/class-anwpfl-referee.php:143
+#: includes/class-anwpfl-stadium.php:141 includes/class-anwpfl-staff.php:209
+msgid "Custom Fields"
+msgstr "Προσαρμοσμένα πεδία"
+
+#: includes/class-anwpfl-club.php:1309 includes/class-anwpfl-stadium.php:137
+msgid "Info"
+msgstr "Πληροφορίες"
+
+#: includes/class-anwpfl-club.php:1301 includes/class-anwpfl-match.php:1595
+#: includes/class-anwpfl-player.php:150 includes/class-anwpfl-referee.php:135
+#: includes/class-anwpfl-stadium.php:133 includes/class-anwpfl-staff.php:201
+msgid "Media"
+msgstr "Μέσα ενημέρωσης"
+
+#: includes/class-anwpfl-club.php:1297 includes/class-anwpfl-data.php:472
+#: includes/class-anwpfl-options.php:389 includes/class-anwpfl-options.php:608
+#: includes/class-anwpfl-player.php:146 includes/class-anwpfl-referee.php:131
+#: includes/class-anwpfl-stadium.php:129 includes/class-anwpfl-staff.php:193
+msgid "General"
+msgstr "Γενικά"
+
+#: includes/class-anwpfl-club.php:1206
+#: includes/class-anwpfl-competition.php:2197
+#: includes/class-anwpfl-competition.php:2266
+#: includes/class-anwpfl-competition.php:2290
+#: includes/class-anwpfl-competition.php:2316
+#: includes/class-anwpfl-league.php:155 includes/class-anwpfl-match.php:2139
+#: includes/class-anwpfl-player.php:667 includes/class-anwpfl-referee.php:421
+#: includes/class-anwpfl-season.php:231 includes/class-anwpfl-staff.php:574
+#: includes/class-anwpfl-standing.php:1250
+msgid "ID"
+msgstr "ID"
+
+#: includes/class-anwpfl-club.php:1205
+msgid "Logo"
+msgstr "Λογότυπο"
+
+#: includes/class-anwpfl-club.php:681 includes/class-anwpfl-competition.php:770
+#: includes/class-anwpfl-match.php:2092 includes/class-anwpfl-player.php:576
+#: includes/class-anwpfl-referee.php:378 includes/class-anwpfl-stadium.php:430
+#: includes/class-anwpfl-staff.php:529
+msgid "Content"
+msgstr "Περιεχόμενο"
+
+#: includes/class-anwpfl-club.php:629 includes/class-anwpfl-club.php:645
+#: includes/class-anwpfl-club.php:661 includes/class-anwpfl-player.php:519
+#: includes/class-anwpfl-player.php:535 includes/class-anwpfl-player.php:551
+#: includes/class-anwpfl-referee.php:321 includes/class-anwpfl-referee.php:337
+#: includes/class-anwpfl-referee.php:353 includes/class-anwpfl-stadium.php:373
+#: includes/class-anwpfl-stadium.php:389 includes/class-anwpfl-stadium.php:405
+#: includes/class-anwpfl-staff.php:472 includes/class-anwpfl-staff.php:488
+#: includes/class-anwpfl-staff.php:504
+msgid "Value"
+msgstr "Αξία"
+
+#: includes/class-anwpfl-club.php:620 includes/class-anwpfl-club.php:637
+#: includes/class-anwpfl-club.php:653 includes/class-anwpfl-player.php:510
+#: includes/class-anwpfl-player.php:527 includes/class-anwpfl-player.php:543
+#: includes/class-anwpfl-referee.php:312 includes/class-anwpfl-referee.php:329
+#: includes/class-anwpfl-referee.php:345 includes/class-anwpfl-stadium.php:364
+#: includes/class-anwpfl-stadium.php:381 includes/class-anwpfl-stadium.php:397
+#: includes/class-anwpfl-staff.php:463 includes/class-anwpfl-staff.php:480
+#: includes/class-anwpfl-staff.php:496
+#: includes/shortcodes/class-anwpfl-shortcode.php:219
+#: includes/widgets/class-anwpfl-widget-birthday.php:60
+#: includes/widgets/class-anwpfl-widget-cards.php:60
+#: includes/widgets/class-anwpfl-widget-clubs.php:62
+#: includes/widgets/class-anwpfl-widget-last-match.php:57
+#: includes/widgets/class-anwpfl-widget-matches.php:62
+#: includes/widgets/class-anwpfl-widget-next-match.php:57
+#: includes/widgets/class-anwpfl-widget-player.php:60
+#: includes/widgets/class-anwpfl-widget-video.php:57
+msgid "Title"
+msgstr "Τίτλος"
+
+#: includes/class-anwpfl-club.php:593 includes/class-anwpfl-player.php:388
+#: includes/class-anwpfl-referee.php:285 includes/class-anwpfl-stadium.php:286
+#: includes/class-anwpfl-staff.php:375
+#: includes/shortcodes/class-anwpfl-shortcode.php:542
+#: includes/shortcodes/class-anwpfl-shortcode.php:589
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: includes/class-anwpfl-club.php:536 includes/class-anwpfl-match.php:1868
+#: includes/class-anwpfl-player.php:452 includes/class-anwpfl-stadium.php:350
+msgid "Text below gallery"
+msgstr "Κείμενο κάτω από τη συλλογή"
+
+#: includes/class-anwpfl-club.php:519 includes/class-anwpfl-match.php:1851
+#: includes/class-anwpfl-player.php:435 includes/class-anwpfl-stadium.php:333
+#: includes/class-anwpfl-text.php:151 includes/class-anwpfl-text.php:322
+#: includes/class-anwpfl-text.php:655
+#: includes/shortcodes/class-anwpfl-shortcode.php:543
+#: includes/shortcodes/class-anwpfl-shortcode.php:590
+#: templates/club/club-gallery.php:50 templates/match/match-gallery.php:44
+#: templates/player/player-gallery.php:50
+msgid "Gallery"
+msgstr "Συλλογή"
+
+#: includes/class-anwpfl-club.php:509
+msgid "Club Main Color"
+msgstr "Βασικό χρώμα του συλλόγου"
+
+#: includes/class-anwpfl-club.php:494
+msgid "Club Kit Photo"
+msgstr "Φωτογραφία συλλόγου"
+
+#: includes/class-anwpfl-club.php:478
+msgid "Logo Big"
+msgstr "Μεγάλο λογότυπο"
+
+#: includes/class-anwpfl-club.php:461
+msgid "Logo Small"
+msgstr "Μικρό λογότυπο"
+
+#: includes/class-anwpfl-club.php:428 includes/class-anwpfl-match.php:1677
+#: includes/class-anwpfl-match.php:1689 includes/class-anwpfl-match.php:1701
+#: includes/class-anwpfl-match.php:1713 includes/class-anwpfl-match.php:1757
+#: includes/class-anwpfl-match.php:2007 includes/class-anwpfl-match.php:2027
+#: includes/class-anwpfl-options.php:498 includes/class-anwpfl-player.php:330
+#: includes/class-anwpfl-player.php:342 includes/class-anwpfl-staff.php:288
+#: includes/class-anwpfl-staff.php:300 includes/class-anwpfl-staff.php:451
+msgid "- not selected -"
+msgstr "- μη επιλεγμένο -"
+
+#: includes/class-anwpfl-club.php:423
+msgid "Home Stadium"
+msgstr "Στάδιο Γηπεδούχου"
+
+#: includes/class-anwpfl-club.php:385
+msgid "Club Info"
+msgstr "Πληροφορίες Συλλόγου"
+
+#: includes/class-anwpfl-club.php:252 includes/class-anwpfl-data.php:431
+msgid "Club Squad"
+msgstr "Σύνθεση ομάδας"
+
+#: includes/class-anwpfl-club.php:109
+msgid "View Club"
+msgstr "Ποβολή Συλλόγου"
+
+#: includes/class-anwpfl-club.php:108
+msgid "New Club"
+msgstr "Νέος Σύλλογος"
+
+#: includes/class-anwpfl-club.php:107
+msgid "Edit Club"
+msgstr "Επεξεργασία Συλλόγου"
+
+#: includes/class-anwpfl-club.php:105 includes/class-anwpfl-club.php:106
+msgid "Add New Club"
+msgstr "Προσθήκη νέου συλλόγου"
+
+#: class-anwp-football-leagues.php:1303 includes/class-anwpfl-club.php:86
+#: includes/class-anwpfl-data.php:428 includes/class-anwpfl-helper.php:1306
+#: includes/class-anwpfl-helper.php:1349 includes/class-anwpfl-options.php:710
+#: includes/class-anwpfl-options.php:848 includes/class-anwpfl-options.php:1254
+#: includes/class-anwpfl-staff.php:446 includes/class-anwpfl-text.php:1213
+#: includes/class-anwpfl-text.php:1258 includes/class-anwpfl-text.php:1330
+#: includes/class-anwpfl-text.php:1411
+#: includes/shortcodes/class-anwpfl-shortcode.php:148
+#: includes/shortcodes/class-anwpfl-shortcode.php:863
+#: includes/shortcodes/class-anwpfl-shortcode.php:972
+#: includes/shortcodes/class-anwpfl-shortcode.php:1163
+#: includes/shortcodes/class-anwpfl-shortcode.php:1323
+#: includes/widgets/class-anwpfl-widget-matches.php:102
+#: includes/widgets/class-anwpfl-widget-next-match.php:63
+#: templates/content-staff.php:207 templates/shortcode-player.php:73
+#: templates/shortcode-players--small.php:68 templates/shortcode-players.php:71
+#: templates/shortcode-standing--mini.php:113
+#: templates/shortcode-standing.php:103
+msgid "Club"
+msgstr "Σύλλογος"
+
+#: class-anwp-football-leagues.php:1440 includes/class-anwpfl-text.php:1555
+msgctxt "flip countdown"
+msgid "seconds"
+msgstr "δευτερολέπτων"
+
+#: class-anwp-football-leagues.php:1439 includes/class-anwpfl-text.php:1546
+msgctxt "flip countdown"
+msgid "minutes"
+msgstr "λεπτά"
+
+#: class-anwp-football-leagues.php:1438 includes/class-anwpfl-text.php:1537
+msgctxt "flip countdown"
+msgid "hours"
+msgstr "ώρες"
+
+#: class-anwp-football-leagues.php:1437 includes/class-anwpfl-text.php:1528
+msgctxt "flip countdown"
+msgid "days"
+msgstr "ημέρες"
+
+#: class-anwp-football-leagues.php:1436 includes/class-anwpfl-text.php:1519
+msgctxt "flip countdown"
+msgid "weeks"
+msgstr "βδομάδες"
+
+#. translators: %s: link to plugins page.
+#: class-anwp-football-leagues.php:1249
+msgid "AnWP Football Leagues is missing requirements and has been <a href=\"%s\">deactivated</a>. Please make sure all requirements are available."
+msgstr "Τα πρωταθλήματα ποδοσφαίρου AnWP λείπουν από τις απαιτήσεις και υπήρξαν <a href=\"%s\">απενεργοποιημένο</a>. Βεβαιωθείτε ότι όλες οι απαιτήσεις είναι διαθέσιμες."
+
+#: class-anwp-football-leagues.php:1012
+msgid "Data Import"
+msgstr "Εισαγωγή δεδομένων"
+
+#: class-anwp-football-leagues.php:1011
+msgid "Tools"
+msgstr "Εργαλεία"
+
+#: class-anwp-football-leagues.php:956 class-anwp-football-leagues.php:957
+msgid "Support"
+msgstr "Υποστήριξη"
+
+#: class-anwp-football-leagues.php:948 class-anwp-football-leagues.php:949
+#: includes/shortcodes/class-anwpfl-shortcode.php:1278
+#: includes/shortcodes/class-anwpfl-shortcode.php:1283
+#: includes/shortcodes/class-anwpfl-shortcode.php:1288
+#: includes/shortcodes/class-anwpfl-shortcode.php:1293
+#: includes/shortcodes/class-anwpfl-shortcode.php:1298
+#: includes/shortcodes/class-anwpfl-shortcode.php:1303
+#: includes/shortcodes/class-anwpfl-shortcode.php:1308
+#: includes/shortcodes/class-anwpfl-shortcode.php:1313
+#: includes/shortcodes/class-anwpfl-shortcode.php:1318
+#: includes/shortcodes/class-anwpfl-shortcode.php:1323
+#: includes/shortcodes/class-anwpfl-shortcode.php:1328
+msgid "Shortcodes"
+msgstr "Σύντομοι κωδικοί"
+
+#: class-anwp-football-leagues.php:924 class-anwp-football-leagues.php:1587
+#: class-anwp-football-leagues.php:2229
+msgctxt "admin menu title"
+msgid "Football Leagues"
+msgstr "Πρωτάθλημα Ποδοσφαίρου"
+
+#: class-anwp-football-leagues.php:923
+msgctxt "admin page title"
+msgid "Football Leagues"
+msgstr "Πρωτάθλημα Ποδοσφαίρου"
+
+#: class-anwp-football-leagues.php:704
+msgctxt "post status"
+msgid "Stage Secondary"
+msgstr "Δεύτερη φάση"
+
+#: class-anwp-football-leagues.php:686 class-anwp-football-leagues.php:965
+msgid "Go Premium"
+msgstr "Πηγαίνετε Premium"
+
+#: class-anwp-football-leagues.php:685
+msgid "Changelog"
+msgstr "Ιστορικό αλλαγών"
+
+#. translators: %s minimum PHP version
+#: anwp-football-leagues.php:75
+msgid "Football Leagues by AnWPPro cannot run on PHP versions older than %s. Please contact your hosting provider to update your site."
+msgstr "Τα πρωταθλήματα ποδοσφαίρου από το AnWPPro δεν μπορούν να εκτελούνται σε εκδόσεις PHP μεγαλύτερες από το %s. Επικοινωνήστε με τον παροχέα φιλοξενίας για να ενημερώσετε τον ιστότοπό σας."
+
+#: anwp-football-leagues.php:68
+msgid "Football Leagues by AnWPPro is missing requirements and currently NOT ACTIVE. Please make sure all requirements are available."
+msgstr "Στα πρωταθλήματα ποδοσφαίρου από το AnWPPro λείπουν απαιτήσεις και αυτή τη στιγμή ΔΕΝ ΕΙΝΑΙ ΕΝΕΡΓΟ. Βεβαιωθείτε ότι όλες οι απαιτήσεις είναι διαθέσιμες."
+
+#: admin/views/tutorials.php:26
+msgid "Premium Version"
+msgstr "Premium έκδοση"
+
+#: admin/views/tutorials.php:25
+msgid "Online Community and Support Forum"
+msgstr "Online κοινότητα και φόρουμ υποστήριξης"
+
+#: admin/views/tutorials.php:24
+msgid "Start Guide"
+msgstr "Οδηγός έναρξης"
+
+#: admin/views/tutorials.php:23 class-anwp-football-leagues.php:684
+#: class-anwp-football-leagues.php:940 class-anwp-football-leagues.php:941
+#: includes/class-anwpfl-options.php:1824
+#: includes/shortcodes/class-anwpfl-shortcode.php:1355
+msgid "Documentation"
+msgstr "Τεκμηρίωση"
+
+#: admin/views/tutorials.php:20
+msgid "Useful Links"
+msgstr "Χρήσιμοι σύνδεσμοι"
+
+#: admin/views/tutorials.php:20 includes/class-anwpfl-text.php:57
+#: includes/shortcodes/class-anwpfl-shortcode.php:43
+msgid "Football Leagues"
+msgstr "Πρωτάθλημα Ποδοσφαίρου"
+
+#: admin/views/tools.php:211
+msgid "Save Data"
+msgstr "Αποθήκευση δεδομένων"
+
+#: admin/views/tools.php:177 includes/class-anwpfl-club.php:451
+#: includes/class-anwpfl-text.php:196 templates/club/club-header.php:110
+msgid "Founded"
+msgstr "Ιδρύθηκε"
+
+#: admin/views/tools.php:173 includes/class-anwpfl-club.php:443
+#: includes/class-anwpfl-stadium.php:237 includes/class-anwpfl-text.php:187
+#: includes/class-anwpfl-text.php:1096 templates/club/club-header.php:101
+#: templates/content-stadium.php:111
+msgid "Website"
+msgstr "Ιστότοπος"
+
+#: admin/views/tools.php:169 includes/class-anwpfl-club.php:435
+#: includes/class-anwpfl-stadium.php:219 includes/class-anwpfl-text.php:178
+#: includes/class-anwpfl-text.php:1060 templates/club/club-header.php:94
+#: templates/content-stadium.php:83
+msgid "Address"
+msgstr "Διεύθυνση"
+
+#: admin/views/tools.php:165 includes/class-anwpfl-club.php:414
+#: includes/class-anwpfl-helper.php:1307 includes/class-anwpfl-helper.php:1350
+#: includes/class-anwpfl-helper.php:1403 includes/class-anwpfl-helper.php:1431
+#: includes/class-anwpfl-league.php:98 includes/class-anwpfl-text.php:169
+#: templates/club/club-header.php:85
+msgid "Country"
+msgstr "Χώρα"
+
+#: admin/views/tools.php:161 includes/class-anwpfl-club.php:406
+#: includes/class-anwpfl-helper.php:1402 includes/class-anwpfl-helper.php:1430
+#: includes/class-anwpfl-stadium.php:228 includes/class-anwpfl-stadium.php:571
+#: includes/class-anwpfl-text.php:160 includes/class-anwpfl-text.php:1042
+#: templates/club/club-header.php:78 templates/content-stadium.php:58
+msgid "City"
+msgstr "Πόλη"
+
+#: admin/views/tools.php:157 includes/class-anwpfl-club.php:397
+#: includes/class-anwpfl-options.php:1144
+#: includes/class-anwpfl-options.php:1332
+#: includes/class-anwpfl-options.php:1370
+#: includes/class-anwpfl-options.php:1408
+#: includes/class-anwpfl-options.php:1446
+msgid "Abbreviation"
+msgstr "Συντομογραφία"
+
+#: admin/views/tools.php:153 includes/class-anwpfl-club.php:126
+#: includes/class-anwpfl-helper.php:1401 includes/class-anwpfl-helper.php:1429
+msgid "Club Title"
+msgstr "Τίτλος Συλλόγου"
+
+#: admin/views/tools.php:92 admin/views/tools.php:100 admin/views/tools.php:108
+#: admin/views/tools.php:185 admin/views/tools.php:193
+#: admin/views/tools.php:201
+msgid "Custom Field - Value"
+msgstr "Προσαρμοσμένο πεδίο - Τιμή"
+
+#: admin/views/tools.php:88 admin/views/tools.php:96 admin/views/tools.php:104
+#: admin/views/tools.php:181 admin/views/tools.php:189
+#: admin/views/tools.php:197
+msgid "Custom Field - Title"
+msgstr "Προσαρμοσμένο πεδίο - Τίτλος"
+
+#: admin/views/tools.php:80 admin/views/tools.php:84 admin/views/tools.php:138
+#: admin/views/tools.php:142 includes/class-anwpfl-player.php:378
+#: includes/class-anwpfl-referee.php:236 includes/class-anwpfl-staff.php:335
+#: includes/class-anwpfl-text.php:691 includes/class-anwpfl-text.php:1006
+#: includes/class-anwpfl-text.php:1159 includes/class-anwpfl-text.php:1339
+#: includes/class-anwpfl-text.php:1393 templates/content-referee.php:84
+#: templates/content-staff.php:128 templates/player/player-header.php:141
+#: templates/shortcode-players--small.php:69 templates/shortcode-players.php:72
+#: templates/shortcode-squad--blocks.php:139
+#: templates/shortcode-squad--blocks.php:189
+#: templates/shortcode-squad--blocks.php:266 templates/shortcode-squad.php:121
+#: templates/shortcode-squad.php:165 templates/shortcode-squad.php:238
+msgid "Nationality"
+msgstr "Εθνικότητα"
+
+#: admin/views/tools.php:76 admin/views/tools.php:134
+#: includes/class-anwpfl-helper.php:1305 includes/class-anwpfl-helper.php:1348
+#: includes/class-anwpfl-player.php:369 includes/class-anwpfl-player.php:666
+#: includes/class-anwpfl-referee.php:227 includes/class-anwpfl-staff.php:326
+msgid "Date of Birth"
+msgstr "Ημερομηνία Γέννησης"
+
+#: admin/views/tools.php:72 admin/views/tools.php:130
+#: includes/class-anwpfl-player.php:350 includes/class-anwpfl-referee.php:218
+#: includes/class-anwpfl-staff.php:317
+msgid "Place of Birth"
+msgstr "Τόπος γέννησης"
+
+#: admin/views/tools.php:68 includes/class-anwpfl-player.php:337
+#: includes/class-anwpfl-player.php:665 includes/class-anwpfl-staff.php:283
+#: includes/class-anwpfl-staff.php:573 includes/class-anwpfl-text.php:682
+#: includes/class-anwpfl-text.php:1141 templates/content-staff.php:88
+#: templates/player/player-header.php:134
+msgid "Current Club"
+msgstr "Τρέχουσα ομάδα"
+
+#: admin/views/tools.php:64 includes/class-anwpfl-data.php:538
+#: includes/class-anwpfl-player.php:327 includes/class-anwpfl-player.php:664
+#: includes/class-anwpfl-text.php:664 includes/class-anwpfl-text.php:1402
+#: templates/player/player-header.php:127
+#: templates/shortcode-squad--blocks.php:125
+msgid "Position"
+msgstr "Θέση"
+
+#: admin/views/tools.php:60 includes/class-anwpfl-player.php:319
+#: includes/class-anwpfl-text.php:745 templates/player/player-header.php:192
+msgid "Height (cm)"
+msgstr "Ύψος (cm)"
+
+#: admin/views/tools.php:56 includes/class-anwpfl-player.php:310
+#: includes/class-anwpfl-text.php:736 templates/player/player-header.php:185
+msgid "Weight (kg)"
+msgstr "Βάρος (kg)"
+
+#: admin/views/tools.php:52 admin/views/tools.php:122
+#: includes/class-anwpfl-player.php:291 includes/class-anwpfl-referee.php:208
+#: includes/class-anwpfl-staff.php:274
+msgid "Short Name"
+msgstr "Μικρό όνομα"
+
+#: admin/views/tools.php:48 includes/class-anwpfl-data.php:534
+#: includes/class-anwpfl-helper.php:1304 includes/class-anwpfl-helper.php:1347
+#: includes/class-anwpfl-player.php:94
+msgid "Player Name"
+msgstr "Όνομα Παίκτη"
+
+#: admin/views/tools.php:44 admin/views/tools.php:114 admin/views/tools.php:148
+msgid "apply new settings"
+msgstr "εφαρμογή νέων ρυθμίσεων"
+
+#: admin/views/tools.php:44 admin/views/tools.php:114 admin/views/tools.php:148
+msgid "Columns order and visibility"
+msgstr "Σειρά στηλών και ορατότητα"
+
+#: admin/views/tools.php:39
+msgid "clubs"
+msgstr "ομάδες"
+
+#: admin/views/tools.php:37
+msgid "players"
+msgstr "παίκτες"
+
+#: admin/views/tools.php:36
+msgid "select import type"
+msgstr "επιλέξτε τύπο εισαγωγής"
+
+#: admin/views/tools.php:31
+msgid "more info"
+msgstr "περισσότερες πληροφορίες"
+
+#: admin/views/tools.php:28
+msgid "Select import type. Then copy and paste data from your source into the table below."
+msgstr "Επιλέξτε τύπο εισαγωγής. Στη συνέχεια, αντιγράψτε και επικολλήστε δεδομένα από την πηγή σας στον παρακάτω πίνακα."
+
+#: admin/views/tools.php:23
+msgid "Batch Import"
+msgstr ""
+
+#: admin/views/dashboard.php:14 admin/views/support.php:17
+#: admin/views/tools.php:17 class-anwp-football-leagues.php:1042
+#: class-anwp-football-leagues.php:1057 class-anwp-football-leagues.php:1072
+#: class-anwp-football-leagues.php:1087 class-anwp-football-leagues.php:1102
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Δεν έχετε επαρκή δικαιώματα πρόσβασης στη σελίδα αυτή."
+
+#: admin/views/support.php:118
+msgctxt "support page"
+msgid "List of DB tables"
+msgstr "Κατάλογος των πινάκων DB"
+
+#: admin/views/support.php:109
+msgctxt "support page"
+msgid "Active Plugins"
+msgstr "Ενεργές προσθήκες"
+
+#: admin/views/support.php:68
+msgctxt "support page"
+msgid "Your System Info"
+msgstr "Πληροφορίες συστήματος"
+
+#: admin/views/support.php:65
+msgctxt "support page"
+msgid "plugin support forum"
+msgstr "φόρουμ υποστήριξης πρόσθετου"
+
+#: admin/views/support.php:63
+msgctxt "support page"
+msgid "If you find a bug, need help, or would like to request a feature, please visit"
+msgstr "Αν βρείτε κάποιο σφάλμα, χρειάζεστε βοήθεια ή θέλετε να ζητήσετε ένα χαρακτηριστικό, παρακαλώ επισκεφθείτε"
+
+#: admin/views/support.php:59
+msgid "Plugin Support"
+msgstr "Υποστήριξη Πρόσθετου"
+
+#: admin/views/shortcodes.php:29
+msgid "Basic Shortcodes"
+msgstr "Βασικοί σύντομοι κωδικοί"
+
+#: admin/views/shortcodes-howto.php:58
+msgid "Copy and paste it into Shortcode widget in the Elementor"
+msgstr "Αντιγράψτε και επικολλήστε το σε widget Shortcode στο στοιχείο Elementor"
+
+#: admin/views/shortcodes-howto.php:54
+msgid "How to insert a shortcode into Elementor page builder"
+msgstr "Πώς να εισαγάγετε ένα σύντομο κωδικό στον Elementor"
+
+#: admin/views/shortcodes-howto.php:46
+msgid "Add Classic block"
+msgstr "Προσθέστε κλασικό μπλοκ"
+
+#: admin/views/shortcodes-howto.php:43
+msgid "How to use shortcode UI helper in Gutenberg Editor"
+msgstr "Πώς να χρησιμοποιήσετε τον βοηθό σύντομου κώδικα UI στο Gutenberg Editor"
+
+#: admin/views/shortcodes-howto.php:36 admin/views/shortcodes-howto.php:48
+msgid "Create and insert the shortcode"
+msgstr "Δημιουργήστε και εισαγάγετε το σύντομο κωδικό"
+
+#: admin/views/shortcodes-howto.php:35 admin/views/shortcodes-howto.php:47
+msgid "Click on Football Leagues button in the editor panel"
+msgstr "Κάντε κλικ στο κουμπί Football Leagues στον πίνακα επεξεργασίας"
+
+#: admin/views/shortcodes-howto.php:34
+msgid "Classic Editor plugin"
+msgstr "Πρόσθετο κλασικού επεξεργαστή"
+
+#: admin/views/shortcodes-howto.php:34
+msgid "Install"
+msgstr "Εγκατάσταση"
+
+#: admin/views/shortcodes-howto.php:31
+msgid "How to use shortcode UI helper in Classic Editor"
+msgstr "Πώς να χρησιμοποιήσετε τον σύντομο κωδικό στον κλασικό επεξεργαστή"
+
+#: admin/views/shortcodes-howto.php:25
+msgid "Copy and paste it into Shortcode block in the Gutenberg editor."
+msgstr "Αντιγράψτε και επικολλήστε το σε μπλοκ σύντομο κωδικό στον επεξεργαστή Gutenberg."
+
+#: admin/views/shortcodes-howto.php:24 admin/views/shortcodes-howto.php:57
+msgid "Create the shortcode with Shortcode Builder."
+msgstr "Δημιουργήστε σύντομο κωδικό με το σύντομο κωδικό Builder."
+
+#: admin/views/shortcodes-howto.php:22
+msgid "How to insert a shortcode into Gutenberg editor"
+msgstr "Πώς να εισαγάγετε ένα σύντομο κωδικό στον επεξεργαστή Gutenberg"
+
+#: admin/views/shortcodes-howto.php:20
+msgid "Some recommended use cases are listed below."
+msgstr "Ορισμένες περιπτώσεις συνιστώμενης χρήσης παρατίθενται παρακάτω."
+
+#: admin/views/shortcodes-howto.php:19
+msgid "Shortcode is a special \"macros\" that lets you insert specific content with very little effort."
+msgstr "Ο σύντομος κωδικός είναι μια ειδική “μακροεντολή” που σας επιτρέπει να εισάγετε συγκεκριμένο περιεχόμενο με ελάχιστη προσπάθεια."
+
+#: admin/views/shortcodes-howto.php:18 admin/views/shortcodes.php:33
+msgid "How To's"
+msgstr "Πώς να είναι"
+
+#: admin/views/shortcodes-builder.php:60
+msgid "Copied to Clipboard"
+msgstr "Αντιγραφή στο Πρόχειρο"
+
+#: admin/views/shortcodes-builder.php:48
+msgid "copy code"
+msgstr "αντιγραφή κωδικού"
+
+#: admin/views/shortcodes-builder.php:34 includes/class-anwpfl-data.php:590
+#: includes/class-anwpfl-standing.php:47 includes/class-anwpfl-standing.php:964
+#: includes/shortcodes/class-anwpfl-shortcode.php:157
+#: includes/shortcodes/class-anwpfl-shortcode.php:225
+#: includes/shortcodes/class-anwpfl-shortcode.php:1278
+msgid "Standing Table"
+msgstr "Πίνακας βαθμολογίας"
+
+#: admin/views/shortcodes-builder.php:33 includes/class-anwpfl-text.php:1357
+#: includes/shortcodes/class-anwpfl-shortcode.php:156
+#: includes/shortcodes/class-anwpfl-shortcode.php:593
+#: includes/shortcodes/class-anwpfl-shortcode.php:1303
+#: templates/shortcode-squad--blocks.php:77 templates/shortcode-squad.php:61
+msgid "Squad"
+msgstr "Σύνθεση"
+
+#: admin/views/shortcodes-builder.php:32 includes/class-anwpfl-data.php:537
+#: includes/class-anwpfl-player.php:57 includes/class-anwpfl-player.php:72
+#: includes/shortcodes/class-anwpfl-shortcode.php:155
+#: includes/shortcodes/class-anwpfl-shortcode.php:1112
+#: includes/shortcodes/class-anwpfl-shortcode.php:1308
+#: includes/widgets/class-anwpfl-widget-cards.php:69
+msgid "Players"
+msgstr "Παίκτες"
+
+#: includes/class-anwpfl-data.php:532 includes/class-anwpfl-options.php:748
+#: includes/class-anwpfl-options.php:1240 includes/class-anwpfl-player.php:56
+#: includes/class-anwpfl-text.php:1267 includes/class-anwpfl-text.php:1321
+#: includes/shortcodes/class-anwpfl-shortcode.php:1313
+#: templates/shortcode-cards--mini.php:74 templates/shortcode-cards.php:66
+#: templates/shortcode-players--mini.php:63
+#: templates/shortcode-players--small.php:65 templates/shortcode-players.php:68
+msgid "Player"
+msgstr "Παίκτης"
+
+#: admin/views/shortcodes-builder.php:29
+#: includes/class-anwpfl-competition.php:2198
+#: includes/class-anwpfl-match.php:50 includes/class-anwpfl-match.php:64
+#: includes/shortcodes/class-anwpfl-shortcode.php:152
+#: includes/shortcodes/class-anwpfl-shortcode.php:544
+#: includes/shortcodes/class-anwpfl-shortcode.php:1298
+msgid "Matches"
+msgstr "Αγώνες"
+
+#: admin/views/shortcodes-builder.php:28 includes/class-anwpfl-match.php:49
+#: includes/class-anwpfl-match.php:2137 includes/class-anwpfl-options.php:691
+#: includes/class-anwpfl-options.php:969
+#: includes/shortcodes/class-anwpfl-shortcode.php:151
+#: includes/shortcodes/class-anwpfl-shortcode.php:1293
+msgid "Match"
+msgstr "Αγώνας"
+
+#: admin/views/shortcodes-builder.php:27 includes/class-anwpfl-club.php:87
+#: includes/class-anwpfl-club.php:104 includes/class-anwpfl-data.php:432
+#: includes/class-anwpfl-stadium.php:208 includes/class-anwpfl-text.php:1051
+#: includes/class-anwpfl-text.php:1249
+#: includes/shortcodes/class-anwpfl-shortcode.php:149
+#: includes/shortcodes/class-anwpfl-shortcode.php:1113
+#: includes/shortcodes/class-anwpfl-shortcode.php:1283
+#: includes/widgets/class-anwpfl-widget-cards.php:70
+#: templates/content-stadium.php:65 templates/shortcode-cards--mini.php:74
+#: templates/shortcode-cards.php:66
+msgid "Clubs"
+msgstr "Σύλλογοι"
+
+#: admin/views/shortcodes-builder.php:26
+#: includes/shortcodes/class-anwpfl-shortcode.php:150
+#: includes/shortcodes/class-anwpfl-shortcode.php:1288
+msgid "Competition Header"
+msgstr "Κεφαλίδα Διοργάνωσης"
+
+#: admin/views/shortcodes-builder.php:25 includes/class-anwpfl-text.php:313
+#: includes/class-anwpfl-text.php:844
+#: includes/shortcodes/class-anwpfl-shortcode.php:147
+#: includes/shortcodes/class-anwpfl-shortcode.php:479
+#: includes/shortcodes/class-anwpfl-shortcode.php:1328
+#: templates/match/match-cards.php:54 templates/player/player-matches.php:79
+msgid "Cards"
+msgstr "Κάρτες"
+
+#: admin/views/shortcodes-builder.php:24
+#: includes/shortcodes/class-anwpfl-shortcode.php:146
+#: includes/shortcodes/class-anwpfl-shortcode.php:304
+#: includes/shortcodes/class-anwpfl-shortcode.php:444
+#: includes/shortcodes/class-anwpfl-shortcode.php:456
+#: includes/shortcodes/class-anwpfl-shortcode.php:529
+#: includes/shortcodes/class-anwpfl-shortcode.php:577
+#: includes/shortcodes/class-anwpfl-shortcode.php:614
+#: includes/shortcodes/class-anwpfl-shortcode.php:636
+#: includes/shortcodes/class-anwpfl-shortcode.php:685
+#: includes/shortcodes/class-anwpfl-shortcode.php:930
+#: includes/shortcodes/class-anwpfl-shortcode.php:952
+#: includes/shortcodes/class-anwpfl-shortcode.php:963
+#: includes/shortcodes/class-anwpfl-shortcode.php:975
+#: includes/shortcodes/class-anwpfl-shortcode.php:1121
+#: includes/shortcodes/class-anwpfl-shortcode.php:1143
+#: includes/shortcodes/class-anwpfl-shortcode.php:1154
+#: includes/shortcodes/class-anwpfl-shortcode.php:1166
+msgid "select"
+msgstr "επιλέξτε"
+
+#: admin/views/shortcodes-builder.php:22
+#: includes/shortcodes/class-anwpfl-shortcode.php:144
+msgid "Shortcode"
+msgstr "Σύντομος κωδικός"
+
+#: admin/views/shortcodes-builder.php:19 admin/views/shortcodes.php:31
+msgid "Shortcode Builder"
+msgstr "Δημιουργία σύντομου κώδικα"

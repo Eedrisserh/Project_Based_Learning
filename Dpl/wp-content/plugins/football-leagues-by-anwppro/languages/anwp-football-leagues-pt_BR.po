@@ -1,0 +1,4744 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Project-Id-Version: Football Leagues by AnWPPro\n"
+"POT-Creation-Date: 2019-03-10 12:46+0300\n"
+"PO-Revision-Date: 2019-06-27 00:02-0300\n"
+"Language-Team: Andrei Strekozov <anwp.pro> <anwp.pro@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: anwp-football-leagues.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: Futexcel <contato@futexcel.com.br>\n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/views/support.php:21
+msgid "Plugin Support"
+msgstr "Suporte do Plugin"
+
+#: admin/views/support.php:25
+msgctxt "support page"
+msgid ""
+"If you find a bug, need help, or would like to request a feature, please "
+"just email me at"
+msgstr ""
+"Se você encontrar um bug, precisar de ajuda ou quiser solicitar um recurso, "
+"envie um e-mail para mim"
+
+#: admin/views/support.php:27
+msgctxt "support page"
+msgid "and I will try my best to help you"
+msgstr "e eu vou tentar o meu melhor para ajudá-lo"
+
+#: admin/views/support.php:28
+msgctxt "support page"
+msgid "Please, attach next information"
+msgstr "Por favor, anexe a próxima informação"
+
+#: admin/views/tools.php:17 class-anwp-football-leagues.php:795
+#: class-anwp-football-leagues.php:810 class-anwp-football-leagues.php:825
+#: class-anwp-football-leagues.php:840
+msgid "You do not have sufficient permissions to access this page."
+msgstr "Você não tem permissões suficientes para acessar esta página."
+
+#: admin/views/tools.php:23
+msgid "Batch Import"
+msgstr "Importação em lote"
+
+#: admin/views/tools.php:28
+msgid ""
+"Select import type. Then copy and paste data from your source into the table "
+"below."
+msgstr ""
+"Selecione o tipo de importação. Em seguida, copie e cole os dados da sua "
+"fonte na tabela abaixo."
+
+#: admin/views/tools.php:31
+msgid "more info"
+msgstr "mais informações"
+
+#: admin/views/tools.php:36
+msgid "select import type"
+msgstr "selecione o tipo de importação"
+
+#: admin/views/tools.php:37
+msgid "players"
+msgstr "jogadores"
+
+#: admin/views/tools.php:38
+msgid "clubs"
+msgstr "clubes"
+
+#: admin/views/tools.php:43 admin/views/tools.php:113
+msgid "Columns order and visibility"
+msgstr "Ordem das colunas e visibilidade"
+
+#: admin/views/tools.php:43 admin/views/tools.php:113
+msgid "apply new settings"
+msgstr "aplicar novas configurações"
+
+#: admin/views/tools.php:47 includes/class-anwpfl-player.php:90
+msgid "Player Name"
+msgstr "Nome do Jogador"
+
+#: admin/views/tools.php:51 includes/class-anwpfl-player.php:283
+#: includes/class-anwpfl-referee.php:204 includes/class-anwpfl-staff.php:270
+msgid "Short Name"
+msgstr "Nome Curto"
+
+#: admin/views/tools.php:55 includes/class-anwpfl-player.php:302
+#: templates/player/player-header.php:157
+msgid "Weight (kg)"
+msgstr "Peso (kg)"
+
+#: admin/views/tools.php:59 includes/class-anwpfl-player.php:311
+#: templates/player/player-header.php:164
+msgid "Height (cm)"
+msgstr "Altura (cm)"
+
+#: admin/views/tools.php:63 includes/class-anwpfl-player.php:319
+#: includes/class-anwpfl-player.php:597 templates/player/player-header.php:107
+#: templates/shortcode-squad--blocks.php:104
+msgid "Position"
+msgstr "Posição"
+
+#: admin/views/tools.php:67 includes/class-anwpfl-player.php:329
+#: includes/class-anwpfl-player.php:598 includes/class-anwpfl-staff.php:279
+#: includes/class-anwpfl-staff.php:541 templates/content-staff.php:84
+#: templates/player/player-header.php:114
+msgid "Current Club"
+msgstr "Clube atual"
+
+#: admin/views/tools.php:71 includes/class-anwpfl-player.php:340
+#: includes/class-anwpfl-referee.php:214 includes/class-anwpfl-staff.php:299
+msgid "Place of Birth"
+msgstr "Local de Nascimento"
+
+#: admin/views/tools.php:75 includes/class-anwpfl-player.php:349
+#: includes/class-anwpfl-referee.php:223 includes/class-anwpfl-staff.php:308
+msgid "Date of Birth"
+msgstr "Data de Nascimento"
+
+#: admin/views/tools.php:79 admin/views/tools.php:83
+#: includes/class-anwpfl-player.php:358 includes/class-anwpfl-referee.php:232
+#: includes/class-anwpfl-staff.php:317 templates/content-referee.php:82
+#: templates/content-staff.php:98 templates/player/player-header.php:121
+#: templates/shortcode-players--small.php:62 templates/shortcode-players.php:65
+#: templates/shortcode-squad--blocks.php:118
+#: templates/shortcode-squad--blocks.php:166
+#: templates/shortcode-squad--blocks.php:240 templates/shortcode-squad.php:112
+#: templates/shortcode-squad.php:156 templates/shortcode-squad.php:221
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+#: admin/views/tools.php:87 admin/views/tools.php:95 admin/views/tools.php:103
+#: admin/views/tools.php:146 admin/views/tools.php:154
+#: admin/views/tools.php:162
+msgid "Custom Field - Title"
+msgstr "Campo personalizado - Título"
+
+#: admin/views/tools.php:91 admin/views/tools.php:99 admin/views/tools.php:107
+#: admin/views/tools.php:150 admin/views/tools.php:158
+#: admin/views/tools.php:166
+msgid "Custom Field - Value"
+msgstr "Campo personalizado - Valor"
+
+#: admin/views/tools.php:118 includes/class-anwpfl-club.php:113
+msgid "Club Title"
+msgstr "Título - Clube"
+
+#: admin/views/tools.php:122 includes/class-anwpfl-club.php:375
+#: includes/class-anwpfl-options.php:549 includes/class-anwpfl-options.php:587
+#: includes/class-anwpfl-options.php:625 includes/class-anwpfl-options.php:663
+msgid "Abbreviation"
+msgstr "Abreviação"
+
+#: admin/views/tools.php:126 includes/class-anwpfl-club.php:384
+#: includes/class-anwpfl-stadium.php:214 includes/class-anwpfl-stadium.php:540
+#: templates/club/club-header.php:73 templates/content-stadium.php:56
+msgid "City"
+msgstr "Cidade"
+
+#: admin/views/tools.php:130 includes/class-anwpfl-club.php:392
+#: includes/class-anwpfl-league.php:98 templates/club/club-header.php:80
+msgid "Country"
+msgstr "País"
+
+#: admin/views/tools.php:134 includes/class-anwpfl-club.php:412
+#: includes/class-anwpfl-stadium.php:204 templates/club/club-header.php:89
+#: templates/content-stadium.php:63
+msgid "Address"
+msgstr "Endereço"
+
+#: admin/views/tools.php:138 includes/class-anwpfl-club.php:420
+#: includes/class-anwpfl-stadium.php:223 templates/club/club-header.php:96
+#: templates/content-stadium.php:91
+msgid "Website"
+msgstr "Website"
+
+#: admin/views/tools.php:142 includes/class-anwpfl-club.php:428
+#: templates/club/club-header.php:105
+msgid "Founded"
+msgstr "Fundação"
+
+#: admin/views/tools.php:176
+msgid "Save Data"
+msgstr "Salvar dados"
+
+#: anwp-football-leagues.php:71
+msgid ""
+"Football Leagues by AnWPPro is missing requirements and currently NOT "
+"ACTIVE. Please make sure all requirements are available."
+msgstr ""
+"Football Leagues by AnWPPro notou uma falta de requisitos que NÃO ESTÃO "
+"ATIVOS. Por favor, verifique se todos os requisitos estão disponíveis."
+
+#. translators: %s minimum PHP version
+#: anwp-football-leagues.php:78
+#, php-format
+msgid ""
+"Football Leagues by AnWPPro cannot run on PHP versions older than %s. Please "
+"contact your hosting provider to update your site."
+msgstr ""
+"Football Leagues by AnWPPro não pode rodar em versões do PHP anteriores a "
+"% s. Entre em contato com seu provedor de hospedagem para atualizar seu site."
+
+#: class-anwp-football-leagues.php:501
+msgid "Documentation"
+msgstr "Documentação"
+
+#: class-anwp-football-leagues.php:502
+msgid "Changelog"
+msgstr "Changelog"
+
+#: class-anwp-football-leagues.php:503 class-anwp-football-leagues.php:756
+#: class-anwp-football-leagues.php:757
+msgid "Go Premium"
+msgstr "Vs Premium"
+
+#: class-anwp-football-leagues.php:521
+msgctxt "post status"
+msgid "Stage Secondary"
+msgstr "Segunda Fase"
+
+#: class-anwp-football-leagues.php:723
+msgctxt "admin page title"
+msgid "Football Leagues"
+msgstr "Football Leagues"
+
+#: class-anwp-football-leagues.php:724 class-anwp-football-leagues.php:1173
+#: class-anwp-football-leagues.php:1620
+msgctxt "admin menu title"
+msgid "Football Leagues"
+msgstr "Football Leagues"
+
+#: class-anwp-football-leagues.php:740 class-anwp-football-leagues.php:741
+msgid "Tutorials"
+msgstr "Tutoriais"
+
+#: class-anwp-football-leagues.php:748 class-anwp-football-leagues.php:749
+msgid "Support"
+msgstr "Suporte"
+
+#: class-anwp-football-leagues.php:764 class-anwp-football-leagues.php:765
+msgid "Tools"
+msgstr "Ferramentas"
+
+#. translators: %s: link to plugins page.
+#: class-anwp-football-leagues.php:977
+#, php-format
+msgid ""
+"AnWP Football Leagues is missing requirements and has been <a href=\"%s"
+"\">deactivated</a>. Please make sure all requirements are available."
+msgstr ""
+"AnWP Football Leagues notou a falta de requisitos e foram <a href=\"%s\"> "
+"desativados </a>. Por favor, verifique se todos os requisitos estão "
+"disponíveis."
+
+#: class-anwp-football-leagues.php:1092
+msgctxt "flip countdown"
+msgid "weeks"
+msgstr "semanas"
+
+#: class-anwp-football-leagues.php:1093
+msgctxt "flip countdown"
+msgid "days"
+msgstr "dias"
+
+#: class-anwp-football-leagues.php:1094
+msgctxt "flip countdown"
+msgid "hours"
+msgstr "horas"
+
+#: class-anwp-football-leagues.php:1095
+msgctxt "flip countdown"
+msgid "minutes"
+msgstr "minutos"
+
+#: class-anwp-football-leagues.php:1096
+msgctxt "flip countdown"
+msgid "seconds"
+msgstr "segundos"
+
+#: class-anwp-football-leagues.php:1598
+#, php-format
+msgid ""
+"Please install and activate the %s plugin. It is required for proper work of "
+"Football Leagues and is used for building metaboxes and custom fields."
+msgstr ""
+"Por favor instale e ative o plugin % s. É necessário para o bom trabalho de "
+"Football Leagues e é usado para construir metaboxes e campos personalizados."
+
+#: class-anwp-football-leagues.php:1605
+msgid "Begin installing plugin"
+msgstr "Comece a instalar o plugin"
+
+#: includes/class-anwpfl-club.php:74 includes/class-anwpfl-data.php:412
+#: includes/class-anwpfl-options.php:301 includes/class-anwpfl-staff.php:427
+#: includes/widgets/class-anwpfl-widget-matches.php:102
+#: templates/content-staff.php:161 templates/shortcode-player.php:98
+#: templates/shortcode-players--small.php:61 templates/shortcode-players.php:64
+#: templates/shortcode-standing--mini.php:91
+#: templates/shortcode-standing.php:93
+msgid "Club"
+msgstr "Clube"
+
+#: includes/class-anwpfl-club.php:75 includes/class-anwpfl-club.php:91
+#: includes/class-anwpfl-data.php:415
+#: includes/widgets/class-anwpfl-widget-cards.php:70
+#: templates/shortcode-cards--mini.php:74 templates/shortcode-cards.php:66
+msgid "Clubs"
+msgstr "Clubes"
+
+#: includes/class-anwpfl-club.php:92 includes/class-anwpfl-club.php:93
+msgid "Add New Club"
+msgstr "Adicionar novo Clube"
+
+#: includes/class-anwpfl-club.php:94
+msgid "Edit Club"
+msgstr "Editar Clube"
+
+#: includes/class-anwpfl-club.php:95
+msgid "New Club"
+msgstr "Novo Clube"
+
+#: includes/class-anwpfl-club.php:96
+msgid "View Club"
+msgstr "Ver Clube"
+
+#: includes/class-anwpfl-club.php:230
+msgid "Club Squad"
+msgstr "Elenco"
+
+#: includes/class-anwpfl-club.php:363
+msgid "Club Info"
+msgstr "Informações do Clube"
+
+#: includes/class-anwpfl-club.php:401
+msgid "Home Stadium"
+msgstr "Estádio Mandante"
+
+#: includes/class-anwpfl-club.php:405 includes/class-anwpfl-match.php:1510
+#: includes/class-anwpfl-match.php:1522 includes/class-anwpfl-match.php:1532
+#: includes/class-anwpfl-match.php:1543 includes/class-anwpfl-options.php:190
+#: includes/class-anwpfl-player.php:322 includes/class-anwpfl-player.php:332
+#: includes/class-anwpfl-staff.php:282 includes/class-anwpfl-staff.php:430
+msgid "- not selected -"
+msgstr "- não selecionado -"
+
+#: includes/class-anwpfl-club.php:438
+msgid "Logo Small"
+msgstr "Escudo reduzido"
+
+#: includes/class-anwpfl-club.php:455
+msgid "Logo Big"
+msgstr "Escudo grande"
+
+#: includes/class-anwpfl-club.php:471
+msgid "Club Kit Photo"
+msgstr "Foto de pôster do clube"
+
+#: includes/class-anwpfl-club.php:486
+msgid "Club Main Color"
+msgstr "Cor principal do clube"
+
+#: includes/class-anwpfl-club.php:496 includes/class-anwpfl-player.php:368
+#: includes/class-anwpfl-referee.php:281 includes/class-anwpfl-stadium.php:272
+#: includes/class-anwpfl-staff.php:357
+msgid "Description"
+msgstr "Descrição"
+
+#: includes/class-anwpfl-club.php:517 includes/class-anwpfl-club.php:534
+#: includes/class-anwpfl-club.php:550 includes/class-anwpfl-player.php:419
+#: includes/class-anwpfl-player.php:436 includes/class-anwpfl-player.php:452
+#: includes/class-anwpfl-referee.php:307 includes/class-anwpfl-referee.php:324
+#: includes/class-anwpfl-referee.php:340 includes/class-anwpfl-stadium.php:349
+#: includes/class-anwpfl-stadium.php:366 includes/class-anwpfl-stadium.php:382
+#: includes/class-anwpfl-staff.php:442 includes/class-anwpfl-staff.php:459
+#: includes/class-anwpfl-staff.php:475
+msgid "Title"
+msgstr "Título"
+
+#: includes/class-anwpfl-club.php:526 includes/class-anwpfl-club.php:542
+#: includes/class-anwpfl-club.php:558 includes/class-anwpfl-player.php:428
+#: includes/class-anwpfl-player.php:444 includes/class-anwpfl-player.php:460
+#: includes/class-anwpfl-referee.php:316 includes/class-anwpfl-referee.php:332
+#: includes/class-anwpfl-referee.php:348 includes/class-anwpfl-stadium.php:358
+#: includes/class-anwpfl-stadium.php:374 includes/class-anwpfl-stadium.php:390
+#: includes/class-anwpfl-staff.php:451 includes/class-anwpfl-staff.php:467
+#: includes/class-anwpfl-staff.php:483
+msgid "Value"
+msgstr "Valor"
+
+#: includes/class-anwpfl-club.php:567 includes/class-anwpfl-competition.php:302
+#: includes/class-anwpfl-match.php:1662 includes/class-anwpfl-player.php:474
+#: includes/class-anwpfl-referee.php:362 includes/class-anwpfl-stadium.php:399
+#: includes/class-anwpfl-staff.php:497
+msgid "Content"
+msgstr "Conteúdo"
+
+#: includes/class-anwpfl-club.php:1048
+msgid "Logo"
+msgstr "Escudo"
+
+#: includes/class-anwpfl-club.php:1049
+#: includes/class-anwpfl-competition.php:1293
+#: includes/class-anwpfl-competition.php:1360
+#: includes/class-anwpfl-competition.php:1384
+#: includes/class-anwpfl-competition.php:1410
+#: includes/class-anwpfl-league.php:155 includes/class-anwpfl-match.php:1709
+#: includes/class-anwpfl-player.php:599 includes/class-anwpfl-referee.php:405
+#: includes/class-anwpfl-season.php:199 includes/class-anwpfl-staff.php:542
+#: includes/class-anwpfl-standing.php:653
+msgid "ID"
+msgstr "ID"
+
+#: includes/class-anwpfl-club.php:1140 includes/class-anwpfl-data.php:451
+#: includes/class-anwpfl-options.php:97 includes/class-anwpfl-options.php:246
+#: includes/class-anwpfl-player.php:142 includes/class-anwpfl-referee.php:127
+#: includes/class-anwpfl-stadium.php:125 includes/class-anwpfl-staff.php:189
+msgid "General"
+msgstr "Geral"
+
+#: includes/class-anwpfl-club.php:1144 includes/class-anwpfl-player.php:146
+#: includes/class-anwpfl-referee.php:131 includes/class-anwpfl-stadium.php:129
+#: includes/class-anwpfl-staff.php:197
+msgid "Media"
+msgstr "Mídia"
+
+#: includes/class-anwpfl-club.php:1148 includes/class-anwpfl-stadium.php:133
+msgid "Info"
+msgstr "Informação"
+
+#: includes/class-anwpfl-club.php:1152 includes/class-anwpfl-player.php:154
+#: includes/class-anwpfl-referee.php:139 includes/class-anwpfl-stadium.php:137
+#: includes/class-anwpfl-staff.php:205
+msgid "Custom Fields"
+msgstr "Campo Personalizado"
+
+#: includes/class-anwpfl-club.php:1156
+#: includes/class-anwpfl-competition.php:192
+#: includes/class-anwpfl-match.php:1443 includes/class-anwpfl-player.php:158
+#: includes/class-anwpfl-referee.php:143 includes/class-anwpfl-stadium.php:141
+#: includes/class-anwpfl-staff.php:209
+msgid "Bottom Content"
+msgstr "Rodapé"
+
+#: includes/class-anwpfl-competition.php:55 includes/class-anwpfl-data.php:419
+#: includes/class-anwpfl-match.php:652 includes/class-anwpfl-match.php:741
+#: includes/class-anwpfl-match.php:1706 includes/class-anwpfl-options.php:476
+#: includes/class-anwpfl-standing.php:651 templates/player/player-stats.php:42
+msgid "Competition"
+msgstr "Competição"
+
+#: includes/class-anwpfl-competition.php:56
+msgid "Competitions"
+msgstr "Competições"
+
+#: includes/class-anwpfl-competition.php:72
+msgid "All Competitions"
+msgstr "Todas as Competições"
+
+#: includes/class-anwpfl-competition.php:73
+#: includes/class-anwpfl-competition.php:74
+msgid "Add New Competition"
+msgstr "Adicionar nova Competição"
+
+#: includes/class-anwpfl-competition.php:75
+msgid "Edit Competition"
+msgstr "Editar Competição"
+
+#: includes/class-anwpfl-competition.php:76
+msgid "New Competition"
+msgstr "Nova Competição"
+
+#: includes/class-anwpfl-competition.php:77
+msgid "View Competition"
+msgstr "Ver Competição"
+
+#: includes/class-anwpfl-competition.php:88 includes/class-anwpfl-data.php:520
+msgid "Round Robin"
+msgstr "Todos contra todos"
+
+#: includes/class-anwpfl-competition.php:89 includes/class-anwpfl-data.php:468
+msgid "Knockout"
+msgstr "Chaveamento"
+
+#: includes/class-anwpfl-competition.php:93 includes/class-anwpfl-data.php:547
+msgctxt "round robin format"
+msgid "Single"
+msgstr "Único"
+
+#: includes/class-anwpfl-competition.php:94 includes/class-anwpfl-data.php:433
+msgctxt "round robin format"
+msgid "Double"
+msgstr "Duplo"
+
+#: includes/class-anwpfl-competition.php:95 includes/class-anwpfl-data.php:429
+msgctxt "round robin format"
+msgid "Custom"
+msgstr "Personalizado"
+
+#: includes/class-anwpfl-competition.php:99
+msgid "single-leg"
+msgstr "partida única"
+
+#: includes/class-anwpfl-competition.php:100
+msgid "two-legged"
+msgstr "partida de ida e volta"
+
+#: includes/class-anwpfl-competition.php:115
+msgid "Competition Title"
+msgstr "Título da Competição"
+
+#: includes/class-anwpfl-competition.php:188
+#: includes/class-anwpfl-options.php:101
+msgid "Display"
+msgstr "Exibição"
+
+#: includes/class-anwpfl-competition.php:240
+msgid "Display Options"
+msgstr "Opções de Exibição"
+
+#: includes/class-anwpfl-competition.php:255
+msgid "Competition Logo"
+msgstr "Logo da Competição"
+
+#: includes/class-anwpfl-competition.php:271
+msgid "Layout"
+msgstr "Layout"
+
+#: includes/class-anwpfl-competition.php:275
+msgid "Tabs - only for Multiple Stages or Rounds "
+msgstr "Guias - apenas para vários estágios ou rodadas "
+
+#: includes/class-anwpfl-competition.php:278
+#: includes/class-anwpfl-options.php:553 includes/class-anwpfl-options.php:563
+#: includes/class-anwpfl-options.php:573 includes/class-anwpfl-options.php:591
+#: includes/class-anwpfl-options.php:601 includes/class-anwpfl-options.php:611
+#: includes/class-anwpfl-options.php:629 includes/class-anwpfl-options.php:639
+#: includes/class-anwpfl-options.php:649 includes/class-anwpfl-options.php:667
+#: includes/class-anwpfl-options.php:677 includes/class-anwpfl-options.php:687
+#: includes/widgets/class-anwpfl-widget-matches.php:131
+#: includes/widgets/class-anwpfl-widget-matches.php:184
+msgid "Default"
+msgstr "Padrão"
+
+#: includes/class-anwpfl-competition.php:279
+msgid "Tabs"
+msgstr "Guias"
+
+#: includes/class-anwpfl-competition.php:286 includes/class-anwpfl-data.php:420
+msgid "Competition Order"
+msgstr "Ordem da Competição"
+
+#: includes/class-anwpfl-competition.php:1070
+msgid "Competition Stages"
+msgstr "Fases da Competição"
+
+#: includes/class-anwpfl-competition.php:1116
+#: includes/class-anwpfl-match.php:708
+msgid "Save"
+msgstr "Salvar"
+
+#: includes/class-anwpfl-competition.php:1127
+msgid "Please, create a season and a league first!"
+msgstr "Por favor, crie uma temporada e uma liga primeiro!"
+
+#: includes/class-anwpfl-competition.php:1292
+msgid "Stages"
+msgstr "Fases"
+
+#: includes/class-anwpfl-competition.php:1294
+#: includes/class-anwpfl-match.php:47 includes/class-anwpfl-match.php:60
+msgid "Matches"
+msgstr "Tabela"
+
+#: includes/class-anwpfl-competition.php:1339
+#: includes/class-anwpfl-competition.php:1396
+#: includes/class-anwpfl-data.php:459
+msgid "Groups"
+msgstr "Grupos"
+
+#: includes/class-anwpfl-competition.php:1339
+#: includes/class-anwpfl-competition.php:1396
+#: includes/class-anwpfl-data.php:563
+msgid "Ties"
+msgstr "Confrontos"
+
+#: includes/class-anwpfl-competition.php:1342
+#: includes/class-anwpfl-options.php:559 includes/class-anwpfl-options.php:597
+#: includes/class-anwpfl-options.php:635 includes/class-anwpfl-options.php:673
+msgid "Single"
+msgstr "Único"
+
+#: includes/class-anwpfl-competition.php:1363
+#: includes/class-anwpfl-options.php:569 includes/class-anwpfl-options.php:607
+#: includes/class-anwpfl-options.php:645 includes/class-anwpfl-options.php:683
+msgid "Multiple"
+msgstr "Plural"
+
+#: includes/class-anwpfl-competition.php:1386
+#: includes/class-anwpfl-competition.php:1411
+msgid "edit"
+msgstr "editar"
+
+#: includes/class-anwpfl-competition.php:1417
+msgid "!!! Error: Main Stage in Multistage competition is not set."
+msgstr ""
+"!!! Erro: A fase principal da competição de vários fases não está definida."
+
+#: includes/class-anwpfl-data.php:86
+msgctxt "country"
+msgid "Afghanistan"
+msgstr "Afeganistão"
+
+#: includes/class-anwpfl-data.php:87
+msgctxt "country"
+msgid "Albania"
+msgstr "Albânia"
+
+#: includes/class-anwpfl-data.php:88
+msgctxt "country"
+msgid "Algeria"
+msgstr "Argélia"
+
+#: includes/class-anwpfl-data.php:89
+msgctxt "country"
+msgid "American Samoa"
+msgstr "Samoa Americana"
+
+#: includes/class-anwpfl-data.php:90
+msgctxt "country"
+msgid "Andorra"
+msgstr "Andorra"
+
+#: includes/class-anwpfl-data.php:91
+msgctxt "country"
+msgid "Angola"
+msgstr "Angola"
+
+#: includes/class-anwpfl-data.php:92
+msgctxt "country"
+msgid "Anguilla"
+msgstr "Anguilla"
+
+#: includes/class-anwpfl-data.php:93
+msgctxt "country"
+msgid "Antarctica"
+msgstr "Antarctica"
+
+#: includes/class-anwpfl-data.php:94
+msgctxt "country"
+msgid "Antigua and Barbuda"
+msgstr "Antígua e Barbuda"
+
+#: includes/class-anwpfl-data.php:95
+msgctxt "country"
+msgid "Argentina"
+msgstr "Argentina"
+
+#: includes/class-anwpfl-data.php:96
+msgctxt "country"
+msgid "Armenia"
+msgstr "Armênia"
+
+#: includes/class-anwpfl-data.php:97
+msgctxt "country"
+msgid "Aruba"
+msgstr "Aruba"
+
+#: includes/class-anwpfl-data.php:98
+msgctxt "country"
+msgid "Australia"
+msgstr "Austrália"
+
+#: includes/class-anwpfl-data.php:99
+msgctxt "country"
+msgid "Austria"
+msgstr "Áustria"
+
+#: includes/class-anwpfl-data.php:100
+msgctxt "country"
+msgid "Azerbaijan"
+msgstr "Azerbaijão"
+
+#: includes/class-anwpfl-data.php:101
+msgctxt "country"
+msgid "Bahamas"
+msgstr "Bahamas"
+
+#: includes/class-anwpfl-data.php:102
+msgctxt "country"
+msgid "Bahrain"
+msgstr "Bahrein"
+
+#: includes/class-anwpfl-data.php:103
+msgctxt "country"
+msgid "Bangladesh"
+msgstr "Bangladesh"
+
+#: includes/class-anwpfl-data.php:104
+msgctxt "country"
+msgid "Barbados"
+msgstr "Barbados"
+
+#: includes/class-anwpfl-data.php:105
+msgctxt "country"
+msgid "Belarus"
+msgstr "Bielorrússia"
+
+#: includes/class-anwpfl-data.php:106
+msgctxt "country"
+msgid "Belgium"
+msgstr "Bélgica"
+
+#: includes/class-anwpfl-data.php:107
+msgctxt "country"
+msgid "Belize"
+msgstr "Belize"
+
+#: includes/class-anwpfl-data.php:108
+msgctxt "country"
+msgid "Benin"
+msgstr "Benim"
+
+#: includes/class-anwpfl-data.php:109
+msgctxt "country"
+msgid "Bermuda"
+msgstr "Bermuda"
+
+#: includes/class-anwpfl-data.php:110
+msgctxt "country"
+msgid "Bhutan"
+msgstr "Butão"
+
+#: includes/class-anwpfl-data.php:111
+msgctxt "country"
+msgid "Bolivia"
+msgstr "Bolívia"
+
+#: includes/class-anwpfl-data.php:112
+msgctxt "country"
+msgid "Bosnia and Herzegovina"
+msgstr "Bósnia e Herzegovina"
+
+#: includes/class-anwpfl-data.php:113
+msgctxt "country"
+msgid "Botswana"
+msgstr "Botsuana"
+
+#: includes/class-anwpfl-data.php:114
+msgctxt "country"
+msgid "Bouvet Island"
+msgstr "Ilha Bouvet"
+
+#: includes/class-anwpfl-data.php:115
+msgctxt "country"
+msgid "Brazil"
+msgstr "Brasil"
+
+#: includes/class-anwpfl-data.php:116
+msgctxt "country"
+msgid "British Indian Ocean Territory"
+msgstr "Território Britânico do Oceano Índico"
+
+#: includes/class-anwpfl-data.php:117
+msgctxt "country"
+msgid "Brunei Darussalam"
+msgstr "Brunei"
+
+#: includes/class-anwpfl-data.php:118
+msgctxt "country"
+msgid "Bulgaria"
+msgstr "Bulgária"
+
+#: includes/class-anwpfl-data.php:119
+msgctxt "country"
+msgid "Burkina Faso"
+msgstr "Burkina Faso"
+
+#: includes/class-anwpfl-data.php:120
+msgctxt "country"
+msgid "Burundi"
+msgstr "Burundi"
+
+#: includes/class-anwpfl-data.php:121
+msgctxt "country"
+msgid "Cambodia"
+msgstr "Cambodja"
+
+#: includes/class-anwpfl-data.php:122
+msgctxt "country"
+msgid "Cameroon"
+msgstr "Camarões"
+
+#: includes/class-anwpfl-data.php:123
+msgctxt "country"
+msgid "Canada"
+msgstr "Canadá"
+
+#: includes/class-anwpfl-data.php:124
+msgctxt "country"
+msgid "Cape Verde"
+msgstr "Cabo Verde"
+
+#: includes/class-anwpfl-data.php:125
+msgctxt "country"
+msgid "Cayman Islands"
+msgstr "Ilhas Cayman"
+
+#: includes/class-anwpfl-data.php:126
+msgctxt "country"
+msgid "Central African Republic"
+msgstr "República Centro-Africana"
+
+#: includes/class-anwpfl-data.php:127
+msgctxt "country"
+msgid "Chad"
+msgstr "Chade"
+
+#: includes/class-anwpfl-data.php:128
+msgctxt "country"
+msgid "Chile"
+msgstr "Chile"
+
+#: includes/class-anwpfl-data.php:129
+msgctxt "country"
+msgid "China"
+msgstr "China"
+
+#: includes/class-anwpfl-data.php:130
+msgctxt "country"
+msgid "Christmas Island"
+msgstr "Ilha Christmas"
+
+#: includes/class-anwpfl-data.php:131
+msgctxt "country"
+msgid "Cocos (Keeling) Islands"
+msgstr "Ilhas Cocos (Keeling)"
+
+#: includes/class-anwpfl-data.php:132
+msgctxt "country"
+msgid "Colombia"
+msgstr "Colômbia"
+
+#: includes/class-anwpfl-data.php:133
+msgctxt "country"
+msgid "Comoros"
+msgstr "Comores"
+
+#: includes/class-anwpfl-data.php:134
+msgctxt "country"
+msgid "Republic of the Congo"
+msgstr "Congo"
+
+#: includes/class-anwpfl-data.php:135
+msgctxt "country"
+msgid "Democratic Republic of the Congo"
+msgstr "RD Congo"
+
+#: includes/class-anwpfl-data.php:136
+msgctxt "country"
+msgid "Cook Islands"
+msgstr "Ilhas Cook"
+
+#: includes/class-anwpfl-data.php:137
+msgctxt "country"
+msgid "Costa Rica"
+msgstr "Costa Rica"
+
+#: includes/class-anwpfl-data.php:138
+msgctxt "country"
+msgid "Croatia (Hrvatska)"
+msgstr "Croácia"
+
+#: includes/class-anwpfl-data.php:139
+msgctxt "country"
+msgid "Cuba"
+msgstr "Cuba"
+
+#: includes/class-anwpfl-data.php:140
+msgctxt "country"
+msgid "Curaçao"
+msgstr "Curação"
+
+#: includes/class-anwpfl-data.php:141
+msgctxt "country"
+msgid "Cyprus"
+msgstr "Chipre"
+
+#: includes/class-anwpfl-data.php:142
+msgctxt "country"
+msgid "Czech Republic"
+msgstr "República Tcheca"
+
+#: includes/class-anwpfl-data.php:143
+msgctxt "country"
+msgid "Denmark"
+msgstr "Dinamarca"
+
+#: includes/class-anwpfl-data.php:144
+msgctxt "country"
+msgid "Djibouti"
+msgstr "Djibuti"
+
+#: includes/class-anwpfl-data.php:145
+msgctxt "country"
+msgid "Dominica"
+msgstr "Dominica"
+
+#: includes/class-anwpfl-data.php:146
+msgctxt "country"
+msgid "Dominican Republic"
+msgstr "República Dominicana"
+
+#: includes/class-anwpfl-data.php:147
+msgctxt "country"
+msgid "East Timor"
+msgstr "Timor Leste"
+
+#: includes/class-anwpfl-data.php:148
+msgctxt "country"
+msgid "Ecuador"
+msgstr "Equador"
+
+#: includes/class-anwpfl-data.php:149
+msgctxt "country"
+msgid "Egypt"
+msgstr "Egito"
+
+#: includes/class-anwpfl-data.php:150
+msgctxt "country"
+msgid "El Salvador"
+msgstr "El Salvador"
+
+#: includes/class-anwpfl-data.php:151
+msgctxt "country"
+msgid "Equatorial Guinea"
+msgstr "Guiné Equatorial"
+
+#: includes/class-anwpfl-data.php:152
+msgctxt "country"
+msgid "Eritrea"
+msgstr "Eritreia"
+
+#: includes/class-anwpfl-data.php:153
+msgctxt "country"
+msgid "Estonia"
+msgstr "Estônia"
+
+#: includes/class-anwpfl-data.php:154
+msgctxt "country"
+msgid "Ethiopia"
+msgstr "Etiópia"
+
+#: includes/class-anwpfl-data.php:155
+msgctxt "country"
+msgid "Falkland Islands (Malvinas)"
+msgstr "Ilhas Malvinas"
+
+#: includes/class-anwpfl-data.php:156
+msgctxt "country"
+msgid "Faroe Islands"
+msgstr "Ilhas Faroé"
+
+#: includes/class-anwpfl-data.php:157
+msgctxt "country"
+msgid "Fiji"
+msgstr "Fiji"
+
+#: includes/class-anwpfl-data.php:158
+msgctxt "country"
+msgid "Finland"
+msgstr "Finlândia"
+
+#: includes/class-anwpfl-data.php:159
+msgctxt "country"
+msgid "France"
+msgstr "França"
+
+#: includes/class-anwpfl-data.php:160
+msgctxt "country"
+msgid "France, Metropolitan"
+msgstr "França, Metropolitana"
+
+#: includes/class-anwpfl-data.php:161
+msgctxt "country"
+msgid "French Guiana"
+msgstr "Guiana Francesa"
+
+#: includes/class-anwpfl-data.php:162
+msgctxt "country"
+msgid "French Polynesia"
+msgstr "Polinésia Francesa"
+
+#: includes/class-anwpfl-data.php:163
+msgctxt "country"
+msgid "French Southern Territories"
+msgstr "Terras Austrais e Antárticas Francesas"
+
+#: includes/class-anwpfl-data.php:164
+msgctxt "country"
+msgid "Gabon"
+msgstr "Gabão"
+
+#: includes/class-anwpfl-data.php:165
+msgctxt "country"
+msgid "Gambia"
+msgstr "Gâmbia"
+
+#: includes/class-anwpfl-data.php:166
+msgctxt "country"
+msgid "Georgia"
+msgstr "Geórgia"
+
+#: includes/class-anwpfl-data.php:167
+msgctxt "country"
+msgid "Germany"
+msgstr "Alemanha"
+
+#: includes/class-anwpfl-data.php:168
+msgctxt "country"
+msgid "Ghana"
+msgstr "Gana"
+
+#: includes/class-anwpfl-data.php:169
+msgctxt "country"
+msgid "Gibraltar"
+msgstr "Gibraltar"
+
+#: includes/class-anwpfl-data.php:170
+msgctxt "country"
+msgid "Guernsey"
+msgstr "Guernsey"
+
+#: includes/class-anwpfl-data.php:171
+msgctxt "country"
+msgid "Greece"
+msgstr "Grécia"
+
+#: includes/class-anwpfl-data.php:172
+msgctxt "country"
+msgid "Greenland"
+msgstr "Groenlândia"
+
+#: includes/class-anwpfl-data.php:173
+msgctxt "country"
+msgid "Grenada"
+msgstr "Granada"
+
+#: includes/class-anwpfl-data.php:174
+msgctxt "country"
+msgid "Guadeloupe"
+msgstr "Guadalupe"
+
+#: includes/class-anwpfl-data.php:175
+msgctxt "country"
+msgid "Guam"
+msgstr "Guam"
+
+#: includes/class-anwpfl-data.php:176
+msgctxt "country"
+msgid "Guatemala"
+msgstr "Guatemala"
+
+#: includes/class-anwpfl-data.php:177
+msgctxt "country"
+msgid "Guinea"
+msgstr "Guiné"
+
+#: includes/class-anwpfl-data.php:178
+msgctxt "country"
+msgid "Guinea-Bissau"
+msgstr "Guiné-Bissau"
+
+#: includes/class-anwpfl-data.php:179
+msgctxt "country"
+msgid "Guyana"
+msgstr "Guiana"
+
+#: includes/class-anwpfl-data.php:180
+msgctxt "country"
+msgid "Haiti"
+msgstr "Haiti"
+
+#: includes/class-anwpfl-data.php:181
+msgctxt "country"
+msgid "Heard and Mc Donald Islands"
+msgstr "Ilha Heard e Ilhas McDonald"
+
+#: includes/class-anwpfl-data.php:182
+msgctxt "country"
+msgid "Honduras"
+msgstr "Honduras"
+
+#: includes/class-anwpfl-data.php:183
+msgctxt "country"
+msgid "Hong Kong"
+msgstr "Hong Kong"
+
+#: includes/class-anwpfl-data.php:184
+msgctxt "country"
+msgid "Hungary"
+msgstr "Hungria"
+
+#: includes/class-anwpfl-data.php:185
+msgctxt "country"
+msgid "Iceland"
+msgstr "Islândia"
+
+#: includes/class-anwpfl-data.php:186
+msgctxt "country"
+msgid "India"
+msgstr "Índia"
+
+#: includes/class-anwpfl-data.php:187
+msgctxt "country"
+msgid "Isle of Man"
+msgstr "Ilha de Man"
+
+#: includes/class-anwpfl-data.php:188
+msgctxt "country"
+msgid "Indonesia"
+msgstr "Indonésia"
+
+#: includes/class-anwpfl-data.php:189
+msgctxt "country"
+msgid "Iran (Islamic Republic of)"
+msgstr "Irã"
+
+#: includes/class-anwpfl-data.php:190
+msgctxt "country"
+msgid "Iraq"
+msgstr "Iraque"
+
+#: includes/class-anwpfl-data.php:191
+msgctxt "country"
+msgid "Ireland"
+msgstr "Irlanda"
+
+#: includes/class-anwpfl-data.php:192
+msgctxt "country"
+msgid "Israel"
+msgstr "Israel"
+
+#: includes/class-anwpfl-data.php:193
+msgctxt "country"
+msgid "Italy"
+msgstr "Itália"
+
+#: includes/class-anwpfl-data.php:194
+msgctxt "country"
+msgid "Ivory Coast"
+msgstr "Costa do Marfim"
+
+#: includes/class-anwpfl-data.php:195
+msgctxt "country"
+msgid "Jersey"
+msgstr "Jersey"
+
+#: includes/class-anwpfl-data.php:196
+msgctxt "country"
+msgid "Jamaica"
+msgstr "Jamaica"
+
+#: includes/class-anwpfl-data.php:197
+msgctxt "country"
+msgid "Japan"
+msgstr "Japão"
+
+#: includes/class-anwpfl-data.php:198
+msgctxt "country"
+msgid "Jordan"
+msgstr "Jordânia"
+
+#: includes/class-anwpfl-data.php:199
+msgctxt "country"
+msgid "Kazakhstan"
+msgstr "Cazaquistão"
+
+#: includes/class-anwpfl-data.php:200
+msgctxt "country"
+msgid "Kenya"
+msgstr "Quênia"
+
+#: includes/class-anwpfl-data.php:201
+msgctxt "country"
+msgid "Kiribati"
+msgstr "Quiribati"
+
+#: includes/class-anwpfl-data.php:202
+msgctxt "country"
+msgid "Korea, Democratic People's Republic of"
+msgstr "Coreia do Norte"
+
+#: includes/class-anwpfl-data.php:203
+msgctxt "country"
+msgid "Korea, Republic of"
+msgstr "Coreia do Sul"
+
+#: includes/class-anwpfl-data.php:204
+msgctxt "country"
+msgid "Kosovo"
+msgstr "Kosovo"
+
+#: includes/class-anwpfl-data.php:205
+msgctxt "country"
+msgid "Kuwait"
+msgstr "Kuwait"
+
+#: includes/class-anwpfl-data.php:206
+msgctxt "country"
+msgid "Kyrgyzstan"
+msgstr "Quirguistão"
+
+#: includes/class-anwpfl-data.php:207
+msgctxt "country"
+msgid "Lao People's Democratic Republic"
+msgstr "Laos"
+
+#: includes/class-anwpfl-data.php:208
+msgctxt "country"
+msgid "Latvia"
+msgstr "Letônia"
+
+#: includes/class-anwpfl-data.php:209
+msgctxt "country"
+msgid "Lebanon"
+msgstr "Líbano"
+
+#: includes/class-anwpfl-data.php:210
+msgctxt "country"
+msgid "Lesotho"
+msgstr "Lesoto"
+
+#: includes/class-anwpfl-data.php:211
+msgctxt "country"
+msgid "Liberia"
+msgstr "Libéria"
+
+#: includes/class-anwpfl-data.php:212
+msgctxt "country"
+msgid "Libyan Arab Jamahiriya"
+msgstr "Líbia"
+
+#: includes/class-anwpfl-data.php:213
+msgctxt "country"
+msgid "Liechtenstein"
+msgstr "Liechtenstein"
+
+#: includes/class-anwpfl-data.php:214
+msgctxt "country"
+msgid "Lithuania"
+msgstr "Lituânia"
+
+#: includes/class-anwpfl-data.php:215
+msgctxt "country"
+msgid "Luxembourg"
+msgstr "Luxemburgo"
+
+#: includes/class-anwpfl-data.php:216
+msgctxt "country"
+msgid "Macau"
+msgstr "Macau"
+
+#: includes/class-anwpfl-data.php:217
+msgctxt "country"
+msgid "Macedonia"
+msgstr "Macedônia"
+
+#: includes/class-anwpfl-data.php:218
+msgctxt "country"
+msgid "Madagascar"
+msgstr "Madagascar"
+
+#: includes/class-anwpfl-data.php:219
+msgctxt "country"
+msgid "Malawi"
+msgstr "Malawi"
+
+#: includes/class-anwpfl-data.php:220
+msgctxt "country"
+msgid "Malaysia"
+msgstr "Malásia"
+
+#: includes/class-anwpfl-data.php:221
+msgctxt "country"
+msgid "Maldives"
+msgstr "Maldivas"
+
+#: includes/class-anwpfl-data.php:222
+msgctxt "country"
+msgid "Mali"
+msgstr "Mali"
+
+#: includes/class-anwpfl-data.php:223
+msgctxt "country"
+msgid "Malta"
+msgstr "Malta"
+
+#: includes/class-anwpfl-data.php:224
+msgctxt "country"
+msgid "Marshall Islands"
+msgstr "Ilhas Marshall"
+
+#: includes/class-anwpfl-data.php:225
+msgctxt "country"
+msgid "Martinique"
+msgstr "Martinica"
+
+#: includes/class-anwpfl-data.php:226
+msgctxt "country"
+msgid "Mauritania"
+msgstr "Mauritânia"
+
+#: includes/class-anwpfl-data.php:227
+msgctxt "country"
+msgid "Mauritius"
+msgstr "Ilhas Maurício"
+
+#: includes/class-anwpfl-data.php:228
+msgctxt "country"
+msgid "Mayotte"
+msgstr "Maiote"
+
+#: includes/class-anwpfl-data.php:229
+msgctxt "country"
+msgid "Mexico"
+msgstr "México"
+
+#: includes/class-anwpfl-data.php:230
+msgctxt "country"
+msgid "Micronesia, Federated States of"
+msgstr "Micronésia"
+
+#: includes/class-anwpfl-data.php:231
+msgctxt "country"
+msgid "Moldova, Republic of"
+msgstr "Moldávia"
+
+#: includes/class-anwpfl-data.php:232
+msgctxt "country"
+msgid "Monaco"
+msgstr "Mônaco"
+
+#: includes/class-anwpfl-data.php:233
+msgctxt "country"
+msgid "Mongolia"
+msgstr "Mongólia"
+
+#: includes/class-anwpfl-data.php:234
+msgctxt "country"
+msgid "Montenegro"
+msgstr "Montenegro"
+
+#: includes/class-anwpfl-data.php:235
+msgctxt "country"
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: includes/class-anwpfl-data.php:236
+msgctxt "country"
+msgid "Morocco"
+msgstr "Marrocos"
+
+#: includes/class-anwpfl-data.php:237
+msgctxt "country"
+msgid "Mozambique"
+msgstr "Moçambique"
+
+#: includes/class-anwpfl-data.php:238
+msgctxt "country"
+msgid "Myanmar"
+msgstr "Myanmar"
+
+#: includes/class-anwpfl-data.php:239
+msgctxt "country"
+msgid "Namibia"
+msgstr "Namíbia"
+
+#: includes/class-anwpfl-data.php:240
+msgctxt "country"
+msgid "Nauru"
+msgstr "Nauru"
+
+#: includes/class-anwpfl-data.php:241
+msgctxt "country"
+msgid "Nepal"
+msgstr "Nepal"
+
+#: includes/class-anwpfl-data.php:242
+msgctxt "country"
+msgid "Netherlands"
+msgstr "Holanda"
+
+#: includes/class-anwpfl-data.php:243
+msgctxt "country"
+msgid "Netherlands Antilles"
+msgstr "Antilhas Holandesas"
+
+#: includes/class-anwpfl-data.php:244
+msgctxt "country"
+msgid "New Caledonia"
+msgstr "Nova Caledônia"
+
+#: includes/class-anwpfl-data.php:245
+msgctxt "country"
+msgid "New Zealand"
+msgstr "Nova Zelândia"
+
+#: includes/class-anwpfl-data.php:246
+msgctxt "country"
+msgid "Nicaragua"
+msgstr "Nicarágua"
+
+#: includes/class-anwpfl-data.php:247
+msgctxt "country"
+msgid "Niger"
+msgstr "Níger"
+
+#: includes/class-anwpfl-data.php:248
+msgctxt "country"
+msgid "Nigeria"
+msgstr "Nigéria"
+
+#: includes/class-anwpfl-data.php:249
+msgctxt "country"
+msgid "Niue"
+msgstr "Niuê"
+
+#: includes/class-anwpfl-data.php:250
+msgctxt "country"
+msgid "Norfolk Island"
+msgstr "Ilha Norfolque"
+
+#: includes/class-anwpfl-data.php:251
+msgctxt "country"
+msgid "Northern Mariana Islands"
+msgstr "Ilhas Marianas do Norte"
+
+#: includes/class-anwpfl-data.php:252
+msgctxt "country"
+msgid "Norway"
+msgstr "Noruega"
+
+#: includes/class-anwpfl-data.php:253
+msgctxt "country"
+msgid "Oman"
+msgstr "Omã"
+
+#: includes/class-anwpfl-data.php:254
+msgctxt "country"
+msgid "Pakistan"
+msgstr "Paquistão"
+
+#: includes/class-anwpfl-data.php:255
+msgctxt "country"
+msgid "Palau"
+msgstr "Palau"
+
+#: includes/class-anwpfl-data.php:256
+msgctxt "country"
+msgid "Palestine"
+msgstr "Palestina"
+
+#: includes/class-anwpfl-data.php:257
+msgctxt "country"
+msgid "Panama"
+msgstr "Panamá"
+
+#: includes/class-anwpfl-data.php:258
+msgctxt "country"
+msgid "Papua New Guinea"
+msgstr "Papua-Nova Guiné"
+
+#: includes/class-anwpfl-data.php:259
+msgctxt "country"
+msgid "Paraguay"
+msgstr "Paraguai"
+
+#: includes/class-anwpfl-data.php:260
+msgctxt "country"
+msgid "Peru"
+msgstr "Peru"
+
+#: includes/class-anwpfl-data.php:261
+msgctxt "country"
+msgid "Philippines"
+msgstr "Filipinas"
+
+#: includes/class-anwpfl-data.php:262
+msgctxt "country"
+msgid "Pitcairn"
+msgstr "Ilhas Pitcairn"
+
+#: includes/class-anwpfl-data.php:263
+msgctxt "country"
+msgid "Poland"
+msgstr "Polônia"
+
+#: includes/class-anwpfl-data.php:264
+msgctxt "country"
+msgid "Portugal"
+msgstr "Portugal"
+
+#: includes/class-anwpfl-data.php:265
+msgctxt "country"
+msgid "Puerto Rico"
+msgstr "Porto Rico"
+
+#: includes/class-anwpfl-data.php:266
+msgctxt "country"
+msgid "Qatar"
+msgstr "Qatar"
+
+#: includes/class-anwpfl-data.php:267
+msgctxt "country"
+msgid "Reunion"
+msgstr "Ilha da Reunião"
+
+#: includes/class-anwpfl-data.php:268
+msgctxt "country"
+msgid "Romania"
+msgstr "Romênia"
+
+#: includes/class-anwpfl-data.php:269
+msgctxt "country"
+msgid "Russian Federation"
+msgstr "Rússia"
+
+#: includes/class-anwpfl-data.php:270
+msgctxt "country"
+msgid "Rwanda"
+msgstr "Ruanda"
+
+#: includes/class-anwpfl-data.php:271
+msgctxt "country"
+msgid "Saint Kitts and Nevis"
+msgstr "São Cristóvão e Neves"
+
+#: includes/class-anwpfl-data.php:272
+msgctxt "country"
+msgid "Saint Lucia"
+msgstr "Santa Lúcia"
+
+#: includes/class-anwpfl-data.php:273
+msgctxt "country"
+msgid "Saint Vincent and the Grenadines"
+msgstr "São Vicente e Granadinas"
+
+#: includes/class-anwpfl-data.php:274
+msgctxt "country"
+msgid "Samoa"
+msgstr "Samoa"
+
+#: includes/class-anwpfl-data.php:275
+msgctxt "country"
+msgid "San Marino"
+msgstr "San Marino"
+
+#: includes/class-anwpfl-data.php:276
+msgctxt "country"
+msgid "Sao Tome and Principe"
+msgstr "São Tomé e Príncipe"
+
+#: includes/class-anwpfl-data.php:277
+msgctxt "country"
+msgid "Saudi Arabia"
+msgstr "Arábia Saudita"
+
+#: includes/class-anwpfl-data.php:278
+msgctxt "country"
+msgid "Senegal"
+msgstr "Senegal"
+
+#: includes/class-anwpfl-data.php:279
+msgctxt "country"
+msgid "Serbia"
+msgstr "Sérvia"
+
+#: includes/class-anwpfl-data.php:280
+msgctxt "country"
+msgid "Seychelles"
+msgstr "Seicheles"
+
+#: includes/class-anwpfl-data.php:281
+msgctxt "country"
+msgid "Sierra Leone"
+msgstr "Serra Leoa"
+
+#: includes/class-anwpfl-data.php:282
+msgctxt "country"
+msgid "Singapore"
+msgstr "Cingapura"
+
+#: includes/class-anwpfl-data.php:283
+msgctxt "country"
+msgid "Slovakia"
+msgstr "Eslováquia"
+
+#: includes/class-anwpfl-data.php:284
+msgctxt "country"
+msgid "Slovenia"
+msgstr "Eslovênia"
+
+#: includes/class-anwpfl-data.php:285
+msgctxt "country"
+msgid "Solomon Islands"
+msgstr "Ilhas Salomão"
+
+#: includes/class-anwpfl-data.php:286
+msgctxt "country"
+msgid "Somalia"
+msgstr "Somália"
+
+#: includes/class-anwpfl-data.php:287
+msgctxt "country"
+msgid "South Africa"
+msgstr "África do Sul"
+
+#: includes/class-anwpfl-data.php:288
+msgctxt "country"
+msgid "South Sudan"
+msgstr "Sudão do Sul"
+
+#: includes/class-anwpfl-data.php:289
+msgctxt "country"
+msgid "South Georgia South Sandwich Islands"
+msgstr "Ilhas Geórgia do Sul e Sandwich do Sul"
+
+#: includes/class-anwpfl-data.php:290
+msgctxt "country"
+msgid "Spain"
+msgstr "Espanha"
+
+#: includes/class-anwpfl-data.php:291
+msgctxt "country"
+msgid "Sri Lanka"
+msgstr "Sri Lanka"
+
+#: includes/class-anwpfl-data.php:292
+msgctxt "country"
+msgid "St. Helena"
+msgstr "Santa Helena"
+
+#: includes/class-anwpfl-data.php:293
+msgctxt "country"
+msgid "St. Pierre and Miquelon"
+msgstr "São Pedro e Miquelão"
+
+#: includes/class-anwpfl-data.php:294
+msgctxt "country"
+msgid "Sudan"
+msgstr "Sudão"
+
+#: includes/class-anwpfl-data.php:295
+msgctxt "country"
+msgid "Suriname"
+msgstr "Suriname"
+
+#: includes/class-anwpfl-data.php:296
+msgctxt "country"
+msgid "Svalbard and Jan Mayen Islands"
+msgstr "Svalbard e Jan Mayen"
+
+#: includes/class-anwpfl-data.php:297
+msgctxt "country"
+msgid "Swaziland"
+msgstr "Suazilândia"
+
+#: includes/class-anwpfl-data.php:298
+msgctxt "country"
+msgid "Sweden"
+msgstr "Suécia"
+
+#: includes/class-anwpfl-data.php:299
+msgctxt "country"
+msgid "Switzerland"
+msgstr "Suíça"
+
+#: includes/class-anwpfl-data.php:300
+msgctxt "country"
+msgid "Syrian Arab Republic"
+msgstr "Síria"
+
+#: includes/class-anwpfl-data.php:301
+msgctxt "country"
+msgid "Taiwan"
+msgstr "Taiwan"
+
+#: includes/class-anwpfl-data.php:302
+msgctxt "country"
+msgid "Tajikistan"
+msgstr "Tajiquistão"
+
+#: includes/class-anwpfl-data.php:303
+msgctxt "country"
+msgid "Tanzania, United Republic of"
+msgstr "Tanzânia"
+
+#: includes/class-anwpfl-data.php:304
+msgctxt "country"
+msgid "Thailand"
+msgstr "Tailândia"
+
+#: includes/class-anwpfl-data.php:305
+msgctxt "country"
+msgid "Togo"
+msgstr "Togo"
+
+#: includes/class-anwpfl-data.php:306
+msgctxt "country"
+msgid "Tokelau"
+msgstr "Tokelau"
+
+#: includes/class-anwpfl-data.php:307
+msgctxt "country"
+msgid "Tonga"
+msgstr "Tonga"
+
+#: includes/class-anwpfl-data.php:308
+msgctxt "country"
+msgid "Trinidad and Tobago"
+msgstr "Trindade e Tobago"
+
+#: includes/class-anwpfl-data.php:309
+msgctxt "country"
+msgid "Tunisia"
+msgstr "Tunísia"
+
+#: includes/class-anwpfl-data.php:310
+msgctxt "country"
+msgid "Turkey"
+msgstr "Turquia"
+
+#: includes/class-anwpfl-data.php:311
+msgctxt "country"
+msgid "Turkmenistan"
+msgstr "Turcomenistão"
+
+#: includes/class-anwpfl-data.php:312
+msgctxt "country"
+msgid "Turks and Caicos Islands"
+msgstr "Ilhas Turcas e Caicos"
+
+#: includes/class-anwpfl-data.php:313
+msgctxt "country"
+msgid "Tuvalu"
+msgstr "Tuvalu"
+
+#: includes/class-anwpfl-data.php:314
+msgctxt "country"
+msgid "Uganda"
+msgstr "Uganda"
+
+#: includes/class-anwpfl-data.php:315
+msgctxt "country"
+msgid "Ukraine"
+msgstr "Ucrânia"
+
+#: includes/class-anwpfl-data.php:316
+msgctxt "country"
+msgid "United Arab Emirates"
+msgstr "Emirados Árabes Unidos"
+
+#: includes/class-anwpfl-data.php:317
+msgctxt "country"
+msgid "United Kingdom"
+msgstr "Reino Unido"
+
+#: includes/class-anwpfl-data.php:318
+msgctxt "country"
+msgid "United States"
+msgstr "Estados Unidos"
+
+#: includes/class-anwpfl-data.php:319
+msgctxt "country"
+msgid "United States minor outlying islands"
+msgstr "Ilhas Menores Distantes dos Estados Unidos"
+
+#: includes/class-anwpfl-data.php:320
+msgctxt "country"
+msgid "Uruguay"
+msgstr "Uruguai"
+
+#: includes/class-anwpfl-data.php:321
+msgctxt "country"
+msgid "Uzbekistan"
+msgstr "Uzbequistão"
+
+#: includes/class-anwpfl-data.php:322
+msgctxt "country"
+msgid "Vanuatu"
+msgstr "Vanuatu"
+
+#: includes/class-anwpfl-data.php:323
+msgctxt "country"
+msgid "Vatican City State"
+msgstr "Vaticano"
+
+#: includes/class-anwpfl-data.php:324
+msgctxt "country"
+msgid "Venezuela"
+msgstr "Venezuela"
+
+#: includes/class-anwpfl-data.php:325
+msgctxt "country"
+msgid "Vietnam"
+msgstr "Vietnã"
+
+#: includes/class-anwpfl-data.php:326
+msgctxt "country"
+msgid "Virgin Islands (British)"
+msgstr "Ilhas Virgens Britânicas"
+
+#: includes/class-anwpfl-data.php:327
+msgctxt "country"
+msgid "Virgin Islands (U.S.)"
+msgstr "Ilhas Virgens Americanas"
+
+#: includes/class-anwpfl-data.php:328
+msgctxt "country"
+msgid "Wallis and Futuna Islands"
+msgstr "Ilhas Wallis e Futuna"
+
+#: includes/class-anwpfl-data.php:329
+msgctxt "country"
+msgid "Western Sahara"
+msgstr "Saara Ocidental"
+
+#: includes/class-anwpfl-data.php:330
+msgctxt "country"
+msgid "Yemen"
+msgstr "Iémen"
+
+#: includes/class-anwpfl-data.php:331
+msgctxt "country"
+msgid "Zaire"
+msgstr "Zaire"
+
+#: includes/class-anwpfl-data.php:332
+msgctxt "country"
+msgid "Zambia"
+msgstr "Zâmbia"
+
+#: includes/class-anwpfl-data.php:333
+msgctxt "country"
+msgid "Zimbabwe"
+msgstr "Zimbábue"
+
+#: includes/class-anwpfl-data.php:340
+msgctxt "country"
+msgid "England"
+msgstr "Inglaterra"
+
+#: includes/class-anwpfl-data.php:341
+msgctxt "country"
+msgid "Northern_Ireland"
+msgstr "Irlanda do Norte"
+
+#: includes/class-anwpfl-data.php:342
+msgctxt "country"
+msgid "Scotland"
+msgstr "Escócia"
+
+#: includes/class-anwpfl-data.php:343
+msgctxt "country"
+msgid "Wales"
+msgstr "País de Gales"
+
+#: includes/class-anwpfl-data.php:357 includes/class-anwpfl-options.php:541
+#: includes/class-anwpfl-options.php:563
+msgctxt "position"
+msgid "Goalkeeper"
+msgstr "Goleiro"
+
+#: includes/class-anwpfl-data.php:358 includes/class-anwpfl-options.php:579
+#: includes/class-anwpfl-options.php:601
+msgctxt "position"
+msgid "Defender"
+msgstr "Defensor"
+
+#: includes/class-anwpfl-data.php:359 includes/class-anwpfl-options.php:617
+#: includes/class-anwpfl-options.php:639
+msgctxt "position"
+msgid "Midfielder"
+msgstr "Meia"
+
+#: includes/class-anwpfl-data.php:360 includes/class-anwpfl-options.php:655
+#: includes/class-anwpfl-options.php:677
+msgctxt "position"
+msgid "Forward"
+msgstr "Atacante"
+
+#: includes/class-anwpfl-data.php:364 includes/class-anwpfl-options.php:573
+msgid "Goalkeepers"
+msgstr "Goleiros"
+
+#: includes/class-anwpfl-data.php:365 includes/class-anwpfl-options.php:611
+msgid "Defenders"
+msgstr "Defensores"
+
+#: includes/class-anwpfl-data.php:366 includes/class-anwpfl-options.php:649
+msgid "Midfielders"
+msgstr "Meias"
+
+#: includes/class-anwpfl-data.php:367 includes/class-anwpfl-options.php:687
+msgid "Forwards"
+msgstr "Atacantes"
+
+#: includes/class-anwpfl-data.php:371
+msgid "Yellow Card"
+msgstr "Cartão Amarelo"
+
+#: includes/class-anwpfl-data.php:372
+msgid "Red Card"
+msgstr "Cartão Vermelho"
+
+#: includes/class-anwpfl-data.php:373
+msgid "2nd Yellow > Red Card"
+msgstr "2º Amarelo > Cartão Vermelho"
+
+#: includes/class-anwpfl-data.php:377
+msgctxt "Win - in club form"
+msgid "w"
+msgstr "v"
+
+#: includes/class-anwpfl-data.php:378
+msgctxt "Draw - in club form"
+msgid "d"
+msgstr "e"
+
+#: includes/class-anwpfl-data.php:379
+msgctxt "Lost - in club form"
+msgid "l"
+msgstr "d"
+
+#: includes/class-anwpfl-data.php:383
+msgid "You can add or remove clubs only on Competition page"
+msgstr "Você pode adicionar ou remover clubes apenas na página da competição"
+
+#: includes/class-anwpfl-data.php:384
+msgid "add event"
+msgstr "adicionar evento"
+
+#: includes/class-anwpfl-data.php:385
+msgid "Add Initial Points"
+msgstr "Adicionar pontos iniciais"
+
+#: includes/class-anwpfl-data.php:386
+msgid "Add Match Event"
+msgstr "Adicionar evento do jogo"
+
+#: includes/class-anwpfl-data.php:387
+msgid "Add new group (tie)"
+msgstr "Adicionar novo grupo (confronto)"
+
+#: includes/class-anwpfl-data.php:388
+msgid "Add New Round"
+msgstr "Adicionar nova rodada"
+
+#: includes/class-anwpfl-data.php:389
+msgid "- add player -"
+msgstr "- adicionar jogador -"
+
+#: includes/class-anwpfl-data.php:390
+msgid "add/remove color"
+msgstr "adicionar/remover cor"
+
+#: includes/class-anwpfl-data.php:391
+msgid "add/remove points"
+msgstr "adicionar/remover pontos"
+
+#: includes/class-anwpfl-data.php:392
+msgid "Add Table Color"
+msgstr "Adicionar tabela de cor"
+
+#: includes/class-anwpfl-data.php:393
+msgid "Additional Minute"
+msgstr "Acréscimos"
+
+#: includes/class-anwpfl-data.php:394
+msgid "Aggregate Text"
+msgstr "Texto agregado"
+
+#: includes/class-anwpfl-data.php:395
+msgid "For Example: \"Agg: 2-2; Team A won on penalties (5-3)\""
+msgstr "Por exemplo: \"Placar: 2-2; Time A venceu nos pênaltis (5-3)\""
+
+#: includes/class-anwpfl-data.php:396
+msgid "Are you sure?"
+msgstr "Você tem certeza?"
+
+#: includes/class-anwpfl-data.php:397 templates/match/match-referees.php:75
+#: templates/match/match-referees.php:98
+msgid "Assistant"
+msgstr "Assistências"
+
+#: includes/class-anwpfl-data.php:398
+msgid "Please, attach some clubs to the current Standing Table"
+msgstr "Por favor, anexe alguns clubes à atual Classificação"
+
+#: includes/class-anwpfl-data.php:399
+msgid "Attach Person to Staff"
+msgstr "Anexar em Estafe"
+
+#: includes/class-anwpfl-data.php:400
+msgid "Attach Player to Squad"
+msgstr "Anexar Jogador no Elenco"
+
+#: includes/class-anwpfl-data.php:401
+msgid "Attach to squad"
+msgstr "Anexar no Elenco"
+
+#: includes/class-anwpfl-data.php:402 templates/match/match.php:86
+msgid "Attendance"
+msgstr "Freqüência"
+
+#: includes/class-anwpfl-data.php:403
+msgid "Automatic Position Calculation"
+msgstr "Cálculo de posição automática"
+
+#: includes/class-anwpfl-data.php:404
+msgid "Available rules"
+msgstr "Regras disponíveis"
+
+#: includes/class-anwpfl-data.php:405
+msgid "Away Club"
+msgstr "Clube Visitante"
+
+#: includes/class-anwpfl-data.php:406 templates/match/match-stats.php:212
+msgid "Ball Possession"
+msgstr "Posse de bola"
+
+#: includes/class-anwpfl-data.php:407
+msgid "Basic Info"
+msgstr "Informação básica"
+
+#: includes/class-anwpfl-data.php:408
+msgid "Card"
+msgstr "Cartão"
+
+#: includes/class-anwpfl-data.php:409
+msgid "Card Type"
+msgstr "Tipo de Cartão"
+
+#: includes/class-anwpfl-data.php:410
+msgid "Clear"
+msgstr "Claro"
+
+#: includes/class-anwpfl-data.php:411
+msgid "Close"
+msgstr "Fechar"
+
+#: includes/class-anwpfl-data.php:413
+msgid "Club initial points"
+msgstr "Pontos iniciais do clube"
+
+#: includes/class-anwpfl-data.php:414
+msgid "Club Staff"
+msgstr "Estafe do Clube"
+
+#: includes/class-anwpfl-data.php:416 templates/match/match-lineups.php:250
+#: templates/match/match-lineups.php:426
+msgid "Coach"
+msgstr "Treinador"
+
+#: includes/class-anwpfl-data.php:417
+msgid "Color"
+msgstr "Cor"
+
+#: includes/class-anwpfl-data.php:418
+msgid "Color by"
+msgstr "Cor por"
+
+#: includes/class-anwpfl-data.php:421
+msgid ""
+"Used for Knockout matches. For example: order is used on the Player page in "
+"the list of latest matches grouped by competition"
+msgstr ""
+"Usado para partidas de mata-mata. Por exemplo: o pedido é usado na página do "
+"jogador na lista de jogos mais recentes agrupados por competição"
+
+#: includes/class-anwpfl-data.php:422
+msgid "Competition Status"
+msgstr "Status da Competição"
+
+#: includes/class-anwpfl-data.php:423
+msgid "Competition Type"
+msgstr "Tipo de Competição"
+
+#: includes/class-anwpfl-data.php:424
+msgid "Confirm Delete"
+msgstr "Confirme a exclusão"
+
+#: includes/class-anwpfl-data.php:425
+msgid "Corner Kicks"
+msgstr "Escanteio"
+
+#: includes/class-anwpfl-data.php:426 includes/class-anwpfl-match.php:613
+msgid "Please, create a Competition first."
+msgstr "Por favor, crie uma competição primeiro."
+
+#: includes/class-anwpfl-data.php:427
+msgid "Create different types of Competitions"
+msgstr "Crie diferentes tipos de competições"
+
+#: includes/class-anwpfl-data.php:428
+msgid "Current standing ranking rules"
+msgstr "Regras de classificação"
+
+#: includes/class-anwpfl-data.php:430
+msgid "Edit Player number"
+msgstr "Editar número de jogador"
+
+#: includes/class-anwpfl-data.php:431
+msgid "Delete Round"
+msgstr "Deletar Rodada"
+
+#: includes/class-anwpfl-data.php:432
+msgid "Disable"
+msgstr "Desabilitar"
+
+#: includes/class-anwpfl-data.php:434 includes/class-anwpfl-data.php:619
+msgid "Drawn"
+msgstr "Empate"
+
+#: includes/class-anwpfl-data.php:435
+msgid "Edit Group Title"
+msgstr "Editar título do grupo"
+
+#: includes/class-anwpfl-data.php:436
+msgid "Edit Number"
+msgstr "Editar nome"
+
+#: includes/class-anwpfl-data.php:437
+msgid "Edit Squad"
+msgstr "Editar Elenco"
+
+#: includes/class-anwpfl-data.php:438
+msgid "Enable"
+msgstr "Habilitar"
+
+#: includes/class-anwpfl-data.php:439
+msgid "You can add events only for finished matches."
+msgstr "Você pode adicionar eventos apenas para jogos encerrados."
+
+#: includes/class-anwpfl-data.php:440 includes/class-anwpfl-match.php:1647
+msgid "Extra Time"
+msgstr "Prorrogação"
+
+#: includes/class-anwpfl-data.php:441
+msgid "Filter players by"
+msgstr "Filtrar jogadores por"
+
+#: includes/class-anwpfl-data.php:442
+msgid "Final Score"
+msgstr "Placar Final"
+
+#: includes/class-anwpfl-data.php:443
+#: includes/widgets/class-anwpfl-widget-matches.php:86
+msgid "Fixture"
+msgstr "Próximo Jogo"
+
+#: includes/class-anwpfl-data.php:444 templates/match/match-stats.php:152
+msgid "Fouls"
+msgstr "Faltas"
+
+#: includes/class-anwpfl-data.php:445
+msgid "Friendly"
+msgstr "Amistoso"
+
+#: includes/class-anwpfl-data.php:446
+msgid "From Penalty"
+msgstr "De penalidade"
+
+#: includes/class-anwpfl-data.php:447
+msgid "from previous round"
+msgstr "da rodada anterior"
+
+#: includes/class-anwpfl-data.php:448 includes/class-anwpfl-match.php:1637
+#: templates/match/match.php:119 templates/match/match.php:176
+msgid "Full Time"
+msgstr "Encerrado"
+
+#: includes/class-anwpfl-data.php:449
+msgctxt "table - goals against"
+msgid "GA"
+msgstr "GC"
+
+#: includes/class-anwpfl-data.php:450
+msgctxt "table - goals diff"
+msgid "GD"
+msgstr "SG"
+
+#: includes/class-anwpfl-data.php:452
+msgctxt "table - goals for"
+msgid "GF"
+msgstr "GP"
+
+#: includes/class-anwpfl-data.php:453
+msgid "Goal"
+msgstr "Gol"
+
+#: includes/class-anwpfl-data.php:454
+msgid "Goal From Penalty"
+msgstr "Gol de Pênalti"
+
+#: includes/class-anwpfl-data.php:455
+msgid "GOALS"
+msgstr "GOLS"
+
+#: includes/class-anwpfl-data.php:456
+msgid "Goals Difference"
+msgstr "Saldo de Gols"
+
+#: includes/class-anwpfl-data.php:457
+msgid "Goals Scored"
+msgstr "Gols Pró"
+
+#: includes/class-anwpfl-data.php:458 includes/class-anwpfl-standing.php:652
+msgid "Group"
+msgstr "Grupo"
+
+#: includes/class-anwpfl-data.php:460 templates/match/match.php:114
+msgid "Half Time"
+msgstr "Intervalo"
+
+#: includes/class-anwpfl-data.php:461
+msgid "Home Club"
+msgstr "Clube Mandante"
+
+#: includes/class-anwpfl-data.php:462
+msgctxt "Substitute"
+msgid "IN"
+msgstr "Entra"
+
+#: includes/class-anwpfl-data.php:463
+msgid "in club"
+msgstr "no clube"
+
+#: includes/class-anwpfl-data.php:464
+msgid "inherit (from settings)"
+msgstr "herdar (de configurações)"
+
+#: includes/class-anwpfl-data.php:465
+msgid "Initial points"
+msgstr "Pontos iniciais"
+
+#: includes/class-anwpfl-data.php:466
+msgid "ignore group structure"
+msgstr "ignorar a estrutura do grupo"
+
+#: includes/class-anwpfl-data.php:467
+msgid "Job"
+msgstr "Função"
+
+#: includes/class-anwpfl-data.php:469
+msgid "Knockout Format"
+msgstr "Formato de mata-mata"
+
+#: includes/class-anwpfl-data.php:470 includes/class-anwpfl-league.php:43
+#: includes/class-anwpfl-match.php:656 includes/class-anwpfl-match.php:745
+msgid "League"
+msgstr "Liga"
+
+#: includes/class-anwpfl-data.php:471
+msgid "left club"
+msgstr "clube esquerdo"
+
+#: includes/class-anwpfl-data.php:472 templates/match/match-lineups.php:79
+msgid "Line Ups"
+msgstr "Escalações"
+
+#: includes/class-anwpfl-data.php:473 includes/class-anwpfl-data.php:623
+msgid "Lost"
+msgstr "Derrotas"
+
+#: includes/class-anwpfl-data.php:474
+msgid "Main Stage ID"
+msgstr "ID da fase inicial"
+
+#: includes/class-anwpfl-data.php:475
+msgid "match"
+msgstr "jogo"
+
+#: includes/class-anwpfl-data.php:476 includes/class-anwpfl-match.php:591
+#: includes/class-anwpfl-match.php:1490
+msgid "Match Data"
+msgstr "Dados do jogo"
+
+#: includes/class-anwpfl-data.php:477
+msgid "Match Events"
+msgstr "Eventos do Jogo"
+
+#: includes/class-anwpfl-data.php:478
+msgid "Match Stats"
+msgstr "Estatísticas de jogo"
+
+#: includes/class-anwpfl-data.php:479
+msgid "Match Setup"
+msgstr "Configuração do Jogo"
+
+#: includes/class-anwpfl-data.php:480 includes/class-anwpfl-match.php:1783
+#: includes/class-anwpfl-options.php:531
+msgid "MatchWeek"
+msgstr "Jogos da Semana"
+
+#: includes/class-anwpfl-data.php:481
+msgid "Minute"
+msgstr "Minuto"
+
+#: includes/class-anwpfl-data.php:482
+msgctxt "Substitute"
+msgid "Missed Penalty"
+msgstr "Pênalti Perdido"
+
+#: includes/class-anwpfl-data.php:483
+msgid "Multistage"
+msgstr "Várias Fases"
+
+#: includes/class-anwpfl-data.php:484
+msgid "Multistage Main"
+msgstr "Fase Inicial"
+
+#: includes/class-anwpfl-data.php:485
+msgid "Multistage Secondary"
+msgstr "Segunda Fase"
+
+#: includes/class-anwpfl-data.php:486
+msgid "Multistage Setup"
+msgstr "Configuração das Fases"
+
+#: includes/class-anwpfl-data.php:487
+msgid "How To Setup Competition With Multiple Stages"
+msgstr "Como configurar a competição com várias fases"
+
+#: includes/class-anwpfl-data.php:488 includes/class-anwpfl-options.php:262
+#: includes/class-anwpfl-options.php:361
+#: includes/widgets/class-anwpfl-widget-cards.php:119
+#: includes/widgets/class-anwpfl-widget-cards.php:129
+#: includes/widgets/class-anwpfl-widget-player.php:87
+#: includes/widgets/class-anwpfl-widget-players.php:121
+#: includes/widgets/class-anwpfl-widget-players.php:131
+msgid "No"
+msgstr "Não"
+
+#: includes/class-anwpfl-data.php:489
+msgid "No players found."
+msgstr "Nenhum  jogador encontrado."
+
+#: includes/class-anwpfl-data.php:490
+msgid "Notes (below table)"
+msgstr "Notas (abaixo da tabela)"
+
+#: includes/class-anwpfl-data.php:491
+msgid "Official"
+msgstr "Oficial"
+
+#: includes/class-anwpfl-data.php:492 templates/match/match-stats.php:192
+msgid "Offsides"
+msgstr "Impedimentos"
+
+#: includes/class-anwpfl-data.php:493
+msgid "on loan"
+msgstr "por empréstimo"
+
+#: includes/class-anwpfl-data.php:494
+msgid "on trial"
+msgstr "em negociação"
+
+#: includes/class-anwpfl-data.php:495
+msgctxt "Substitute"
+msgid "OUT"
+msgstr "Fora"
+
+#: includes/class-anwpfl-data.php:496
+msgid "Own Goal"
+msgstr "Gol Contra"
+
+#: includes/class-anwpfl-data.php:497
+msgid "Penalty"
+msgstr "Pênalti"
+
+#: includes/class-anwpfl-data.php:498
+#: templates/match/match-penalty_shootout.php:38
+msgid "Penalty Shootout"
+msgstr "Pênalti pra fora"
+
+#: includes/class-anwpfl-data.php:499
+msgid "Place"
+msgstr "Local"
+
+#: includes/class-anwpfl-data.php:500
+msgid "Place and Time"
+msgstr "Local e horário"
+
+#: includes/class-anwpfl-data.php:501
+msgid "Played"
+msgstr "Partidas"
+
+#: includes/class-anwpfl-data.php:502 includes/class-anwpfl-player.php:53
+#: includes/shortcodes/class-anwpfl-shortcode.php:101
+#: templates/shortcode-cards--mini.php:74 templates/shortcode-cards.php:66
+#: templates/shortcode-players--mini.php:63
+#: templates/shortcode-players--small.php:60 templates/shortcode-players.php:63
+msgid "Player"
+msgstr "Jogador"
+
+#: includes/class-anwpfl-data.php:503
+msgid "Player In"
+msgstr "Entra Jogador"
+
+#: includes/class-anwpfl-data.php:504
+msgid "! player not in squad"
+msgstr "! jogador não está no Elenco"
+
+#: includes/class-anwpfl-data.php:505
+msgid "Player Out"
+msgstr "Sai Jogador"
+
+#: includes/class-anwpfl-data.php:506 includes/class-anwpfl-player.php:54
+#: includes/class-anwpfl-player.php:68
+#: includes/widgets/class-anwpfl-widget-cards.php:69
+msgid "Players"
+msgstr "Jogadores"
+
+#: includes/class-anwpfl-data.php:507 includes/class-anwpfl-data.php:639
+msgid "Points"
+msgstr "Pontos"
+
+#: includes/class-anwpfl-data.php:508
+msgid "Points for a draw"
+msgstr "Pontos por Empate"
+
+#: includes/class-anwpfl-data.php:509
+msgid "Points for a loss"
+msgstr "Pontos por Derrota"
+
+#: includes/class-anwpfl-data.php:510
+msgid "Points for a win"
+msgstr "Pontos por Vitória"
+
+#: includes/class-anwpfl-data.php:511
+msgid "Ranking Rules"
+msgstr "Regras de classificação"
+
+#: includes/class-anwpfl-data.php:512
+msgid ""
+"Ranking rules are used to determine the position of the team in the Standing "
+"Table (from top to bottom)."
+msgstr ""
+"As regras de classificação são usadas para determinar a posição da equipe na "
+"classificação (de cima para baixo)."
+
+#: includes/class-anwpfl-data.php:513
+msgid "Click on arrows to change ranking rules order."
+msgstr "Clique nas setas para alterar a ordem das regras de classificação."
+
+#: includes/class-anwpfl-data.php:514
+msgid "Red"
+msgstr "Vermelho"
+
+#: includes/class-anwpfl-data.php:515 templates/match/match-stats.php:272
+msgid "Red Cards"
+msgstr "Cartões Vermelhos"
+
+#: includes/class-anwpfl-data.php:516
+msgid "Remove Group"
+msgstr "Remover Grupo"
+
+#: includes/class-anwpfl-data.php:517
+msgid ""
+"You can remove only empty Round. Delete all attached groups/pairs first."
+msgstr ""
+"Você pode remover apenas a rodada vazia. Exclua todos os grupos/pares "
+"anexados primeiro."
+
+#: includes/class-anwpfl-data.php:518
+#: includes/widgets/class-anwpfl-widget-matches.php:85
+#: templates/player/player-matches.php:52
+msgid "Result"
+msgstr "Resultado"
+
+#: includes/class-anwpfl-data.php:519 includes/class-anwpfl-match.php:666
+#: includes/class-anwpfl-match.php:755 includes/class-anwpfl-match.php:1780
+msgid "Round"
+msgstr "Rodada"
+
+#: includes/class-anwpfl-data.php:521
+msgid "Please, create a Competition with type of \"Round-Robin\" first."
+msgstr ""
+"Por favor, crie uma competição com o tipo \"Todos contra todos\" primeiro."
+
+#: includes/class-anwpfl-data.php:522
+msgid "Round-Robin Format"
+msgstr "Formato de todos contra todos"
+
+#: includes/class-anwpfl-data.php:523
+msgid "Save changes"
+msgstr "Salvar mudanças"
+
+#: includes/class-anwpfl-data.php:524
+msgid "Save Squad"
+msgstr "Salvar Elenco"
+
+#: includes/class-anwpfl-data.php:525
+msgid "Save & Continue"
+msgstr "Salve e Continue"
+
+#: includes/class-anwpfl-data.php:526 includes/class-anwpfl-match.php:661
+#: includes/class-anwpfl-match.php:750 includes/class-anwpfl-match.php:1772
+#: includes/class-anwpfl-season.php:44
+msgid "Season"
+msgstr "Temporada"
+
+#: includes/class-anwpfl-data.php:527
+msgid "Select"
+msgstr "Selecionar"
+
+#: includes/class-anwpfl-data.php:528
+msgid "Select and Continue"
+msgstr "Selecione e Continue"
+
+#: includes/class-anwpfl-data.php:529
+msgid "Select club"
+msgstr "Selecione Clube"
+
+#: includes/class-anwpfl-data.php:530
+msgid "- select coach -"
+msgstr "- selecionar treinador -"
+
+#: includes/class-anwpfl-data.php:531
+msgid "Select Competition & Clubs"
+msgstr "Selecione Competição e Clubes"
+
+#: includes/class-anwpfl-data.php:532
+msgid "Select Competition Group"
+msgstr "Selecione o grupo de competição"
+
+#: includes/class-anwpfl-data.php:533
+msgid "Select date"
+msgstr "Selecione a data"
+
+#: includes/class-anwpfl-data.php:534
+msgid "Select event"
+msgstr "Selecione evento"
+
+#: includes/class-anwpfl-data.php:535
+msgid "Select Home and Away Clubs first."
+msgstr "Selecione os clubes de casa e fora primeiro."
+
+#: includes/class-anwpfl-data.php:536
+msgid "Kick off time"
+msgstr "Início"
+
+#: includes/class-anwpfl-data.php:537
+msgid "Select appropriate rules from the list below."
+msgstr "Selecione as regras apropriadas na lista abaixo."
+
+#: includes/class-anwpfl-data.php:538
+#: includes/widgets/class-anwpfl-widget-cards.php:98
+#: includes/widgets/class-anwpfl-widget-players.php:100
+msgid "- select season -"
+msgstr "- selecionar temporada -"
+
+#: includes/class-anwpfl-data.php:539
+msgid "- select stadium -"
+msgstr "- selecionar estádio -"
+
+#: includes/class-anwpfl-data.php:540
+msgid "- select stage -"
+msgstr "- selecionar fase -"
+
+#: includes/class-anwpfl-data.php:541
+msgid "Select two teams only."
+msgstr "Selecione apenas dois times."
+
+#: includes/class-anwpfl-data.php:542
+msgid "You can set statistics only for finished matches."
+msgstr "Você pode definir estatísticas apenas para jogos encerrados."
+
+#: includes/class-anwpfl-data.php:543
+msgid "Scored"
+msgstr "Convertidos"
+
+#: includes/class-anwpfl-data.php:544 templates/match/match-stats.php:111
+msgid "Shots"
+msgstr "Chutes"
+
+#: includes/class-anwpfl-data.php:545
+msgid "Show all clubs ignoring group structure (not recommended)"
+msgstr ""
+"Mostrar todos os clubes ignorando a estrutura do grupo (não recomendado)"
+
+#: includes/class-anwpfl-data.php:546
+msgid "Shots on Goal"
+msgstr "Chutes a Gol"
+
+#: includes/class-anwpfl-data.php:548
+msgid "single-leg ties"
+msgstr "partida única (regra gol fora)"
+
+#: includes/class-anwpfl-data.php:549 includes/class-anwpfl-options.php:217
+msgid "squad"
+msgstr "elenco"
+
+#: includes/class-anwpfl-data.php:550 includes/class-anwpfl-options.php:378
+#: includes/class-anwpfl-stadium.php:44 templates/club/club-header.php:112
+msgid "Stadium"
+msgstr "Estádio"
+
+#: includes/class-anwpfl-data.php:551
+msgid "Stage Order"
+msgstr "Ordem da Fase"
+
+#: includes/class-anwpfl-data.php:552
+msgid "Stage Title"
+msgstr "Título da Fase"
+
+#: includes/class-anwpfl-data.php:553 includes/class-anwpfl-standing.php:44
+#: includes/class-anwpfl-standing.php:472
+msgid "Standing Table"
+msgstr "Classificação"
+
+#: includes/class-anwpfl-data.php:554
+msgid "Standing Table Colors"
+msgstr "Cor da Tabela de Classificação"
+
+#: includes/class-anwpfl-data.php:555
+msgid "... start typing name"
+msgstr "... digite o nome"
+
+#: includes/class-anwpfl-data.php:556
+msgid "STATS"
+msgstr "Estatísticas"
+
+#: includes/class-anwpfl-data.php:557
+msgid "Status"
+msgstr "Situação"
+
+#: includes/class-anwpfl-data.php:558
+msgid "Step"
+msgstr "Etapa"
+
+#: includes/class-anwpfl-data.php:559
+msgid "Structure"
+msgstr "Estrutura"
+
+#: includes/class-anwpfl-data.php:560
+msgid "Substitute"
+msgstr "Substituição"
+
+#: includes/class-anwpfl-data.php:561 templates/match/match-lineups.php:181
+#: templates/match/match-lineups.php:358
+#: templates/match/match-substitutes.php:47
+msgid "Substitutes"
+msgstr "Substituições"
+
+#: includes/class-anwpfl-data.php:562
+msgid "Tie"
+msgstr "Confronto"
+
+#: includes/class-anwpfl-data.php:564
+msgid "Tips"
+msgstr "Dicas"
+
+#: includes/class-anwpfl-data.php:565
+msgid "Toggle"
+msgstr "Turno"
+
+#: includes/class-anwpfl-data.php:566
+msgid "Tutorial"
+msgstr "Tutorial"
+
+#: includes/class-anwpfl-data.php:567
+msgid "two-legged ties"
+msgstr "partida de ida e volta (regra gol fora)"
+
+#: includes/class-anwpfl-data.php:568
+msgid "Use Batch import tool for fast Clubs creation"
+msgstr "Use a ferramenta de importação em lote para a criação rápida de clubes"
+
+#: includes/class-anwpfl-data.php:569
+msgid "Use separate group"
+msgstr "Use grupo separado"
+
+#: includes/class-anwpfl-data.php:570
+msgid "Do you really want to delete Round?"
+msgstr "Você realmente deseja excluir a Rodada?"
+
+#: includes/class-anwpfl-data.php:571
+msgid "Wins"
+msgstr "Vitórias"
+
+#: includes/class-anwpfl-data.php:572 includes/class-anwpfl-data.php:615
+msgid "Won"
+msgstr "Vitória"
+
+#: includes/class-anwpfl-data.php:573
+msgid "Yellow"
+msgstr "Amarelo"
+
+#: includes/class-anwpfl-data.php:574 templates/match/match-stats.php:232
+msgid "Yellow Cards"
+msgstr "Cartões Amarelos"
+
+#: includes/class-anwpfl-data.php:575
+msgid "2nd Yellow > Red"
+msgstr "2º Amarelo > Cartão Vermelho"
+
+#: includes/class-anwpfl-data.php:576 templates/match/match-stats.php:252
+msgid "2d Yellow > Red Cards"
+msgstr "2º Amarelo > Cartões Vermelhos"
+
+#: includes/class-anwpfl-data.php:577 includes/class-anwpfl-options.php:266
+#: includes/class-anwpfl-options.php:365
+#: includes/widgets/class-anwpfl-widget-cards.php:120
+#: includes/widgets/class-anwpfl-widget-cards.php:130
+#: includes/widgets/class-anwpfl-widget-player.php:88
+#: includes/widgets/class-anwpfl-widget-players.php:122
+#: includes/widgets/class-anwpfl-widget-players.php:132
+msgid "Yes"
+msgstr "Sim"
+
+#: includes/class-anwpfl-data.php:611
+msgid "Matches played"
+msgstr "Jogos"
+
+#: includes/class-anwpfl-data.php:612
+msgctxt "Matches played - on standing page"
+msgid "M"
+msgstr "J"
+
+#: includes/class-anwpfl-data.php:616
+msgctxt "Won - on standing page"
+msgid "W"
+msgstr "V"
+
+#: includes/class-anwpfl-data.php:620
+msgctxt "Drawn"
+msgid "D"
+msgstr "E"
+
+#: includes/class-anwpfl-data.php:624
+msgctxt "Lost - on standing page"
+msgid "L"
+msgstr "D"
+
+#: includes/class-anwpfl-data.php:627
+msgid "Goals for"
+msgstr "Gols Pró"
+
+#: includes/class-anwpfl-data.php:628
+msgid "GF"
+msgstr "GP"
+
+#: includes/class-anwpfl-data.php:631
+msgid "Goals against"
+msgstr "Gols Contra"
+
+#: includes/class-anwpfl-data.php:632
+msgid "GA"
+msgstr "GC"
+
+#: includes/class-anwpfl-data.php:635
+msgid "Goal difference"
+msgstr "Saldo de gols"
+
+#: includes/class-anwpfl-data.php:636
+msgid "GD"
+msgstr "SG"
+
+#: includes/class-anwpfl-data.php:640
+msgctxt "Points - on standing page"
+msgid "Pt"
+msgstr "Pts"
+
+#: includes/class-anwpfl-data.php:710 includes/class-anwpfl-options.php:553
+msgctxt "goalkeeper - player position Letter"
+msgid "g"
+msgstr "g"
+
+#: includes/class-anwpfl-data.php:711 includes/class-anwpfl-options.php:591
+msgctxt "defender - player position Letter"
+msgid "d"
+msgstr "d"
+
+#: includes/class-anwpfl-data.php:712 includes/class-anwpfl-options.php:629
+msgctxt "midfielder - player position Letter"
+msgid "m"
+msgstr "m"
+
+#: includes/class-anwpfl-data.php:713 includes/class-anwpfl-options.php:667
+msgctxt "forward - player position Letter"
+msgid "f"
+msgstr "a"
+
+#: includes/class-anwpfl-helper.php:179
+msgid "Successfully saved items"
+msgstr "Itens salvos com sucesso"
+
+#: includes/class-anwpfl-helper.php:180
+msgid "Saving Data Error"
+msgstr "Salvando Erro de Dados"
+
+#: includes/class-anwpfl-league.php:44
+msgid "Leagues"
+msgstr "Ligas"
+
+#: includes/class-anwpfl-league.php:53
+msgid "Search Leagues"
+msgstr "Procurar Ligas"
+
+#: includes/class-anwpfl-league.php:54
+msgid "All Leagues"
+msgstr "Todas as Ligas"
+
+#: includes/class-anwpfl-league.php:55
+msgid "Edit League"
+msgstr "Editar  Ligas"
+
+#: includes/class-anwpfl-league.php:56
+msgid "View League"
+msgstr "Ver Liga"
+
+#: includes/class-anwpfl-league.php:57
+msgid "Update League"
+msgstr "Atualizar Liga"
+
+#: includes/class-anwpfl-league.php:58
+msgid "Add New League"
+msgstr "Adicionar Nova Liga"
+
+#: includes/class-anwpfl-league.php:59
+msgid "New League Title"
+msgstr "Novo Título da Liga"
+
+#: includes/class-anwpfl-league.php:86
+msgid "League Info"
+msgstr "Informação da Liga"
+
+#: includes/class-anwpfl-league.php:101
+msgid "select country"
+msgstr "selecione o país"
+
+#: includes/class-anwpfl-match.php:46 includes/class-anwpfl-match.php:1707
+#: includes/class-anwpfl-options.php:327
+msgid "Match"
+msgstr "Partida"
+
+#: includes/class-anwpfl-match.php:61 includes/class-anwpfl-match.php:62
+msgid "Add New Match"
+msgstr "Adicionar Novo Jogo"
+
+#: includes/class-anwpfl-match.php:63
+msgid "Edit Match"
+msgstr "Editar Jogo"
+
+#: includes/class-anwpfl-match.php:64
+msgid "New Match"
+msgstr "Novo Jogo"
+
+#: includes/class-anwpfl-match.php:65
+msgid "View Match"
+msgstr "Ver jogo"
+
+#: includes/class-anwpfl-match.php:136
+msgid "Edit structure"
+msgstr "Editar Estrutura"
+
+#: includes/class-anwpfl-match.php:149
+msgid "Please re-save untrashed match to update statistics."
+msgstr ""
+"Por favor, salve novamente o jogo não filtrado para atualizar as "
+"estatísticas."
+
+#: includes/class-anwpfl-match.php:691
+msgid "You can edit Match structure from admin list."
+msgstr "Você pode editar a estrutura do jogo na lista de administradores."
+
+#: includes/class-anwpfl-match.php:736
+msgid "Use the Match Structure editing with caution."
+msgstr "Use a edição da Estrutura de Jogo com cuidado."
+
+#: includes/class-anwpfl-match.php:737
+msgid "Save Match data on the next step to recalculate statistic."
+msgstr ""
+"Salve os dados do jogo na próxima etapa para recalcular as estatísticas."
+
+#: includes/class-anwpfl-match.php:740
+msgid "Old Structure"
+msgstr "Estrutura antiga"
+
+#: includes/class-anwpfl-match.php:1427 templates/match/match-referees.php:47
+msgid "Referees"
+msgstr "Árbitros"
+
+#: includes/class-anwpfl-match.php:1431
+msgid "Summary"
+msgstr "Resumo"
+
+#: includes/class-anwpfl-match.php:1435
+msgid "Video"
+msgstr "Vídeo"
+
+#: includes/class-anwpfl-match.php:1439
+msgid "Match Duration"
+msgstr "Duração do Jogo"
+
+#: includes/class-anwpfl-match.php:1507 includes/class-anwpfl-referee.php:44
+#: includes/class-anwpfl-referee.php:45 includes/class-anwpfl-referee.php:59
+#: templates/match/match-referees.php:52 templates/match/match.php:92
+msgid "Referee"
+msgstr "Árbitro"
+
+#: includes/class-anwpfl-match.php:1519
+msgid "Assistant 1"
+msgstr "Assistente 1"
+
+#: includes/class-anwpfl-match.php:1529
+msgid "Assistant 2"
+msgstr "Assistente 2"
+
+#: includes/class-anwpfl-match.php:1539 templates/match/match-referees.php:121
+msgid "Fourth official"
+msgstr "Quarto Árbitro"
+
+#: includes/class-anwpfl-match.php:1555 templates/match/match-summary.php:41
+msgid "Match Summary"
+msgstr "Resumo do Jogo"
+
+#: includes/class-anwpfl-match.php:1581
+msgid "Video Source"
+msgstr "Fonte de Vídeo"
+
+#: includes/class-anwpfl-match.php:1587
+msgid "- select source -"
+msgstr "- selecionar fonte -"
+
+#: includes/class-anwpfl-match.php:1588
+msgid "Media Library"
+msgstr "Biblioteca de mídia"
+
+#: includes/class-anwpfl-match.php:1589
+msgid "Youtube"
+msgstr "Youtube"
+
+#: includes/class-anwpfl-match.php:1590
+msgid "Vimeo"
+msgstr "Vimeo"
+
+#: includes/class-anwpfl-match.php:1601
+msgid "Video ID (or URL)"
+msgstr "Vídeo ID (ou URL)"
+
+#: includes/class-anwpfl-match.php:1605
+msgid "for Youtube or Vimeo"
+msgstr "para Youtube ou Vimeo"
+
+#: includes/class-anwpfl-match.php:1611
+msgid "Video File"
+msgstr "Arquivo de Vídeo"
+
+#: includes/class-anwpfl-match.php:1616
+msgid "for Media Library"
+msgstr "para biblioteca de mídia"
+
+#: includes/class-anwpfl-match.php:1621
+msgid "Open Media Library"
+msgstr "Abrir biblioteca de mídia"
+
+#: includes/class-anwpfl-match.php:1708
+msgid "Kick Off Time"
+msgstr "Início"
+
+#: includes/class-anwpfl-match.php:1764
+#: includes/widgets/class-anwpfl-widget-matches.php:122
+msgid "Stage"
+msgstr "Fase"
+
+#: includes/class-anwpfl-match.php:1986 templates/match/match-goals.php:92
+#: templates/match/match-goals.php:140
+msgctxt "match event"
+msgid "Goal"
+msgstr "Gol"
+
+#: includes/class-anwpfl-match.php:1989 templates/match/match-goals.php:88
+#: templates/match/match-goals.php:136
+msgctxt "match event"
+msgid "Goal (own)"
+msgstr "Gol (contra)"
+
+#: includes/class-anwpfl-match.php:1991 templates/match/match-goals.php:90
+#: templates/match/match-goals.php:138
+msgctxt "match event"
+msgid "Goal (from penalty)"
+msgstr "Gol (de pênalti)"
+
+#: includes/class-anwpfl-match.php:1994
+msgctxt "match event"
+msgid "Substitute"
+msgstr "Substituição"
+
+#: includes/class-anwpfl-match.php:1999
+#: templates/match/match-missed_penalties.php:60
+#: templates/match/match-missed_penalties.php:100
+msgctxt "match event"
+msgid "Missed Penalty"
+msgstr "Pênalti Perdido"
+
+#: includes/class-anwpfl-options.php:68
+msgid "Football Leagues :: Settings"
+msgstr "Football Leagues :: Configurações"
+
+#: includes/class-anwpfl-options.php:105 includes/class-anwpfl-options.php:699
+msgid "API Keys"
+msgstr "Chaves de API"
+
+#: includes/class-anwpfl-options.php:109
+msgid "Text Strings"
+msgstr "Strings de texto"
+
+#: includes/class-anwpfl-options.php:113 includes/class-anwpfl-options.php:725
+msgid "Service Links"
+msgstr "Links de Serviço"
+
+#. translators: %d: Matchweek number
+#: includes/class-anwpfl-options.php:158
+#, php-format
+msgid "Matchweek %d"
+msgstr "Jogos da Semana %d"
+
+#: includes/class-anwpfl-options.php:179
+msgid "Settings"
+msgstr "Configurações"
+
+#: includes/class-anwpfl-options.php:187
+msgid "Active Season"
+msgstr "Temporada Ativa"
+
+#: includes/class-anwpfl-options.php:198
+msgid "Match title clubs separator"
+msgstr "Separador dos clubes no jogo"
+
+#: includes/class-anwpfl-options.php:202
+msgid "Default \" - \" >> \"Team A - Team B\". Applied on Match save."
+msgstr "Padrão \"-\" >> \"Equipe A - Equipe B\". Aplicado no jogo salvo."
+
+#: includes/class-anwpfl-options.php:203
+msgid "E.g.: \"vs\""
+msgstr "Exemplo: \"vs\""
+
+#: includes/class-anwpfl-options.php:209
+msgid "Players dropdown sorting"
+msgstr "Classificação suspensa de jogadores"
+
+#: includes/class-anwpfl-options.php:214
+msgid "Used on Match edit (for lineups and subs)"
+msgstr "Usado na edição do jogo (para escalações e substituições)"
+
+#: includes/class-anwpfl-options.php:216
+msgid "number"
+msgstr "número"
+
+#: includes/class-anwpfl-options.php:218
+msgid "name"
+msgstr "nome"
+
+#: includes/class-anwpfl-options.php:225
+msgid "Load Bootstrap-4 files"
+msgstr "Carregar arquivos Bootstrap-4"
+
+#: includes/class-anwpfl-options.php:230
+#: includes/widgets/class-anwpfl-widget-matches.php:84
+msgid "All"
+msgstr "Todos"
+
+#: includes/class-anwpfl-options.php:231
+msgid "JS only"
+msgstr "JS somente"
+
+#: includes/class-anwpfl-options.php:232
+msgid "CSS only"
+msgstr "CSS somente"
+
+#: includes/class-anwpfl-options.php:233
+msgid "None"
+msgstr "Nenhum"
+
+#: includes/class-anwpfl-options.php:255
+msgid "Load alternative page layout (experimental)"
+msgstr "Carregar layout de página alternativa (experimental)"
+
+#: includes/class-anwpfl-options.php:274
+msgid "Custom Match Date format"
+msgstr "Formato de data personalizada"
+
+#: includes/class-anwpfl-options.php:278
+msgid ""
+"<a target=\"_blank\" href=\"https://codex.wordpress.org/"
+"Formatting_Date_and_Time\">Date formatting</a>"
+msgstr ""
+"<a target=\"_blank\" href=\"https://codex.wordpress.org/"
+"Formatting_Date_and_Time\">Formato de Data</a>"
+
+#: includes/class-anwpfl-options.php:279
+msgid "E.g.: \"l, F j\""
+msgstr "Exemplo: \"l, F j\""
+
+#: includes/class-anwpfl-options.php:285
+msgid "Custom Match Time format"
+msgstr "Formato de hora personalizada"
+
+#: includes/class-anwpfl-options.php:287
+msgid ""
+"<a target=\"_blank\" href=\"https://codex.wordpress.org/"
+"Formatting_Date_and_Time\">Time formatting</a>"
+msgstr ""
+"<a target=\"_blank\" href=\"https://codex.wordpress.org/"
+"Formatting_Date_and_Time\">Formato de Horário</a>"
+
+#: includes/class-anwpfl-options.php:288
+msgid "E.g.: \"H:i\""
+msgstr "Exemplo: \"H:i\""
+
+#: includes/class-anwpfl-options.php:309
+msgid "Squad Layout"
+msgstr "Layout do Elenco"
+
+#: includes/class-anwpfl-options.php:314
+msgid "Table (default)"
+msgstr "Tabela (padrão)"
+
+#: includes/class-anwpfl-options.php:315
+msgid "Blocks"
+msgstr "Blocos"
+
+#: includes/class-anwpfl-options.php:335
+msgid "Flip Countdown in match fixture"
+msgstr "Contagem regressiva no jogo de partida"
+
+#: includes/class-anwpfl-options.php:342 includes/class-anwpfl-options.php:393
+#: includes/class-anwpfl-options.php:412 includes/class-anwpfl-options.php:459
+msgid "Hide"
+msgstr "Ocultar"
+
+#: includes/class-anwpfl-options.php:346 includes/class-anwpfl-options.php:397
+#: includes/class-anwpfl-options.php:416 includes/class-anwpfl-options.php:463
+msgid "Show"
+msgstr "Mostrar"
+
+#: includes/class-anwpfl-options.php:354
+msgid "Match Slim - Show Stadium"
+msgstr "Match Slim - Mostrar Estádio"
+
+#: includes/class-anwpfl-options.php:386
+msgid "Upcoming matches"
+msgstr "Próximos jogos"
+
+#: includes/class-anwpfl-options.php:405
+msgid "Finished matches"
+msgstr "Jogos finalizados"
+
+#: includes/class-anwpfl-options.php:429
+msgid "Player & Staff"
+msgstr "Jogador e Estafe"
+
+#: includes/class-anwpfl-options.php:437
+msgid "Default Player Photo"
+msgstr "Foto do Jogador Padrão"
+
+#: includes/class-anwpfl-options.php:452
+msgid "Main photo caption"
+msgstr "Legenda da foto principal"
+
+#: includes/class-anwpfl-options.php:484
+msgid "Matchweeks order"
+msgstr "Ordenar Jogos da Semana"
+
+#: includes/class-anwpfl-options.php:491 includes/class-anwpfl-options.php:511
+msgid "Ascending (1...30)"
+msgstr "Ascendente (1...30)"
+
+#: includes/class-anwpfl-options.php:495 includes/class-anwpfl-options.php:515
+msgid "Descending (30...1)"
+msgstr "Descendente (1...30)"
+
+#: includes/class-anwpfl-options.php:503
+msgid "Rounds order"
+msgstr "Ordenar Rodadas"
+
+#: includes/class-anwpfl-options.php:527
+msgid "You can override text strings listed below."
+msgstr "Você pode substituir as strings de texto listadas abaixo."
+
+#: includes/class-anwpfl-options.php:532
+msgid "e.g. Matchday"
+msgstr "exemplo: dia do jogo"
+
+#: includes/class-anwpfl-options.php:709
+msgid "Google Maps API Key"
+msgstr "Chave da API do Google Maps"
+
+#: includes/class-anwpfl-options.php:710
+msgid "Google Map is used to locate stadiums. You can get key here - "
+msgstr ""
+"O Google Map é usado para localizar estádios. Você pode pegar a chave aqui - "
+
+#: includes/class-anwpfl-options.php:764
+msgid "Recalculate Stats for All Matches and Players"
+msgstr "Recalcular estatísticas para todos os jogos e jogadores"
+
+#: includes/class-anwpfl-player.php:69 includes/class-anwpfl-player.php:70
+msgid "Add New Player"
+msgstr "Adicionar Novo Jogador"
+
+#: includes/class-anwpfl-player.php:71
+msgid "Edit Player"
+msgstr "Editar jogador"
+
+#: includes/class-anwpfl-player.php:72
+msgid "New Player"
+msgstr "Novo jogador"
+
+#: includes/class-anwpfl-player.php:73
+msgid "View Player"
+msgstr "Ver Jogador"
+
+#: includes/class-anwpfl-player.php:150 includes/class-anwpfl-referee.php:135
+#: includes/class-anwpfl-staff.php:201
+msgid "Bio"
+msgstr "Biotipo"
+
+#: includes/class-anwpfl-player.php:271
+msgid "Player Info"
+msgstr "Informação do Jogador"
+
+#: includes/class-anwpfl-player.php:293
+msgid "Full Name"
+msgstr "Nome Completo"
+
+#: includes/class-anwpfl-player.php:396 includes/class-anwpfl-referee.php:258
+#: includes/class-anwpfl-stadium.php:300 includes/class-anwpfl-staff.php:334
+msgid "Photo"
+msgstr "Foto"
+
+#: includes/class-anwpfl-referee.php:60 includes/class-anwpfl-referee.php:61
+msgid "Add Referee"
+msgstr "Adicionar Árbitro"
+
+#: includes/class-anwpfl-referee.php:62
+msgid "Edit Referee"
+msgstr "Editar Árbitro"
+
+#: includes/class-anwpfl-referee.php:63
+msgid "New Referee"
+msgstr "Novo  Árbitro"
+
+#: includes/class-anwpfl-referee.php:64
+msgid "View Referee"
+msgstr "Ver Árbitro"
+
+#: includes/class-anwpfl-referee.php:81 includes/class-anwpfl-staff.php:81
+msgid "Name"
+msgstr "Nome"
+
+#: includes/class-anwpfl-referee.php:192
+msgid "Referee Info"
+msgstr "Informação do Árbitro"
+
+#: includes/class-anwpfl-referee.php:242 includes/class-anwpfl-staff.php:290
+#: includes/class-anwpfl-staff.php:398 includes/class-anwpfl-staff.php:540
+#: templates/content-referee.php:75 templates/content-staff.php:91
+#: templates/content-staff.php:162
+msgid "Job Title"
+msgstr "Função"
+
+#: includes/class-anwpfl-season.php:45
+msgid "Seasons"
+msgstr "Temporadas"
+
+#: includes/class-anwpfl-season.php:54
+msgid "Search Seasons"
+msgstr "Procurar Temporadas"
+
+#: includes/class-anwpfl-season.php:55
+msgid "All Seasons"
+msgstr "Todas as Temporadas"
+
+#: includes/class-anwpfl-season.php:56
+msgid "Edit Season"
+msgstr "Editar Temporada"
+
+#: includes/class-anwpfl-season.php:57
+msgid "View Season"
+msgstr "Ver Temporada"
+
+#: includes/class-anwpfl-season.php:58
+msgid "Update Season"
+msgstr "Atualizar Temporada"
+
+#: includes/class-anwpfl-season.php:59
+msgid "Add New Season"
+msgstr "Adicionar Nova Temporada"
+
+#: includes/class-anwpfl-season.php:60
+msgid "New Season Title"
+msgstr "Título da Nova Temporada"
+
+#: includes/class-anwpfl-season.php:232
+msgid "Recommended season name is \"YYYY\" or \"YYYY-YYYY\"."
+msgstr "O nome da temporada recomendada é \"YYYY\" ou \"YYYY-YYYY\"."
+
+#: includes/class-anwpfl-stadium.php:45 includes/class-anwpfl-stadium.php:57
+msgid "Stadiums"
+msgstr "Estádios"
+
+#: includes/class-anwpfl-stadium.php:58 includes/class-anwpfl-stadium.php:59
+msgid "Add New Stadium"
+msgstr "Adicionar Novo Estádio"
+
+#: includes/class-anwpfl-stadium.php:60
+msgid "Edit Stadium"
+msgstr "Editar Estádio"
+
+#: includes/class-anwpfl-stadium.php:61
+msgid "New Stadium"
+msgstr "Novo Estádio"
+
+#: includes/class-anwpfl-stadium.php:62
+msgid "View Stadium"
+msgstr "Ver Estádio"
+
+#: includes/class-anwpfl-stadium.php:79
+msgid "Stadium Title"
+msgstr "Nome do Estádio"
+
+#: includes/class-anwpfl-stadium.php:192
+msgid "Stadium Info"
+msgstr "Informações do Estádio"
+
+#: includes/class-anwpfl-stadium.php:232 templates/content-stadium.php:70
+msgid "Capacity"
+msgstr "Capacidade"
+
+#: includes/class-anwpfl-stadium.php:241 templates/content-stadium.php:77
+msgid "Opened"
+msgstr "Inauguração"
+
+#: includes/class-anwpfl-stadium.php:250 templates/content-stadium.php:84
+msgid "Surface"
+msgstr "Gramado"
+
+#: includes/class-anwpfl-stadium.php:259
+msgid "Map"
+msgstr "Mapa"
+
+#: includes/class-anwpfl-stadium.php:318
+msgid "Gallery"
+msgstr "Fotos"
+
+#: includes/class-anwpfl-stadium.php:335
+msgid "Text below gallery"
+msgstr "Texto abaixo da galeria"
+
+#: includes/class-anwpfl-staff.php:44 includes/class-anwpfl-staff.php:45
+#: includes/class-anwpfl-staff.php:59
+msgid "Staff"
+msgstr "Estafe"
+
+#: includes/class-anwpfl-staff.php:60 includes/class-anwpfl-staff.php:61
+msgid "Add Staff Member"
+msgstr "Adicionar Estafe"
+
+#: includes/class-anwpfl-staff.php:62
+msgid "Edit Staff Member"
+msgstr "Editar Estafe"
+
+#: includes/class-anwpfl-staff.php:63
+msgid "New Staff Member"
+msgstr "Novo Estafe"
+
+#: includes/class-anwpfl-staff.php:64
+msgid "View Staff Member"
+msgstr "Ver Estafe"
+
+#: includes/class-anwpfl-staff.php:193
+msgid "Staff History"
+msgstr "Histórico do Estafe"
+
+#: includes/class-anwpfl-staff.php:258
+msgid "Staff Info"
+msgstr "Informações do Estafe"
+
+#: includes/class-anwpfl-staff.php:387
+msgid "Entry {#}"
+msgstr "Entrada {#}"
+
+#: includes/class-anwpfl-staff.php:388
+msgid "Add Another Entry"
+msgstr "Adicionar outra entrada"
+
+#: includes/class-anwpfl-staff.php:389
+msgid "Remove Entry"
+msgstr "Remover Entrada"
+
+#: includes/class-anwpfl-staff.php:407 templates/content-staff.php:163
+msgid "From"
+msgstr "De"
+
+#: includes/class-anwpfl-staff.php:417 templates/content-staff.php:164
+msgid "To"
+msgstr "Para"
+
+#: includes/class-anwpfl-standing.php:45 includes/class-anwpfl-standing.php:54
+msgid "Standing Tables"
+msgstr "Tabelas de Classificação"
+
+#: includes/class-anwpfl-standing.php:55 includes/class-anwpfl-standing.php:56
+msgid "Add New Standing Table"
+msgstr "Adicionar Nova Classificação"
+
+#: includes/class-anwpfl-standing.php:57
+msgid "Edit Standing Table"
+msgstr "Editar Classificação"
+
+#: includes/class-anwpfl-standing.php:58
+msgid "New Standing Table"
+msgstr "Nova Classificação"
+
+#: includes/class-anwpfl-standing.php:59
+msgid "View Standing Table"
+msgstr "Ver Classificação"
+
+#: includes/class-anwpfl-standing.php:76
+msgid "Standing Table Title"
+msgstr "Título da Tabela de Classificação"
+
+#: includes/cmb2-fields/cmb-field-map.php:45
+msgid "Set location"
+msgstr "Defina a localização"
+
+#: includes/cmb2-fields/cmb-field-map.php:49
+msgid "Latitude"
+msgstr "Latitude"
+
+#: includes/cmb2-fields/cmb-field-map.php:64
+msgid "Longitude"
+msgstr "Longitude"
+
+#: includes/cmb2-fields/cmb-field-map.php:79
+msgid "Reset location"
+msgstr "Repor a localização"
+
+#: includes/cmb2-fields/cmb-field-map.php:85
+msgid "Address Search"
+msgstr "Procurar Endereço"
+
+#: includes/cmb2-fields/cmb-field-map.php:93
+msgid "Please insert Google Maps API Key in plugin settings."
+msgstr "Insira a chave da API do Google Maps nas configurações do plug-in."
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:41
+msgctxt "tinymce shortcode"
+msgid "All"
+msgstr "Todos"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:42
+msgctxt "tinymce shortcode"
+msgid "All Clubs"
+msgstr "Todos os Clubes"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:43
+msgctxt "tinymce shortcode"
+msgid "All Competitions"
+msgstr "Todas as Competições"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:44
+msgctxt "tinymce shortcode"
+msgid "All Leagues"
+msgstr "Todas as Ligas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:45
+msgctxt "tinymce shortcode"
+msgid "All Seasons"
+msgstr "Todas as Temporadas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:46
+msgctxt "tinymce shortcode"
+msgid "All Stadiums"
+msgstr "Estádios"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:47
+msgctxt "tinymce shortcode"
+msgid "Ascending"
+msgstr "Ascendente"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:48
+msgctxt "tinymce shortcode"
+msgid "Assists"
+msgstr "Assistências"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:49
+msgctxt "tinymce shortcode"
+msgid "Big"
+msgstr "Grande"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:50
+msgctxt "tinymce shortcode"
+msgid "Cards"
+msgstr "Cartões"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:51
+msgctxt "tinymce shortcode"
+msgid "Club"
+msgstr "Clube"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:52
+msgctxt "tinymce shortcode"
+msgid "Club IDs to exclude"
+msgstr "IDs dos clubes excluídos"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:53
+msgctxt "tinymce shortcode"
+msgid "Club Links"
+msgstr "Links dos Clubes"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:54
+msgctxt "tinymce shortcode"
+msgid "Clubs"
+msgstr "Clubes"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:55
+msgctxt "tinymce shortcode"
+msgid "2 columns"
+msgstr "2 colunas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:56
+msgctxt "tinymce shortcode"
+msgid "3 columns"
+msgstr "3 colunas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:57
+msgctxt "tinymce shortcode"
+msgid "4 columns"
+msgstr "4 colunas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:58
+msgctxt "tinymce shortcode"
+msgid "6 columns"
+msgstr "6 colunas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:59
+msgctxt "tinymce shortcode"
+msgid "Competition"
+msgstr "Competição"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:60
+msgctxt "tinymce shortcode"
+msgid "Competition Header"
+msgstr "Cabeçalho da Competição"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:61
+msgctxt "tinymce shortcode"
+msgid "Competition Logo"
+msgstr "Logo da Competição"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:62
+msgctxt "tinymce shortcode"
+msgid "Day"
+msgstr "Dia"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:63
+msgctxt "tinymce shortcode"
+msgid "Default"
+msgstr "Padrão"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:64
+msgctxt "tinymce shortcode"
+msgid "Descending"
+msgstr "Descendente"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:65
+msgctxt "tinymce shortcode"
+msgid "Filter By"
+msgstr "Filtrar por"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:66
+msgctxt "tinymce shortcode"
+msgid "Filter By Stadium"
+msgstr "Filtrar por Estádio"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:67
+msgctxt "tinymce shortcode"
+msgid "Filter Values"
+msgstr "Filtrar por Valores"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:68
+msgctxt "tinymce shortcode"
+msgid "Comma separated list of options. Club ID’s or Round numbers."
+msgstr ""
+"Lista de opções separadas por vírgulas. IDs de clube ou números de rodadas."
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:69
+msgctxt "tinymce shortcode"
+msgid "Fixtures"
+msgstr "Jogos"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:70
+msgctxt "tinymce shortcode"
+msgid "AnWP Football Leagues"
+msgstr "AnWP Football Leagues"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:71
+msgctxt "tinymce shortcode"
+msgid "Full"
+msgstr "Encerrado"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:72
+msgctxt "tinymce shortcode"
+msgid "Group By"
+msgstr "Agrupar"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:73
+msgctxt "tinymce shortcode"
+msgid "Group Header Style"
+msgstr "Agrupar por estilo de cabeçalho"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:74
+msgctxt "tinymce shortcode"
+msgid "Hide with zero points"
+msgstr "Ocultar com  0 pontos"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:75
+msgctxt "tinymce shortcode"
+msgid "Include Secondary Stages"
+msgstr "Incluir Fases secudárias"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:76
+msgctxt "tinymce shortcode"
+msgid "Insert Club Logos"
+msgstr "Inserir logos dos clubes"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:77
+msgctxt "tinymce shortcode"
+msgid "Insert competition header block"
+msgstr "Inserir Cabeçalho da Competição"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:78
+msgctxt "tinymce shortcode"
+msgid "Insert List of Matches"
+msgstr "Inserir lista de jogos"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:79
+msgctxt "tinymce shortcode"
+msgid "Insert One Match"
+msgstr "Inserir um jogo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:80
+msgctxt "tinymce shortcode"
+msgid "Insert Players List"
+msgstr "Inserir lista de jogos"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:81
+msgctxt "tinymce shortcode"
+msgid "Insert Squad"
+msgstr "Inserir Elenco"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:82
+msgctxt "tinymce shortcode"
+msgid "Insert Standing Table"
+msgstr "Inserir Classificação"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:83
+msgctxt "tinymce shortcode"
+msgid "Latest"
+msgstr "Últimas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:84
+msgctxt "tinymce shortcode"
+msgid "Layout"
+msgstr "Layout"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:85
+msgctxt "tinymce shortcode"
+msgid "League"
+msgstr "Liga"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:86
+msgctxt "tinymce shortcode"
+msgid "Limit (0 - for all)"
+msgstr "Limite de jogadores (0 - para todos):"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:87
+msgctxt "tinymce shortcode"
+msgid "Logo Height"
+msgstr "Altura do escudo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:88
+msgctxt "tinymce shortcode"
+msgid "Logo Size"
+msgstr "Tamanho do escudo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:89
+msgctxt "tinymce shortcode"
+msgid "Logo Width"
+msgstr "Largura do escudo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:90
+msgctxt "tinymce shortcode"
+msgid "MatchWeek"
+msgstr "Jogos da Semana"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:91
+msgctxt "tinymce shortcode"
+msgid "Match"
+msgstr "Partida"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:92
+msgctxt "tinymce shortcode"
+msgid "Match ID"
+msgstr "ID do jogo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:93
+msgctxt "tinymce shortcode"
+msgid "Matches"
+msgstr "Tabela"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:94
+msgctxt "tinymce shortcode"
+msgid "Mini"
+msgstr "Mini"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:95
+msgctxt "tinymce shortcode"
+msgid "Month"
+msgstr "Mês"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:96
+msgctxt "tinymce shortcode"
+msgid "No"
+msgstr "Não"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:97
+msgctxt "tinymce shortcode"
+msgid "None"
+msgstr "Nenhum"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:98
+msgctxt "tinymce shortcode"
+msgid "Not Set"
+msgstr "Não configurado"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:99
+msgctxt "tinymce shortcode"
+msgid "Oldest"
+msgstr "Mais antigo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:100
+#: includes/widgets/class-anwpfl-widget-player.php:72
+msgid "Options Text:"
+msgstr "Opções do Texto:"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:102
+#: includes/widgets/class-anwpfl-widget-player.php:66
+msgid "Player ID:"
+msgstr "ID do Jogador:"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:103
+msgctxt "tinymce shortcode"
+msgid "Players"
+msgstr "Jogadores"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:104
+msgctxt "tinymce shortcode"
+msgid "Players List"
+msgstr "Lista de jogadores"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:105
+msgctxt "tinymce shortcode"
+msgid "Points for Yellow/Red card"
+msgstr "Pontos para Cartão Amarelo/Vermelho"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:106
+msgctxt "tinymce shortcode"
+msgid "Points for Red card"
+msgstr "Pontos para Cartão Vermelho"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:107
+msgctxt "tinymce shortcode"
+msgid "Primary"
+msgstr "Navegação Primária"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:108
+#: includes/widgets/class-anwpfl-widget-player.php:94
+msgid "Profile link text:"
+msgstr "Texto do link do perfil:"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:109
+msgctxt "tinymce shortcode"
+msgid "Results"
+msgstr "Resultados"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:110
+msgctxt "tinymce shortcode"
+msgid "Row (using width & height)"
+msgstr "Altura e largura personalizadas"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:111
+msgctxt "tinymce shortcode"
+msgid "Scorers"
+msgstr "Artilheiros"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:112
+msgctxt "tinymce shortcode"
+msgid "Season"
+msgstr "Temporada"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:113
+msgctxt "tinymce shortcode"
+msgid "Sections"
+msgstr "Seções"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:114
+msgctxt "tinymce shortcode"
+msgid "Secondary"
+msgstr "Secundário"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:115
+msgctxt "tinymce shortcode"
+msgid "Show Club Logo"
+msgstr "Mostrar Escudo do Clube"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:116
+#: includes/widgets/class-anwpfl-widget-player.php:78
+msgid "Show Club"
+msgstr "Mostrar Clube"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:117
+msgctxt "tinymce shortcode"
+msgid "Show Match Datetime"
+msgstr "Mostrar Data e Horário do Jogo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:118
+msgctxt "tinymce shortcode"
+msgid "Show Photo"
+msgstr "Mostrar Foto"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:119
+#: includes/widgets/class-anwpfl-widget-player.php:84
+msgid "Show Link to Profile:"
+msgstr "Mostrar Link do Perfil:"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:120
+msgctxt "tinymce shortcode"
+msgid "Slim"
+msgstr "Slim"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:121
+msgctxt "tinymce shortcode"
+msgid "Small"
+msgstr "Pequeno"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:122
+msgctxt "tinymce shortcode"
+msgid "Soft Limit"
+msgstr "Limite Suave"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:123
+msgctxt "tinymce shortcode"
+msgid "Sort By Date"
+msgstr "Classificar por Data"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:124
+msgctxt "tinymce shortcode"
+msgid "Sort By Points"
+msgstr "Classificar por Pontos"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:125
+msgctxt "tinymce shortcode"
+msgid "Squad"
+msgstr "Elenco"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:126
+msgctxt "tinymce shortcode"
+msgid "Stage"
+msgstr "Fase"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:127
+msgctxt "tinymce shortcode"
+msgid "Standing Table"
+msgstr "Classificação"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:128
+msgctxt "tinymce shortcode"
+msgid "Title as a link"
+msgstr "Título do link"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:129
+msgctxt "tinymce shortcode"
+msgid "Type"
+msgstr "Tipo"
+
+#: includes/shortcodes/class-anwpfl-shortcode.php:130
+msgctxt "tinymce shortcode"
+msgid "Yes"
+msgstr "Sim"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:29
+msgid "FL Cards"
+msgstr "FL Cartões"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:38
+msgid "Show Players or Clubs with Cards."
+msgstr "Mostrar Jogadores ou Clubes com Cartões."
+
+#: includes/widgets/class-anwpfl-widget-cards.php:60
+#: includes/widgets/class-anwpfl-widget-clubs.php:62
+#: includes/widgets/class-anwpfl-widget-matches.php:62
+#: includes/widgets/class-anwpfl-widget-player.php:60
+#: includes/widgets/class-anwpfl-widget-players.php:62
+#: includes/widgets/class-anwpfl-widget-standing.php:63
+msgid "Title:"
+msgstr "Título:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:66
+#: includes/widgets/class-anwpfl-widget-players.php:68
+msgid "Type:"
+msgstr "Tipo:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:76
+#: includes/widgets/class-anwpfl-widget-clubs.php:68
+#: includes/widgets/class-anwpfl-widget-matches.php:68
+#: includes/widgets/class-anwpfl-widget-players.php:78
+msgid "Competition:"
+msgstr "Competição:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:77
+#: includes/widgets/class-anwpfl-widget-clubs.php:69
+#: includes/widgets/class-anwpfl-widget-matches.php:69
+#: includes/widgets/class-anwpfl-widget-players.php:79
+msgid "- select competition -"
+msgstr "- selecionar competição -"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:84
+#: includes/widgets/class-anwpfl-widget-players.php:86
+msgid "Include stats from secondary stages"
+msgstr "Incluir estatísticas de estágios secundários"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:89
+#: includes/widgets/class-anwpfl-widget-players.php:91
+msgid "League:"
+msgstr "Liga:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:90
+#: includes/widgets/class-anwpfl-widget-players.php:92
+msgid "- select league -"
+msgstr "- selecionar liga -"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:97
+#: includes/widgets/class-anwpfl-widget-players.php:99
+#: templates/shortcode-squad--blocks.php:57
+#: templates/shortcode-squad--blocks.php:201
+msgid "Season:"
+msgstr "Temporada:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:105
+#: includes/widgets/class-anwpfl-widget-players.php:107
+msgid "Club ID:"
+msgstr "ID do Clube:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:110
+#: includes/widgets/class-anwpfl-widget-players.php:112
+msgid "Players Limit (0 - for all):"
+msgstr "Limite de jogadores (0 - para todos):"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:116
+#: includes/widgets/class-anwpfl-widget-players.php:118
+msgid "Soft Limit:"
+msgstr "Limite Suave:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:126
+msgid "Show Photo/Logo:"
+msgstr "Mostrar Foto/Escudo:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:136
+msgid "Points for Yellow/Red card:"
+msgstr "Pontos para Cartão Amarelo/Vermelho:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:142
+msgid "Points for Red card:"
+msgstr "Pontos para Cartão Vermelho:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:148
+msgid "Sort By Points:"
+msgstr "Classificar por Pontos:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:151
+msgid "Descending "
+msgstr "Descendente "
+
+#: includes/widgets/class-anwpfl-widget-cards.php:152
+msgid "Ascending"
+msgstr "Ascendente"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:159
+msgid "Hide with zero points"
+msgstr "Ocultar com  0 pontos"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:165
+msgid "Hide points"
+msgstr "Ocultar pontos"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:170
+#: includes/widgets/class-anwpfl-widget-matches.php:149
+msgid "Bottom Link Text:"
+msgstr "Texto do link embaixo:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:176
+#: includes/widgets/class-anwpfl-widget-matches.php:155
+msgid "Bottom Link Target:"
+msgstr "Link pretendido embaixo:"
+
+#: includes/widgets/class-anwpfl-widget-cards.php:177
+#: includes/widgets/class-anwpfl-widget-matches.php:156
+msgid "- select target page -"
+msgstr "- selecione a página de destino -"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:31
+msgid "FL Clubs"
+msgstr "FL Clubes"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:40
+msgid "Show Football Clubs."
+msgstr "Mostrar Clubes de Futebol."
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:63
+msgctxt "widget default title"
+msgid "Clubs"
+msgstr "Clubes"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:76
+msgid "Logo Size:"
+msgstr "Tamanho do escudo:"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:79
+msgid "Small"
+msgstr "Pequeno"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:80
+msgid "Big"
+msgstr "Grande"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:86
+#: includes/widgets/class-anwpfl-widget-matches.php:181
+msgid "Layout:"
+msgstr "Layout:"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:89
+msgid "Custom Height and Width"
+msgstr "Altura e largura personalizadas"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:90
+msgid "2 Columns"
+msgstr "2 Colunas"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:91
+msgid "3 Columns"
+msgstr "3 Colunas"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:92
+msgid "4 Columns"
+msgstr "4 Colunas"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:93
+msgid "6 Columns"
+msgstr "6 Colunas"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:99
+msgid "Logo Height:"
+msgstr "Altura do escudo:"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:100
+msgid "Height value with units. Example: \"50px\" or \"3rem\"."
+msgstr "Valor de altura com unidades. Exemplo: \"50px\" ou \"3rem\"."
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:106
+msgid "Logo Width:"
+msgstr "Largura do escudo:"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:107
+msgid "Width value with units. Example: \"50px\" or \"3rem\"."
+msgstr "Valor de largura com unidades. Exemplo: \"50px\" ou \"3rem\"."
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:113
+#: includes/widgets/class-anwpfl-widget-standing.php:80
+msgid "Exclude:"
+msgstr "Excluir:"
+
+#: includes/widgets/class-anwpfl-widget-clubs.php:114
+#: includes/widgets/class-anwpfl-widget-standing.php:81
+msgid "Club IDs, separated by commas."
+msgstr "IDs dos clubes, separados por vírgulas."
+
+#: includes/widgets/class-anwpfl-widget-matches.php:31
+msgid "FL Matches"
+msgstr "FL Jogos"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:40
+msgid "Show Football Matches."
+msgstr "Mostrar Jogos de Futebol."
+
+#: includes/widgets/class-anwpfl-widget-matches.php:76
+msgid "Include matches from secondary stages"
+msgstr "Incluir jogos de estágios secundários"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:81
+msgid "Match Type:"
+msgstr "Tipo de Jogo:"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:92
+msgid "Matches Limit (0 - for all):"
+msgstr "Limite de jogos (0 - para todos):"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:98
+msgid "Filter By:"
+msgstr "Filtrar por:"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:101
+#: includes/widgets/class-anwpfl-widget-matches.php:118
+#: includes/widgets/class-anwpfl-widget-matches.php:141
+msgid "none"
+msgstr "nenhum"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:103
+#: includes/widgets/class-anwpfl-widget-matches.php:121
+msgid "Matchweek"
+msgstr "Jogos da Semana"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:109
+msgid "Filter By Values:"
+msgstr "Filtrar por Valores:"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:110
+msgid "Comma separated list of options (if more than one)."
+msgstr "Lista separada por vírgula de opções (se mais de uma)."
+
+#: includes/widgets/class-anwpfl-widget-matches.php:115
+msgid "Group By:"
+msgstr "Agrupar:"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:119
+msgid "Day"
+msgstr "Dia"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:120
+msgid "Month"
+msgstr "Mês"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:128
+msgid "Group By Header Style:"
+msgstr "Agrupar por estilo de cabeçalho:"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:132
+msgid "Secondary"
+msgstr "Secundário"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:138
+msgid "Sort By Date:"
+msgstr "Classificar por Data:"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:142
+msgid "Oldest"
+msgstr "Mais antigo"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:143
+msgid "Latest"
+msgstr "Últimas"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:163
+msgid "Show club logos"
+msgstr "Mostrar Escudos dos Clubes"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:169
+msgid "Show match datetime"
+msgstr "Mostrar data e horário do jogo"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:175
+msgid "Club links"
+msgstr "Links dos Clubes"
+
+#: includes/widgets/class-anwpfl-widget-matches.php:185
+msgid "Modern"
+msgstr "Moderno"
+
+#: includes/widgets/class-anwpfl-widget-player.php:29
+msgid "FL Player"
+msgstr "FL Jogador"
+
+#: includes/widgets/class-anwpfl-widget-player.php:38
+msgid "Show Single Player."
+msgstr "Mostrar um Jogador."
+
+#: includes/widgets/class-anwpfl-widget-player.php:73
+msgid ""
+"Separate line by \"|\", number and label - with \":\". E.q.: \"Goals: 8 | "
+"Assists: 5\""
+msgstr ""
+"Separe a linha por \"|\", número e etiqueta - com \":\". Ex .: \"Gols: 8 | "
+"Assistências: 5\""
+
+#: includes/widgets/class-anwpfl-widget-player.php:95
+msgid "profile"
+msgstr "perfil"
+
+#: includes/widgets/class-anwpfl-widget-players.php:31
+msgid "FL Players"
+msgstr "FL Jogadores"
+
+#: includes/widgets/class-anwpfl-widget-players.php:40
+msgid "Show Players (scorers or assists)."
+msgstr "Mostrar Jogadores (artilharia ou assistências)."
+
+#: includes/widgets/class-anwpfl-widget-players.php:71
+msgid "Scorers"
+msgstr "Artilheiros"
+
+#: includes/widgets/class-anwpfl-widget-players.php:72
+#: templates/player/player-matches.php:64 templates/player/player-stats.php:83
+#: templates/shortcode-players--mini.php:55
+#: templates/shortcode-players--small.php:52 templates/shortcode-players.php:55
+msgid "Assists"
+msgstr "Assistências"
+
+#: includes/widgets/class-anwpfl-widget-players.php:128
+msgid "Show Photo:"
+msgstr "Mostrar Foto:"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:32
+msgid "FL Standing Table"
+msgstr "FL Classificação"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:41
+msgid "Show competition standing table."
+msgstr "Mostrar Tabela de Classificação da Competição."
+
+#: includes/widgets/class-anwpfl-widget-standing.php:64
+msgctxt "widget default title"
+msgid "Standing Table"
+msgstr "Classificação"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:69
+msgid "Standing Table:"
+msgstr "Classificação:"
+
+#: includes/widgets/class-anwpfl-widget-standing.php:70
+msgid "- select table -"
+msgstr "- selecionar tabela -"
+
+#: templates/club/club-fixtures.php:55 templates/content-stadium.php:158
+msgid "Fixtures"
+msgstr "Jogos"
+
+#: templates/club/club-header.php:121
+msgid "Club Kit"
+msgstr "Pôster do Time"
+
+#: templates/club/club-latest.php:47 templates/content-stadium.php:193
+#: templates/match/match-latest.php:35
+msgid "Latest Matches"
+msgstr "Últimos jogos"
+
+#: templates/content-referee.php:94 templates/content-staff.php:110
+#: templates/player/player-header.php:133
+msgid "Place Of Birth"
+msgstr "Local de Nascimento"
+
+#: templates/content-referee.php:101 templates/content-staff.php:117
+#: templates/player/player-header.php:140
+msgid "Date Of Birth"
+msgstr "Data de Nascimento"
+
+#: templates/content-referee.php:110 templates/content-staff.php:126
+#: templates/player/player-header.php:149
+#: templates/shortcode-squad--blocks.php:111
+#: templates/shortcode-squad--blocks.php:159
+#: templates/shortcode-squad--blocks.php:233 templates/shortcode-squad.php:108
+#: templates/shortcode-squad.php:152 templates/shortcode-squad.php:217
+msgid "Age"
+msgstr "Ano"
+
+#: templates/content-stadium.php:235
+msgid "Stadium Gallery"
+msgstr "Galeria do estádio"
+
+#: templates/content-stadium.php:261
+msgid "Location"
+msgstr "Local"
+
+#: templates/content-staff.php:157
+msgid "Career"
+msgstr "Carreira"
+
+#: templates/match/match--modern.php:95 templates/match/match--simple.php:113
+#: templates/match/match--slim.php:158 templates/match/match.php:180
+msgctxt "Abbr: after extra time"
+msgid "AET"
+msgstr "Prorrogação"
+
+#: templates/match/match--modern.php:98 templates/match/match--simple.php:116
+#: templates/match/match--slim.php:161 templates/match/match.php:183
+msgctxt "on penalties"
+msgid "Penalties"
+msgstr "Pênaltis"
+
+#: templates/match/match-cards.php:50 templates/player/player-matches.php:68
+msgid "Cards"
+msgstr "Cartões"
+
+#: templates/match/match-goals.php:62 templates/player/player-matches.php:61
+#: templates/shortcode-players--mini.php:55
+#: templates/shortcode-players--small.php:52 templates/shortcode-players.php:55
+msgid "Goals"
+msgstr "Gols"
+
+#: templates/match/match-missed_penalties.php:36
+msgid "Missed penalties"
+msgstr "Penalidades perdidas"
+
+#: templates/match/match-penalty_shootout.php:70
+#: templates/match/match-penalty_shootout.php:110
+msgctxt "penalty shootout"
+msgid "Scored"
+msgstr "Convertidos"
+
+#: templates/match/match-penalty_shootout.php:72
+#: templates/match/match-penalty_shootout.php:112
+msgctxt "penalty shootout"
+msgid "Missed"
+msgstr "Perdidos"
+
+#: templates/match/match-stats.php:82
+msgid "Match Statistics"
+msgstr "Estatísticas do Jogo"
+
+#: templates/match/match-stats.php:132
+msgid "Shots on Target"
+msgstr "Tiros no alvo"
+
+#: templates/match/match-stats.php:172
+msgid "Corners"
+msgstr "Cantos"
+
+#: templates/match/match-substitutes.php:81
+#: templates/match/match-substitutes.php:149
+msgctxt "substitute event"
+msgid "Out"
+msgstr "Sai"
+
+#: templates/match/match-substitutes.php:94
+#: templates/match/match-substitutes.php:162
+msgctxt "substitute event"
+msgid "In"
+msgstr "Entra"
+
+#: templates/match/match-summary.php:41
+msgid "Match Preview"
+msgstr "Visualizar Jogo"
+
+#: templates/match/match-video.php:42
+msgid "Match Video"
+msgstr "Vídeo do Jogo"
+
+#: templates/match/match.php:206
+msgid "- match preview -"
+msgstr "- ver o jogo -"
+
+#: templates/player/player-matches.php:34
+msgid "Latest matches"
+msgstr "Últimos Jogos"
+
+#: templates/player/player-matches.php:48
+msgid "Date"
+msgstr "Data"
+
+#: templates/player/player-matches.php:49
+msgid "For"
+msgstr "Para"
+
+#: templates/player/player-matches.php:50
+msgid "Against"
+msgstr "Contra"
+
+#: templates/player/player-matches.php:51
+msgid "Home /Away"
+msgstr "Mandante/Visitante"
+
+#: templates/player/player-matches.php:53 templates/player/player-stats.php:57
+msgid "Minutes"
+msgstr "Minutos"
+
+#: templates/player/player-matches.php:57 templates/player/player-stats.php:67
+msgid "Goals Conceded"
+msgstr "Gols Tomados"
+
+#: templates/player/player-matches.php:88
+msgid "Home"
+msgstr "Pág. Inicial"
+
+#: templates/player/player-matches.php:88
+msgid "Away"
+msgstr "Visitante"
+
+#: templates/player/player-stats.php:34
+msgid "Stats Totals"
+msgstr "Total de Estatísticas"
+
+#: templates/player/player-stats.php:43
+msgid "Played Matches"
+msgstr "Jogos realizados"
+
+#: templates/player/player-stats.php:48
+msgid "Started"
+msgstr "Em andamento"
+
+#: templates/player/player-stats.php:53
+msgid "Substituted In"
+msgstr "Substituído por"
+
+#: templates/player/player-stats.php:72
+msgid "Clean Sheets"
+msgstr "Sem tomar gols"
+
+#: templates/player/player-stats.php:78
+msgid "Goals (from penalty)"
+msgstr "Gols (de pênaltis)"
+
+#: templates/player/player-stats.php:88
+msgid "Own Goals"
+msgstr "Gols contra"
+
+#: templates/shortcode-cards--mini.php:73 templates/shortcode-cards.php:65
+#: templates/shortcode-players--mini.php:62
+msgctxt "Rank"
+msgid "#"
+msgstr "#"
+
+#: templates/shortcode-cards--mini.php:92 templates/shortcode-cards.php:82
+msgctxt "points"
+msgid "Pts"
+msgstr "Pts"
+
+#: templates/shortcode-players--small.php:59 templates/shortcode-players.php:62
+msgid "Rank"
+msgstr "Posição"
+
+#: templates/shortcode-squad--blocks.php:66 templates/shortcode-squad.php:62
+msgid "Squad"
+msgstr "Elenco"
+
+#: templates/shortcode-squad--blocks.php:97 templates/shortcode-squad.php:97
+msgid "On Loan"
+msgstr "Por empréstimo"
+
+#: vendor/cpt-core/CPT_Core.php:77 vendor/cpt-core/CPT_Core.php:81
+#: vendor/cpt-core/CPT_Core.php:85
+msgid "It is required to pass a single, plural and slug string to CPT_Core"
+msgstr ""
+
+#: vendor/cpt-core/CPT_Core.php:142 vendor/cpt-core/CPT_Core.php:143
+#: vendor/taxonomy-core/Taxonomy_Core.php:131
+#, php-format
+msgid "Add New %s"
+msgstr "Adicionar Novo %s"
+
+#: vendor/cpt-core/CPT_Core.php:144 vendor/taxonomy-core/Taxonomy_Core.php:128
+#, php-format
+msgid "Edit %s"
+msgstr "Editar %s"
+
+#: vendor/cpt-core/CPT_Core.php:145
+#, php-format
+msgid "New %s"
+msgstr "Novo %s"
+
+#: vendor/cpt-core/CPT_Core.php:146 vendor/taxonomy-core/Taxonomy_Core.php:127
+#, php-format
+msgid "All %s"
+msgstr "Todos %s"
+
+#: vendor/cpt-core/CPT_Core.php:147 vendor/taxonomy-core/Taxonomy_Core.php:129
+#, php-format
+msgid "View %s"
+msgstr "Ver %s"
+
+#: vendor/cpt-core/CPT_Core.php:148 vendor/taxonomy-core/Taxonomy_Core.php:126
+#, php-format
+msgid "Search %s"
+msgstr "Pesquisar %s"
+
+#: vendor/cpt-core/CPT_Core.php:149 vendor/taxonomy-core/Taxonomy_Core.php:134
+#, php-format
+msgid "No %s"
+msgstr "Não %s"
+
+#: vendor/cpt-core/CPT_Core.php:150
+#, php-format
+msgid "No %s found in Trash"
+msgstr "Nada % s encontrado na lixeira"
+
+#: vendor/cpt-core/CPT_Core.php:151 vendor/taxonomy-core/Taxonomy_Core.php:138
+#, php-format
+msgid "Parent %s:"
+msgstr "Similar %s:"
+
+#: vendor/cpt-core/CPT_Core.php:153
+#, php-format
+msgid "Insert into %s"
+msgstr "Inserir introdução %s"
+
+#: vendor/cpt-core/CPT_Core.php:154
+#, php-format
+msgid "Uploaded to this %s"
+msgstr "Carregado para este %s"
+
+#: vendor/cpt-core/CPT_Core.php:155
+#, php-format
+msgid "%s list"
+msgstr "%s lista"
+
+#: vendor/cpt-core/CPT_Core.php:156
+#, php-format
+msgid "%s list navigation"
+msgstr "%s lista de navegação"
+
+#: vendor/cpt-core/CPT_Core.php:157
+#, php-format
+msgid "Filter %s list"
+msgstr "Filtrar %s listas"
+
+#: vendor/cpt-core/CPT_Core.php:207
+msgid "Custom field updated."
+msgstr "Campo Personalizado atualizado."
+
+#: vendor/cpt-core/CPT_Core.php:208
+msgid "Custom field deleted."
+msgstr "Campo Personalizado excluído."
+
+#: vendor/cpt-core/CPT_Core.php:209 vendor/cpt-core/CPT_Core.php:226
+#, php-format
+msgid "%1$s updated."
+msgstr "%1$s atualizado."
+
+#. translators: %s: date and time of the revision
+#: vendor/cpt-core/CPT_Core.php:211
+#, php-format
+msgid "%1$s restored to revision from %2$s"
+msgstr "%1$s restaurado para revisão de %2$s"
+
+#: vendor/cpt-core/CPT_Core.php:212
+#, php-format
+msgid "%1$s saved."
+msgstr "%1$s salvo."
+
+#: vendor/cpt-core/CPT_Core.php:217
+#, php-format
+msgid "%1$s updated. <a href=\"%2$s\">View %1$s</a>"
+msgstr "%1$s atualizado. <a href=\"%2$s\">Ver %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:218
+#, php-format
+msgid "%1$s published. <a href=\"%2$s\">View %1$s</a>"
+msgstr "%1$s publicado. <a href=\"%2$s\">Ver %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:219
+#, php-format
+msgid "%1$s submitted. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+msgstr ""
+"%1$s submetido. <a target=\"_blank\" href=\"%2$s\">Pré-visualizar %1$s</a>"
+
+#. translators: Publish box date format, see http://php.net/date
+#: vendor/cpt-core/CPT_Core.php:221
+#, php-format
+msgid ""
+"%1$s scheduled for: <strong>%2$s</strong>. <a target=\"_blank\" href=\"%3$s"
+"\">Preview %1$s</a>"
+msgstr ""
+"%1$s agendado para: <strong>%2$s</strong>. <a target=\"_blank\" href=\"%3$s"
+"\"> Pré-visualizar %1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:221 vendor/cpt-core/CPT_Core.php:230
+msgid "M j, Y @ G:i"
+msgstr "M j, Y @ G:i"
+
+#: vendor/cpt-core/CPT_Core.php:222
+#, php-format
+msgid "%1$s draft updated. <a target=\"_blank\" href=\"%2$s\">Preview %1$s</a>"
+msgstr ""
+"%1$s rascunho atualizado. <a target=\"_blank\" href=\"%2$s\">Pré-visualizar "
+"%1$s</a>"
+
+#: vendor/cpt-core/CPT_Core.php:227
+#, php-format
+msgid "%1$s published."
+msgstr "%1$s publicado."
+
+#: vendor/cpt-core/CPT_Core.php:228
+#, php-format
+msgid "%1$s submitted."
+msgstr "%1$s Enviado."
+
+#. translators: Publish box date format, see http://php.net/date
+#: vendor/cpt-core/CPT_Core.php:230
+#, php-format
+msgid "%1$s scheduled for: <strong>%2$s</strong>."
+msgstr "%1$s agendado para:: <strong>%2$s</strong>."
+
+#: vendor/cpt-core/CPT_Core.php:231
+#, php-format
+msgid "%1$s draft updated."
+msgstr "%1$s rascunho atualizado."
+
+#: vendor/cpt-core/CPT_Core.php:249
+#, php-format
+msgid "%1$s %2$s updated."
+msgid_plural "%1$s %3$s updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:250
+#, php-format
+msgid "%1$s %2$s not updated, somebody is editing it."
+msgid_plural "%1$s %3$s not updated, somebody is editing them."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:251
+#, php-format
+msgid "%1$s %2$s permanently deleted."
+msgid_plural "%1$s %3$s permanently deleted."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:252
+#, php-format
+msgid "%1$s %2$s moved to the Trash."
+msgid_plural "%1$s %3$s moved to the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:253
+#, php-format
+msgid "%1$s %2$s restored from the Trash."
+msgid_plural "%1$s %3$s restored from the Trash."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/cpt-core/CPT_Core.php:305
+#, php-format
+msgid "%s Title"
+msgstr "%s Título"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:84
+#: vendor/taxonomy-core/Taxonomy_Core.php:88
+#: vendor/taxonomy-core/Taxonomy_Core.php:92
+msgid ""
+"It is required to pass a single, plural and slug string to Taxonomy_Core"
+msgstr ""
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:130
+#, php-format
+msgid "Update %s"
+msgstr "Atualização %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:132
+#, php-format
+msgid "New %s Name"
+msgstr "Novo %s Nome"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:133
+#, php-format
+msgid "No %s found."
+msgstr "Não %s encontrado."
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:137
+#, php-format
+msgid "Parent %s"
+msgstr "Similar%s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:141
+#, php-format
+msgid "Popular %s"
+msgstr "Popular %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:142
+#, php-format
+msgid "Separate %s with commas"
+msgstr "Separar %s com vírgulas"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:143
+#, php-format
+msgid "Add or remove %s"
+msgstr "Adicionar ou remover %s"
+
+#: vendor/taxonomy-core/Taxonomy_Core.php:144
+#, php-format
+msgid "Choose from the most used %s"
+msgstr "Escolha entre os % s mais usados"
+
+#. Plugin Name of the plugin/theme
+msgid "Football Leagues by AnWP.pro"
+msgstr "Football Leagues by AnWP.pro"
+
+#. Plugin URI of the plugin/theme
+msgid "https://anwp.pro/football-leagues-documentation/"
+msgstr "https://anwp.pro/football-leagues-documentation/"
+
+#. Description of the plugin/theme
+msgid ""
+"Create and manage your own football club, competition, league or soccer news "
+"website. Knockout and round-robin stages, player profiles, standing tables "
+"and much more."
+msgstr ""
+"Crie e gerencie seu próprio clube de futebol, competição, liga ou site de "
+"notícias de futebol. Todos contra todos e mata-mata, perfis de jogadores, "
+"classificação e muito mais."
+
+#. Author of the plugin/theme
+msgid "Andrei Strekozov <anwppro>"
+msgstr "Andrei Strekozov <anwppro>"
+
+#. Author URI of the plugin/theme
+msgid "https://anwp.pro"
+msgstr "https://anwp.pro"

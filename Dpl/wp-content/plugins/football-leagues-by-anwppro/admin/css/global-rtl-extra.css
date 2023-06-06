@@ -1,0 +1,10 @@
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+.v--modal {
+	text-align: right;
+	left: 0px !important;
+	margin: 0 auto;
+}

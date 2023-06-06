@@ -1,0 +1,430 @@
+/*
+Theme Name: Sports Club Lite
+Theme URI: https://gracethemes.com/themes/free-sports-league-wordpress-theme/
+Author: Grace Themes
+Author URI: https://gracethemes.com/
+Description: Sports Club Lite is a resourceful, modern and engaging, youthful and lively, purposeful and versatile, highly responsive sports league WordPress theme. This sports theme has been designed to provide an easy and specialized platform for the streamlined development of professional, awesome and tech-savvy websites for various sports club. This flexible theme can be adjusted to be used for rugby, football, basketball, volleyball, hockey, tennis, baseball or any other individual sport. This feature-rich, highly customizable and multisport WordPress theme can also be used to create a fully functional website template for fitness clubs, gyms, dance schools, martial arts, personal trainers and any other health & fitness related business.  Demo Link: http://www.gracethemesdemo.com/sports-club/
+
+Version: 1.1
+License: GNU General Public License version 2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sports-club-lite
+Tags:blog,two-columns,right-sidebar,full-width-template,custom-colors,custom-menu,custom-header,custom-logo,featured-images,editor-style,custom-background,threaded-comments,theme-options, translation-ready
+
+Sports Club Lite WordPress Theme has been created by Grace Themes(gracethemes.com), 2019.
+Sports Club Lite WordPress Theme is released under the terms of GNU GPL
+*/
+*{ margin:0; padding:0; outline:none;}
+*, *:before, *:after{margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+body{ margin:0; padding:0; overflow-X:hidden;
+ -ms-word-wrap:break-word; word-wrap:break-word; line-height:24px; margin:0; padding:0; color:#373735; font-size:15px; font-family: 'Open Sans', sans-serif;}
+
+img{ border:none; margin:0; padding:0; height:auto; max-width:100%;}
+.wp-caption, .wp-caption-text, .sticky, .gallery-caption, .aligncenter{ margin:0; padding:0; max-width:100% !important;}
+p{ margin:0; padding:0;}
+a{ text-decoration:none; color:#efc62c;}
+a:hover{ color:#111;}
+.clear{ clear:both;}
+.left{ float:left;}
+.right{ float:right;}
+ol,ul{ margin:0; padding:0;}
+ul li ul, ul li ul li ul, ol li ol, ol li ol li ol{ margin-left:10px;}
+/*
+Lists style CSS
+-------------------------------------------------------------*/
+ul,ol { margin:0; padding: 0;}
+ul {list-style: inside none disc;}
+ol {list-style: decimal;}
+ul li,ol li {margin-bottom: 0;	margin-left: 1.5em;}
+dt {font-weight: 700;}
+dd {margin: 0 1.5em 1.5em;}
+audio:not([controls]) {	display: none;height: 0;}
+img {border-style: none;}
+svg:not(:root) {overflow: hidden;}
+a {	background-color: transparent;	-webkit-text-decoration-skip: objects;}
+a:active, a:hover {outline-width: 0;}
+b, strong {	font-weight: inherit;}
+pre {background: #ddd;font-size: 14px;	font-size: 0.9375rem;line-height: 1.4;margin-bottom: 1.6em;	max-width: 100%;overflow: auto;	padding:20px;}
+iframe{max-width:100%;}
+nav.pagination{ clear:both;}
+#comment-nav-above .nav-previous, #comment-nav-below .nav-previous{ float:none !important; margin:10px 0;}
+nav.pagination .page-numbers{ background-color:#ccc; padding:10px 15px; font-size:15px; font-weight:600; color:#444;}
+nav.pagination .page-numbers.current{background-color:#efc62c;}
+ol.comment-list li{ list-style:none; margin-bottom:5px;}
+
+.blogpost_meta{margin-bottom:20px; display:inline-block; color:#999; }
+.blogpost_meta a{color:#999;}
+.blogpost_meta a:hover{color:#e74c3c;}
+.breadcrumbs{padding:10px 0; margin-bottom:0;}
+
+h1,h2,h3,h4,h5,h6{ font-family: 'Roboto Condensed', sans-serif;  color:#303030; margin:0 0 20px; padding:0; font-weight:600; line-height:1.1; }
+h1.entry-title{ font-weight:bold; margin-bottom:35px;}
+h1{ font-size:35px;}
+h2{ font-size:28px;}
+h3{ font-size:24px;}
+h4{ font-size:20px;}
+h5{ font-size:18px;}
+h6{ font-size:14px;}
+figcaption,figure{	display: block;}
+figure {margin: 1em 0;}
+blockquote{ background-color:#eee; border-left:5px solid #ec4613; padding:15px 15px 15px 40px; color:#666; font-size:15px; line-height:1.5; margin-bottom:30px;}
+blockquote p{ margin-bottom:0 !important;}
+hr {-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;	height: 0;	overflow: visible;}
+.textwidget select{ width:100%;}
+.tagcloud a{ font-size:12px !important; color:#fff; border:1px solid #fff; padding:5px 12px; margin:0 5px 5px 0; display:inline-block;}
+.tagcloud a:hover{ border:1px solid #fff;}
+table{ width:100%}
+.alignnone{ width:100%;}
+img.alignleft, .alignleft{ float:left; margin:0 15px 0 0; padding:5px; border:1px solid #cccccc;}
+img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border:1px solid #cccccc;}
+.aligncenter, img.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; margin-top:0;  height:auto;}
+
+/*
+Main site CSS
+-------------------------------------------------------------*/
+#layout_forsite{ margin:0 auto;}
+.boxlayout{ width:1210px; margin:0 auto; background-color:#fff; position:relative; box-shadow:0 -8px 8px #111; overflow:hidden;}
+.fulllayout{ width:100% !important;}
+
+.container{ width:1170px; margin:0 auto; position:relative; }
+.header_fixer{ width:100%; z-index:9999; position:relative; background-color:#fff !important;}
+.header_fixer.siteinner{ position:relative; border-bottom:1px solid #eee;  }
+.header_fixer.fixed{ position: fixed; top:0; z-index:999999; width:100%;}
+.boxlayout .header_fixer.fixed{ overflow:hidden; }
+.header_fixer.no-sticky{ position:relative !important; }
+
+.logo { float: left; padding: 15px 0;position: relative;text-align: left;}
+.logo h1 { margin: 0;font-size:30px;font-weight:400;letter-spacing:-1px;}
+.logo a { color: #111;}
+.logo p{ font-size:13px; color:#111; display:block; letter-spacing:1px;}
+
+
+.header_right a, .header_right i{ color:#ffffff;}
+.header_right{float:right; text-align:right; width:auto; margin:0 0 0 25px; padding:14px 20px 15px 20px; position:relative; background:#ec4613;-webkit-transform: skew(-30deg); -moz-transform: skew(-30deg); -ms-transform: skew(-30deg); -o-transform: skew(-30deg);}
+.header_right:after{background: #ec4613; bottom: 0;content: "";position: absolute;right: -99988px; top: 0px; width: 99999px;}
+.header_right:empty{display:none;}
+.contactinfo{text-align:left; box-sizing:border-box;padding:0; display:block;-webkit-transform: skew(30deg); -moz-transform: skew(30deg); -ms-transform: skew(30deg); -o-transform: skew(30deg);}
+.contactinfo:nth-child(2){ padding-left:20px}
+.contactinfo i{float:left;margin-right:10px;position:relative; top:4px}
+
+.header-socialicons a{ width:40px; height:40px; line-height:40px; text-align:center;  vertical-align:middle; display:inline-block; padding:0; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s; -o-transition:0.6s; font-size:15px; color:#ffffff;}
+.header-top .header-socialicons a{ height:46px;}
+.header-socialicons a:hover{ color:#111; }
+.header-socialicons br{ display:none;}
+
+
+
+/*header menu css*/
+.toggle{display: block;}
+.toggle a{width:100%; color:#ffffff; background:url(images/mobile-nav.png) no-repeat right center #3e3e3e; padding:8px 10px; margin-top:5px; font-size:15px; display:none; text-align:left;}
+.toggle a:hover{color:#ffffff !important;}
+/*main menu*/
+.sitenavigation{float:right; padding-top:20px; position:relative;}
+.sitemenu{ padding:0; z-index:9999; display:inline-block; position:relative; }
+.sitemenu ul { margin:0; padding:0; font-family:'Open Sans', sans-serif; font-size:13px; font-weight:600;  position:relative; }
+.sitemenu ul li{ margin:0; padding:0; display:inline-block; position:relative; }
+.sitemenu ul li:last-child{border-right:none;}
+.sitemenu ul li a{ padding:10px 20px; display:block; text-align:center; text-transform:uppercase;  color:#303030; -webkit-transform: skew(-20deg); -moz-transform: skew(-20deg); -ms-transform: skew(-20deg); -o-transform: skew(-20deg);}
+.sitemenu ul.sub-menu li, .sitemenu ul.sub-menu li:hover, .sitemenu ul.sub-menu li a {-webkit-transform: none !important; -moz-transform: none !important;   -ms-transform: none !important; -o-transform: none !important; }
+
+.sitemenu ul li ul li{ display:block; position:relative; float:none; border-bottom:1px solid #eee;}
+.sitemenu ul li ul li a{ display:block; padding-top:7px; padding-bottom:7px; position:relative; text-align:left;}
+.sitemenu ul li ul{display:none; z-index:9999999; position:relative; background-color:#ffffff ;}
+.sitemenu ul li:hover > ul{display:block; width:200px; position:absolute; left:0; text-align:left; }
+.sitemenu ul li:hover ul li ul{display:none; position:relative;}
+.sitemenu ul li:hover ul li:hover > ul{display:block; position:absolute; left:200px; top:0;}
+.sitemenu ul li a:hover, 
+.sitemenu ul li.current-menu-item a,
+.sitemenu ul li.current-menu-parent a.parent,
+.sitemenu ul li.current-menu-item ul.sub-menu li a:hover{ background-color:#8f2817; color:#fff;  }
+.sitemenu ul li.current-menu-item ul.sub-menu li a{  -webkit-transform: none !important; -moz-transform: none !important;   -ms-transform: none !important; -o-transform: none !important;}
+
+
+.slider_section{ position:relative;}
+h2.sectiontitle{font-weight:600; font-size:40px; margin-bottom:50px; position:relative; text-align:center;}
+.last_column{clear:right; margin-right:0 !important; }
+#sidebar .search-form input.search-submit{ background:url(images/search-icon.png) no-repeat center center #efc62c; padding: 12px 0 12px 0; font-size:0; width:20%; height:43px; float:right; border:0;}
+
+/* = Five Column boxes Section CSS Section
+-------------------------------------- */
+h2.section-title{ font-size:32px; font-weight:800; text-align:center; margin-bottom:40px; display:block;}
+#fivecol_sports_section{ padding:1px 0 0 0; text-align:center;}
+#fivecol_sports_section .container{ width:100%;}
+.sports_5col{ width:20%; float:left; margin:0; position:relative; box-sizing:border-box; text-align:center;}
+.sports_5col .imgbx_5col{width:100%; height:208px; overflow:hidden; margin:0 auto; box-sizing:border-box; background:#000000;}
+.sports_5col .imgbx_5col img{backface-visibility:hidden; min-height:208px; width:100%; vertical-align: middle; opacity:0.5}
+.sports_5col:hover .imgbx_5col img{ opacity:0.5;}
+.contentbx_5col{ padding:0; position:absolute; left:0; right:0; top:45%; }
+.contentbx_5col p{ margin-bottom:30px;}
+.sports_5col .readmorebtn{ background-color:#ec4613; color:#fff; text-align:center; height:58px; width:47px; line-height:58px; display:inline-block; font-size:18px; position:absolute; bottom:0; left:0; right:0; margin:0 auto; opacity:0; z-index:999999}
+.sports_5col .readmorebtn:hover{ background-color:#111; color:#fff; }
+.sports_5col:hover .readmorebtn{ opacity:1;}
+.sports_5col h3{ font-size:20px; font-weight:400; margin:0; color:#ffffff; text-transform:uppercase;}
+.sports_5col h3 a{ color:#fff;}
+
+
+/* = Welcome Section
+-------------------------------------- */
+#about_section{ padding:80px 0 0; background-color:#eff0f0; }
+.aboutus_thumbox{ width:42%; float:left; margin:0 0 0 0; }
+.aboutus_thumbox img{ width:100%; display:block; }
+.aboutus_contentcol{ width:50%; float:right; margin:0; }
+.aboutus_contentcol h3{ font-size:32px; font-weight:800; margin-bottom:30px; position:relative; padding-bottom:25px;}
+.aboutus_contentcol h3:after{content:""; position:absolute; width:53px; border-bottom:2px solid #222222; bottom:0; left:0;}
+.aboutus_contentcol p{ margin-bottom:35px;}
+
+
+/* = Three column box section
+-------------------------------------------------------------- */
+#services_3column_section{ position:relative; background-color:#ffffff; padding:80px 0 0; }
+#services_3column_section .container{ width:100%;}
+.srvshortdesc{ width:70%; margin:0 auto; margin-bottom:50px; text-align:center;}
+
+.threecol_thumbx, .threecol_thumbx img, .pagereadmore, .pagereadmore:after{ transition:all ease 1s; -webkit-transition:all ease 1s; -o-transition:all ease 1s; -ms-transition:all ease 1s; -moz-transition:all ease 1s; -moz-transition:all ease 1s; }
+
+
+.threecol_box{ padding:0; width:33.333%; float:left; margin:0; position:relative; box-sizing:border-box; }
+.threecol_box .threecol_thumbx{ height:390px; overflow:hidden; margin:0; position:relative; background-color:#000;  }
+.threecol_box .threecol_thumbx img{min-height:390px; opacity:0.5; width:100%;}
+
+.threecol_box h3{ font-size:27px; color:#ffffff; padding:0 40px 0 0; position:relative; display:inline-block}
+.threecol_box h3 a{ color:#fff; }
+
+.threecol_contentbx{width:100%; padding:75px; color:#ffffff; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); -webkit-transform:translate(-50%,-50%); -o-transform:translate(-50%,-50%); -ms-transform:translate(-50%,-50%); -moz-transform:translate(-50%,-50%); }
+.threecol_contentbx p{ margin:10px 0 45px 0; }
+
+.threecol_box .pagereadmore{ font-weight: 600; color:#000000; font-size: 15px; border-radius: 0; position: relative; padding:13px 28px 13px 28px; background:#ffffff; text-transform:uppercase; }
+.pagereadmore:after{top: 0; height: 45px; width: 45px; content: ''; position: absolute; right: -15px; background:#ffffff; -webkit-transform:skew(30deg);   -moz-transform: skew(30deg); -ms-transform: skew(30deg); -o-transform: skew(30deg); z-index:-1}
+.threecol_box:hover .pagereadmore, .pagereadmore:hover{ color:#ffffff}
+.white-dot{ width:13px; height:3px; border-bottom:3px solid #ffffff; bottom:0; position:absolute; right:0;}
+.orange-dot{width:13px; height:3px; border-bottom:3px solid #ec4613; bottom:0; position:absolute; right:16px;}
+
+
+/* = sidebar
+-------------------------------------------------------------- */
+#sidebar{ float:right; width:28%;}
+aside.widget{ margin-bottom:30px; }
+aside.widget ul{ list-style:disc; margin:0; padding:0; }
+h3.widget-title{ font-weight:600; margin:0 0 20px; color:#202020; font-size:20px; position:relative; padding:0 0 15px; text-transform:uppercase; }
+h3.widget-title:after{content:""; position:absolute; width:50px; border-bottom:1px solid #202020; bottom:0; left:0;}
+
+
+#sidebar ul li{ list-style:none; margin:0; margin-bottom:2px; padding:7px 0 7px 0; }
+#sidebar ul li a{ color:#3b3b3b; }
+#sidebar ul li a:hover{ color:#34c6f6;}
+#sidebar ul li:before{font-family: "Font Awesome 5 solid"; content: "\f054"; font-size:12px; margin-top:0; font-style:normal; font-weight:400; padding-right:10px;}
+
+
+
+
+aside .textwidget{ padding:20px; background-color:#f5f5f4;}
+
+#sidebar .search-form{ margin-bottom:20px;}
+#sidebar .search-form input.search-field{ background-color:#fff; width:80%; padding: 12px 15px 12px 15px; border:1px solid #ddd; }
+#sidebar .search-form input.search-submit{ background:url(images/search-icon.png) no-repeat center center #efc62c; padding: 12px 0 12px 0; font-size:0; width:20%; height:43px; float:right; border:0;}
+.headerwidget .header-title{ display:none;}
+
+
+
+/* = Page layout css
+-------------------------------------------------------------- */
+.sport_innerpage_content_wrapper{ width:68%; margin:0; float:left; padding:0 0 30px; }
+.sport_innerpage_content_wrapper ul, .sport_innerpage_content_wrapper ol{ margin:0 0 20px 20px; }
+.sport_innerpage_content_wrapper ul li, .sport_innerpage_content_wrapper ol li{ margin:0; }
+.sport_innerpage_content_wrapper ul ul, .sport_innerpage_content_wrapper ol ol{ margin:0 0 0 30px; }
+
+.fullwidth{ width:100% !important; float:none  !important;}
+.fullwidth p{ margin-bottom:15px;}
+.nosidebar{ float:none  !important; margin: auto;}
+
+#sport_innerpage_area{ padding:50px 0;}
+#sport_innerpage_area p{ margin-bottom:30px;}
+
+.blogpost_layout{ margin:0 0 30px 0;}
+.blogpost_layout .blogpost_imagebx{ float:left; width:35%; margin:0 5% 20px 0;}
+.blogpost_layout .blogpost_imagebx img{ height:auto;}
+.blogpost_layout h3, h3.single-title{ margin-bottom:10px; font-size:22px; font-weight:600;}
+.blogpost_layout h3 a{ color:#484f5e;}
+.blogpost_layout h3 a:hover{ color:#efc62c;}
+.blogpost_layout p{ margin-bottom:20px;}
+.blogreadmore{ border:1px solid #111; color:#111; padding:7px 20px; display:inline-block; border-radius:2px;}
+.blog-meta{ font-style:italic; margin-bottom:8px;}
+.blogpost_date, .post-comment, .post-categories, .post-author, .edit-link{ display:inline; color:#333; font-weight:600; text-transform:uppercase; letter-spacing:2px; font-size:13px; margin:0 10px 0 0;} 
+.single_title{ margin-bottom:5px;}
+body.single-post .blogpost_layout { width:100%; float:none; margin:0; }
+
+/* = Footer css
+-------------------------------------------------------------- */
+.footer-wrapper{ background-color:#262a31; padding:0; position:relative; color:#6a6a6a;}
+.copyright-txt span{color:#efc62c;}
+.wp_powerd_by{ float:left; text-align:left;}
+.gt_design_by { float:right; text-align:right;}
+.gt_design_by a:hover{color:#999;}
+
+.footer-wrapper h5{ margin:0 0 30px 0; font-size:22px; color:#ddd; text-transform:uppercase; }
+.footer-wrapper .widget{ padding:40px 0 20px;}
+
+.footer_bottom{ background-color:#1e2025; color:#6a6a6a; position:relative; text-align:center; padding:25px 0;}
+.footer_bottom a:hover{ color:#fff;}
+
+.widget-column-1{ width:24%; float:left; margin:0 4% 0 0; }
+.widget-column-2{ width:20%; float:left; margin:0 4% 0 0; }
+.widget-column-3{ width:24%; float:left; margin:0 4% 0 0; }
+.widget-column-4{ width:20%; float:left; margin:0 0 0 0; }
+
+.footer-wrapper ul{ margin:0; padding:0; list-style:inside disc;}
+.footer-wrapper ul li { padding:0 0 8px 0; margin:0; color:#8a8989;}
+.footer-wrapper ul li a { color:#8a8989; }
+.footer-wrapper ul li a:hover, .footer-wrapper ul li.current_page_item a { color:#f2b23d; }
+
+
+
+/* Buttons */
+.button{  border:1px solid #404040; color:#404040; padding:10px 30px; display:inline-block; border-radius:25px; -moz-border-radius:25px; -webkit-border-radius:25px; -o-border-radius:25px; -ms-border-radius:25px; }
+.button:hover{ border:1px solid #ec4613; color:#ec4613; }
+a.ReadMore{ background-color:#333339; color:#fff ; padding:5px 15px; display:inline-block;}
+a.ReadMore:hover{ background-color:#ffae00; color:#fff; }
+
+.learnmore{ background-color:#ec4613; color:#fff ;display: inline-block; padding:10px 30px; text-transform:uppercase; font-weight:600; border-radius:25px; -moz-border-radius:25px; -webkit-border-radius:25px; -o-border-radius:25px; -ms-border-radius:25px; font-size:14px; }
+.learnmore:hover{ background-color:#333;color:#fff ;}
+
+
+/* WooCommerce plugin css code */
+a.added_to_cart{background:#e1472f; padding:5px; display:inline-block; color:#fff; line-height:1;}
+a.added_to_cart:hover{background:#000000;}
+a.button.added:before{content:'' !important;}
+#bbpress-forums ul li{padding:0;}
+#subscription-toggle a.subscription-toggle{padding:5px 10px; display:inline-block; color:#e1472f; margin-top:4px;}
+textarea.wp-editor-area{border:1px #ccc solid;}
+.woocommerce input[type=text], .woocommerce textarea{border:1px #ccc solid; padding:4px;}
+form.woocommerce-ordering select{ padding:5px; color:#777777;}
+.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ color:#ff8a00;}
+.woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price{ color:inherit !important;}
+h1.product_title, p.price{ margin-bottom:10px;}
+
+.woocommerce table.shop_table th, .woocommerce-page table.shop_table th{ color:#ff6d84;}
+.woocommerce ul.products li, #payment ul.payment_methods li{ list-style:none !important;}
+.woocommerce ul.products li.product .price, .woocommerce-page ul.products li.product .price{ color:inherit !important;}
+.woocommerce table.shop_table th, .woocommerce table.shop_table td{ border-bottom:0px !important}
+
+.woocommerce .quantity .qty{ padding:7px; border:1px solid #ccc;}
+.woocommerce-Price-amount.amount{font-size:14px !important;}
+.woocommerce div.product .product_title{ padding-bottom:20px !important;}
+.woocommerce div.product form.cart{ margin-top:15px !important;}
+
+/* = Contact Form 7 css
+-------------------------------------------------------------- */
+.wpcf7{ margin:30px 0 0; padding:0;}
+.wpcf7 input[type="text"], .wpcf7 input[type="tel"], .wpcf7 input[type="email"]{ width:40%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:35px; padding:0 15px; color:#797979; margin-bottom:0;}
+.wpcf7 textarea{width:60%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:150px; color:#797979; margin-bottom:25px; font:12px arial; padding:10px; padding-right:0;}
+.wpcf7 input[type="submit"]{background-color:#efc62c; width:auto; border:none; cursor:pointer; font:18px/22px 'Open Sans',san-serif; color:#ffffff; padding:10px 40px; border-radius:3px;}
+
+
+/* = Comment Form css
+-------------------------------------------------------------- */
+h1.screen-reader-text{font:22px 'Open Sans',san-serif;}
+.site-nav-previous, .nav-previous{ float:left;}
+.site-nav-next, .nav-next{ float:right;}
+h3#reply-title{ font-size:20px;}
+#comments{ margin:30px 0 0; padding:0;}
+nav#nav-below{ margin-top:15px;}
+
+/* Comment styles */
+ol.commentlist{list-style:none;}
+#commentform p{margin:5px 0;}
+#commentform label{display:block;}
+#commentform input#email, #commentform input#url, #commentform input#author, #commentform textarea, #commentform input#eazycfc_captcha{max-width:96%; border:1px #ccc solid; padding:5px 2%;}
+#commentform input#submit{ background-color:#32373a; border:none; padding:12px 25px; color:#fff; display:inline-block; cursor:pointer; border-radius:5px;}
+#commentform input#submit:hover{background:#34c6f6; color:#fff;}
+.form-allowed-tags{display:none;}
+.entry-content table, .comment-body table{ border-collapse:collapse; margin:10px 0;}
+.entry-content table td, .entry-content table th, .comment-body table td, .comment-body table th{padding:10px 5px; text-align:left;}
+.entry-content table th, .comment-body table th{color:#676767; font:normal 18px Oswald; border-bottom:1px #888 solid;}
+.entry-content table td, .comment-body table td{border-bottom:1px #ccc solid;}
+.fvch-codeblock:hover .comment-form-url{display:block !important;}
+.commentlist, ol.commentlist {list-style:none; box-shadow:0 0 5px #666; -moz-box-shadow:0 0 5px #666; -webkit-box-shadow:0 0 5px #666; -khtml-box-shadow:0 0 5px #666; margin:10px 0; background-color:#fff; padding:10px 0;}
+.commentlist li, ol.commentlist li { list-style:none; background-image:none !important; padding:0px 15px;}
+.commentlist li ol li.depth-2, .commentlist li ol li.depth-3, .commentlist li ol li.depth-4, ol.commentlist li ol li.depth-2, ol.commentlist li ol li.depth-3, ol.commentlist li ol li.depth-4 { border-bottom:none;}
+.commentlist li.bypostauthor article, ol.commentlist li.bypostauthor article { background:#f9ffe1;}
+.commentlist article, .commentlist li.bypostauthor li article, ol.commentlist li.bypostauthor li article { border:none !important; padding:10px; position:relative; background-color:#fff;}
+.commentlist li .fn { font-weight:normal; font-size:15px; font-style:normal;}
+.commentlist li.bypostauthor .fn, ol.commentlist li.bypostauthor .fn { color:#000;}
+img.avatar { vertical-align:middle; position:static; display:inline-block;}
+.commentlist article a time { display:block; clear:both; padding:5px 0 10px; font-size:11px; font-style:italic; }
+.commentlist, ol.commentlist p { font-size:14px;}
+.commentlist .reply span, ol.commentlist .reply span { display:none;}
+.commentlist .reply a, ol.commentlist .reply a { display:block;	padding:10px; text-align:center; background:#f6f6f6; margin:5px 0; border:1px #ddd solid;}
+.comment-author.vcard{display:inline-block; margin-right:15px;}
+.comment-list ul.children li.comment{background-image:none; padding-left:5px;}
+
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; 
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#sport_innerpage_area[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+
+/* = Navigation Focus CSS
+-------------------------------------------- */
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus,
+a:focus {
+	outline: thin dotted #e96300;
+}

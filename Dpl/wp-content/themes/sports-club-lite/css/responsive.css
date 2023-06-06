@@ -1,0 +1,152 @@
+/* Mobile Portrait View */
+@media screen and (max-width:767px) {
+*{box-sizing:border-box;}
+.left, .right, .copyright-txt, .gt_design_by, .wp_powerd_by{ float:none; text-align:center;}
+.container { width:auto; padding:0 20px;}
+.header_fixer{ position:relative;}
+.logo{ width:auto; float:none; text-align:center; margin-bottom:5px; position:relative; padding:8px 0;}
+.header-top .left{ display:none;}
+.left-right-border{ border:none; padding:0;}
+.sitenavigationigation{ margin-bottom:10px;}
+.contactinfo{ padding-top:10px; padding-bottom:10px;}
+/*coloumn css*/
+.blogpost_imagebx{ width:100%; float:none; margin:0 0 10px;}
+/*sidebar css*/
+#sidebar{ width:100%; float:none;}
+.content-area{ width:auto; margin:0; padding:50px 20px;}
+.sport_innerpage_content_wrapper{ width:auto; float:none;}
+.fivecol_sports_section{ padding:40px 0;}
+.threecol_contentbx{ float:none; width:100%; padding:10px;}
+.srvshortdesc{ width:100%;}
+.threecol_contentbx p{ margin-bottom:30px;}
+
+.header_right{ float:none; text-align:center; width:100%; margin:0; padding:15px; position:relative; background:#ec4613;-webkit-transform: none !important; -moz-transform: none !important; -ms-transform:none !important; -o-transform:none !important;}
+.header_right:after{ position: relative;right:0;  width:100%;}
+.contactinfo{text-align:center; padding:0; display:block;-webkit-transform: none !important; -moz-transform: none !important; -ms-transform: none !important; -o-transform: none !important;}
+.sitenavigation{ float:none; margin:10px 0; padding:0;}
+.contactinfo i{ float:none;}
+
+/*slider css*/
+#slider{ top:0; margin:0;}
+.nivo-caption{ width:80%; bottom:25%; padding:10px; }
+.nivo-caption h2{ font-size:22px !important; line-height:22px !important; margin:0 0 15px !important;}
+.nivo-caption p{ line-height:16px; font-size:14px; margin-bottom:20px;}
+.nivo-caption .slide_more{ padding:5px 20px; font-size:12px;}
+.nivo-directionNav a{ top:35% !important;}
+.nivo-controlNav{ display:none !important;}
+a.nivo-prevNav{ left:1%;}
+a.nivo-nextNav{right:1%;}
+.aboutus_thumbox, .aboutus_contentcol{ float:none; width:auto; margin:0 0 25px 0;}
+.header_panel{ width:100%; display:block;}
+.header-contactinfo{ line-height:30px;}
+#services_3column_section{ margin:0; padding:30px 0;}
+h2.section_title{ font-size:34px; margin-bottom:25px;}
+/*front blog post*/
+
+.wpcf7 input[type="text"], .wpcf7 input[type="tel"], .wpcf7 input[type="email"], .wpcf7 textarea{ width:100%;}
+#layout_forsite{ width:100%;}
+.threecol_box{ width:auto; float:none; margin:0 0 35px; }
+.threecol_box.last_column{ margin-bottom:30px;}
+.widget-column-1, .widget-column-2, .widget-column-3, .widget-column-4{ float:none; width:100%; margin:0 0 5px; padding:0; text-align:left;}
+.footer-wrapper ul li{ margin:0;}
+.footer-wrapper ul li a{ padding:5px;}
+.aboutus_contentcol h3{ font-size:24px;}
+.footer-wrapper h2{ font-size:20px;}
+#about_section{ padding-bottom:30px;}
+.blogpost_layout .blogpost_imagebx{ width:auto; height:auto; overflow:hidden; float:none; margin:0 0 25px 0;}
+.blogpost_layout .blogpost_imagebx img{ height:auto; min-height: inherit;}
+.threecol_box .threecol_thumbx{ float:none; width:100%; margin:0 0 15px 0; height:230px; min-height:inherit;}
+.blogpost_layout{ float:none; width:100%; margin:0 0 30px 0;}
+.threecol_box h3{ margin-bottom:5px;}
+}
+
+/* Mobile Landscape View */
+@media screen and (min-width: 481px) and (max-width: 767px){
+*{box-sizing:border-box;}
+.container, .content-area, #fivecol_sports_section .container, #services_3column_section .container{ width:440px; margin:0 auto;}
+.nivo-controlNav{ display:none !important;}
+.blogpost_imagebx{ width:50%; float:left; margin:5px 20px 10px 0;}
+.sports_5col{ float:none; width:100%; margin:0;}
+}
+/* Mobile Landscape View */
+@media screen and (min-width: 300px) and (max-width: 481px){
+*{box-sizing:border-box;}
+.nivo-caption{ width:80%;}
+.nivo-caption .slide_more, .nivo-caption p{ display:none;}
+.header-socialicons{ display:block; padding:0; position:relative; text-align:center;}
+.header-socialicons a{ padding:0; padding:0 10px; display:inline-table; line-height:40px;}
+.nivo-directionNav{ display:none;}
+.sports_5col{ float:none; width:100%; margin:0;}
+}
+
+@media screen and (min-width:768px) and (max-width: 980px){
+.header_fixer { width:100%; position:relative !important;}
+.header_fixer{ position:relative; background-color:rgba(0, 0, 0, 0.9);}
+#about_section{ padding:40px 0 10px;}
+.aboutus_contentcol h3{ font-size:34px;}
+.nivo-directionNav a{ top:40%;}
+.aboutus_contentcol{ padding-bottom:25px;}
+.header_panel{ display:block; width:100%;}
+.blogpost_layout .blogpost_imagebx{ height:150px;}
+.blogpost_layout .blogpost_imagebx img{ min-height:150px;}
+.threecol_box .threecol_thumbx{ width:100%; float:none; height:200px; margin-bottom:20px;}
+.threecol_contentbx{ float:none; width:100%;}
+.sitenavigation{ display:block; clear:both; float:none; margin:0 0 0; padding:0;}
+.sports_5col .imgbx_5col{ height:150px;}
+.sports_5col .imgbx_5col img{ min-height:150px;}
+.threecol_contentbx{ padding:10px;}
+.threecol_box h3{ margin-bottom:5px;}
+.threecol_contentbx p{ margin-bottom:15px; line-height:18px;}
+}
+
+/* Tablet View */
+@media screen and (max-width:1169px) and (min-width:768px) { 
+*{box-sizing:border-box;}
+.container { width:auto; padding:0 20px;}
+.logo{ padding:20px 0;}
+.logo h1{ font-size:28px;}
+.header_panel{ display:block !important; width:100% !important;}
+/*slider css*/
+.nivo-caption{ width:80%; bottom:15%;}
+.nivo-caption h2{ font-size:42px; line-height:45px;}
+.content-area{ width:auto; margin:0; padding:50px 20px;}
+#sidebar{ width:30%;}
+.sport_innerpage_content_wrapper{ width:65%;}
+#layout_forsite{ width:100%;}
+.aboutus_contentcol{ padding-bottom:25px;}
+
+}
+
+@media screen and (max-width:1169px) and (min-width:981px) { 
+html{overflow-x:hidden; }
+.nivo-caption{ bottom:25%;}
+
+}
+
+@media screen and (max-width: 980px){
+.toggleMenu{display: block;}
+.sitemenu{float:none; margin:0; position:relative; overflow-x:hidden; background-color:#fff; border-radius:0; top:0; border-bottom:none; display:block; }
+.sitemenu ul{color:#000; width:100% !important; float:none !important; margin:0; padding:0;}
+.sitemenu ul li{border-top:1px #cccccc solid; display:block; float:none; text-align:left; border-bottom:none !important}
+.sitemenu ul li a{padding:5px 10px !important; display:block; color:#000; border:none; text-align:left;}
+.sitemenu ul li a:hover, .sitemenu ul li.current_page_item a{color:#efc62c;  border:none !important; border-radius:0;}
+.sitemenu ul li ul, .sitemenu ul li ul ul{ display:block !important; background: transparent !important;}
+.sitemenu ul li ul li a:before{content:"\00BB \00a0";}
+.sitemenu ul li ul li a{padding-left:20px !important; }
+.sitemenu ul li ul li a, .sitemenu ul li.current-menu-ancestor a.parent{ border:none; border-radius:0;}
+.sitemenu ul li ul li ul li a{padding-left:30px !important;}
+.sitemenu ul li ul li ul li ul li a{padding-left:40px !important;}
+.sitemenu ul li:hover > ul{ background:none !important; box-shadow:none;}
+.sitemenu ul li:hover > ul{ background: transparent !important; width:auto !important; display:block; position: relative !important; left:0; right:0; top:0; padding:0;}
+.sitemenu ul li:hover ul li ul, .sitemenu ul li:hover ul li:hover > ul, .sitemenu ul li:hover ul li:hover > ul li ul{  background: transparent !important; display:block; position:relative !important;  right:0; left:0; top:0;}
+.sitemenu ul li:hover ul li:hover ul, .sitemenu ul li:hover ul li:hover ul li:hover ul{ left:0 !important;}
+.sitemenu ul li ul li a{ color:#000;}
+.header_fixer{ position:relative; }
+.header_panel{ width:100%; display:block; background-color:transparent;}
+iframe{ height:auto;}
+.header-socialicons{ position:relative;}
+}
+@media screen and (min-width:1210px) { 
+	.boxlayout .header_fixer.fixed{width:1210px; margin:0 auto;}
+
+}
