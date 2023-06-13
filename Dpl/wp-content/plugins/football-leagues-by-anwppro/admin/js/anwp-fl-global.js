@@ -32,6 +32,8 @@ window.AnWPFootballLeaguesGlobal = window.AnWPFootballLeaguesGlobal || {};
 		$c.singleSelect = true;
 
 		$c.xhr = null;
+
+		$c.selectorInElementorInitialized = false;
 	};
 
 	plugin.bindEvents = function() {
@@ -46,6 +48,77 @@ window.AnWPFootballLeaguesGlobal = window.AnWPFootballLeaguesGlobal || {};
 
 		$c.document.on( 'widget-added', plugin.initSelectorModaal );
 		$c.document.on( 'widget-updated', plugin.initSelectorModaal );
+
+		if ( 'undefined' !== typeof elementor ) {
+
+			// ToDo - improve - https://github.com/elementor/elementor/issues/1886
+			$c.body.on( 'click', '.anwp-fl-selector', function( e ) {
+
+				var $this = $( this );
+
+				if ( ! $this.closest( '#elementor-controls' ).length ) {
+					return false;
+				}
+
+				if ( ! $c.selectorInElementorInitialized ) {
+
+					$c.btnCancel.on( 'click', function( env ) {
+						env.preventDefault();
+						$c.activeLink.modaal( 'close' );
+					} );
+
+					$c.resultContext.on( 'click', '.anwp-fl-selector-action', function( env ) {
+						env.preventDefault();
+						plugin.addSelected( $( this ).closest( 'tr' ).data( 'id' ), $( this ).closest( 'tr' ).data( 'name' ) );
+					} );
+
+					$c.selectedItems.on( 'click', '.anwp-fl-selector-action-no', function( env ) {
+						env.preventDefault();
+						$( this ).closest( '.anwp-fl-selector-modaal__selected-item' ).remove();
+					} );
+
+					$c.btnInsert.on( 'click', function( env ) {
+						env.preventDefault();
+
+						var output = [];
+
+						$c.selectedItems.find( '.anwp-fl-selector-modaal__selected-item' ).each( function() {
+							output.push( $( this ).find( '.anwp-fl-selector-action-no' ).data( 'id' ) );
+						} );
+
+						$c.activeLink.modaal( 'close' );
+						$c.activeLink.prev( 'input' ).val( output.join( ',' ) );
+						$c.activeLink.prev( 'input' ).trigger( 'change' );
+					} );
+
+					$c.searchInput.on( 'keyup', _.debounce( function() {
+						plugin.sendSearchRequest();
+					}, 500 ) );
+
+					$c.searchStages.on( 'change', plugin.sendSearchRequest );
+
+					$c.selectorInElementorInitialized = true;
+				}
+
+				// Initialize modaal
+				$this.modaal(
+					{
+						content_source: '#anwp-fl-selector-modaal',
+						custom_class: 'anwpfl-shortcode-modal anwp-fl-selector-modal wp-core-ui',
+						hide_close: true,
+						animation: 'none',
+						before_close: plugin.clearSelector
+					}
+				);
+
+				$c.activeLink = $this;
+				$c.activeLink.modaal( 'open' );
+				$c.singleSelect = $c.activeLink.data( 'single' ) === 'yes';
+				plugin.initializeSelectorContent();
+
+				e.preventDefault();
+			} );
+		}
 	};
 
 	plugin.onPageReady = function() {
@@ -58,6 +131,7 @@ window.AnWPFootballLeaguesGlobal = window.AnWPFootballLeaguesGlobal || {};
 		$c.searchSpinner  = $c.body.find( '#anwp-fl-selector-modaal__search-spinner' );
 		$c.initialSpinner = $c.body.find( '#anwp-fl-selector-modaal__initial-spinner' );
 		$c.searchInput    = $c.body.find( '#anwp-fl-selector-modaal__search' );
+		$c.searchStages   = $c.body.find( '#anwp-fl-selector-modaal__stages' );
 		$c.headerContext  = $c.body.find( '#anwp-fl-selector-modaal__header-context' );
 		$c.resultContext  = $c.body.find( '#anwp-fl-selector-modaal__content' );
 		$c.selectedItems  = $c.body.find( '#anwp-fl-selector-modaal__selected' );
@@ -65,6 +139,24 @@ window.AnWPFootballLeaguesGlobal = window.AnWPFootballLeaguesGlobal || {};
 		$c.btnInsert      = $c.body.find( '#anwp-fl-selector-modaal__insert' );
 
 		plugin.initSelectorModaal();
+		plugin.initDatepicker();
+	};
+
+	plugin.initDatepicker = function() {
+		var pickers = $c.body.find( 'input.anwp-fl-admin-datepicker' );
+
+		if ( pickers.length && typeof jQuery.datepicker !== 'undefined' ) {
+			pickers.each( function() {
+				$( this ).datepicker( {
+					dateFormat: 'yy-mm-dd',
+					changeMonth: true,
+					changeYear: true,
+					beforeShow: function( input, inst ) {
+						inst.dpDiv.addClass( 'cmb2-element' );
+					}
+				} );
+			} );
+		}
 	};
 
 	plugin.initSelectorModaal = function() {
@@ -130,6 +222,8 @@ window.AnWPFootballLeaguesGlobal = window.AnWPFootballLeaguesGlobal || {};
 		$c.searchInput.on( 'keyup', _.debounce( function() {
 			plugin.sendSearchRequest();
 		}, 500 ) );
+
+		$c.searchStages.on( 'change', plugin.sendSearchRequest );
 	};
 
 	plugin.addSelected = function( id, name ) {
@@ -245,6 +339,8 @@ window.AnWPFootballLeaguesGlobal = window.AnWPFootballLeaguesGlobal || {};
 				}
 			}
 		} );
+
+		plugin.sendSearchRequest();
 	};
 
 	plugin.sendSearchRequest = function() {
@@ -264,6 +360,8 @@ window.AnWPFootballLeaguesGlobal = window.AnWPFootballLeaguesGlobal || {};
 		$c.searchData.club_away = $c.searchBar.find( '#anwp-fl-selector-modaal__search-club-away' ).val();
 		$c.searchData.season    = $c.searchBar.find( '#anwp-fl-selector-modaal__search-season' ).val();
 		$c.searchData.country   = $c.searchBar.find( '#anwp-fl-selector-modaal__search-country' ).val();
+		$c.searchData.league    = $c.searchBar.find( '#anwp-fl-selector-modaal__search-league' ).val();
+		$c.searchData.stages    = $c.searchBar.find( '#anwp-fl-selector-modaal__stages' ).prop( 'checked' ) ? 'yes' : 'no';
 
 		$c.xhr = $.ajax( {
 			url: ajaxurl,

@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.10.21
  *
- * @version       0.10.23
+ * @version       0.13.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,6 +37,7 @@ if ( empty( $gallery ) || ! is_array( $gallery ) ) {
 	return;
 }
 
+$gallery_alts  = anwp_football_leagues()->data->get_image_alt( array_keys( $gallery ) );
 $gallery_notes = get_post_meta( $data->match_id, '_anwpfl_gallery_notes', true );
 ?>
 <div class="match__gallery-wrapper anwp-section">
@@ -44,8 +45,8 @@ $gallery_notes = get_post_meta( $data->match_id, '_anwpfl_gallery_notes', true )
 		<div class="anwp-block-header"><?php echo esc_html( AnWPFL_Text::get_value( 'match__gallery__gallery', __( 'Gallery', 'anwp-football-leagues' ) ) ); ?></div>
 	<?php endif; ?>
 	<div class="anwpfl-not-ready-0 anwp-justified-gallery" id="match__gallery" data-featherlight-gallery data-featherlight-filter="a">
-		<?php foreach ( $gallery as $image ) : ?>
-			<a href="<?php echo esc_attr( $image ); ?>"><img src="<?php echo esc_url( $image ); ?>" alt=""></a>
+		<?php foreach ( $gallery as $image_id => $image ) : ?>
+			<a href="<?php echo esc_attr( $image ); ?>"><img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( isset( $gallery_alts[ $image_id ] ) ? $gallery_alts[ $image_id ] : '' ); ?>"></a>
 		<?php endforeach; ?>
 	</div>
 

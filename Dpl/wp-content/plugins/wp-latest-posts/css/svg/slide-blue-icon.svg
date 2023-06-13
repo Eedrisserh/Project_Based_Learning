@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <path id="b" d="M10.537 23.38h-8.39a2.023 2.023 0 0 1-2.024-2.023V2.921c0-1.117.906-2.023 2.023-2.023h26.177c1.117 0 2.023.906 2.023 2.023v18.436a2.023 2.023 0 0 1-2.023 2.024h-8.38"/>
+        <filter id="a" width="371.3%" height="464.7%" x="-135.7%" y="-93.4%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="shadowSpreadOuter1"/>
+            <feOffset dy="20" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feMorphology in="SourceAlpha" radius="1" result="shadowInner"/>
+            <feOffset dy="20" in="shadowInner" result="shadowInner"/>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.72977329 0 0 0 0 0.752441054 0 0 0 0 0.834289966 0 0 0 0.0619055707 0"/>
+        </filter>
+        <path id="d" d="M2.023 9.104v-7.08h7.081"/>
+        <filter id="c" width="1258%" height="1258%" x="-579%" y="-296.6%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="shadowSpreadOuter1"/>
+            <feOffset dy="20" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feMorphology in="SourceAlpha" radius="1" result="shadowInner"/>
+            <feOffset dy="20" in="shadowInner" result="shadowInner"/>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.72977329 0 0 0 0 0.752441054 0 0 0 0 0.834289966 0 0 0 0.0619055707 0"/>
+        </filter>
+        <path id="f" d="M5.564 1.012v17.283"/>
+        <filter id="e" width="4153%" height="574.5%" x="-2026.5%" y="-121.5%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="shadowSpreadOuter1"/>
+            <feOffset dy="20" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feMorphology in="SourceAlpha" radius="1" result="shadowInner"/>
+            <feOffset dy="20" in="shadowInner" result="shadowInner"/>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.72977329 0 0 0 0 0.752441054 0 0 0 0 0.834289966 0 0 0 0.0619055707 0"/>
+        </filter>
+        <path id="h" d="M24.735.69v22.119"/>
+        <filter id="g" width="4666%" height="470.7%" x="-2283%" y="-94.9%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="shadowSpreadOuter1"/>
+            <feOffset dy="20" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feMorphology in="SourceAlpha" radius="1" result="shadowInner"/>
+            <feOffset dy="20" in="shadowInner" result="shadowInner"/>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.72977329 0 0 0 0 0.752441054 0 0 0 0 0.834289966 0 0 0 0.0619055707 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="rotate(-90 21.816 14.625)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use stroke="#297FFF" stroke-width="2" xlink:href="#b"/>
+        </g>
+        <g transform="rotate(-45 33.679 -5.836)">
+            <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+            <use stroke="#297FFF" stroke-width="2" xlink:href="#d"/>
+        </g>
+        <g transform="rotate(-90 21.982 5.687)">
+            <use fill="#000" filter="url(#e)" xlink:href="#f"/>
+            <use stroke="#297FFF" stroke-width="2" xlink:href="#f"/>
+        </g>
+        <g transform="rotate(-90 21.816 14.625)">
+            <use fill="#000" filter="url(#g)" xlink:href="#h"/>
+            <use stroke="#297FFF" stroke-width="2" xlink:href="#h"/>
+        </g>
+    </g>
+</svg>

@@ -1,4 +1,10 @@
+/**
+ * @output wp-includes/js/customize-preview-nav-menus.js
+ */
+
 /* global _wpCustomizePreviewNavMenusExports */
+
+/** @namespace wp.customize.navMenusPreview */
 wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function( $, _, wp, api ) {
 	'use strict';
 
@@ -15,7 +21,19 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 	 * Initialize nav menus preview.
 	 */
 	self.init = function() {
-		var self = this;
+		var self = this, synced = false;
+
+		/*
+		 * Keep track of whether we synced to determine whether or not bindSettingListener
+		 * should also initially fire the listener. This initial firing needs to wait until
+		 * after all of the settings have been synced from the pane in order to prevent
+		 * an infinite selective fallback-refresh. Note that this sync handler will be
+		 * added after the sync handler in customize-preview.js, so it will be triggered
+		 * after all of the settings are added.
+		 */
+		api.preview.bind( 'sync', function() {
+			synced = true;
+		} );
 
 		if ( api.selectiveRefresh ) {
 			// Listen for changes to settings related to nav menus.
@@ -23,7 +41,17 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 				self.bindSettingListener( setting );
 			} );
 			api.bind( 'add', function( setting ) {
-				self.bindSettingListener( setting, { fire: true } );
+
+				/*
+				 * Handle case where an invalid nav menu item (one for which its associated object has been deleted)
+				 * is synced from the controls into the preview. Since invalid nav menu items are filtered out from
+				 * being exported to the frontend by the _is_valid_nav_menu_item filter in wp_get_nav_menu_items(),
+				 * the customizer controls will have a nav_menu_item setting where the preview will have none, and
+				 * this can trigger an infinite fallback refresh when the nav menu item lacks any valid items.
+				 */
+				if ( setting.get() && ! setting.get()._invalid ) {
+					self.bindSettingListener( setting, { fire: synced } );
+				}
 			} );
 			api.bind( 'remove', function( setting ) {
 				self.unbindSettingListener( setting );
@@ -50,11 +78,14 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 		/**
 		 * Partial representing an invocation of wp_nav_menu().
 		 *
+		 * @memberOf wp.customize.navMenusPreview
+		 * @alias wp.customize.navMenusPreview.NavMenuInstancePartial
+		 *
 		 * @class
 		 * @augments wp.customize.selectiveRefresh.Partial
 		 * @since 4.5.0
 		 */
-		self.NavMenuInstancePartial = api.selectiveRefresh.Partial.extend({
+		self.NavMenuInstancePartial = api.selectiveRefresh.Partial.extend(/** @lends wp.customize.navMenusPreview.NavMenuInstancePartial.prototype */{
 
 			/**
 			 * Constructor.
@@ -67,7 +98,7 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 			 * @param {string} options.params.navMenuArgs.args_hmac
 			 * @param {string} [options.params.navMenuArgs.theme_location]
 			 * @param {number} [options.params.navMenuArgs.menu]
-			 * @param {object} [options.constructingContainerContext]
+			 * @param {Object} [options.constructingContainerContext]
 			 */
 			initialize: function( id, options ) {
 				var partial = this, matches, argsHmac;
@@ -101,12 +132,12 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 			 *
 			 * @since 4.5.0
 			 * @param {wp.customize.Value|string} setting  - Object or ID.
-			 * @param {number|object|false|null}  newValue - New value, or null if the setting was just removed.
-			 * @param {number|object|false|null}  oldValue - Old value, or null if the setting was just added.
-			 * @returns {boolean}
+			 * @param {number|Object|false|null}  newValue - New value, or null if the setting was just removed.
+			 * @param {number|Object|false|null}  oldValue - Old value, or null if the setting was just added.
+			 * @return {boolean}
 			 */
 			isRelatedSetting: function( setting, newValue, oldValue ) {
-				var partial = this, navMenuLocationSetting, navMenuId, isNavMenuItemSetting;
+				var partial = this, navMenuLocationSetting, navMenuId, isNavMenuItemSetting, _newValue, _oldValue, urlParser;
 				if ( _.isString( setting ) ) {
 					setting = api( setting );
 				}
@@ -123,9 +154,29 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 				 */
 				isNavMenuItemSetting = /^nav_menu_item\[/.test( setting.id );
 				if ( isNavMenuItemSetting && _.isObject( newValue ) && _.isObject( oldValue ) ) {
-					delete newValue.type_label;
-					delete oldValue.type_label;
-					if ( _.isEqual( oldValue, newValue ) ) {
+					_newValue = _.clone( newValue );
+					_oldValue = _.clone( oldValue );
+					delete _newValue.type_label;
+					delete _oldValue.type_label;
+
+					// Normalize URL scheme when parent frame is HTTPS to prevent selective refresh upon initial page load.
+					if ( 'https' === api.preview.scheme.get() ) {
+						urlParser = document.createElement( 'a' );
+						urlParser.href = _newValue.url;
+						urlParser.protocol = 'https:';
+						_newValue.url = urlParser.href;
+						urlParser.href = _oldValue.url;
+						urlParser.protocol = 'https:';
+						_oldValue.url = urlParser.href;
+					}
+
+					// Prevent original_title differences from causing refreshes if title is present.
+					if ( newValue.title ) {
+						delete _oldValue.original_title;
+						delete _newValue.original_title;
+					}
+
+					if ( _.isEqual( _oldValue, _newValue ) ) {
 						return false;
 					}
 				}
@@ -159,7 +210,7 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 			 *
 			 * @since 4.5.0
 			 *
-			 * @returns {Promise}
+			 * @return {Promise}
 			 */
 			refresh: function() {
 				var partial = this, menuId, deferred = $.Deferred();
@@ -212,7 +263,7 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 		/**
 		 * Request full refresh if there are nav menu instances that lack partials which also match the supplied args.
 		 *
-		 * @param {object} navMenuInstanceArgs
+		 * @param {Object} navMenuInstanceArgs
 		 */
 		self.handleUnplacedNavMenuInstances = function( navMenuInstanceArgs ) {
 			var unplacedNavMenuInstances;
@@ -232,7 +283,7 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 		 * @since 4.5.0
 		 *
 		 * @param {wp.customize.Value} setting
-		 * @param {object}             [options]
+		 * @param {Object}             [options]
 		 * @param {boolean}            options.fire Whether to invoke the callback after binding.
 		 *                                          This is used when a dynamic setting is added.
 		 * @return {boolean} Whether the setting was bound.
@@ -319,8 +370,8 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 		 *
 		 * @since 4.5.0
 		 *
-		 * @param {object} newItem New value for nav_menu_item[] setting.
-		 * @param {object} oldItem Old value for nav_menu_item[] setting.
+		 * @param {Object} newItem New value for nav_menu_item[] setting.
+		 * @param {Object} oldItem Old value for nav_menu_item[] setting.
 		 * @this {wp.customize.Value}
 		 */
 		self.onChangeNavMenuItemSetting = function( newItem, oldItem ) {
@@ -365,6 +416,11 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 	self.highlightControls = function() {
 		var selector = '.menu-item';
 
+		// Skip adding highlights if not in the customizer preview iframe.
+		if ( ! api.settings.channel ) {
+			return;
+		}
+
 		// Focus on the menu item control when shift+clicking the menu item.
 		$( document ).on( 'click', selector, function( e ) {
 			var navMenuItemParts;
@@ -372,7 +428,7 @@ wp.customize.navMenusPreview = wp.customize.MenusCustomizerPreview = ( function(
 				return;
 			}
 
-			navMenuItemParts = $( this ).attr( 'class' ).match( /(?:^|\s)menu-item-(\d+)(?:\s|$)/ );
+			navMenuItemParts = $( this ).attr( 'class' ).match( /(?:^|\s)menu-item-(-?\d+)(?:\s|$)/ );
 			if ( navMenuItemParts ) {
 				e.preventDefault();
 				e.stopPropagation(); // Make sure a sub-nav menu item will get focused instead of parent items.

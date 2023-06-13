@@ -8,9 +8,6 @@
  */
 
 /** Load WordPress Administration Bootstrap */
-require_once( dirname( __FILE__ ) . '/admin.php' );
+require_once __DIR__ . '/admin.php';
 
-if ( ! is_multisite() )
-	wp_die( __( 'Multisite support is not enabled.' ) );
-
-require( ABSPATH . 'wp-admin/plugin-editor.php' );
+require ABSPATH . 'wp-admin/plugin-editor.php';

@@ -1,5 +1,72 @@
 == Changelog ==
 
+= 0.13.2 - 2021-10-18 =
+* added: Plugin Health page to check some common problems
+
+= 0.13.1 - 2021-10-08 =
+* added: Data Import - player "Bio" field
+* improved: minor improvements
+
+= 0.13.0 - 2021-10-04 =
+* added: Game edit page: squad number in the player selector
+* improved: minor performance improvements
+* added: WebP image support in gallery
+
+= 0.12.7 - 2021-08-01 =
+* improved: Game Edit UI (new lineup player selector, updated game events table and selector, special submenu)
+* improved: Import Data UI
+* added: new fields in Import Data UI >> Player: full_name, national_team, country_of_birth, date_of_death
+* fixed: error on loading team squad to edit with fully removed player
+* added: Next and Last Match shortcodes (the same as the existing widgets)
+
+= 0.12.6 - 2021-06-19 =
+* improved: Club edit page UI
+* added: option to change player current club in Squad
+
+= 0.12.5 - 2021-06-07 =
+* improved: Club Squad admin UI
+* added: Data Import >> Club: "National Team" option
+* added: home_club and away_club arguments in Matches shortcode
+
+= 0.12.4 - 2021-05-21 =
+* added: new Staff and Referee shortcodes
+* added: option to count in player statistics Yellow + Yellow/Red as Red card only - (Settings & Tools >> Settings >> General)
+
+= 0.12.3 - 2021-04-28 =
+* added: option to override Countries translations
+* added: option "How to count in statistics "second yellow > red" card"
+* added: new shortcode and widget - Competition List
+
+= 0.12.2 - 2021-04-07 =
+* added: National team option in Club and Player
+
+= 0.12.1 - 2021-03-22 =
+* fixed: date picker not working in the Match edit page
+
+= 0.12.0 - 2021-03-21 =
+* fixed: Matches shortcode: grouping header text (day and month) is not localized
+* added: new socials in Player's and Club's profile: TikTok, VK, LinkedIn
+* added: possibility to create new League and Season at the Competition edit page
+* improved: process of creating multi-stage Competition
+* added: Player - new field "External ID". Can be used on import to update the existing player.
+* added: CSV export for players
+* added: support for dynamic custom fields in "Batch Import" >> "Players"
+* added: new fields in "Batch Import" >> "Players":  "Player ID" and "Player External ID"
+
+= 0.11.15 - 2021-02-27 =
+* added: new Player option - "Date of Death"
+* added: Referee support for "Hide not used seasons" option in the Seasons Dropdown
+* added: Competition selector in widgets
+* added: "league_id" argument in "FL Matches" shortcode
+* added: new arguments in "Matches" widget: "league_id", "season_id", "exclude_ids", "include_ids", "date_from", "date_to", "days_offset", "days_offset_to"
+* added: option to show all referees in Match slim layout
+* improved: "FL Matches" widget - "competition_id" argument is now optional
+* fixed: assistant link in Game Goals block
+* improved: logic of cards calculation in "Referee - Finished games"
+
+= 0.11.14 - 2021-01-26 =
+* added: Referee - Finished games and Upcoming games
+
 = 0.11.13 - 2021-01-14 =
 * improved: CSS Styles - added prefixes to grid classes to prevent conflicts with some themes
 * added: referees block in Match Shortcode

@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.8.0
  *
- * @version       0.11.13
+ * @version       0.12.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -50,19 +50,22 @@ $club_id  = get_post_meta( $player->ID, '_anwpfl_current_club', true );
 	<div class="player-block context--<?php echo esc_attr( $data->context ); ?> border">
 		<div class="d-flex align-items-center p-2 anwp-bg-light player-block__header">
 			<?php if ( $photo_id ) : ?>
-				<?php echo wp_get_attachment_image( $photo_id, 'medium', false, [ 'class' => 'player-block__photo mr-2' ] ); ?>
+				<?php echo wp_get_attachment_image( $photo_id, 'medium', false, [ 'class' => 'anwp-w-100 anwp-h-100 anwp-object-contain m-0' ] ); ?>
 			<?php endif; ?>
 			<div class="flex-grow-1">
-				<div class="player-block__name h4"><?php echo esc_html( $player->post_title ); ?></div>
-				<div class="player-block__extra d-flex align-items-center mt-2">
-					<?php if ( ! empty( $nationality ) && is_array( $nationality ) ) : ?>
-						<?php foreach ( $nationality as $country_code ) : ?>
-							<span class="options__flag f32 mr-3" data-toggle="anwp-tooltip"
-								data-tippy-content="<?php echo esc_attr( anwp_football_leagues()->data->get_value_by_key( $country_code, 'country' ) ); ?>"><span class="flag <?php echo esc_attr( $country_code ); ?>"></span></span>
-						<?php endforeach; ?>
-					<?php endif; ?>
-					<span><?php echo esc_html( anwp_football_leagues()->player->get_translated_position( $player->ID ) ); ?></span>
-				</div>
+				<div class="player-block__name text-uppercase px-3 anwp-text-xl anwp-leading-1-25 anwp-font-medium pl-3"><?php echo esc_html( $player->post_title ); ?></div>
+
+				<?php if ( ! empty( $nationality ) || anwp_football_leagues()->player->get_translated_position( $player->ID ) ) : ?>
+					<div class="player-block__extra d-flex align-items-center mt-2 pl-3">
+						<?php if ( ! empty( $nationality ) && is_array( $nationality ) ) : ?>
+							<?php foreach ( $nationality as $country_code ) : ?>
+								<span class="options__flag f32 mr-3" data-toggle="anwp-tooltip"
+									data-tippy-content="<?php echo esc_attr( anwp_football_leagues()->data->get_value_by_key( $country_code, 'country' ) ); ?>"><span class="flag <?php echo esc_attr( $country_code ); ?>"></span></span>
+							<?php endforeach; ?>
+						<?php endif; ?>
+						<span><?php echo esc_html( anwp_football_leagues()->player->get_translated_position( $player->ID ) ); ?></span>
+					</div>
+				<?php endif; ?>
 			</div>
 		</div>
 

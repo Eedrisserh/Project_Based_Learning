@@ -196,7 +196,7 @@ class AnWPFL_League extends Taxonomy_Core {
 					'suppress_filters' => false,
 					'hide_empty'       => false,
 					'orderby'          => 'name',
-					'order'            => 'DESC',
+					'order'            => 'ASC',
 				]
 			);
 
@@ -242,10 +242,40 @@ class AnWPFL_League extends Taxonomy_Core {
 					'id'           => $league->term_id,
 					'name'         => $league->name,
 					'country_code' => $country_code ?: '',
+					'country'      => anwp_football_leagues()->data->get_value_by_key( $country_code, 'country' ),
 				];
 			}
 		}
 
 		return $output_data;
+	}
+
+	/**
+	 * Get league Country code by league ID
+	 *
+	 * @return string
+	 * @since 0.13.0
+	 */
+	public function get_league_country_code( $league_id ) {
+
+		static $output_data = null;
+
+		if ( null === $output_data ) {
+			global $wpdb;
+
+			$codes = $wpdb->get_results(
+				"
+				SELECT term_id, meta_value
+				FROM $wpdb->termmeta
+				WHERE meta_key = '_anwpfl_country' AND meta_value != ''
+				"
+			);
+
+			foreach ( $codes as $code ) {
+				$output_data[ $code->term_id ] = $code->meta_value;
+			}
+		}
+
+		return isset( $output_data[ $league_id ] ) ? $output_data[ $league_id ] : '';
 	}
 }

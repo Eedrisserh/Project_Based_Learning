@@ -217,7 +217,7 @@
 				// done in keydown so the check fires repeatedly when you hold the tab key down
 				if (key == 9 && self.scope.is_open) {
 					if (!$.contains(document.getElementById(self.scope.id), target) ) {
-						$('#' + self.scope.id).find('*[tabindex="0"]').focus();
+						$('#' + self.scope.id).find('*[tabindex="0"]').trigger('focus');
 					}
 				}
 			});
@@ -230,7 +230,7 @@
 				if ( (e.shiftKey && e.keyCode == 9) && self.scope.is_open) {
 					// Watch for shift + tab key press. if open shift focus to close button.
 					if (!$.contains(document.getElementById(self.scope.id), target) ) {
-						$('#' + self.scope.id).find('.modaal-close').focus();
+						$('#' + self.scope.id).find('.modaal-close').trigger('focus');
 					}
 				}
 
@@ -776,7 +776,7 @@
 
 					// Focus on the new gallery item
 					this_gallery.find('.modaal-gallery-item').removeAttr('tabindex');
-					this_gallery.find('.modaal-gallery-item.' + self.private_options.active_class + '').attr('tabindex', '0').focus();
+					this_gallery.find('.modaal-gallery-item.' + self.private_options.active_class + '').attr('tabindex', '0').trigger('focus');
 
 					// hide/show next/prev
 					if ( this_gallery.find('.modaal-gallery-item.' + self.private_options.active_class).is('.gallery-item-0') ) {
@@ -950,7 +950,7 @@
 			}
 
 			// now set the focus
-			focusTarget.attr('tabindex', '0').focus();
+			focusTarget.attr('tabindex', '0').trigger('focus');
 
 			// Run after_open
 			if (animation_type !== 'none') {
@@ -1010,7 +1010,7 @@
 
 			// Roll back to last focus state before modal open. If was closed programmatically, this might not be set
 			if (self.lastFocus != null) {
-				self.lastFocus.focus();
+				self.lastFocus.trigger('focus');
 			}
 		},
 

@@ -238,6 +238,33 @@ class AnWPFL_Text {
 
 		$cmb->add_field(
 			[
+				'name' => esc_html__( 'Finished matches', 'anwp-football-leagues' ),
+				'desc' => 'referee :: finished',
+				'id'   => 'referee__finished__finished_matches',
+				'type' => 'anwp_fl_text',
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name' => esc_html__( 'Upcoming matches', 'anwp-football-leagues' ),
+				'desc' => 'referee :: fixtures',
+				'id'   => 'referee__fixtures__upcoming_matches',
+				'type' => 'anwp_fl_text',
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name' => esc_html__( 'no data', 'anwp-football-leagues' ),
+				'desc' => 'referee :: no data',
+				'id'   => 'referee__finished__no_data',
+				'type' => 'anwp_fl_text',
+			]
+		);
+
+		$cmb->add_field(
+			[
 				'name' => esc_html__( 'Attendance', 'anwp-football-leagues' ),
 				'desc' => 'match :: header',
 				'id'   => 'match__match__attendance',
@@ -481,7 +508,7 @@ class AnWPFL_Text {
 
 		$cmb->add_field(
 			[
-				'name' => esc_html__( 'Assistant', 'anwp-football-leagues' ),
+				'name' => esc_html__( 'Assistant Referee', 'anwp-football-leagues' ),
 				'desc' => 'match :: referees',
 				'id'   => 'match__referees__assistant',
 				'type' => 'anwp_fl_text',
@@ -688,6 +715,15 @@ class AnWPFL_Text {
 
 		$cmb->add_field(
 			[
+				'name' => esc_html__( 'National Team', 'anwp-football-leagues' ),
+				'desc' => 'player :: header',
+				'id'   => 'player__header__national_team',
+				'type' => 'anwp_fl_text',
+			]
+		);
+
+		$cmb->add_field(
+			[
 				'name' => esc_html__( 'Nationality', 'anwp-football-leagues' ),
 				'desc' => 'player :: header',
 				'id'   => 'player__header__nationality',
@@ -709,6 +745,15 @@ class AnWPFL_Text {
 				'name' => esc_html__( 'Date Of Birth', 'anwp-football-leagues' ),
 				'desc' => 'player :: header',
 				'id'   => 'player__header__date_of_birth',
+				'type' => 'anwp_fl_text',
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name' => esc_html__( 'Date Of Death', 'anwp-football-leagues' ),
+				'desc' => 'player :: header',
+				'id'   => 'player__header__date_of_death',
 				'type' => 'anwp_fl_text',
 			]
 		);

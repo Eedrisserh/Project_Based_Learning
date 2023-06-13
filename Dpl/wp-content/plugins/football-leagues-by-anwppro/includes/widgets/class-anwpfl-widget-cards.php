@@ -71,12 +71,11 @@ class AnWPFL_Widget_Cards extends AnWPFL_Widget {
 				],
 			],
 			[
-				'id'         => 'competition_id',
-				'type'       => 'select',
-				'label'      => esc_html__( 'Competition', 'anwp-football-leagues' ),
-				'show_empty' => esc_html__( '- select competition -', 'anwp-football-leagues' ),
-				'default'    => '',
-				'options_cb' => [ anwp_football_leagues()->competition, 'get_competition_options' ],
+				'id'      => 'competition_id',
+				'type'    => 'competition_id',
+				'label'   => esc_html__( 'Competition ID', 'anwp-football-leagues' ),
+				'default' => '',
+				'single'  => 'yes',
 			],
 			[
 				'id'    => 'join_secondary',
@@ -172,12 +171,10 @@ class AnWPFL_Widget_Cards extends AnWPFL_Widget {
 				'default' => '',
 			],
 			[
-				'id'         => 'link_target',
-				'type'       => 'select',
-				'label'      => esc_html__( 'Bottom Link Target', 'anwp-football-leagues' ),
-				'show_empty' => esc_html__( '- select target page -', 'anwp-football-leagues' ),
-				'default'    => '',
-				'options_cb' => [ anwp_football_leagues()->helper, 'get_target_options' ],
+				'id'      => 'link_target',
+				'type'    => 'number',
+				'label'   => esc_html__( 'Bottom Link Target', 'anwp-football-leagues' ) . ' (' . esc_html__( 'Competition ID or Page ID', 'anwp-football-leagues' ) . ')',
+				'default' => '',
 			],
 		];
 	}

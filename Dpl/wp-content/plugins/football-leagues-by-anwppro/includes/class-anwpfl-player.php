@@ -127,6 +127,173 @@ class AnWPFL_Player extends CPT_Core {
 		);
 
 		add_action( 'clean_post_cache', [ $this, 'maybe_clean_player_cache' ], 10, 2 );
+
+		add_action( 'rest_api_init', [ $this, 'add_rest_routes' ] );
+	}
+
+	/**
+	 * Register REST routes.
+	 *
+	 * @since 0.12.3
+	 */
+	public function add_rest_routes() {
+
+		register_rest_route(
+			'anwpfl/v1/player',
+			'/update-player-current-club/',
+			[
+				'methods'             => 'POST',
+				'callback'            => [ $this, 'update_player_current_club' ],
+				'permission_callback' => [ anwp_football_leagues()->helper, 'update_permissions_check' ],
+			]
+		);
+
+		register_rest_route(
+			'anwpfl/v1/player',
+			'/add-player-to-squad/',
+			[
+				'methods'             => 'POST',
+				'callback'            => [ $this, 'add_player_to_squad' ],
+				'permission_callback' => function () {
+					return current_user_can( 'manage_options' ); // ToDo check with update_permissions_check
+				},
+			]
+		);
+
+		register_rest_route(
+			'anwpfl/v1/player',
+			'/get-player-data/',
+			[
+				'methods'             => 'GET',
+				'callback'            => [ $this, 'get_player_actions_data' ],
+				'permission_callback' => function () {
+					return current_user_can( 'edit_posts' ); // ToDo check with update_permissions_check
+				},
+			]
+		);
+	}
+
+	/**
+	 * Get Player Data
+	 *
+	 * @param WP_REST_Request $request
+	 *
+	 * @return WP_REST_Response | WP_Error
+	 * @since 0.12.6
+	 */
+	public function get_player_actions_data( WP_REST_Request $request ) {
+
+		$params    = $request->get_params();
+		$player_id = isset( $params['player_id'] ) ? absint( $params['player_id'] ) : '';
+
+		if ( empty( $player_id ) ) {
+			return new WP_Error( 'rest_anwp_fl_error', 'Invalid Player ID', [ 'status' => 400 ] );
+		}
+
+		$player_obj  = anwp_football_leagues()->player->get_player( $player_id );
+		$player_data = [
+			'current_club' => absint( $player_obj->club_id ) ? ( anwp_football_leagues()->club->get_club_title_by_id( $player_obj->club_id ) . ' (ID: ' . $player_obj->club_id . ')' ) : ' - ',
+		];
+
+		/**
+		 * Modify player data
+		 *
+		 * @since 0.12.6
+		 */
+		$player_data = apply_filters( 'anwpfl/player/player_actions_data', $player_data, $params );
+
+		return rest_ensure_response(
+			[
+				'result'      => true,
+				'player_data' => $player_data,
+			]
+		);
+	}
+
+	/**
+	 * Update Player Current Club
+	 *
+	 * @param WP_REST_Request $request
+	 *
+	 * @return WP_REST_Response | WP_Error
+	 * @since 0.12.3
+	 */
+	public function update_player_current_club( WP_REST_Request $request ) {
+
+		$params = $request->get_params();
+
+		$player_id = isset( $params['post_id'] ) ? absint( $params['post_id'] ) : '';
+		$club_id   = isset( $params['club_id'] ) ? absint( $params['club_id'] ) : '';
+
+		if ( empty( $player_id ) || empty( $club_id ) ) {
+			return new WP_Error( 'rest_anwp_fl_error', 'Invalid Data', [ 'status' => 400 ] );
+		}
+
+		$saved_current_club = get_post_meta( $player_id, '_anwpfl_current_club', true );
+
+		if ( (int) $saved_current_club === $club_id ) {
+			return rest_ensure_response( [ 'result' => true ] );
+		}
+
+		if ( ! update_post_meta( $player_id, '_anwpfl_current_club', $club_id ) ) {
+			return new WP_Error( 'rest_anwp_fl_error', 'Save error', [ 'status' => 400 ] );
+		}
+
+		return rest_ensure_response( [ 'result' => true ] );
+	}
+
+	/**
+	 * Add Player to Squad
+	 *
+	 * @param WP_REST_Request $request
+	 *
+	 * @return WP_REST_Response | WP_Error
+	 * @since 0.12.3
+	 */
+	public function add_player_to_squad( WP_REST_Request $request ) {
+
+		$params = $request->get_params();
+
+		$player_id = isset( $params['player_id'] ) ? absint( $params['player_id'] ) : '';
+		$club_id   = isset( $params['club_id'] ) ? absint( $params['club_id'] ) : '';
+		$season_id = isset( $params['season_id'] ) ? absint( $params['season_id'] ) : '';
+
+		$season_slug = 's:' . $season_id;
+		$club_squad  = json_decode( get_post_meta( $club_id, '_anwpfl_squad', true ) );
+
+		if ( ! $club_squad ) {
+			$club_squad = (object) [];
+		}
+
+		$squad_players = isset( $club_squad->{$season_slug} ) ? $club_squad->{$season_slug} : [];
+
+		if ( ! empty( wp_list_filter( $squad_players, [ 'id' => $player_id ] ) ) ) {
+			return rest_ensure_response( [ 'result' => true ] );
+		}
+
+		$player_position = get_post_meta( $player_id, '_anwpfl_position', true );
+
+		$squad_players[] = (object) [
+			'id'       => $player_id,
+			'position' => $player_position ?: '',
+			'number'   => '',
+			'status'   => '',
+		];
+
+		/*
+		|--------------------------------------------------------------------
+		| Save Club Squad
+		|--------------------------------------------------------------------
+		*/
+		// Update club slug with new data
+		$club_squad->{$season_slug} = $squad_players;
+
+		// Save squad
+		if ( ! update_post_meta( $club_id, '_anwpfl_squad', wp_slash( wp_json_encode( $club_squad ) ) ) ) {
+			return new WP_Error( 'rest_anwp_fl_error', 'Save error', [ 'status' => 400 ] );
+		}
+
+		return rest_ensure_response( [ 'result' => true ] );
 	}
 
 	/**
@@ -344,6 +511,18 @@ class AnWPFL_Player extends CPT_Core {
 			]
 		);
 
+		$cmb->add_field(
+			[
+				'name'       => esc_html__( 'National Team', 'anwp-football-leagues' ),
+				'id'         => $prefix . 'national_team',
+				'options_cb' => [ $this->plugin->club, 'get_national_team_options' ],
+				'type'       => 'anwp_fl_select',
+				'attributes' => [
+					'placeholder' => esc_html__( '- not selected -', 'anwp-football-leagues' ),
+				],
+			]
+		);
+
 		// Place of Birth
 		$cmb->add_field(
 			[
@@ -373,13 +552,32 @@ class AnWPFL_Player extends CPT_Core {
 			]
 		);
 
+		// Date of death
+		$cmb->add_field(
+			[
+				'name'        => esc_html__( 'Date of death', 'anwp-football-leagues' ),
+				'id'          => $prefix . 'date_of_death',
+				'type'        => 'text_date',
+				'date_format' => 'Y-m-d',
+			]
+		);
+
 		$cmb->add_field(
 			[
 				'name'       => esc_html__( 'Nationality', 'anwp-football-leagues' ),
 				'id'         => $prefix . 'nationality',
 				'type'       => 'anwp_fl_multiselect',
 				'options_cb' => [ $this->plugin->data, 'cb_get_countries' ],
-				'after_row'  => '</div>',
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'        => esc_html__( 'External ID', 'anwp-football-leagues' ),
+				'id'          => $prefix . 'player_external_id',
+				'type'        => 'text',
+				'description' => esc_html__( 'Used on Data Import', 'anwp-football-leagues' ),
+				'after_row'   => '</div>',
 			]
 		);
 
@@ -456,7 +654,6 @@ class AnWPFL_Player extends CPT_Core {
 			]
 		);
 
-
 		/*
 		|--------------------------------------------------------------------
 		| Social Tab
@@ -485,6 +682,33 @@ class AnWPFL_Player extends CPT_Core {
 			[
 				'name'      => esc_html__( 'YouTube', 'anwp-football-leagues' ),
 				'id'        => $prefix . 'youtube',
+				'type'      => 'text_url',
+				'protocols' => [ 'http', 'https' ],
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'      => esc_html__( 'LinkedIn', 'anwp-football-leagues' ),
+				'id'        => $prefix . 'linkedin',
+				'type'      => 'text_url',
+				'protocols' => [ 'http', 'https' ],
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'      => esc_html__( 'TikTok', 'anwp-football-leagues' ),
+				'id'        => $prefix . 'tiktok',
+				'type'      => 'text_url',
+				'protocols' => [ 'http', 'https' ],
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'      => esc_html__( 'VKontakte', 'anwp-football-leagues' ),
+				'id'        => $prefix . 'vk',
 				'type'      => 'text_url',
 				'protocols' => [ 'http', 'https' ],
 			]
@@ -610,10 +834,12 @@ class AnWPFL_Player extends CPT_Core {
 	 * Method returns players with id and title.
 	 * Used in admin Squad assigning.
 	 *
+	 * @param array $squad_position_map
+	 *
 	 * @return array
 	 * @since 0.2.0 (2018-01-11)
 	 */
-	public function get_players_list() {
+	public function get_players_list( $squad_position_map = [] ) {
 
 		global $wpdb;
 
@@ -623,7 +849,8 @@ class AnWPFL_Player extends CPT_Core {
 				MAX( CASE WHEN pm.meta_key = '_anwpfl_position' THEN pm.meta_value ELSE '' END) as position,
 				MAX( CASE WHEN pm.meta_key = '_anwpfl_nationality' THEN pm.meta_value ELSE '' END) as nationality,
 				MAX( CASE WHEN pm.meta_key = '_anwpfl_date_of_birth' THEN pm.meta_value ELSE '' END) as birthdate,
-				MAX( CASE WHEN pm.meta_key = '_anwpfl_current_club' THEN pm.meta_value ELSE '' END) as club_id
+				MAX( CASE WHEN pm.meta_key = '_anwpfl_current_club' THEN pm.meta_value ELSE '' END) as club_id,
+				MAX( CASE WHEN pm.meta_key = '_anwpfl_photo' THEN pm.meta_value ELSE '' END) as photo
 			FROM $wpdb->posts p
 			LEFT JOIN $wpdb->postmeta pm ON ( pm.post_id = p.ID )
 			WHERE p.post_status = 'publish' AND p.post_type = 'anwp_player'
@@ -632,18 +859,38 @@ class AnWPFL_Player extends CPT_Core {
 			"
 		);
 
-		foreach ( $all_players as $player_index => $player ) {
+		if ( empty( $all_players ) ) {
+			return [];
+		}
 
-			$all_players[ $player_index ]->id = absint( $all_players[ $player_index ]->id );
-			$all_players[ $player_index ]->id = absint( $all_players[ $player_index ]->id );
+		foreach ( $all_players as $player ) {
+
+			$player->id       = absint( $player->id );
+			$player->club_id  = absint( $player->club_id );
+			$player->country  = '';
+			$player->country2 = '';
 
 			if ( $player->birthdate ) {
-				$all_players[ $player_index ]->birthdate = date_i18n( get_option( 'date_format' ), strtotime( $player->birthdate ) );
+				$player->birthdate = date_i18n( 'M j, Y', strtotime( $player->birthdate ) );
 			}
 
 			if ( $player->nationality ) {
-				$all_players[ $player_index ]->nationality = maybe_unserialize( $player->nationality );
+				$countries = maybe_unserialize( $player->nationality );
+
+				if ( ! empty( $countries ) && is_array( $countries ) && ! empty( $countries[0] ) ) {
+					$player->country = mb_strtolower( $countries[0] );
+				}
+
+				if ( ! empty( $countries ) && is_array( $countries ) && ! empty( $countries[1] ) ) {
+					$player->country2 = mb_strtolower( $countries[1] );
+				}
 			}
+
+			if ( ! empty( $squad_position_map[ $player->id ] ) && $squad_position_map[ $player->id ] !== $player->position ) {
+				$player->position = $squad_position_map[ $player->id ];
+			}
+
+			unset( $player->nationality );
 		}
 
 		return $all_players;
@@ -791,6 +1038,8 @@ class AnWPFL_Player extends CPT_Core {
 			return $data;
 		}
 
+		$player_yr_card_count = AnWPFL_Options::get_value( 'player_yr_card_count', 'yyr' );
+
 		// Get competition ids from matches
 		$competition_ids = [];
 		foreach ( $matches as $match ) {
@@ -837,7 +1086,7 @@ class AnWPFL_Player extends CPT_Core {
 				$data[ $competition_index ]['totals']['started']        += (int) in_array( $match->appearance, [ '1', '2' ], true );
 				$data[ $competition_index ]['totals']['sub_in']         += (int) in_array( $match->appearance, [ '3', '4' ], true );
 				$data[ $competition_index ]['totals']['minutes']        += (int) $match->time_out - (int) $match->time_in;
-				$data[ $competition_index ]['totals']['card_y']         += (int) $match->card_y;
+				$data[ $competition_index ]['totals']['card_y']         += ( 'yr' === $player_yr_card_count && $match->card_yr > 0 ? 0 : (int) $match->card_y );
 				$data[ $competition_index ]['totals']['card_yr']        += (int) $match->card_yr;
 				$data[ $competition_index ]['totals']['card_r']         += (int) $match->card_r;
 				$data[ $competition_index ]['totals']['goals']          += (int) $match->goals;
@@ -970,7 +1219,7 @@ class AnWPFL_Player extends CPT_Core {
 			$query .= $wpdb->prepare( ' LIMIT %d', $options->limit );
 		}
 
-		$players = $wpdb->get_results( $query ); // WPCS: unprepared SQL ok.
+		$players = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
 		// Cache players
 		if ( $cache && ! empty( $players ) && is_array( $players ) ) {
@@ -993,6 +1242,8 @@ class AnWPFL_Player extends CPT_Core {
 
 		global $wpdb;
 
+		$player_yr_card_count = AnWPFL_Options::get_value( 'player_yr_card_count', 'yyr' );
+
 		$options = (object) wp_parse_args(
 			$options,
 			[
@@ -1012,7 +1263,11 @@ class AnWPFL_Player extends CPT_Core {
 		);
 
 		// Prepare countable field
-		$countable = ' SUM( card_y ) as cards_y, SUM( card_yr ) as cards_yr, SUM( card_r ) as cards_r, SUM( card_r * ' . (int) $options->points_r . ' + card_yr * ' . (int) $options->points_yr . ' + card_y * 1 ) as countable ';
+		if ( 'yr' === $player_yr_card_count && 'clubs' !== $options->type ) {
+			$countable = ' SUM(CASE WHEN card_yr > 0 THEN 0 ELSE card_y END) as cards_y, SUM( card_yr ) as cards_yr, SUM( card_r ) as cards_r, SUM( card_r * ' . (int) $options->points_r . ' + card_yr * ' . (int) $options->points_yr . ' + ( CASE WHEN card_yr > 0 THEN 0 ELSE card_y END ) ) as countable ';
+		} else {
+			$countable = ' SUM( card_y ) as cards_y, SUM( card_yr ) as cards_yr, SUM( card_r ) as cards_r, SUM( card_r * ' . (int) $options->points_r . ' + card_yr * ' . (int) $options->points_yr . ' + card_y * 1 ) as countable ';
+		}
 
 		if ( 'clubs' === $options->type ) {
 			$query = "SELECT club_id, {$countable}";
@@ -1085,7 +1340,7 @@ class AnWPFL_Player extends CPT_Core {
 			$query .= $wpdb->prepare( ' LIMIT %d', $options->limit );
 		}
 
-		$items = $wpdb->get_results( $query ); // WPCS: unprepared SQL ok.
+		$items = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
 
 		return $items;
 	}
@@ -1237,8 +1492,9 @@ class AnWPFL_Player extends CPT_Core {
 
 		$players = get_posts(
 			[
-				'include'   => $ids,
-				'post_type' => 'anwp_player',
+				'include'                => $ids,
+				'post_type'              => 'anwp_player',
+				'update_post_term_cache' => false,
 			]
 		);
 
@@ -1561,5 +1817,29 @@ class AnWPFL_Player extends CPT_Core {
 		}
 
 		return $players;
+	}
+
+	/**
+	 * Get Post ID by External id
+	 *
+	 * @param $external_id
+	 *
+	 * @return string|null
+	 * @since 0.12.0
+	 */
+	public function get_player_id_by_external_id( $external_id ) {
+
+		global $wpdb;
+
+		return $wpdb->get_var(
+			$wpdb->prepare(
+				"
+				SELECT post_id
+				FROM $wpdb->postmeta
+				WHERE meta_key = '_anwpfl_player_external_id' AND meta_value = %s
+				",
+				$external_id
+			)
+		);
 	}
 }

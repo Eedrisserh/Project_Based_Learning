@@ -4,8 +4,10 @@ Theme URI: https://gracethemes.com/themes/free-sports-league-wordpress-theme/
 Author: Grace Themes
 Author URI: https://gracethemes.com/
 Description: Sports Club Lite is a resourceful, modern and engaging, youthful and lively, purposeful and versatile, highly responsive sports league WordPress theme. This sports theme has been designed to provide an easy and specialized platform for the streamlined development of professional, awesome and tech-savvy websites for various sports club. This flexible theme can be adjusted to be used for rugby, football, basketball, volleyball, hockey, tennis, baseball or any other individual sport. This feature-rich, highly customizable and multisport WordPress theme can also be used to create a fully functional website template for fitness clubs, gyms, dance schools, martial arts, personal trainers and any other health & fitness related business.  Demo Link: http://www.gracethemesdemo.com/sports-club/
-
-Version: 1.1
+Requires at least: 5.0
+Tested up to: 5.8
+Requires PHP: 5.6
+Version: 2.0
 License: GNU General Public License version 2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: sports-club-lite
@@ -404,7 +406,7 @@ img.avatar { vertical-align:middle; position:static; display:inline-block;}
 
 /* = Navigation Focus CSS
 -------------------------------------------- */
-
+#layout_forsite a:focus,
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -426,5 +428,10 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus,
 a:focus {
-	outline: thin dotted #e96300;
+	outline: thin dotted #ec4613;
+}
+
+.sport_innerpage_content_wrapper  a{ 
+font-weight:bold;
+text-decoration:underline;
 }

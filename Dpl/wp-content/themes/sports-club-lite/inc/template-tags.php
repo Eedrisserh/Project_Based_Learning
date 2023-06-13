@@ -24,8 +24,7 @@ function sports_club_lite_the_attached_image() {
 	 */
 	$attachment_ids = get_posts( array(
 		'post_parent'    => $post->post_parent,
-		'fields'         => 'ids',
-		'numberposts'    => '',
+		'fields'         => 'ids',		
 		'post_status'    => 'inherit',
 		'post_type'      => 'attachment',
 		'post_mime_type' => 'image',
@@ -55,6 +54,7 @@ function sports_club_lite_the_attached_image() {
 		esc_url( $next_attachment_url ),
 		wp_get_attachment_image( $post->ID, $attachment_size )
 	);
+	wp_reset_postdata();
 }
 endif;
 
@@ -62,19 +62,19 @@ endif;
  * Returns true if a blog has more than 1 category
  */
 function sports_club_lite_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'all_the_cool_cats' ) ) ) {
+	if ( false === ( $sports_club_lite_all_the_cool_cats = get_transient( 'sports_club_lite_all_the_cool_cats' ) ) ) {
 		// Create an array of all the categories that are attached to posts
-		$all_the_cool_cats = get_categories( array(
+		$sports_club_lite_all_the_cool_cats = get_categories( array(
 			'hide_empty' => 1,
 		) );
 
 		// Count the number of categories that are attached to the posts
-		$all_the_cool_cats = count( $all_the_cool_cats );
+		$sports_club_lite_all_the_cool_cats = count( $sports_club_lite_all_the_cool_cats );
 
-		set_transient( 'all_the_cool_cats', $all_the_cool_cats );
+		set_transient( 'sports_club_lite_all_the_cool_cats', $sports_club_lite_all_the_cool_cats );
 	}
 
-	if ( '1' != $all_the_cool_cats ) {
+	if ( '1' != $sports_club_lite_all_the_cool_cats ) {
 		// This blog has more than 1 category so sports_club_lite_categorized_blog should return true
 		return true;
 	} else {
@@ -88,7 +88,7 @@ function sports_club_lite_categorized_blog() {
  */
 function sports_club_lite_category_transient_flusher() {
 	// Like, beat it. Dig?
-	delete_transient( 'all_the_cool_cats' );
+	delete_transient( 'sports_club_lite_all_the_cool_cats' );
 }
 add_action( 'edit_category', 'sports_club_lite_category_transient_flusher' );
 add_action( 'save_post',     'sports_club_lite_category_transient_flusher' );

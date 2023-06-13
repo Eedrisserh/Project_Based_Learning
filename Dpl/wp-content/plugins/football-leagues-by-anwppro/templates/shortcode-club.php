@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.11.8
  *
- * @version       0.11.8
+ * @version       0.12.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,6 +62,9 @@ $fields = [
 	'youtube',
 	'facebook',
 	'instagram',
+	'vk',
+	'tiktok',
+	'linkedin',
 ];
 
 foreach ( $fields as $field ) {

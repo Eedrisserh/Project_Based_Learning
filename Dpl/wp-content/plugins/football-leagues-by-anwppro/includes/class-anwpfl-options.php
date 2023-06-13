@@ -585,6 +585,33 @@ class AnWPFL_Options {
 
 		$cmb->add_field(
 			[
+				'name'    => esc_html__( 'How to count in statistics "second yellow > red" card', 'anwp-football-leagues' ),
+				'id'      => 'yr_card_count',
+				'type'    => 'select',
+				'default' => 'r',
+				'options' => [
+					'r'  => esc_html__( 'Red Card', 'anwp-football-leagues' ),
+					'yr' => esc_html__( 'Yellow + Red Card', 'anwp-football-leagues' ),
+					'y'  => esc_html__( 'Yellow Card', 'anwp-football-leagues' ),
+				],
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'    => esc_html__( 'How to count in player statistics "yellow + second yellow > red" card', 'anwp-football-leagues' ),
+				'id'      => 'player_yr_card_count',
+				'type'    => 'select',
+				'default' => 'yyr',
+				'options' => [
+					'yyr' => esc_html__( 'Yellow + Yellow/Red card', 'anwp-football-leagues' ),
+					'yr'  => esc_html__( 'Yellow/Red card', 'anwp-football-leagues' ),
+				],
+			]
+		);
+
+		$cmb->add_field(
+			[
 				'name'      => esc_html__( 'Video Player', 'anwp-football-leagues' ),
 				'id'        => 'preferred_video_player',
 				'type'      => 'select',
@@ -1029,8 +1056,10 @@ class AnWPFL_Options {
 				'id'                => 'match_slim_bottom_line',
 				'type'              => 'multicheck',
 				'options'           => [
-					'referee' => esc_html__( 'Referee', 'anwp-football-leagues' ),
-					'stadium' => esc_html__( 'Stadium', 'anwp-football-leagues' ),
+					'referee'            => esc_html__( 'Referee', 'anwp-football-leagues' ),
+					'referee_assistants' => esc_html__( 'Referee Assistants', 'anwp-football-leagues' ),
+					'referee_fourth'     => esc_html__( 'Referee', 'anwp-football-leagues' ) . ' ' . esc_html__( 'Fourth official', 'anwp-football-leagues' ),
+					'stadium'            => esc_html__( 'Stadium', 'anwp-football-leagues' ),
 				],
 				'select_all_button' => false,
 			]

@@ -5,6 +5,8 @@
  * Licensed under the GPLv2+ license.
  */
 
+/* global getUserSetting, setUserSetting */
+
 window.AnWPFootballLeagues = window.AnWPFootballLeagues || {};
 
 ( function( window, document, $, plugin ) {
@@ -85,12 +87,43 @@ window.AnWPFootballLeagues = window.AnWPFootballLeagues || {};
 	plugin.onPageReady = function() {
 		plugin.initTooltips();
 		plugin.initBtnPublishClick();
+		plugin.initCollapseMenuClick();
 		plugin.initMatchListHelper();
 		plugin.tableInputNavigation();
 		plugin.initTextSearch();
 		plugin.initOptionTabs();
 		plugin.initDependentOptions();
 		plugin.initCompetitionCloneModaal();
+
+		var metaboxNav = $( '#anwp-fl-metabox-page-nav' );
+
+		if ( 'undefined' !== typeof Gumshoe && metaboxNav.length ) {
+			new Gumshoe( '#anwp-fl-metabox-page-nav a', {
+
+				// Active classes
+				navClass: 'anwp-fl-metabox-page-nav--active', // applied to the nav list item
+				contentClass: 'anwp-scroll-content--active', // applied to the content
+
+				// Nested navigation
+				nested: false, // if true, add classes to parents of active link
+				nestedClass: '', // applied to the parent items
+
+				// Offset & reflow
+				offset: 60, // how far from the top of the page to activate a content area
+				reflow: true, // if true, listen for reflows
+
+				// Event support
+				events: false // if true, emit custom events
+			} );
+		}
+
+		if ( 'undefined' !== typeof SmoothScroll && metaboxNav.length ) {
+			new SmoothScroll( '.anwp-fl-smooth-scroll', {
+				speed: 300,
+				speedAsDuration: true,
+				offset: 50
+			} );
+		}
 	};
 
 	/**
@@ -286,8 +319,40 @@ window.AnWPFootballLeagues = window.AnWPFootballLeagues || {};
 				btnClick.next( '.spinner' ).addClass( 'is-active' );
 
 				if ( btnPublish.length ) {
-					btnPublish.click();
+					btnPublish.trigger( 'click' );
 				}
+			} );
+		}
+
+		var btnClickNew = $( '#anwp-fl-publish-click-proxy' );
+
+		if ( btnClickNew.length ) {
+			btnClickNew.on( 'click', function( e ) {
+				e.preventDefault();
+
+				if ( btnClickNew.prop( 'disabled' ) ) {
+					return false;
+				}
+
+				btnClickNew.prop( 'disabled', true );
+				btnClickNew.find( '.spinner' ).addClass( 'is-active' );
+
+				if ( btnPublish.length ) {
+					btnPublish.trigger( 'click' );
+				}
+			} );
+		}
+	};
+
+	plugin.initCollapseMenuClick = function() {
+		var btnCollapse   = $( '.anwp-fl-collapse-menu' );
+
+		if ( btnCollapse.length ) {
+			btnCollapse.on( 'click', function( e ) {
+				e.preventDefault();
+
+				setUserSetting( 'anwp-fl-collapsed-menu', btnCollapse.closest( '.anwp-fl-menu-wrapper' ).hasClass( 'anwp-fl-collapsed-menu' ) ? '' : 'yes' );
+				btnCollapse.closest( '.anwp-fl-menu-wrapper' ).toggleClass( 'anwp-fl-collapsed-menu' );
 			} );
 		}
 	};

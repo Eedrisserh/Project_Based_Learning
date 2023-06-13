@@ -13,15 +13,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<link rel="pingback" href="<?php echo esc_url( get_bloginfo( 'pingback_url' ) ); ?>">
 <?php endif; ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php
-	//wp_body_open hook from WordPress 5.2
 	if ( function_exists( 'wp_body_open' ) ) {
-	    wp_body_open();
+		wp_body_open();
+	} else {
+		do_action( 'wp_body_open' );
 	}
 ?>
 <a class="skip-link screen-reader-text" href="#sport_innerpage_area">
@@ -61,8 +62,8 @@ $inner_cls = 'siteinner';
             <?php endif; ?>
         </div><!-- logo -->
         
-       <div class="header_right">
-       
+        <?php if( $sports_club_lite_show_topheader_contactinfo != '' || $sports_club_lite_show_headersocialsection != '' ){ ?> 
+       <div class="header_right">       
        <?php if( $sports_club_lite_show_headersocialsection != ''){ ?> 
            <div class="contactinfo">
             <div class="header-socialicons">                                                
@@ -90,7 +91,7 @@ $inner_cls = 'siteinner';
       <?php } ?> 
        
        
-        <?php if( $sports_club_lite_show_topheader_contactinfo != ''){ ?> 
+       
              <?php
                $sports_club_lite_emailaddress = get_theme_mod('sports_club_lite_emailaddress');
                if( !empty($sports_club_lite_emailaddress) ){ ?> 
@@ -98,10 +99,10 @@ $inner_cls = 'siteinner';
                  <i class="fas fa-envelope"></i>
                  <span><a href="<?php echo esc_url('mailto:'.get_theme_mod('sports_club_lite_emailaddress')); ?>"><?php echo esc_html(get_theme_mod('sports_club_lite_emailaddress')); ?></a></span>
                 </div>
-               <?php } ?>               
-                            
-           <?php } ?>          
+               <?php } ?>     
+                
         </div><!--.header_right -->
+         <?php } ?>    
         
        <div class="sitenavigation">
            <div class="toggle">

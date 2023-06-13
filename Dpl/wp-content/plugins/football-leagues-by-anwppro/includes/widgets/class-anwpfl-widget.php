@@ -153,28 +153,28 @@ abstract class AnWPFL_Widget extends WP_Widget {
 
 				case 'player_id':
 					?>
-					<p>
+					<div class="anwp-mt-2">
 						<?php if ( $field['label'] ) : ?>
 							<label for="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
 						<?php endif; ?>
-						<br>
-						<input
-							class="<?php echo esc_attr( $field['classes'] ); ?>"
-							id="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"
-							name="<?php echo esc_attr( $this->get_field_name( $field['id'] ) ); ?>"
-							type="text"
-							value="<?php echo esc_attr( $value ); ?>"/>
+						<div class="anwp-d-flex">
+							<input
+								class="<?php echo esc_attr( $field['classes'] ); ?> anwp-flex-grow-1"
+								id="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( $field['id'] ) ); ?>"
+								type="text"
+								value="<?php echo esc_attr( $value ); ?>"/>
 
-						<button type="button" class="button anwp-fl-selector anwp-fl-selector--visible" style="display: none;" data-context="player"
-							data-single="<?php echo esc_attr( 'no' === $field['single'] ? 'no' : 'yes' ); ?>">
-							<span class="dashicons dashicons-search"></span>
-						</button>
+							<button type="button" class="button anwp-fl-selector anwp-fl-selector--visible anwp-ml-2" style="display: none;" data-context="player"
+								data-single="<?php echo esc_attr( 'no' === $field['single'] ? 'no' : 'yes' ); ?>">
+								<span class="dashicons dashicons-search"></span>
+							</button>
+						</div>
 
 						<?php if ( ! empty( $field['description'] ) ) : ?>
-							<br>
 							<small><?php echo esc_html( $field['description'] ); ?></small>
 						<?php endif; ?>
-					</p>
+					</div>
 					<?php
 					break;
 
@@ -220,6 +220,87 @@ abstract class AnWPFL_Widget extends WP_Widget {
 								value="<?php echo esc_attr( $value ); ?>"/>
 
 							<button type="button" class="button anwp-fl-selector anwp-fl-selector--visible anwp-ml-2" style="display: none;" data-context="match"
+								data-single="<?php echo esc_attr( 'no' === $field['single'] ? 'no' : 'yes' ); ?>">
+								<span class="dashicons dashicons-search"></span>
+							</button>
+						</div>
+
+						<?php if ( ! empty( $field['description'] ) ) : ?>
+							<small><?php echo esc_html( $field['description'] ); ?></small>
+						<?php endif; ?>
+					</div>
+					<?php
+					break;
+
+				case 'competition_id':
+					?>
+					<div class="anwp-mt-2">
+						<?php if ( $field['label'] ) : ?>
+							<label for="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
+						<?php endif; ?>
+						<div class="anwp-d-flex">
+							<input
+								class="<?php echo esc_attr( $field['classes'] ); ?> anwp-flex-grow-1"
+								id="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( $field['id'] ) ); ?>"
+								type="text"
+								value="<?php echo esc_attr( $value ); ?>"/>
+
+							<button type="button" class="button anwp-fl-selector anwp-fl-selector--visible anwp-ml-2" style="display: none;" data-context="competition"
+								data-single="<?php echo esc_attr( 'no' === $field['single'] ? 'no' : 'yes' ); ?>">
+								<span class="dashicons dashicons-search"></span>
+							</button>
+						</div>
+
+						<?php if ( ! empty( $field['description'] ) ) : ?>
+							<small><?php echo esc_html( $field['description'] ); ?></small>
+						<?php endif; ?>
+					</div>
+					<?php
+					break;
+
+				case 'season_id':
+					?>
+					<div class="anwp-mt-2">
+						<?php if ( $field['label'] ) : ?>
+							<label for="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
+						<?php endif; ?>
+						<div class="anwp-d-flex">
+							<input
+								class="<?php echo esc_attr( $field['classes'] ); ?> anwp-flex-grow-1"
+								id="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( $field['id'] ) ); ?>"
+								type="text"
+								value="<?php echo esc_attr( $value ); ?>"/>
+
+							<button type="button" class="button anwp-fl-selector anwp-fl-selector--visible anwp-ml-2" style="display: none;" data-context="season"
+								data-single="<?php echo esc_attr( 'no' === $field['single'] ? 'no' : 'yes' ); ?>">
+								<span class="dashicons dashicons-search"></span>
+							</button>
+						</div>
+
+						<?php if ( ! empty( $field['description'] ) ) : ?>
+							<small><?php echo esc_html( $field['description'] ); ?></small>
+						<?php endif; ?>
+					</div>
+					<?php
+					break;
+
+				case 'league_id':
+					?>
+					<div class="anwp-mt-2">
+						<?php if ( $field['label'] ) : ?>
+							<label for="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"><?php echo esc_html( $field['label'] ); ?></label>
+						<?php endif; ?>
+						<div class="anwp-d-flex">
+							<input
+								class="<?php echo esc_attr( $field['classes'] ); ?> anwp-flex-grow-1"
+								id="<?php echo esc_attr( $this->get_field_id( $field['id'] ) ); ?>"
+								name="<?php echo esc_attr( $this->get_field_name( $field['id'] ) ); ?>"
+								type="text"
+								value="<?php echo esc_attr( $value ); ?>"/>
+
+							<button type="button" class="button anwp-fl-selector anwp-fl-selector--visible anwp-ml-2" style="display: none;" data-context="league"
 								data-single="<?php echo esc_attr( 'no' === $field['single'] ? 'no' : 'yes' ); ?>">
 								<span class="dashicons dashicons-search"></span>
 							</button>

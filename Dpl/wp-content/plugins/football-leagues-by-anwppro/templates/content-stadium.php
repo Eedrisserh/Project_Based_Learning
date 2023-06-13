@@ -9,7 +9,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.3.0
  *
- * @version       0.11.13
+ * @version       0.13.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,7 +35,7 @@ do_action( 'anwpfl/tmpl-stadium/before_wrapper', $stadium );
 	<div class="anwp-row anwp-section">
 		<?php if ( $stadium->_anwpfl_photo ) : ?>
 			<div class="anwp-col-md-6">
-				<img class="stadium__main-photo" src="<?php echo esc_attr( $stadium->_anwpfl_photo ); ?>" alt="stadium photo">
+				<img class="stadium__main-photo" src="<?php echo esc_attr( $stadium->_anwpfl_photo ); ?>" alt="<?php echo get_post_meta( $stadium->_anwpfl_photo_id, '_wp_attachment_image_alt', true ) ?: 'stadium photo'; ?>">
 			</div>
 		<?php endif; ?>
 		<div class="anwp-col-md-6">
@@ -266,12 +266,14 @@ do_action( 'anwpfl/tmpl-stadium/before_wrapper', $stadium );
 	 */
 	if ( apply_filters( 'anwpfl/tmpl-stadium/render_gallery', true, $stadium ) ) :
 		if ( ! empty( $stadium->_anwpfl_gallery ) && is_array( $stadium->_anwpfl_gallery ) ) :
+
+			$gallery_alts = anwp_football_leagues()->data->get_image_alt( array_keys( $stadium->_anwpfl_gallery ) );
 			?>
 			<div class="stadium__gallery-wrapper anwp-section">
 				<div class="anwp-block-header"><?php echo esc_html( AnWPFL_Text::get_value( 'stadium__content__stadium_gallery', __( 'Stadium Gallery', 'anwp-football-leagues' ) ) ); ?></div>
 				<div class="anwpfl-not-ready-0 anwp-justified-gallery" id="stadium__gallery" data-featherlight-gallery data-featherlight-filter="a">
-					<?php foreach ( $stadium->_anwpfl_gallery as $image ) : ?>
-						<a href="<?php echo esc_attr( $image ); ?>"><img src="<?php echo esc_url( $image ); ?>"></a>
+					<?php foreach ( $stadium->_anwpfl_gallery as $image_id => $image ) : ?>
+						<a href="<?php echo esc_attr( $image ); ?>"><img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( isset( $gallery_alts[ $image_id ] ) ? $gallery_alts[ $image_id ] : '' ); ?>"></a>
 					<?php endforeach; ?>
 				</div>
 

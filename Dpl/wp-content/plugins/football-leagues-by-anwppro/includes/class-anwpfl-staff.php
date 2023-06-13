@@ -636,30 +636,54 @@ class AnWPFL_Staff extends CPT_Core {
 	 */
 	public function get_staff_list() {
 
-		$output_data = [];
+		global $wpdb;
 
-		$all_staff = get_posts(
-			[
-				'numberposts'      => - 1,
-				'post_type'        => 'anwp_staff',
-				'suppress_filters' => false,
-				'orderby'          => 'title',
-				'post_status'      => 'publish',
-			]
+		$all_staff = $wpdb->get_results(
+			"
+			SELECT p.ID id, p.post_title name,
+				MAX( CASE WHEN pm.meta_key = '_anwpfl_job_title' THEN pm.meta_value ELSE '' END) as job,
+				MAX( CASE WHEN pm.meta_key = '_anwpfl_nationality' THEN pm.meta_value ELSE '' END) as nationality,
+				MAX( CASE WHEN pm.meta_key = '_anwpfl_date_of_birth' THEN pm.meta_value ELSE '' END) as birthdate,
+				MAX( CASE WHEN pm.meta_key = '_anwpfl_current_club' THEN pm.meta_value ELSE '' END) as club_id,
+				MAX( CASE WHEN pm.meta_key = '_anwpfl_photo' THEN pm.meta_value ELSE '' END) as photo
+			FROM $wpdb->posts p
+			LEFT JOIN $wpdb->postmeta pm ON ( pm.post_id = p.ID )
+			WHERE p.post_status = 'publish' AND p.post_type = 'anwp_staff'
+			GROUP BY p.ID
+			ORDER BY p.post_title
+			"
 		);
 
-		/** @var WP_Post $staff */
-		foreach ( $all_staff as $staff ) {
-
-			$staff_obj          = (object) [];
-			$staff_obj->id      = $staff->ID;
-			$staff_obj->name    = $staff->post_title;
-			$staff_obj->job     = get_post_meta( $staff->ID, '_anwpfl_job_title', true );
-			$staff_obj->club_id = get_post_meta( $staff->ID, '_anwpfl_current_club', true );
-
-			$output_data[] = $staff_obj;
+		if ( empty( $all_staff ) ) {
+			return [];
 		}
 
-		return $output_data;
+		foreach ( $all_staff as $staff ) {
+
+			$staff->id       = absint( $staff->id );
+			$staff->club_id  = absint( $staff->club_id );
+			$staff->country  = '';
+			$staff->country2 = '';
+
+			if ( $staff->birthdate ) {
+				$staff->birthdate = date_i18n( get_option( 'date_format' ), strtotime( $staff->birthdate ) );
+			}
+
+			if ( $staff->nationality ) {
+				$countries = maybe_unserialize( $staff->nationality );
+
+				if ( ! empty( $countries ) && is_array( $countries ) && ! empty( $countries[0] ) ) {
+					$staff->country = mb_strtolower( $countries[0] );
+				}
+
+				if ( ! empty( $countries ) && is_array( $countries ) && ! empty( $countries[1] ) ) {
+					$staff->country2 = mb_strtolower( $countries[1] );
+				}
+			}
+
+			unset( $staff->nationality );
+		}
+
+		return $all_staff;
 	}
 }

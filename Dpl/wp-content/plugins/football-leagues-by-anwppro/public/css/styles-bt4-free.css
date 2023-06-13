@@ -12,6 +12,10 @@
 /*--------------------------------------------------------------
 # Modules
 --------------------------------------------------------------*/
+img {
+  margin-bottom: 0;
+}
+
 .anwp-text-center {
   text-align: center !important;
 }
@@ -286,6 +290,12 @@ body:not(.anwpfl-ready) .anwpfl-not-ready-0 {
   stroke-width: 2px;
 }
 
+.anwp-icon--feather {
+  stroke: currentColor !important;
+  fill: none;
+  stroke-width: 2px;
+}
+
 .anwp-icon--octi-red {
   fill: #dc3545;
 }
@@ -296,6 +306,11 @@ body:not(.anwpfl-ready) .anwpfl-not-ready-0 {
 
 .anwp-icon--trans {
   fill: transparent;
+}
+
+.anwp-icon--s36 {
+  width: 36px;
+  height: 36px;
 }
 
 .anwp-icon--s24 {
@@ -2863,6 +2878,54 @@ os-theme-thick-dark
   }
 }
 
+.anwp-border {
+  border: 1px solid;
+}
+
+.anwp-border-top {
+  border-top: 1px solid;
+}
+
+.anwp-border-right {
+  border-right: 1px solid;
+}
+
+.anwp-border-bottom {
+  border-bottom: 1px solid;
+}
+
+.anwp-border-left {
+  border-left: 1px solid;
+}
+
+.anwp-border-0 {
+  border: 0 !important;
+}
+
+.anwp-border-top-0 {
+  border-top: 0 !important;
+}
+
+.anwp-border-right-0 {
+  border-right: 0 !important;
+}
+
+.anwp-border-bottom-0 {
+  border-bottom: 0 !important;
+}
+
+.anwp-border-left-0 {
+  border-left: 0 !important;
+}
+
+.anwp-border-collapse {
+  border-collapse: collapse;
+}
+
+.anwp-border-separate {
+  border-collapse: separate;
+}
+
 .anwp-box-border {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -3195,6 +3258,114 @@ os-theme-thick-dark
 
 .anwp-border-orange-900 {
   border-color: #7b341e !important;
+}
+
+.anwp-bg-yellow-100 {
+  background-color: #fffff0 !important;
+}
+
+.anwp-text-yellow-100 {
+  color: #fffff0 !important;
+}
+
+.anwp-border-yellow-100 {
+  border-color: #fffff0 !important;
+}
+
+.anwp-bg-yellow-200 {
+  background-color: #fefcbf !important;
+}
+
+.anwp-text-yellow-200 {
+  color: #fefcbf !important;
+}
+
+.anwp-border-yellow-200 {
+  border-color: #fefcbf !important;
+}
+
+.anwp-bg-yellow-300 {
+  background-color: #faf089 !important;
+}
+
+.anwp-text-yellow-300 {
+  color: #faf089 !important;
+}
+
+.anwp-border-yellow-300 {
+  border-color: #faf089 !important;
+}
+
+.anwp-bg-yellow-400 {
+  background-color: #f6e05e !important;
+}
+
+.anwp-text-yellow-400 {
+  color: #f6e05e !important;
+}
+
+.anwp-border-yellow-400 {
+  border-color: #f6e05e !important;
+}
+
+.anwp-bg-yellow-500 {
+  background-color: #ecc94b !important;
+}
+
+.anwp-text-yellow-500 {
+  color: #ecc94b !important;
+}
+
+.anwp-border-yellow-500 {
+  border-color: #ecc94b !important;
+}
+
+.anwp-bg-yellow-600 {
+  background-color: #d69e2e !important;
+}
+
+.anwp-text-yellow-600 {
+  color: #d69e2e !important;
+}
+
+.anwp-border-yellow-600 {
+  border-color: #d69e2e !important;
+}
+
+.anwp-bg-yellow-700 {
+  background-color: #b7791f !important;
+}
+
+.anwp-text-yellow-700 {
+  color: #b7791f !important;
+}
+
+.anwp-border-yellow-700 {
+  border-color: #b7791f !important;
+}
+
+.anwp-bg-yellow-800 {
+  background-color: #975a16 !important;
+}
+
+.anwp-text-yellow-800 {
+  color: #975a16 !important;
+}
+
+.anwp-border-yellow-800 {
+  border-color: #975a16 !important;
+}
+
+.anwp-bg-yellow-900 {
+  background-color: #744210 !important;
+}
+
+.anwp-text-yellow-900 {
+  color: #744210 !important;
+}
+
+.anwp-border-yellow-900 {
+  border-color: #744210 !important;
 }
 
 .anwp-bg-green-100 {
@@ -3833,12 +4004,28 @@ os-theme-thick-dark
   height: 10px;
 }
 
+.anwp-h-min-10 {
+  min-height: 10px;
+}
+
+.anwp-h-max-10 {
+  max-height: 10px;
+}
+
 .anwp-w-20 {
   width: 20px;
 }
 
 .anwp-h-20 {
   height: 20px;
+}
+
+.anwp-h-min-20 {
+  min-height: 20px;
+}
+
+.anwp-h-max-20 {
+  max-height: 20px;
 }
 
 .anwp-w-30 {
@@ -3849,12 +4036,28 @@ os-theme-thick-dark
   height: 30px;
 }
 
+.anwp-h-min-30 {
+  min-height: 30px;
+}
+
+.anwp-h-max-30 {
+  max-height: 30px;
+}
+
 .anwp-w-40 {
   width: 40px;
 }
 
 .anwp-h-40 {
   height: 40px;
+}
+
+.anwp-h-min-40 {
+  min-height: 40px;
+}
+
+.anwp-h-max-40 {
+  max-height: 40px;
 }
 
 .anwp-w-50 {
@@ -3865,12 +4068,28 @@ os-theme-thick-dark
   height: 50px;
 }
 
+.anwp-h-min-50 {
+  min-height: 50px;
+}
+
+.anwp-h-max-50 {
+  max-height: 50px;
+}
+
 .anwp-w-60 {
   width: 60px;
 }
 
 .anwp-h-60 {
   height: 60px;
+}
+
+.anwp-h-min-60 {
+  min-height: 60px;
+}
+
+.anwp-h-max-60 {
+  max-height: 60px;
 }
 
 .anwp-w-70 {
@@ -3881,12 +4100,28 @@ os-theme-thick-dark
   height: 70px;
 }
 
+.anwp-h-min-70 {
+  min-height: 70px;
+}
+
+.anwp-h-max-70 {
+  max-height: 70px;
+}
+
 .anwp-w-80 {
   width: 80px;
 }
 
 .anwp-h-80 {
   height: 80px;
+}
+
+.anwp-h-min-80 {
+  min-height: 80px;
+}
+
+.anwp-h-max-80 {
+  max-height: 80px;
 }
 
 .anwp-w-90 {
@@ -3897,12 +4132,28 @@ os-theme-thick-dark
   height: 90px;
 }
 
+.anwp-h-min-90 {
+  min-height: 90px;
+}
+
+.anwp-h-max-90 {
+  max-height: 90px;
+}
+
 .anwp-w-100 {
   width: 100px;
 }
 
 .anwp-h-100 {
   height: 100px;
+}
+
+.anwp-h-min-100 {
+  min-height: 100px;
+}
+
+.anwp-h-max-100 {
+  max-height: 100px;
 }
 
 .anwp-w-150 {
@@ -3929,6 +4180,142 @@ os-theme-thick-dark
   width: 400px;
 }
 
+.anwp-w-min-100 {
+  min-width: 100px;
+}
+
+.anwp-w-min-150 {
+  min-width: 150px;
+}
+
+.anwp-w-min-200 {
+  min-width: 200px;
+}
+
+.anwp-w-min-250 {
+  min-width: 250px;
+}
+
+.anwp-w-min-300 {
+  min-width: 300px;
+}
+
+.anwp-w-min-350 {
+  min-width: 350px;
+}
+
+.anwp-w-min-400 {
+  min-width: 400px;
+}
+
+.anwp-w-15 {
+  width: 15px;
+}
+
+.anwp-h-15 {
+  height: 15px;
+}
+
+.anwp-h-min-15 {
+  min-height: 15px;
+}
+
+.anwp-h-max-15 {
+  max-height: 15px;
+}
+
+.anwp-w-25 {
+  width: 25px;
+}
+
+.anwp-h-25 {
+  height: 25px;
+}
+
+.anwp-h-min-25 {
+  min-height: 25px;
+}
+
+.anwp-h-max-25 {
+  max-height: 25px;
+}
+
+.anwp-w-35 {
+  width: 35px;
+}
+
+.anwp-h-35 {
+  height: 35px;
+}
+
+.anwp-h-min-35 {
+  min-height: 35px;
+}
+
+.anwp-h-max-35 {
+  max-height: 35px;
+}
+
+.anwp-w-45 {
+  width: 45px;
+}
+
+.anwp-h-45 {
+  height: 45px;
+}
+
+.anwp-h-min-45 {
+  min-height: 45px;
+}
+
+.anwp-h-max-45 {
+  max-height: 45px;
+}
+
+.anwp-w-55 {
+  width: 55px;
+}
+
+.anwp-h-55 {
+  height: 55px;
+}
+
+.anwp-h-min-55 {
+  min-height: 55px;
+}
+
+.anwp-h-max-55 {
+  max-height: 55px;
+}
+
+.anwp-h-min-200 {
+  min-height: 200px;
+}
+
+.anwp-h-min-300 {
+  min-height: 300px;
+}
+
+.anwp-h-min-400 {
+  min-height: 400px;
+}
+
+.anwp-h-min-500 {
+  min-height: 500px;
+}
+
+.anwp-w-120 {
+  width: 120px;
+}
+
+.anwp-w-130 {
+  width: 130px;
+}
+
+.anwp-w-140 {
+  width: 140px;
+}
+
 .anwp-max-width-1 {
   max-width: 1px;
 }
@@ -3938,11 +4325,11 @@ os-theme-thick-dark
 }
 
 .anwp-fill-current {
-  fill: currentColor;
+  fill: currentColor !important;
 }
 
 .anwp-stroke-current {
-  stroke: currentColor;
+  stroke: currentColor !important;
 }
 
 .anwp-stroke-0 {
@@ -3957,10 +4344,53 @@ os-theme-thick-dark
   stroke-width: 2;
 }
 
+.anwp-font-thin {
+  font-weight: 100;
+}
+
+.anwp-font-extralight {
+  font-weight: 200;
+}
+
+.anwp-font-light {
+  font-weight: 300;
+}
+
+.anwp-font-normal {
+  font-weight: 400;
+}
+
+.anwp-font-medium {
+  font-weight: 500;
+}
+
+.anwp-font-semibold {
+  font-weight: 600;
+}
+
+.anwp-font-bold {
+  font-weight: 700;
+}
+
+.anwp-font-extrabold {
+  font-weight: 800;
+}
+
+.anwp-font-black {
+  font-weight: 900;
+}
+
 .anwp-text-truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.anwp-text-truncate-multiline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .anwp-text-wrap {
@@ -4030,6 +4460,125 @@ os-theme-thick-dark
 
 .anwp-leading-2 {
   line-height: 2;
+}
+
+/*--------------------------------------------------------------
+# Vendor Styles
+--------------------------------------------------------------*/
+/*!
+ * justifiedGallery - v3.8.1
+ * http://miromannino.github.io/Justified-Gallery/
+ * Copyright (c) 2020 Miro Mannino
+ * Licensed under the MIT license.
+ */
+.justified-gallery {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.justified-gallery > a,
+.justified-gallery > div,
+.justified-gallery > figure {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  /* background: #888888; To have gray placeholders while the gallery is loading with waitThumbnailsLoad = false */
+  filter: "alpha(opacity=10)";
+  opacity: 0.1;
+  margin: 0;
+  padding: 0;
+}
+
+.justified-gallery > a > img,
+.justified-gallery > div > img,
+.justified-gallery > figure > img,
+.justified-gallery > a > a > img,
+.justified-gallery > div > a > img,
+.justified-gallery > figure > a > img,
+.justified-gallery > a > svg,
+.justified-gallery > div > svg,
+.justified-gallery > figure > svg,
+.justified-gallery > a > a > svg,
+.justified-gallery > div > a > svg,
+.justified-gallery > figure > a > svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  filter: "alpha(opacity=0)";
+  opacity: 0;
+}
+
+.justified-gallery > a > .jg-caption,
+.justified-gallery > div > .jg-caption,
+.justified-gallery > figure > .jg-caption {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  background-color: #000000;
+  left: 0;
+  right: 0;
+  margin: 0;
+  color: white;
+  font-size: 12px;
+  font-weight: 300;
+  font-family: sans-serif;
+}
+
+.justified-gallery > a > .jg-caption.jg-caption-visible,
+.justified-gallery > div > .jg-caption.jg-caption-visible,
+.justified-gallery > figure > .jg-caption.jg-caption-visible {
+  display: initial;
+  filter: "alpha(opacity=70)";
+  opacity: 0.7;
+  -webkit-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+.justified-gallery > .jg-entry-visible {
+  filter: "alpha(opacity=100)";
+  opacity: 1;
+  background: none;
+}
+
+.justified-gallery > .jg-entry-visible > img,
+.justified-gallery > .jg-entry-visible > a > img,
+.justified-gallery > .jg-entry-visible > svg,
+.justified-gallery > .jg-entry-visible > a > svg {
+  filter: "alpha(opacity=100)";
+  opacity: 1;
+  -webkit-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+.justified-gallery > .jg-filtered {
+  display: none;
+}
+
+.justified-gallery > .jg-spinner {
+  position: absolute;
+  bottom: 0;
+  margin-left: -24px;
+  padding: 10px 0 10px 0;
+  left: 50%;
+  filter: "alpha(opacity=100)";
+  opacity: 1;
+  overflow: initial;
+}
+
+.justified-gallery > .jg-spinner > span {
+  display: inline-block;
+  filter: "alpha(opacity=0)";
+  opacity: 0;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px 0 4px;
+  background-color: #000;
+  border-radius: 6px;
 }
 
 /*--------------------------------------------------------------
@@ -4204,6 +4753,22 @@ os-theme-thick-dark
   width: 32px;
   height: 28px;
   min-width: 32px;
+}
+
+.competition-list__competition.d-none {
+  display: none !important;
+}
+
+.competition-list__country-collapsed-icon {
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+}
+
+.list__country_collapsed--active .competition-list__country-collapsed-icon {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 .match--simple .match-list__kickoff,
@@ -4675,7 +5240,7 @@ os-theme-thick-dark
 }
 
 .match__player-position {
-  width: 15px;
+  min-width: 20px;
   text-align: center;
   display: inline-block;
   text-transform: uppercase;
@@ -4683,6 +5248,8 @@ os-theme-thick-dark
   color: #0085ba;
   font-size: 9px;
   border: 1px solid rgba(0, 133, 186, 0.25);
+  padding-left: 2px;
+  padding-right: 2px;
 }
 
 .match__sup-result-item-separator {

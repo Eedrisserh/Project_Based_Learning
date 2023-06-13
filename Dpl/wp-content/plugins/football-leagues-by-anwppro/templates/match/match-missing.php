@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.11.4
  *
- * @version       0.11.13
+ * @version       0.12.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -118,7 +118,7 @@ $positions_l10n = [
 						</div>
 
 						<?php if ( ! empty( $home_squad[ $player_id ] ) && isset( $positions_l10n[ $home_squad[ $player_id ]['position'] ] ) ) : ?>
-							<div class="match__player-position mr-1">
+							<div class="match__player-position mr-1 text-nowrap">
 								<?php echo esc_html( $positions_l10n[ $home_squad[ $player_id ]['position'] ] ); ?>
 							</div>
 						<?php endif; ?>
@@ -195,7 +195,7 @@ $positions_l10n = [
 						</div>
 
 						<?php if ( ! empty( $away_squad[ $player_id ] ) && isset( $positions_l10n[ $away_squad[ $player_id ]['position'] ] ) ) : ?>
-							<div class="match__player-position mr-1">
+							<div class="match__player-position mr-1 text-nowrap">
 								<?php echo esc_html( $positions_l10n[ $away_squad[ $player_id ]['position'] ] ); ?>
 							</div>
 						<?php endif; ?>

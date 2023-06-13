@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.10.6
  *
- * @version       0.11.13
+ * @version       0.11.15
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -84,27 +84,27 @@ $referee_id = get_post_meta( $data->match_id, '_anwpfl_referee', true );
 			<?php echo esc_html( get_post( (int) $data->competition_id )->post_title ); ?>
 		</div>
 
-		<div class="match-card__clubs anwp-row anwp-no-gutters my-3">
-			<div class="anwp-col d-flex flex-column anwp-text-center">
+		<div class="match-card__clubs d-flex anwp-no-gutters my-3">
+			<div class="anwp-col d-flex flex-column anwp-text-center anwp-min-width-0 px-1">
 				<?php if ( $show_name ) : ?>
 					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_home_logo ); ?>')"></div>
-					<div class="match__club mt-1 d-inline-block">
+					<div class="match__club mt-1 d-inline-block text-truncate">
 						<?php echo esc_html( $data->club_home_title ); ?>
 					</div>
 				<?php else : ?>
-					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_home_logo ); ?>')"
+					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto text-truncate" style="background-image: url('<?php echo esc_attr( $data->club_home_logo ); ?>')"
 						data-toggle="anwp-tooltip" data-tippy-content="<?php echo esc_attr( $data->club_home_title ); ?>"></div>
 				<?php endif; ?>
 			</div>
-			<div class="anwp-col-auto align-self-center h3 text-muted">vs</div>
-			<div class="anwp-col d-flex flex-column anwp-text-center">
+			<div class="anwp-col-auto align-self-center h3 text-muted mx-2">vs</div>
+			<div class="anwp-col d-flex flex-column anwp-text-center anwp-min-width-0 px-1">
 				<?php if ( $show_name ) : ?>
 					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_away_logo ); ?>')"></div>
-					<div class="match__club mt-1 d-inline-block">
+					<div class="match__club mt-1 d-inline-block text-truncate">
 						<?php echo esc_html( $data->club_away_title ); ?>
 					</div>
 				<?php else : ?>
-					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_away_logo ); ?>')"
+					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto text-truncate" style="background-image: url('<?php echo esc_attr( $data->club_away_logo ); ?>')"
 						data-toggle="anwp-tooltip" data-tippy-content="<?php echo esc_attr( $data->club_away_title ); ?>"></div>
 				<?php endif; ?>
 			</div>

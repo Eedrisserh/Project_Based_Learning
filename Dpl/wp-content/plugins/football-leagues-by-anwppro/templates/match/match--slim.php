@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.6.1
  *
- * @version       0.11.13
+ * @version       0.13.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -43,6 +43,7 @@ $data = (object) wp_parse_args(
 		'competition_logo'    => true,
 		'outcome_id'          => '',
 		'special_status'      => '',
+		'extra_actions_html'  => '',
 	]
 );
 
@@ -162,6 +163,16 @@ if ( $render_match_time ) {
 			do_action( 'anwpfl/tmpl-match-slim/extra_action', $data );
 
 			/**
+			 * Render extra actions block.
+			 *
+			 * @since 0.11.14
+			 */
+			if ( $data->extra_actions_html ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $data->extra_actions_html;
+			}
+
+			/**
 			 * Render outcome.
 			 *
 			 * @since 0.10.23
@@ -255,6 +266,16 @@ if ( $render_match_time ) {
 			do_action( 'anwpfl/tmpl-match-slim/extra_action', $data );
 
 			/**
+			 * Render extra actions block.
+			 *
+			 * @since 0.11.14
+			 */
+			if ( $data->extra_actions_html ) {
+				// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $data->extra_actions_html;
+			}
+
+			/**
 			 * Render outcome.
 			 *
 			 * @since 0.10.23
@@ -333,6 +354,43 @@ if ( $render_match_time ) {
 				$bottom_line_html .= '<span class="match-list__time-result text-muted d-inline-block text-nowrap">';
 				$bottom_line_html .= esc_html( AnWPFL_Text::get_value( 'match__match__referee', __( 'Referee', 'anwp-football-leagues' ) ) ) . ': ';
 				$bottom_line_html .= esc_html( $referee_name ) . '</span>';
+			}
+		}
+
+		// Referee Assistants
+		if ( in_array( 'referee_assistants', $bottom_line_options, true ) ) {
+
+			$assistant_1_id   = get_post_meta( $data->match_id, '_anwpfl_assistant_1', true );
+			$assistant_1_name = absint( $assistant_1_id ) ? get_the_title( $assistant_1_id ) : '';
+
+			if ( $assistant_1_name ) {
+				$bottom_line_html .= '<span class="match__sup-result-item-separator"> | </span>';
+				$bottom_line_html .= '<span class="match-list__time-result text-muted d-inline-block text-nowrap">';
+				$bottom_line_html .= esc_html( AnWPFL_Text::get_value( 'match__referees__assistant', __( 'Assistant Referee', 'anwp-football-leagues' ) ) ) . ' 1: ';
+				$bottom_line_html .= esc_html( $assistant_1_name ) . '</span>';
+			}
+
+			$assistant_2_id   = get_post_meta( $data->match_id, '_anwpfl_assistant_2', true );
+			$assistant_2_name = absint( $assistant_2_id ) ? get_the_title( $assistant_2_id ) : '';
+
+			if ( $assistant_2_name ) {
+				$bottom_line_html .= '<span class="match__sup-result-item-separator"> | </span>';
+				$bottom_line_html .= '<span class="match-list__time-result text-muted d-inline-block text-nowrap">';
+				$bottom_line_html .= esc_html( AnWPFL_Text::get_value( 'match__referees__assistant', __( 'Assistant Referee', 'anwp-football-leagues' ) ) ) . ' 2: ';
+				$bottom_line_html .= esc_html( $assistant_2_name ) . '</span>';
+			}
+		}
+
+		// Fourth official
+		if ( in_array( 'referee_fourth', $bottom_line_options, true ) ) {
+			$referee_fourth_id   = get_post_meta( $data->match_id, '_anwpfl_referee_fourth', true );
+			$referee_fourth_name = absint( $referee_fourth_id ) ? get_the_title( $referee_fourth_id ) : '';
+
+			if ( $referee_fourth_name ) {
+				$bottom_line_html .= '<span class="match__sup-result-item-separator"> | </span>';
+				$bottom_line_html .= '<span class="match-list__time-result text-muted d-inline-block text-nowrap">';
+				$bottom_line_html .= esc_html( AnWPFL_Text::get_value( 'match__referees__fourth_official', __( 'Fourth official', 'anwp-football-leagues' ) ) ) . ': ';
+				$bottom_line_html .= esc_html( $referee_fourth_name ) . '</span>';
 			}
 		}
 	}

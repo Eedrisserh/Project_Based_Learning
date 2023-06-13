@@ -38,6 +38,17 @@ window.anwpFLVideos = {};
 			window.onYouTubeIframeAPIReady = app.onPlayerReady;
 		} else if ( 'undefined' !== typeof window.YT ) {
 			app.onPlayerReady();
+		} else if ( 'function' === typeof window.onYouTubeIframeAPIReady ) {
+
+			var previous = window.onYouTubeIframeAPIReady;
+
+			window.onYouTubeIframeAPIReady = function() {
+				if ( previous ) {
+					previous();
+				}
+
+				app.onPlayerReady();
+			};
 		}
 	};
 

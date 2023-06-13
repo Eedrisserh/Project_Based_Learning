@@ -164,7 +164,15 @@ $col_span = 'g' === $data->position_code ? 8 : 9;
 								<td class="anwp-text-center"><?php echo (int) $match->goals; ?></td>
 								<td class="anwp-text-center"><?php echo (int) $match->assist; ?></td>
 							<?php endif; ?>
-							<td class="anwp-text-center"><?php echo $card_type ? $data->card_icons[ $card_type ] : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></td>
+							<td class="anwp-text-center">
+								<?php
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo 'r' === $card_type && intval( $match->card_y ) ? $data->card_icons['y'] : '';
+
+								// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo $card_type ? $data->card_icons[ $card_type ] : '';
+								?>
+							</td>
 						</tr>
 						<?php
 					endforeach;

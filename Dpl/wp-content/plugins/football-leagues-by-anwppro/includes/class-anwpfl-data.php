@@ -82,7 +82,321 @@ class AnWPFL_Data {
 
 		$this->plugin = $plugin;
 
-		$this->countries = [
+		$this->positions = [
+			'g' => esc_html_x( 'Goalkeeper', 'position', 'anwp-football-leagues' ),
+			'd' => esc_html_x( 'Defender', 'position', 'anwp-football-leagues' ),
+			'm' => esc_html_x( 'Midfielder', 'position', 'anwp-football-leagues' ),
+			'f' => esc_html_x( 'Forward', 'position', 'anwp-football-leagues' ),
+		];
+
+		$this->positions_plural = [
+			'g' => __( 'Goalkeepers', 'anwp-football-leagues' ),
+			'd' => __( 'Defenders', 'anwp-football-leagues' ),
+			'm' => __( 'Midfielders', 'anwp-football-leagues' ),
+			'f' => __( 'Forwards', 'anwp-football-leagues' ),
+		];
+
+		$this->cards = [
+			'y'  => AnWPFL_Text::get_value( 'data__cards__yellow_card', esc_html__( 'Yellow Card', 'anwp-football-leagues' ) ),
+			'r'  => AnWPFL_Text::get_value( 'data__cards__red_card', esc_html__( 'Red Card', 'anwp-football-leagues' ) ),
+			'yr' => AnWPFL_Text::get_value( 'data__cards__red_yellow_card', esc_html__( '2nd Yellow > Red Card', 'anwp-football-leagues' ) ),
+		];
+
+		$this->series = [
+			'w' => esc_html_x( 'w', 'Win - in club form', 'anwp-football-leagues' ),
+			'd' => esc_html_x( 'd', 'Draw - in club form', 'anwp-football-leagues' ),
+			'l' => esc_html_x( 'l', 'Lost - in club form', 'anwp-football-leagues' ),
+		];
+
+		// Load translatable series options
+		if ( AnWPFL_Options::get_value( 'text_outcome_letter_w' ) ) {
+			$this->series['w'] = AnWPFL_Options::get_value( 'text_outcome_letter_w' );
+		}
+
+		if ( AnWPFL_Options::get_value( 'text_outcome_letter_d' ) ) {
+			$this->series['d'] = AnWPFL_Options::get_value( 'text_outcome_letter_d' );
+		}
+
+		if ( AnWPFL_Options::get_value( 'text_outcome_letter_l' ) ) {
+			$this->series['l'] = AnWPFL_Options::get_value( 'text_outcome_letter_l' );
+		}
+
+		$this->admin_l10n = [
+			'add_clubs_only_competition'             => esc_html__( 'You can add or remove clubs only on Competition page', 'anwp-football-leagues' ),
+			'add_event'                              => esc_html__( 'add event', 'anwp-football-leagues' ),
+			'add_initial_points'                     => esc_html__( 'Add Initial Points', 'anwp-football-leagues' ),
+			'add_match_event'                        => esc_html__( 'Add Match Event', 'anwp-football-leagues' ),
+			'add_new_group'                          => esc_html__( 'Add new group (tie)', 'anwp-football-leagues' ),
+			'add_new_round'                          => esc_html__( 'Add New Round', 'anwp-football-leagues' ),
+			'add_player'                             => esc_html__( 'Add Player', 'anwp-football-leagues' ),
+			'add_remove_color'                       => esc_html__( 'add/remove color', 'anwp-football-leagues' ),
+			'add_remove_points'                      => esc_html__( 'add/remove points', 'anwp-football-leagues' ),
+			'add_sideline'                           => esc_html__( 'Add Missing Player', 'anwp-football-leagues' ),
+			'add_table_color'                        => esc_html__( 'Add Table Color', 'anwp-football-leagues' ),
+			'additional_minute'                      => esc_html__( 'Additional Minute', 'anwp-football-leagues' ),
+			'aggtext'                                => esc_html__( 'Aggregate Text', 'anwp-football-leagues' ),
+			'aggtext_hint'                           => esc_html__( 'For Example: "Agg: 2-2; Team A won on penalties (5-3)"', 'anwp-football-leagues' ),
+			'allows_multiple_seasons'                => esc_html__( 'allows multiple seasons', 'anwp-football-leagues' ),
+			'are_you_sure'                           => esc_html__( 'Are you sure?', 'anwp-football-leagues' ),
+			'assistant'                              => esc_html__( 'Assistant', 'anwp-football-leagues' ),
+			'attach_clubs_current_table'             => esc_html__( 'Please, attach some clubs to the current Standing Table', 'anwp-football-leagues' ),
+			'attach_person_to_staff'                 => esc_html__( 'Attach Person to Staff', 'anwp-football-leagues' ),
+			'attach_player_to_squad'                 => esc_html__( 'Attach Player to Squad', 'anwp-football-leagues' ),
+			'attach_to_squad'                        => esc_html__( 'Attach to squad', 'anwp-football-leagues' ),
+			'attendance'                             => esc_html__( 'Attendance', 'anwp-football-leagues' ),
+			'automatic_pos_calculation'              => esc_html__( 'Automatic Position Calculation', 'anwp-football-leagues' ),
+			'available_placeholders'                 => esc_html__( 'Available placeholders', 'anwp-football-leagues' ),
+			'available_rules'                        => esc_html__( 'Available rules', 'anwp-football-leagues' ),
+			'away_club'                              => esc_html__( 'Away Club', 'anwp-football-leagues' ),
+			'ball_possession'                        => esc_html__( 'Ball Possession', 'anwp-football-leagues' ),
+			'basic_info'                             => esc_html__( 'Basic Info', 'anwp-football-leagues' ),
+			'card'                                   => esc_html__( 'Card', 'anwp-football-leagues' ),
+			'card_type'                              => esc_html__( 'Card Type', 'anwp-football-leagues' ),
+			'clear'                                  => esc_html__( 'Clear', 'anwp-football-leagues' ),
+			'click_to_change'                        => esc_html__( 'click to change', 'anwp-football-leagues' ),
+			'click_create_new_league_add_new_one'    => esc_html__( 'Click "Create New League" to add a new one.', 'anwp-football-leagues' ),
+			'click_create_new_season_add_new_one'    => esc_html__( 'Click "Create New Season" to add a new one.', 'anwp-football-leagues' ),
+			'close'                                  => esc_html__( 'Close', 'anwp-football-leagues' ),
+			'club'                                   => esc_html__( 'Club', 'anwp-football-leagues' ),
+			'club_initial_points'                    => esc_html__( 'Club initial points', 'anwp-football-leagues' ),
+			'club_squad'                             => esc_html__( 'Club Squad', 'anwp-football-leagues' ),
+			'club_staff'                             => esc_html__( 'Club Staff', 'anwp-football-leagues' ),
+			'clubs'                                  => esc_html__( 'Clubs', 'anwp-football-leagues' ),
+			'coach'                                  => esc_html__( 'Coach', 'anwp-football-leagues' ),
+			'color'                                  => esc_html__( 'Color', 'anwp-football-leagues' ),
+			'color_by'                               => esc_html__( 'Color by', 'anwp-football-leagues' ),
+			'comment'                                => esc_html__( 'Comment', 'anwp-football-leagues' ),
+			'competition'                            => esc_html__( 'Competition', 'anwp-football-leagues' ),
+			'competition_logo'                       => esc_html__( 'Competition Logo', 'anwp-football-leagues' ),
+			'competition_order'                      => esc_html__( 'Competition Order', 'anwp-football-leagues' ),
+			'competition_order_hint'                 => esc_html__( 'Used for Knockout matches. For example: order is used on the Player page in the list of latest matches grouped by competition', 'anwp-football-leagues' ),
+			'competition_status'                     => esc_html__( 'Competition Status', 'anwp-football-leagues' ),
+			'competition_title_league_seasons_copy'  => esc_html__( 'Competition Title, League and Seasons have been copied from selected Main Stage.', 'anwp-football-leagues' ),
+			'competition_type'                       => esc_html__( 'Competition Type', 'anwp-football-leagues' ),
+			'confirm_delete'                         => esc_html__( 'Confirm Delete', 'anwp-football-leagues' ),
+			'corner_kicks'                           => esc_html__( 'Corner Kicks', 'anwp-football-leagues' ),
+			'country'                                => esc_html__( 'Country', 'anwp-football-leagues' ),
+			'create_competition_first'               => esc_html__( 'Please, create a Competition first.', 'anwp-football-leagues' ),
+			'create_different_types_of_competitions' => esc_html__( 'Create different types of Competitions', 'anwp-football-leagues' ),
+			'create_new_league'                      => esc_html__( 'Create New League', 'anwp-football-leagues' ),
+			'create_new_season'                      => esc_html__( 'Create New Season', 'anwp-football-leagues' ),
+			'current_ranking_rules'                  => esc_html__( 'Current standing ranking rules', 'anwp-football-leagues' ),
+			'custom'                                 => esc_html_x( 'Custom', 'round robin format', 'anwp-football-leagues' ),
+			'custom_player_number'                   => esc_html__( 'Edit Player number', 'anwp-football-leagues' ),
+			'delete_event'                           => esc_html__( 'Delete Event', 'anwp-football-leagues' ),
+			'data_save_error'                        => esc_html__( 'Data Save Error', 'anwp-football-leagues' ),
+			'delete_round'                           => esc_html__( 'Delete Round', 'anwp-football-leagues' ),
+			'delete_sideline'                        => esc_html__( 'Delete Missing Player', 'anwp-football-leagues' ),
+			'disable'                                => esc_html__( 'Disable', 'anwp-football-leagues' ),
+			'double'                                 => esc_html_x( 'Double', 'round robin format', 'anwp-football-leagues' ),
+			'drawn'                                  => esc_html__( 'Drawn', 'anwp-football-leagues' ),
+			'edit'                                   => esc_html__( 'edit', 'anwp-football-leagues' ),
+			'edit_group_title'                       => esc_html__( 'Edit Group Title', 'anwp-football-leagues' ),
+			'edit_player_number'                     => esc_html__( 'Edit Number', 'anwp-football-leagues' ),
+			'edit_squad'                             => esc_html__( 'Edit Squad', 'anwp-football-leagues' ),
+			'enable'                                 => esc_html__( 'Enable', 'anwp-football-leagues' ),
+			'empty_league_name_not_allowed'          => esc_html__( 'Empty League name not allowed', 'anwp-football-leagues' ),
+			'empty_season_name_not_allowed'          => esc_html__( 'Empty Season name not allowed', 'anwp-football-leagues' ),
+			'events_only_for_finished'               => esc_html__( 'You can add events only for finished matches.', 'anwp-football-leagues' ),
+			'extra_time'                             => esc_html__( 'Extra Time', 'anwp-football-leagues' ),
+			'fill_in_the_required_fields'            => esc_html__( 'Fill in the required fields', 'anwp-football-leagues' ),
+			'filter_competitions_by_active_season'   => esc_html__( 'filter competitions by active season', 'anwp-football-leagues' ),
+			'filter_players_by'                      => esc_html__( 'Filter players by', 'anwp-football-leagues' ),
+			'final_score'                            => esc_html__( 'Final Score', 'anwp-football-leagues' ),
+			'fixture'                                => esc_html__( 'Fixture', 'anwp-football-leagues' ),
+			'fouls'                                  => esc_html__( 'Fouls', 'anwp-football-leagues' ),
+			'friendly'                               => esc_html__( 'Friendly', 'anwp-football-leagues' ),
+			'friendly_not_calculated'                => esc_html__( 'In "Friendly" status player statistics is NOT calculated', 'anwp-football-leagues' ),
+			'from_penalty'                           => esc_html__( 'From Penalty', 'anwp-football-leagues' ),
+			'from_previous_round'                    => esc_html__( 'from previous round', 'anwp-football-leagues' ),
+			'full_time'                              => esc_html__( 'Full Time', 'anwp-football-leagues' ),
+			'ga'                                     => esc_html_x( 'GA', 'table - goals against', 'anwp-football-leagues' ),
+			'gd'                                     => esc_html_x( 'GD', 'table - goals diff', 'anwp-football-leagues' ),
+			'general'                                => esc_html__( 'General', 'anwp-football-leagues' ),
+			'gf'                                     => esc_html_x( 'GF', 'table - goals for', 'anwp-football-leagues' ),
+			'goal'                                   => esc_html__( 'Goal', 'anwp-football-leagues' ),
+			'goal_from_penalty'                      => esc_html__( 'Goal From Penalty', 'anwp-football-leagues' ),
+			'goals'                                  => esc_html__( 'GOALS', 'anwp-football-leagues' ),
+			'goals_difference'                       => esc_html__( 'Goals Difference', 'anwp-football-leagues' ),
+			'goals_scored'                           => esc_html__( 'Goals Scored', 'anwp-football-leagues' ),
+			'group'                                  => esc_html__( 'Group', 'anwp-football-leagues' ),
+			'groups'                                 => esc_html__( 'Groups', 'anwp-football-leagues' ),
+			'half_time'                              => esc_html__( 'Half Time', 'anwp-football-leagues' ),
+			'home_club'                              => esc_html__( 'Home Club', 'anwp-football-leagues' ),
+			'ignore_group_structure'                 => esc_html__( 'ignore group structure', 'anwp-football-leagues' ),
+			'in'                                     => esc_html_x( 'IN', 'Substitute', 'anwp-football-leagues' ),
+			'in_club'                                => esc_html__( 'in club', 'anwp-football-leagues' ),
+			'inherit_from_settings'                  => esc_html__( 'inherit (from settings)', 'anwp-football-leagues' ),
+			'initial_points'                         => esc_html__( 'Initial points', 'anwp-football-leagues' ),
+			'initial_standing_table_data'            => esc_html__( 'Initial Standing Table Data', 'anwp-football-leagues' ),
+			'injured'                                => esc_html__( 'Injured', 'anwp-football-leagues' ),
+			'job'                                    => esc_html__( 'Job', 'anwp-football-leagues' ),
+			'kickoff_time'                           => esc_html__( 'Kick off time', 'anwp-football-leagues' ),
+			'knockout'                               => esc_html__( 'Knockout', 'anwp-football-leagues' ),
+			'knockout_format'                        => esc_html__( 'Knockout Format', 'anwp-football-leagues' ),
+			'league'                                 => esc_html__( 'League', 'anwp-football-leagues' ),
+			'league_name'                            => esc_html__( 'League Name', 'anwp-football-leagues' ),
+			'leagues_updated'                        => esc_html__( 'Leagues updated', 'anwp-football-leagues' ),
+			'left_club'                              => esc_html__( 'left club', 'anwp-football-leagues' ),
+			'line_ups'                               => esc_html__( 'Line Ups', 'anwp-football-leagues' ),
+			'lost'                                   => esc_html__( 'Lost', 'anwp-football-leagues' ),
+			'main_stage_id'                          => esc_html__( 'Main Stage ID', 'anwp-football-leagues' ),
+			'match'                                  => esc_html__( 'match', 'anwp-football-leagues' ),
+			'match_data'                             => esc_html__( 'Match Data', 'anwp-football-leagues' ),
+			'match_events'                           => esc_html__( 'Match Events', 'anwp-football-leagues' ),
+			'match_postponed'                        => esc_html__( 'Match Postponed', 'anwp-football-leagues' ),
+			'match_setup'                            => esc_html__( 'Match Setup', 'anwp-football-leagues' ),
+			'match_sidelines'                        => esc_html__( 'Missing Players', 'anwp-football-leagues' ),
+			'match_stats'                            => esc_html__( 'Match Stats', 'anwp-football-leagues' ),
+			'match_time_to_be_defined'               => esc_html__( 'Time To Be Defined', 'anwp-football-leagues' ),
+			'match_week'                             => esc_html__( 'MatchWeek', 'anwp-football-leagues' ),
+			'minute'                                 => esc_html__( 'Minute', 'anwp-football-leagues' ),
+			'missed_penalty'                         => esc_html_x( 'Missed Penalty', 'Substitute', 'anwp-football-leagues' ),
+			'multistage'                             => esc_html__( 'Multistage', 'anwp-football-leagues' ),
+			'multistage_main'                        => esc_html__( 'Multistage Main', 'anwp-football-leagues' ),
+			'multistage_secondary'                   => esc_html__( 'Multistage Secondary', 'anwp-football-leagues' ),
+			'multistage_setup'                       => esc_html__( 'Multistage Setup', 'anwp-football-leagues' ),
+			'multistage_setup_hint'                  => esc_html__( 'How To Setup Competition With Multiple Stages', 'anwp-football-leagues' ),
+			'no'                                     => esc_html__( 'No', 'anwp-football-leagues' ),
+			'no_players_found'                       => esc_html__( 'No players found.', 'anwp-football-leagues' ),
+			'no_published_leagues_available'         => esc_html__( 'No published Leagues available.', 'anwp-football-leagues' ),
+			'no_published_seasons_available'         => esc_html__( 'No published Seasons available.', 'anwp-football-leagues' ),
+			'none'                                   => esc_html__( 'None', 'anwp-football-leagues' ),
+			'not_specified'                          => esc_html__( 'not specified', 'anwp-football-leagues' ),
+			'notes_below_table'                      => esc_html__( 'Notes (below table)', 'anwp-football-leagues' ),
+			'number'                                 => esc_html__( 'Number', 'anwp-football-leagues' ),
+			'official'                               => esc_html__( 'Official', 'anwp-football-leagues' ),
+			'offsides'                               => esc_html__( 'Offsides', 'anwp-football-leagues' ),
+			'on_loan'                                => esc_html__( 'on loan', 'anwp-football-leagues' ),
+			'on_trial'                               => esc_html__( 'on trial', 'anwp-football-leagues' ),
+			'other'                                  => esc_html__( 'other', 'anwp-football-leagues' ),
+			'out'                                    => esc_html_x( 'OUT', 'Substitute', 'anwp-football-leagues' ),
+			'own_goal'                               => esc_html__( 'Own Goal', 'anwp-football-leagues' ),
+			'penalty'                                => esc_html__( 'Penalty', 'anwp-football-leagues' ),
+			'penalty_shootout'                       => esc_html__( 'Penalty Shootout', 'anwp-football-leagues' ),
+			'place'                                  => esc_html__( 'Place', 'anwp-football-leagues' ),
+			'place_and_time'                         => esc_html__( 'Place and Time', 'anwp-football-leagues' ),
+			'played'                                 => esc_html__( 'Played', 'anwp-football-leagues' ),
+			'player'                                 => esc_html__( 'Player', 'anwp-football-leagues' ),
+			'player_in'                              => esc_html__( 'Player In', 'anwp-football-leagues' ),
+			'player_name'                            => esc_html__( 'Player Name', 'anwp-football-leagues' ),
+			'player_not_in_squad'                    => esc_html__( '! player not in squad', 'anwp-football-leagues' ),
+			'player_out'                             => esc_html__( 'Player Out', 'anwp-football-leagues' ),
+			'players'                                => esc_html__( 'Players', 'anwp-football-leagues' ),
+			'points'                                 => esc_html__( 'Points', 'anwp-football-leagues' ),
+			'points_for_a_draw'                      => esc_html__( 'Points for a draw', 'anwp-football-leagues' ),
+			'points_for_a_loss'                      => esc_html__( 'Points for a loss', 'anwp-football-leagues' ),
+			'points_for_a_win'                       => esc_html__( 'Points for a win', 'anwp-football-leagues' ),
+			'position'                               => esc_html__( 'Position', 'anwp-football-leagues' ),
+			'quickly_create_players'                 => esc_html__( 'Quickly create players with "Import Data" Tool', 'anwp-football-leagues' ),
+			'ranking_rules'                          => esc_html__( 'Ranking Rules', 'anwp-football-leagues' ),
+			'ranking_rules_notes_1'                  => esc_html__( 'Ranking rules are used to determine the position of the team in the Standing Table (from top to bottom).', 'anwp-football-leagues' ),
+			'ranking_rules_notes_2'                  => esc_html__( 'Click on arrows to change ranking rules order.', 'anwp-football-leagues' ),
+			'recommended_season_name'                => esc_html__( 'Recommended season name is "YYYY" or "YYYY-YYYY".', 'anwp-football-leagues' ),
+			'red'                                    => esc_html__( 'Red', 'anwp-football-leagues' ),
+			'red_cards'                              => esc_html__( 'Red Cards', 'anwp-football-leagues' ),
+			'remove_group'                           => esc_html__( 'Remove Group', 'anwp-football-leagues' ),
+			'remove_image'                           => esc_html__( 'Remove Image', 'anwp-football-leagues' ),
+			'remove_only_empty_round'                => esc_html__( 'You can remove only empty Round. Delete all attached groups/pairs first.', 'anwp-football-leagues' ),
+			'result'                                 => esc_html__( 'Result', 'anwp-football-leagues' ),
+			'round'                                  => esc_html__( 'Round', 'anwp-football-leagues' ),
+			'round_robin'                            => esc_html__( 'Round Robin', 'anwp-football-leagues' ),
+			'round_robin_format'                     => esc_html__( 'Round-Robin Format', 'anwp-football-leagues' ),
+			'save'                                   => esc_html__( 'Save', 'anwp-football-leagues' ),
+			'save_changes'                           => esc_html__( 'Save changes', 'anwp-football-leagues' ),
+			'save_continue'                          => esc_html__( 'Save & Continue', 'anwp-football-leagues' ),
+			'save_event'                             => esc_html__( 'Save Event', 'anwp-football-leagues' ),
+			'save_new_league'                        => esc_html__( 'Save New League', 'anwp-football-leagues' ),
+			'save_new_season'                        => esc_html__( 'Save New Season', 'anwp-football-leagues' ),
+			'save_squad'                             => esc_html__( 'Save Squad', 'anwp-football-leagues' ),
+			'season'                                 => esc_html__( 'Season', 'anwp-football-leagues' ),
+			'season_name'                            => esc_html__( 'Season Name', 'anwp-football-leagues' ),
+			'seasons_updated'                        => esc_html__( 'Seasons updated', 'anwp-football-leagues' ),
+			'select'                                 => esc_html__( 'Select', 'anwp-football-leagues' ),
+			'select_and_continue'                    => esc_html__( 'Select and Continue', 'anwp-football-leagues' ),
+			'select_club'                            => esc_html__( 'Select club', 'anwp-football-leagues' ),
+			'select_coach'                           => esc_html__( '- select coach -', 'anwp-football-leagues' ),
+			'select_competition_clubs'               => esc_html__( 'Select Competition & Clubs', 'anwp-football-leagues' ),
+			'select_competition_group'               => esc_html__( 'Select Competition Group', 'anwp-football-leagues' ),
+			'select_date'                            => esc_html__( 'Select date', 'anwp-football-leagues' ),
+			'select_event'                           => esc_html__( 'Select event', 'anwp-football-leagues' ),
+			'select_home_away_first'                 => esc_html__( 'Select Home and Away Clubs first.', 'anwp-football-leagues' ),
+			'select_image'                           => esc_html__( 'Select Image', 'anwp-football-leagues' ),
+			'select_league'                          => esc_html__( 'select league', 'anwp-football-leagues' ),
+			'select_reason'                          => esc_html__( 'Select reason', 'anwp-football-leagues' ),
+			'select_rules_from_list'                 => esc_html__( 'Select appropriate rules from the list below.', 'anwp-football-leagues' ),
+			'select_season'                          => esc_html__( 'select season', 'anwp-football-leagues' ),
+			'select_stadium'                         => esc_html__( '- select stadium -', 'anwp-football-leagues' ),
+			'select_stage'                           => esc_html__( '- select stage -', 'anwp-football-leagues' ),
+			'select_two_teams_only'                  => esc_html__( 'Select two teams only.', 'anwp-football-leagues' ),
+			'set_default'                            => esc_html__( 'set default', 'anwp-football-leagues' ),
+			'set_stat_only_finished'                 => esc_html__( 'You can set statistics only for finished matches.', 'anwp-football-leagues' ),
+			'shootout_scored'                        => esc_html__( 'Scored', 'anwp-football-leagues' ),
+			'shots'                                  => esc_html__( 'Shots', 'anwp-football-leagues' ),
+			'shots_on_goal'                          => esc_html__( 'Shots on Goal', 'anwp-football-leagues' ),
+			'show_all_clubs_ignoring_structure'      => esc_html__( 'Show all clubs ignoring group structure (not recommended)', 'anwp-football-leagues' ),
+			'single'                                 => esc_html_x( 'Single', 'round robin format', 'anwp-football-leagues' ),
+			'single_leg_ties'                        => esc_html__( 'single-leg ties', 'anwp-football-leagues' ),
+			'special_status'                         => esc_html__( 'Special Status', 'anwp-football-leagues' ),
+			'squad'                                  => esc_html__( 'squad', 'anwp-football-leagues' ),
+			'stadium'                                => esc_html__( 'Stadium', 'anwp-football-leagues' ),
+			'stage_order'                            => esc_html__( 'Stage Order', 'anwp-football-leagues' ),
+			'stage_title'                            => esc_html__( 'Stage Title', 'anwp-football-leagues' ),
+			'standing_table'                         => esc_html__( 'Standing Table', 'anwp-football-leagues' ),
+			'standing_table_colors'                  => esc_html__( 'Standing Table Colors', 'anwp-football-leagues' ),
+			'start_typing_name'                      => esc_html__( '... start typing name', 'anwp-football-leagues' ),
+			'stats'                                  => esc_html__( 'STATS', 'anwp-football-leagues' ),
+			'status'                                 => esc_html__( 'Status', 'anwp-football-leagues' ),
+			'step'                                   => esc_html__( 'Step', 'anwp-football-leagues' ),
+			'structure'                              => esc_html__( 'Structure', 'anwp-football-leagues' ),
+			'substitute'                             => esc_html__( 'Substitute', 'anwp-football-leagues' ),
+			'substitutes'                            => esc_html__( 'Substitutes', 'anwp-football-leagues' ),
+			'suspended'                              => esc_html__( 'Suspended', 'anwp-football-leagues' ),
+			'tie'                                    => esc_html__( 'Tie', 'anwp-football-leagues' ),
+			'ties'                                   => esc_html__( 'Ties', 'anwp-football-leagues' ),
+			'tips'                                   => esc_html__( 'Tips', 'anwp-football-leagues' ),
+			'toggle'                                 => esc_html__( 'Toggle', 'anwp-football-leagues' ),
+			'tutorial'                               => esc_html__( 'Tutorial', 'anwp-football-leagues' ),
+			'two_legged_ties'                        => esc_html__( 'two-legged ties', 'anwp-football-leagues' ),
+			'use_batch_import_tool'                  => esc_html__( 'Use Batch import tool for fast Clubs creation', 'anwp-football-leagues' ),
+			'use_separate_group'                     => esc_html__( 'Use separate group', 'anwp-football-leagues' ),
+			'want_to_delete_event'                   => esc_html__( 'Do you really want to delete Event?', 'anwp-football-leagues' ),
+			'want_to_delete_round'                   => esc_html__( 'Do you really want to delete Round?', 'anwp-football-leagues' ),
+			'want_to_delete_sideline'                => esc_html__( 'Do you really want to delete Missing Player?', 'anwp-football-leagues' ),
+			'wins'                                   => esc_html__( 'Wins', 'anwp-football-leagues' ),
+			'won'                                    => esc_html__( 'Won', 'anwp-football-leagues' ),
+			'yellow'                                 => esc_html__( 'Yellow', 'anwp-football-leagues' ),
+			'yellow_cards'                           => esc_html__( 'Yellow Cards', 'anwp-football-leagues' ),
+			'yellow_red'                             => esc_html__( '2nd Yellow > Red', 'anwp-football-leagues' ),
+			'yellow_reds'                            => esc_html__( '2d Yellow > Red Cards', 'anwp-football-leagues' ),
+			'yes'                                    => esc_html__( 'Yes', 'anwp-football-leagues' ),
+		];
+	}
+
+	/**
+	 * Get initial confederations.
+	 *
+	 * @return array
+	 */
+	public function get_initial_confederations() {
+		return [
+			'__World'         => esc_html__( 'World', 'anwp-football-leagues' ),
+			'__Africa'        => esc_html__( 'Africa', 'anwp-football-leagues' ),
+			'__Asia'          => esc_html__( 'Asia', 'anwp-football-leagues' ),
+			'__Europe'        => esc_html__( 'Europe', 'anwp-football-leagues' ),
+			'__NC_America'    => esc_html__( 'N/C America', 'anwp-football-leagues' ),
+			'__Oceania'       => esc_html__( 'Oceania', 'anwp-football-leagues' ),
+			'__South_America' => esc_html__( 'South America', 'anwp-football-leagues' ),
+		];
+	}
+
+	/**
+	 * Get initial countries.
+	 *
+	 * @return array
+	 */
+	public function get_initial_countries() {
+		$countries = [
 			'af' => esc_html_x( 'Afghanistan', 'country', 'anwp-football-leagues' ),
 			'al' => esc_html_x( 'Albania', 'country', 'anwp-football-leagues' ),
 			'dz' => esc_html_x( 'Algeria', 'country', 'anwp-football-leagues' ),
@@ -335,8 +649,8 @@ class AnWPFL_Data {
 		];
 
 		// Non standard Nations (FIFA)
-		$this->countries = array_merge(
-			$this->countries,
+		return array_merge(
+			$countries,
 			[
 				'_England'          => esc_html_x( 'England', 'country', 'anwp-football-leagues' ),
 				'_Northern_Ireland' => esc_html_x( 'Northern_Ireland', 'country', 'anwp-football-leagues' ),
@@ -344,6 +658,18 @@ class AnWPFL_Data {
 				'_Wales'            => esc_html_x( 'Wales', 'country', 'anwp-football-leagues' ),
 			]
 		);
+	}
+
+	/**
+	 * Initialize Countries array
+	 */
+	private function init_countries() {
+
+		if ( ! empty( $this->countries ) ) {
+			return;
+		}
+
+		$this->countries = array_merge( $this->get_initial_confederations(), $this->get_initial_countries() );
 
 		/**
 		 * Filter available countries.
@@ -353,269 +679,6 @@ class AnWPFL_Data {
 		 * @since 0.5.5
 		 */
 		$this->countries = apply_filters( 'anwpfl/config/countries', $this->countries );
-
-		$this->positions = [
-			'g' => esc_html_x( 'Goalkeeper', 'position', 'anwp-football-leagues' ),
-			'd' => esc_html_x( 'Defender', 'position', 'anwp-football-leagues' ),
-			'm' => esc_html_x( 'Midfielder', 'position', 'anwp-football-leagues' ),
-			'f' => esc_html_x( 'Forward', 'position', 'anwp-football-leagues' ),
-		];
-
-		$this->positions_plural = [
-			'g' => __( 'Goalkeepers', 'anwp-football-leagues' ),
-			'd' => __( 'Defenders', 'anwp-football-leagues' ),
-			'm' => __( 'Midfielders', 'anwp-football-leagues' ),
-			'f' => __( 'Forwards', 'anwp-football-leagues' ),
-		];
-
-		$this->cards = [
-			'y'  => AnWPFL_Text::get_value( 'data__cards__yellow_card', esc_html__( 'Yellow Card', 'anwp-football-leagues' ) ),
-			'r'  => AnWPFL_Text::get_value( 'data__cards__red_card', esc_html__( 'Red Card', 'anwp-football-leagues' ) ),
-			'yr' => AnWPFL_Text::get_value( 'data__cards__red_yellow_card', esc_html__( '2nd Yellow > Red Card', 'anwp-football-leagues' ) ),
-		];
-
-		$this->series = [
-			'w' => esc_html_x( 'w', 'Win - in club form', 'anwp-football-leagues' ),
-			'd' => esc_html_x( 'd', 'Draw - in club form', 'anwp-football-leagues' ),
-			'l' => esc_html_x( 'l', 'Lost - in club form', 'anwp-football-leagues' ),
-		];
-
-		// Load translatable series options
-		if ( AnWPFL_Options::get_value( 'text_outcome_letter_w' ) ) {
-			$this->series['w'] = AnWPFL_Options::get_value( 'text_outcome_letter_w' );
-		}
-
-		if ( AnWPFL_Options::get_value( 'text_outcome_letter_d' ) ) {
-			$this->series['d'] = AnWPFL_Options::get_value( 'text_outcome_letter_d' );
-		}
-
-		if ( AnWPFL_Options::get_value( 'text_outcome_letter_l' ) ) {
-			$this->series['l'] = AnWPFL_Options::get_value( 'text_outcome_letter_l' );
-		}
-
-		$this->admin_l10n = [
-			'add_clubs_only_competition'             => esc_html__( 'You can add or remove clubs only on Competition page', 'anwp-football-leagues' ),
-			'add_event'                              => esc_html__( 'add event', 'anwp-football-leagues' ),
-			'add_sideline'                           => esc_html__( 'Add Missing Player', 'anwp-football-leagues' ),
-			'add_initial_points'                     => esc_html__( 'Add Initial Points', 'anwp-football-leagues' ),
-			'add_match_event'                        => esc_html__( 'Add Match Event', 'anwp-football-leagues' ),
-			'add_new_group'                          => esc_html__( 'Add new group (tie)', 'anwp-football-leagues' ),
-			'add_new_round'                          => esc_html__( 'Add New Round', 'anwp-football-leagues' ),
-			'add_player'                             => esc_html__( '- add player -', 'anwp-football-leagues' ),
-			'add_remove_color'                       => esc_html__( 'add/remove color', 'anwp-football-leagues' ),
-			'add_remove_points'                      => esc_html__( 'add/remove points', 'anwp-football-leagues' ),
-			'add_table_color'                        => esc_html__( 'Add Table Color', 'anwp-football-leagues' ),
-			'additional_minute'                      => esc_html__( 'Additional Minute', 'anwp-football-leagues' ),
-			'aggtext'                                => esc_html__( 'Aggregate Text', 'anwp-football-leagues' ),
-			'aggtext_hint'                           => esc_html__( 'For Example: "Agg: 2-2; Team A won on penalties (5-3)"', 'anwp-football-leagues' ),
-			'are_you_sure'                           => esc_html__( 'Are you sure?', 'anwp-football-leagues' ),
-			'assistant'                              => esc_html__( 'Assistant', 'anwp-football-leagues' ),
-			'attach_clubs_current_table'             => esc_html__( 'Please, attach some clubs to the current Standing Table', 'anwp-football-leagues' ),
-			'attach_person_to_staff'                 => esc_html__( 'Attach Person to Staff', 'anwp-football-leagues' ),
-			'attach_player_to_squad'                 => esc_html__( 'Attach Player to Squad', 'anwp-football-leagues' ),
-			'attach_to_squad'                        => esc_html__( 'Attach to squad', 'anwp-football-leagues' ),
-			'attendance'                             => esc_html__( 'Attendance', 'anwp-football-leagues' ),
-			'automatic_pos_calculation'              => esc_html__( 'Automatic Position Calculation', 'anwp-football-leagues' ),
-			'available_rules'                        => esc_html__( 'Available rules', 'anwp-football-leagues' ),
-			'available_placeholders'                 => esc_html__( 'Available placeholders', 'anwp-football-leagues' ),
-			'away_club'                              => esc_html__( 'Away Club', 'anwp-football-leagues' ),
-			'ball_possession'                        => esc_html__( 'Ball Possession', 'anwp-football-leagues' ),
-			'basic_info'                             => esc_html__( 'Basic Info', 'anwp-football-leagues' ),
-			'card'                                   => esc_html__( 'Card', 'anwp-football-leagues' ),
-			'card_type'                              => esc_html__( 'Card Type', 'anwp-football-leagues' ),
-			'clear'                                  => esc_html__( 'Clear', 'anwp-football-leagues' ),
-			'close'                                  => esc_html__( 'Close', 'anwp-football-leagues' ),
-			'club'                                   => esc_html__( 'Club', 'anwp-football-leagues' ),
-			'club_initial_points'                    => esc_html__( 'Club initial points', 'anwp-football-leagues' ),
-			'club_staff'                             => esc_html__( 'Club Staff', 'anwp-football-leagues' ),
-			'club_squad'                             => esc_html__( 'Club Squad', 'anwp-football-leagues' ),
-			'clubs'                                  => esc_html__( 'Clubs', 'anwp-football-leagues' ),
-			'coach'                                  => esc_html__( 'Coach', 'anwp-football-leagues' ),
-			'color'                                  => esc_html__( 'Color', 'anwp-football-leagues' ),
-			'color_by'                               => esc_html__( 'Color by', 'anwp-football-leagues' ),
-			'comment'                                => esc_html__( 'Comment', 'anwp-football-leagues' ),
-			'competition'                            => esc_html__( 'Competition', 'anwp-football-leagues' ),
-			'competition_order'                      => esc_html__( 'Competition Order', 'anwp-football-leagues' ),
-			'competition_order_hint'                 => esc_html__( 'Used for Knockout matches. For example: order is used on the Player page in the list of latest matches grouped by competition', 'anwp-football-leagues' ),
-			'competition_status'                     => esc_html__( 'Competition Status', 'anwp-football-leagues' ),
-			'competition_type'                       => esc_html__( 'Competition Type', 'anwp-football-leagues' ),
-			'confirm_delete'                         => esc_html__( 'Confirm Delete', 'anwp-football-leagues' ),
-			'corner_kicks'                           => esc_html__( 'Corner Kicks', 'anwp-football-leagues' ),
-			'create_competition_first'               => esc_html__( 'Please, create a Competition first.', 'anwp-football-leagues' ),
-			'create_different_types_of_competitions' => esc_html__( 'Create different types of Competitions', 'anwp-football-leagues' ),
-			'current_ranking_rules'                  => esc_html__( 'Current standing ranking rules', 'anwp-football-leagues' ),
-			'custom'                                 => esc_html_x( 'Custom', 'round robin format', 'anwp-football-leagues' ),
-			'custom_player_number'                   => esc_html__( 'Edit Player number', 'anwp-football-leagues' ),
-			'delete_round'                           => esc_html__( 'Delete Round', 'anwp-football-leagues' ),
-			'delete_event'                           => esc_html__( 'Delete Event', 'anwp-football-leagues' ),
-			'delete_sideline'                        => esc_html__( 'Delete Missing Player', 'anwp-football-leagues' ),
-			'disable'                                => esc_html__( 'Disable', 'anwp-football-leagues' ),
-			'double'                                 => esc_html_x( 'Double', 'round robin format', 'anwp-football-leagues' ),
-			'drawn'                                  => esc_html__( 'Drawn', 'anwp-football-leagues' ),
-			'edit_group_title'                       => esc_html__( 'Edit Group Title', 'anwp-football-leagues' ),
-			'edit_player_number'                     => esc_html__( 'Edit Number', 'anwp-football-leagues' ),
-			'edit_squad'                             => esc_html__( 'Edit Squad', 'anwp-football-leagues' ),
-			'enable'                                 => esc_html__( 'Enable', 'anwp-football-leagues' ),
-			'events_only_for_finished'               => esc_html__( 'You can add events only for finished matches.', 'anwp-football-leagues' ),
-			'extra_time'                             => esc_html__( 'Extra Time', 'anwp-football-leagues' ),
-			'filter_players_by'                      => esc_html__( 'Filter players by', 'anwp-football-leagues' ),
-			'filter_competitions_by_active_season'   => esc_html__( 'filter competitions by active season', 'anwp-football-leagues' ),
-			'final_score'                            => esc_html__( 'Final Score', 'anwp-football-leagues' ),
-			'fixture'                                => esc_html__( 'Fixture', 'anwp-football-leagues' ),
-			'fouls'                                  => esc_html__( 'Fouls', 'anwp-football-leagues' ),
-			'friendly'                               => esc_html__( 'Friendly', 'anwp-football-leagues' ),
-			'from_penalty'                           => esc_html__( 'From Penalty', 'anwp-football-leagues' ),
-			'from_previous_round'                    => esc_html__( 'from previous round', 'anwp-football-leagues' ),
-			'full_time'                              => esc_html__( 'Full Time', 'anwp-football-leagues' ),
-			'ga'                                     => esc_html_x( 'GA', 'table - goals against', 'anwp-football-leagues' ),
-			'gd'                                     => esc_html_x( 'GD', 'table - goals diff', 'anwp-football-leagues' ),
-			'general'                                => esc_html__( 'General', 'anwp-football-leagues' ),
-			'gf'                                     => esc_html_x( 'GF', 'table - goals for', 'anwp-football-leagues' ),
-			'goal'                                   => esc_html__( 'Goal', 'anwp-football-leagues' ),
-			'goal_from_penalty'                      => esc_html__( 'Goal From Penalty', 'anwp-football-leagues' ),
-			'goals'                                  => esc_html__( 'GOALS', 'anwp-football-leagues' ),
-			'goals_difference'                       => esc_html__( 'Goals Difference', 'anwp-football-leagues' ),
-			'goals_scored'                           => esc_html__( 'Goals Scored', 'anwp-football-leagues' ),
-			'group'                                  => esc_html__( 'Group', 'anwp-football-leagues' ),
-			'groups'                                 => esc_html__( 'Groups', 'anwp-football-leagues' ),
-			'half_time'                              => esc_html__( 'Half Time', 'anwp-football-leagues' ),
-			'home_club'                              => esc_html__( 'Home Club', 'anwp-football-leagues' ),
-			'in'                                     => esc_html_x( 'IN', 'Substitute', 'anwp-football-leagues' ),
-			'injured'                                => esc_html__( 'Injured', 'anwp-football-leagues' ),
-			'in_club'                                => esc_html__( 'in club', 'anwp-football-leagues' ),
-			'inherit_from_settings'                  => esc_html__( 'inherit (from settings)', 'anwp-football-leagues' ),
-			'initial_standing_table_data'            => esc_html__( 'Initial Standing Table Data', 'anwp-football-leagues' ),
-			'initial_points'                         => esc_html__( 'Initial points', 'anwp-football-leagues' ),
-			'ignore_group_structure'                 => esc_html__( 'ignore group structure', 'anwp-football-leagues' ),
-			'job'                                    => esc_html__( 'Job', 'anwp-football-leagues' ),
-			'knockout'                               => esc_html__( 'Knockout', 'anwp-football-leagues' ),
-			'knockout_format'                        => esc_html__( 'Knockout Format', 'anwp-football-leagues' ),
-			'league'                                 => esc_html__( 'League', 'anwp-football-leagues' ),
-			'left_club'                              => esc_html__( 'left club', 'anwp-football-leagues' ),
-			'line_ups'                               => esc_html__( 'Line Ups', 'anwp-football-leagues' ),
-			'lost'                                   => esc_html__( 'Lost', 'anwp-football-leagues' ),
-			'main_stage_id'                          => esc_html__( 'Main Stage ID', 'anwp-football-leagues' ),
-			'match'                                  => esc_html__( 'match', 'anwp-football-leagues' ),
-			'match_data'                             => esc_html__( 'Match Data', 'anwp-football-leagues' ),
-			'match_events'                           => esc_html__( 'Match Events', 'anwp-football-leagues' ),
-			'match_stats'                            => esc_html__( 'Match Stats', 'anwp-football-leagues' ),
-			'match_sidelines'                        => esc_html__( 'Missing Players', 'anwp-football-leagues' ),
-			'match_setup'                            => esc_html__( 'Match Setup', 'anwp-football-leagues' ),
-			'match_week'                             => esc_html__( 'MatchWeek', 'anwp-football-leagues' ),
-			'match_postponed'                        => esc_html__( 'Match Postponed', 'anwp-football-leagues' ),
-			'match_time_to_be_defined'               => esc_html__( 'Time To Be Defined', 'anwp-football-leagues' ),
-			'minute'                                 => esc_html__( 'Minute', 'anwp-football-leagues' ),
-			'missed_penalty'                         => esc_html_x( 'Missed Penalty', 'Substitute', 'anwp-football-leagues' ),
-			'multistage'                             => esc_html__( 'Multistage', 'anwp-football-leagues' ),
-			'multistage_main'                        => esc_html__( 'Multistage Main', 'anwp-football-leagues' ),
-			'multistage_secondary'                   => esc_html__( 'Multistage Secondary', 'anwp-football-leagues' ),
-			'multistage_setup'                       => esc_html__( 'Multistage Setup', 'anwp-football-leagues' ),
-			'multistage_setup_hint'                  => esc_html__( 'How To Setup Competition With Multiple Stages', 'anwp-football-leagues' ),
-			'no'                                     => esc_html__( 'No', 'anwp-football-leagues' ),
-			'none'                                   => esc_html__( 'None', 'anwp-football-leagues' ),
-			'not_specified'                          => esc_html__( 'not specified', 'anwp-football-leagues' ),
-			'number'                                 => esc_html__( 'Number', 'anwp-football-leagues' ),
-			'no_players_found'                       => esc_html__( 'No players found.', 'anwp-football-leagues' ),
-			'notes_below_table'                      => esc_html__( 'Notes (below table)', 'anwp-football-leagues' ),
-			'official'                               => esc_html__( 'Official', 'anwp-football-leagues' ),
-			'offsides'                               => esc_html__( 'Offsides', 'anwp-football-leagues' ),
-			'other'                                  => esc_html__( 'other', 'anwp-football-leagues' ),
-			'on_loan'                                => esc_html__( 'on loan', 'anwp-football-leagues' ),
-			'on_trial'                               => esc_html__( 'on trial', 'anwp-football-leagues' ),
-			'out'                                    => esc_html_x( 'OUT', 'Substitute', 'anwp-football-leagues' ),
-			'own_goal'                               => esc_html__( 'Own Goal', 'anwp-football-leagues' ),
-			'penalty'                                => esc_html__( 'Penalty', 'anwp-football-leagues' ),
-			'penalty_shootout'                       => esc_html__( 'Penalty Shootout', 'anwp-football-leagues' ),
-			'place'                                  => esc_html__( 'Place', 'anwp-football-leagues' ),
-			'place_and_time'                         => esc_html__( 'Place and Time', 'anwp-football-leagues' ),
-			'played'                                 => esc_html__( 'Played', 'anwp-football-leagues' ),
-			'player'                                 => esc_html__( 'Player', 'anwp-football-leagues' ),
-			'player_in'                              => esc_html__( 'Player In', 'anwp-football-leagues' ),
-			'player_name'                            => esc_html__( 'Player Name', 'anwp-football-leagues' ),
-			'player_not_in_squad'                    => esc_html__( '! player not in squad', 'anwp-football-leagues' ),
-			'player_out'                             => esc_html__( 'Player Out', 'anwp-football-leagues' ),
-			'players'                                => esc_html__( 'Players', 'anwp-football-leagues' ),
-			'position'                               => esc_html__( 'Position', 'anwp-football-leagues' ),
-			'points'                                 => esc_html__( 'Points', 'anwp-football-leagues' ),
-			'points_for_a_draw'                      => esc_html__( 'Points for a draw', 'anwp-football-leagues' ),
-			'points_for_a_loss'                      => esc_html__( 'Points for a loss', 'anwp-football-leagues' ),
-			'points_for_a_win'                       => esc_html__( 'Points for a win', 'anwp-football-leagues' ),
-			'quickly_create_players'                 => esc_html__( 'Quickly create players with "Import Data" Tool', 'anwp-football-leagues' ),
-			'ranking_rules'                          => esc_html__( 'Ranking Rules', 'anwp-football-leagues' ),
-			'ranking_rules_notes_1'                  => esc_html__( 'Ranking rules are used to determine the position of the team in the Standing Table (from top to bottom).', 'anwp-football-leagues' ),
-			'ranking_rules_notes_2'                  => esc_html__( 'Click on arrows to change ranking rules order.', 'anwp-football-leagues' ),
-			'red'                                    => esc_html__( 'Red', 'anwp-football-leagues' ),
-			'red_cards'                              => esc_html__( 'Red Cards', 'anwp-football-leagues' ),
-			'remove_group'                           => esc_html__( 'Remove Group', 'anwp-football-leagues' ),
-			'remove_only_empty_round'                => esc_html__( 'You can remove only empty Round. Delete all attached groups/pairs first.', 'anwp-football-leagues' ),
-			'result'                                 => esc_html__( 'Result', 'anwp-football-leagues' ),
-			'round'                                  => esc_html__( 'Round', 'anwp-football-leagues' ),
-			'round_robin'                            => esc_html__( 'Round Robin', 'anwp-football-leagues' ),
-			'round_robin_format'                     => esc_html__( 'Round-Robin Format', 'anwp-football-leagues' ),
-			'save_changes'                           => esc_html__( 'Save changes', 'anwp-football-leagues' ),
-			'save_event'                             => esc_html__( 'Save Event', 'anwp-football-leagues' ),
-			'save_squad'                             => esc_html__( 'Save Squad', 'anwp-football-leagues' ),
-			'save'                                   => esc_html__( 'Save', 'anwp-football-leagues' ),
-			'save_continue'                          => esc_html__( 'Save & Continue', 'anwp-football-leagues' ),
-			'season'                                 => esc_html__( 'Season', 'anwp-football-leagues' ),
-			'select'                                 => esc_html__( 'Select', 'anwp-football-leagues' ),
-			'select_and_continue'                    => esc_html__( 'Select and Continue', 'anwp-football-leagues' ),
-			'select_club'                            => esc_html__( 'Select club', 'anwp-football-leagues' ),
-			'select_coach'                           => esc_html__( '- select coach -', 'anwp-football-leagues' ),
-			'select_competition_clubs'               => esc_html__( 'Select Competition & Clubs', 'anwp-football-leagues' ),
-			'select_competition_group'               => esc_html__( 'Select Competition Group', 'anwp-football-leagues' ),
-			'select_date'                            => esc_html__( 'Select date', 'anwp-football-leagues' ),
-			'select_event'                           => esc_html__( 'Select event', 'anwp-football-leagues' ),
-			'select_reason'                          => esc_html__( 'Select reason', 'anwp-football-leagues' ),
-			'select_home_away_first'                 => esc_html__( 'Select Home and Away Clubs first.', 'anwp-football-leagues' ),
-			'kickoff_time'                           => esc_html__( 'Kick off time', 'anwp-football-leagues' ),
-			'select_rules_from_list'                 => esc_html__( 'Select appropriate rules from the list below.', 'anwp-football-leagues' ),
-			'select_season'                          => esc_html__( '- select season -', 'anwp-football-leagues' ),
-			'select_stadium'                         => esc_html__( '- select stadium -', 'anwp-football-leagues' ),
-			'select_stage'                           => esc_html__( '- select stage -', 'anwp-football-leagues' ),
-			'select_two_teams_only'                  => esc_html__( 'Select two teams only.', 'anwp-football-leagues' ),
-			'set_default'                            => esc_html__( 'set default', 'anwp-football-leagues' ),
-			'set_stat_only_finished'                 => esc_html__( 'You can set statistics only for finished matches.', 'anwp-football-leagues' ),
-			'shootout_scored'                        => esc_html__( 'Scored', 'anwp-football-leagues' ),
-			'shots'                                  => esc_html__( 'Shots', 'anwp-football-leagues' ),
-			'show_all_clubs_ignoring_structure'      => esc_html__( 'Show all clubs ignoring group structure (not recommended)', 'anwp-football-leagues' ),
-			'shots_on_goal'                          => esc_html__( 'Shots on Goal', 'anwp-football-leagues' ),
-			'single'                                 => esc_html_x( 'Single', 'round robin format', 'anwp-football-leagues' ),
-			'single_leg_ties'                        => esc_html__( 'single-leg ties', 'anwp-football-leagues' ),
-			'squad'                                  => esc_html__( 'squad', 'anwp-football-leagues' ),
-			'special_status'                         => esc_html__( 'Special Status', 'anwp-football-leagues' ),
-			'stadium'                                => esc_html__( 'Stadium', 'anwp-football-leagues' ),
-			'stage_order'                            => esc_html__( 'Stage Order', 'anwp-football-leagues' ),
-			'stage_title'                            => esc_html__( 'Stage Title', 'anwp-football-leagues' ),
-			'standing_table'                         => esc_html__( 'Standing Table', 'anwp-football-leagues' ),
-			'standing_table_colors'                  => esc_html__( 'Standing Table Colors', 'anwp-football-leagues' ),
-			'start_typing_name'                      => esc_html__( '... start typing name', 'anwp-football-leagues' ),
-			'stats'                                  => esc_html__( 'STATS', 'anwp-football-leagues' ),
-			'status'                                 => esc_html__( 'Status', 'anwp-football-leagues' ),
-			'step'                                   => esc_html__( 'Step', 'anwp-football-leagues' ),
-			'structure'                              => esc_html__( 'Structure', 'anwp-football-leagues' ),
-			'substitute'                             => esc_html__( 'Substitute', 'anwp-football-leagues' ),
-			'substitutes'                            => esc_html__( 'Substitutes', 'anwp-football-leagues' ),
-			'suspended'                              => esc_html__( 'Suspended', 'anwp-football-leagues' ),
-			'tie'                                    => esc_html__( 'Tie', 'anwp-football-leagues' ),
-			'ties'                                   => esc_html__( 'Ties', 'anwp-football-leagues' ),
-			'tips'                                   => esc_html__( 'Tips', 'anwp-football-leagues' ),
-			'toggle'                                 => esc_html__( 'Toggle', 'anwp-football-leagues' ),
-			'tutorial'                               => esc_html__( 'Tutorial', 'anwp-football-leagues' ),
-			'two_legged_ties'                        => esc_html__( 'two-legged ties', 'anwp-football-leagues' ),
-			'use_batch_import_tool'                  => esc_html__( 'Use Batch import tool for fast Clubs creation', 'anwp-football-leagues' ),
-			'use_separate_group'                     => esc_html__( 'Use separate group', 'anwp-football-leagues' ),
-			'want_to_delete_round'                   => esc_html__( 'Do you really want to delete Round?', 'anwp-football-leagues' ),
-			'want_to_delete_event'                   => esc_html__( 'Do you really want to delete Event?', 'anwp-football-leagues' ),
-			'want_to_delete_sideline'                => esc_html__( 'Do you really want to delete Missing Player?', 'anwp-football-leagues' ),
-			'wins'                                   => esc_html__( 'Wins', 'anwp-football-leagues' ),
-			'won'                                    => esc_html__( 'Won', 'anwp-football-leagues' ),
-			'yellow'                                 => esc_html__( 'Yellow', 'anwp-football-leagues' ),
-			'yellow_cards'                           => esc_html__( 'Yellow Cards', 'anwp-football-leagues' ),
-			'yellow_red'                             => esc_html__( '2nd Yellow > Red', 'anwp-football-leagues' ),
-			'yellow_reds'                            => esc_html__( '2d Yellow > Red Cards', 'anwp-football-leagues' ),
-			'yes'                                    => esc_html__( 'Yes', 'anwp-football-leagues' ),
-		];
 	}
 
 	/**
@@ -638,6 +701,7 @@ class AnWPFL_Data {
 	}
 
 	public function cb_get_countries() {
+		$this->init_countries();
 		return $this->countries;
 	}
 
@@ -713,6 +777,7 @@ class AnWPFL_Data {
 				return empty( $this->positions[ $key ] ) ? '' : $this->positions[ $key ];
 
 			case 'country':
+				$this->init_countries();
 				return empty( $this->countries[ $key ] ) ? '' : $this->countries[ $key ];
 		}
 
@@ -779,5 +844,65 @@ class AnWPFL_Data {
 		$options['rest_nonce'] = wp_create_nonce( 'wp_rest' );
 
 		return $options;
+	}
+
+	/**
+	 * Array of localization strings for Vue Datepicker.
+	 *
+	 * @return array
+	 * @since 0.12.7
+	 */
+	public function get_vue_datepicker_locale() {
+
+		global $wp_locale;
+
+		return [
+			'formatLocale' => [
+				'firstDayOfWeek' => absint( esc_html_x( '0', 'First day of the week: 0 - Sunday, 1 - Monday', 'anwp-football-leagues' ) ),
+				'months'         => array_values( $wp_locale->month ),
+				'monthsShort'    => array_values( $wp_locale->month_abbrev ),
+				'weekdays'       => array_values( $wp_locale->weekday ),
+				'weekdaysShort'  => array_values( $wp_locale->weekday_abbrev ),
+				'weekdaysMin'    => array_values( $wp_locale->weekday_abbrev ),
+			],
+		];
+	}
+
+	/**
+	 * Get alt for the list of ids
+	 *
+	 * @params array $ids
+	 *
+	 * @return array
+	 * @since  0.12.7
+	 */
+	public function get_image_alt( $ids ) {
+
+		global $wpdb;
+
+		$ids = wp_parse_id_list( $ids );
+
+		if ( empty( $ids ) ) {
+			return [];
+		}
+
+		$query = "
+		SELECT post_id, meta_value
+		FROM $wpdb->postmeta
+		WHERE meta_key = '_wp_attachment_image_alt' AND meta_value != ''
+		";
+
+		$format = implode( ', ', array_fill( 0, count( $ids ), '%d' ) );
+		$query  .= $wpdb->prepare( " AND post_id IN ({$format}) ", $ids ); // phpcs:ignore
+
+		$row_items = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL
+
+		$output = [];
+
+		foreach ( $row_items as $row_item ) {
+			$output[ $row_item->post_id ] = $row_item->meta_value;
+		}
+
+		return $output;
 	}
 }

@@ -488,4 +488,302 @@ class AnWPFL_Referee extends CPT_Core {
 
 		return $output_data;
 	}
+
+	/**
+	 * Get array of matches for widget and shortcode.
+	 *
+	 * @param object|array $options
+	 * @param string $result
+	 *
+	 * @since 0.11.14
+	 * @return array|null|object
+	 */
+	public function get_referee_games( $options, $result = '' ) {
+
+		global $wpdb;
+
+		$options = (object) wp_parse_args(
+			$options,
+			[
+				'referee_id'      => '',
+				'competition_id'  => '',
+				'season_id'       => '',
+				'show_secondary'  => '',
+				'type'            => '',
+				'filter_by_clubs' => '',
+				'sort_by_date'    => '',
+				'limit'           => '',
+				'date_from'       => '',
+				'date_to'         => '',
+				'exclude_ids'     => '',
+				'include_ids'     => '',
+			]
+		);
+
+		if ( ! absint( $options->referee_id ) ) {
+			return [];
+		}
+
+		$query = "
+		SELECT g.*
+		FROM {$wpdb->prefix}anwpfl_matches g
+		LEFT JOIN $wpdb->postmeta pm ON ( pm.post_id = g.match_id AND pm.meta_key = '_anwpfl_referee' )
+		";
+
+		$query .= $wpdb->prepare( 'WHERE pm.meta_value = %d ', $options->referee_id );
+
+		/**==================
+		 * WHERE filter by competition
+		 *================ */
+		if ( ! empty( $options->competition_id ) ) {
+			if ( anwp_football_leagues()->helper->string_to_bool( $options->show_secondary ) ) {
+				$competition_ids = wp_parse_id_list( $options->competition_id );
+				$format          = implode( ', ', array_fill( 0, count( $competition_ids ), '%d' ) );
+
+				$query .= $wpdb->prepare( " AND ( g.competition_id IN ({$format}) OR g.main_stage_id IN ({$format}) ) ", array_merge( $competition_ids, $competition_ids ) ); // phpcs:ignore
+			} else {
+
+				$competition_ids = wp_parse_id_list( $options->competition_id );
+				$format          = implode( ', ', array_fill( 0, count( $competition_ids ), '%d' ) );
+
+				$query .= $wpdb->prepare( " AND g.competition_id IN ({$format}) ", $competition_ids ); // phpcs:ignore
+			}
+		}
+
+		/**==================
+		 * WHERE filter by season
+		 *================ */
+		if ( ! empty( $options->season_id ) ) {
+			$query .= $wpdb->prepare( ' AND g.season_id = %d ', $options->season_id );
+		}
+
+		/**==================
+		 * WHERE filter by type
+		 *================ */
+		if ( '' !== $options->type ) {
+			$query .= $wpdb->prepare( ' AND g.finished = %d ', 'result' === $options->type ? 1 : 0 );
+		}
+
+		/**==================
+		 * WHERE filter by club
+		 *================ */
+		if ( ! empty( $options->filter_by_clubs ) ) {
+
+			$clubs  = wp_parse_id_list( $options->filter_by_clubs );
+			$format = implode( ', ', array_fill( 0, count( $clubs ), '%d' ) );
+
+			$query .= $wpdb->prepare( " AND ( g.home_club IN ({$format}) OR g.away_club IN ({$format}) ) ", array_merge( $clubs, $clubs ) ); // phpcs:ignore
+		}
+
+		/**==================
+		 * WHERE filter by date_to
+		 *
+		 * @since 0.10.3
+		 *================ */
+		if ( trim( $options->date_to ) ) {
+			$date_to = explode( ' ', $options->date_to )[0];
+
+			if ( anwp_football_leagues()->helper->validate_date( $date_to, 'Y-m-d' ) ) {
+				$query .= $wpdb->prepare( ' AND g.kickoff <= %s ', $date_to . ' 23:59:59' );
+			}
+		}
+
+		/**==================
+		 * WHERE filter by date_from
+		 * --
+		 * @since 0.10.3
+		 *================ */
+		if ( trim( $options->date_from ) ) {
+			$date_from = explode( ' ', $options->date_from )[0];
+
+			if ( anwp_football_leagues()->helper->validate_date( $date_from, 'Y-m-d' ) ) {
+				$query .= $wpdb->prepare( ' AND g.kickoff >= %s ', $date_from . ' 00:00:00' );
+			}
+		}
+
+		/**==================
+		 * WHERE exclude ids
+		 * --
+		 * @since 0.10.17
+		 *================ */
+		if ( trim( $options->exclude_ids ) ) {
+			$exclude_ids = wp_parse_id_list( $options->exclude_ids );
+
+			if ( ! empty( $exclude_ids ) && is_array( $exclude_ids ) && count( $exclude_ids ) ) {
+
+				// Prepare exclude format and placeholders
+				$exclude_placeholders = array_fill( 0, count( $exclude_ids ), '%s' );
+				$exclude_format       = implode( ', ', $exclude_placeholders );
+
+				$query .= $wpdb->prepare( " AND g.match_id NOT IN ({$exclude_format})", $exclude_ids ); // phpcs:ignore
+			}
+		}
+
+		/**==================
+		 * WHERE include ids
+		 * --
+		 * @since 0.10.17
+		 *================ */
+		if ( trim( $options->include_ids ) ) {
+			$include_ids = wp_parse_id_list( $options->include_ids );
+
+			if ( ! empty( $include_ids ) && is_array( $include_ids ) && count( $include_ids ) ) {
+
+				// Prepare include format and placeholders
+				$include_placeholders = array_fill( 0, count( $include_ids ), '%s' );
+				$include_format       = implode( ', ', $include_placeholders );
+
+				$query .= $wpdb->prepare( " AND g.match_id IN ({$include_format})", $include_ids ); // phpcs:ignore
+			}
+		}
+
+		/**==================
+		 * ORDER BY
+		 *================ */
+		if ( 'asc' === mb_strtolower( $options->sort_by_date ) ) {
+			$query .= ' ORDER BY CASE WHEN g.kickoff = "0000-00-00 00:00:00" THEN 1 ELSE 0 END, g.kickoff ASC';
+		} elseif ( 'desc' === mb_strtolower( $options->sort_by_date ) ) {
+			$query .= ' ORDER BY CASE WHEN g.kickoff = "0000-00-00 00:00:00" THEN 1 ELSE 0 END, g.kickoff DESC';
+		}
+
+		/**==================
+		 * LIMIT clause
+		 *================ */
+		if ( isset( $options->limit ) && 0 < $options->limit ) {
+			$query .= $wpdb->prepare( ' LIMIT %d', $options->limit );
+		}
+
+		$matches = $wpdb->get_results( $query ); // phpcs:ignore WordPress.DB.PreparedSQL
+
+		if ( 'stats' === $result ) {
+			return $matches;
+		}
+
+		// Populate Object Cache
+		$ids = wp_list_pluck( $matches, 'match_id' );
+
+		if ( 'ids' === $result ) {
+			return $ids;
+		}
+
+		// Get match links
+		$matches_posts = [];
+
+		$args = [
+			'include'                => $ids,
+			'post_type'              => 'anwp_match',
+			'update_post_meta_cache' => false,
+		];
+
+		/** @var WP_Post $match_post */
+		foreach ( get_posts( $args ) as $match_post ) {
+			$matches_posts[ $match_post->ID ] = $match_post;
+		}
+
+		// Add extra data to match
+		foreach ( $matches as $match_index => $match ) {
+			$matches[ $match_index ]->permalink = get_permalink( isset( $matches_posts[ $match->match_id ] ) ? $matches_posts[ $match->match_id ] : $match->match_id );
+		}
+
+		return $matches;
+	}
+
+	/**
+	 * Get array of matches for widget and shortcode.
+	 *
+	 * @param object/bool $game
+	 * @param array $player_cards
+	 *
+	 * @return string
+	 * @since 0.11.14
+	 */
+	public function get_cards_game_html( $game, $player_cards = [] ) {
+
+		$y_cards = 0;
+		$r_cards = 0;
+
+		$yr_count = AnWPFL_Options::get_value( 'yr_card_count', 'r' );
+
+		if ( ! empty( $game ) ) {
+
+			/*
+			|--------------------------------------------------------------------
+			| Get number of cards by team stats
+			|--------------------------------------------------------------------
+			*/
+			$yr_cards = (int) $game->home_cards_yr + (int) $game->away_cards_yr;
+			$y_cards  = (int) $game->home_cards_y + (int) $game->away_cards_y + ( in_array( $yr_count, [ 'y', 'yr' ], true ) ? $yr_cards : 0 );
+			$r_cards  = (int) $game->home_cards_r + (int) $game->away_cards_r + ( in_array( $yr_count, [ 'r', 'yr' ], true ) ? $yr_cards : 0 );
+
+			/*
+			|--------------------------------------------------------------------
+			| Get number of cards by players stats
+			|--------------------------------------------------------------------
+			*/
+			$player_cards = (object) wp_parse_args(
+				$player_cards,
+				[
+					'y'  => 0,
+					'yr' => 0,
+					'r'  => 0,
+				]
+			);
+
+			// Compare team vs players stats
+			$players_y_cards = (int) $player_cards->y + ( in_array( $yr_count, [ 'y', 'yr' ], true ) ? (int) $player_cards->yr : 0 );
+			$players_r_cards = (int) $player_cards->r + ( in_array( $yr_count, [ 'r', 'yr' ], true ) ? (int) $player_cards->yr : 0 );
+
+			if ( $y_cards < $players_y_cards ) {
+				$y_cards = $players_y_cards;
+			}
+
+			if ( $r_cards < $players_r_cards ) {
+				$r_cards = $players_r_cards;
+			}
+		}
+
+		ob_start();
+		?>
+		<span class="mx-1 anwp-w-20 anwp-text-nowrap anwp-text-center text-white <?php echo $y_cards ? 'anwp-bg-yellow-500' : 'anwp-bg-gray-300'; ?>"><?php echo $y_cards ? (int) $y_cards : '&nbsp;'; ?></span>
+		<span class="mr-1 anwp-w-20 anwp-text-nowrap anwp-text-center text-white <?php echo $r_cards ? 'anwp-bg-red-600' : 'anwp-bg-gray-300'; ?>"><?php echo $r_cards ? (int) $r_cards : '&nbsp;'; ?></span>
+		<?php
+		return ob_get_clean();
+	}
+
+	/**
+	 * Get game cards by players
+	 *
+	 * @param array $games
+	 *
+	 * @return array
+	 * @since 0.11.15
+	 */
+	public function get_cards_game_by_players( $games ) {
+
+		$game_ids = wp_list_pluck( $games, 'match_id' );
+
+		if ( empty( $game_ids ) ) {
+			return [];
+		}
+
+		/*
+		|--------------------------------------------------------------------
+		| Get data from DB
+		|--------------------------------------------------------------------
+		*/
+		global $wpdb;
+
+		$query = "
+		SELECT match_id, SUM(card_y) as y, SUM(card_yr) as yr, SUM(card_r) as r
+		FROM {$wpdb->prefix}anwpfl_players
+		";
+
+		$game_ids = wp_parse_id_list( $game_ids );
+		$format   = implode( ', ', array_fill( 0, count( $game_ids ), '%d' ) );
+
+		$query .= $wpdb->prepare( " WHERE match_id IN ({$format}) ", $game_ids ); // phpcs:ignore
+		$query .= ' GROUP BY match_id';
+
+		return $wpdb->get_results( $query, OBJECT_K ); // phpcs:ignore WordPress.DB.PreparedSQL
+	}
 }

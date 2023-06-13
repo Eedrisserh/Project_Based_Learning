@@ -44,7 +44,11 @@ _fl_shortcodes_l10n = _fl_shortcodes_l10n || {};
 	};
 
 	plugin.bindEvents = function() {
-		window.onload = plugin.onPageReady;
+		if ( document.readyState === 'complete' ) {
+			plugin.onPageReady();
+		} else {
+			window.onload = plugin.onPageReady;
+		}
 	};
 
 	plugin.onPageReady = function() {

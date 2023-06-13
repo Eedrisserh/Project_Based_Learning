@@ -18,20 +18,15 @@ if ( ! function_exists( 'sports_club_lite_setup' ) ) :
  * support post thumbnails.  
  */
 function sports_club_lite_setup() {		
-	global $content_width;   
-    if ( ! isset( $content_width ) ) {
-        $content_width = 680; /* pixels */
-    }	
-
+	$GLOBALS['content_width'] = apply_filters( 'sports_club_lite_content_width', 680 );		
 	load_theme_textdomain( 'sports-club-lite', get_template_directory() . '/languages' );
-	add_theme_support( 'automatic-feed-links' );
-	add_theme_support('woocommerce');
-	add_theme_support( 'wc-product-gallery-zoom' );
-	add_theme_support( 'wc-product-gallery-lightbox' );
-	add_theme_support( 'wc-product-gallery-slider' );
-	add_theme_support('html5');	
-	add_theme_support( 'post-thumbnails' );		
+	add_theme_support( 'automatic-feed-links' );	
+	add_theme_support('html5');
+	add_theme_support( 'post-thumbnails' );	
 	add_theme_support( 'title-tag' );	
+	add_theme_support( 'responsive-embeds' );
+	add_theme_support( 'align-wide' );	
+	add_theme_support( 'wp-block-styles' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 60,
 		'width'       => 250,
@@ -189,9 +184,21 @@ function sports_club_lite_the_custom_logo() {
 endif;
 
 /**
+ * WooCommerce Compatibility
+ */
+add_action( 'after_setup_theme', 'sports_club_lite_setup_woocommerce_support' );
+function sports_club_lite_setup_woocommerce_support()   
+{
+  	add_theme_support('woocommerce');
+	add_theme_support( 'wc-product-gallery-zoom' ); 
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' ); 
+}
+
+/**
  * Customize Pro included.
  */
-require_once get_template_directory() . '/customize-pro/example-1/class-customize.php';
+require_once get_template_directory() . '/customize-pro/class-customize.php';
 
 //Custom Excerpt length.
 function sports_club_lite_excerpt_length( $length ) {

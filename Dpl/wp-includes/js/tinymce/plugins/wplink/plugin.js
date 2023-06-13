@@ -1,10 +1,10 @@
 ( function( tinymce ) {
-	tinymce.ui.WPLinkPreview = tinymce.ui.Control.extend( {
+	tinymce.ui.Factory.add( 'WPLinkPreview', tinymce.ui.Control.extend( {
 		url: '#',
 		renderHtml: function() {
 			return (
 				'<div id="' + this._id + '" class="wp-link-preview">' +
-					'<a href="' + this.url + '" target="_blank" tabindex="-1">' + this.url + '</a>' +
+					'<a href="' + this.url + '" target="_blank" rel="noopener" tabindex="-1">' + this.url + '</a>' +
 				'</div>'
 			);
 		},
@@ -37,9 +37,9 @@
 					url = this.url;
 				}
 
-				// If the URL is longer that 40 chars, concatenate the beginning (after the domain) and ending with ...
+				// If the URL is longer that 40 chars, concatenate the beginning (after the domain) and ending with '...'.
 				if ( url.length > 40 && ( index = url.indexOf( '/' ) ) !== -1 && ( lastIndex = url.lastIndexOf( '/' ) ) !== -1 && lastIndex !== index ) {
-					// If the beginning + ending are shorter that 40 chars, show more of the ending
+					// If the beginning + ending are shorter that 40 chars, show more of the ending.
 					if ( index + url.length - lastIndex < 40 ) {
 						lastIndex = -( 40 - ( index + 1 ) );
 					}
@@ -50,9 +50,9 @@
 				tinymce.$( this.getEl().firstChild ).attr( 'href', this.url ).text( url );
 			}
 		}
-	} );
+	} ) );
 
-	tinymce.ui.WPLinkInput = tinymce.ui.Control.extend( {
+	tinymce.ui.Factory.add( 'WPLinkInput', tinymce.ui.Control.extend( {
 		renderHtml: function() {
 			return (
 				'<div id="' + this._id + '" class="wp-link-input">' +
@@ -82,7 +82,7 @@
 			urlInput.value = '';
 			urlInput.nextSibling.value = '';
 		}
-	} );
+	} ) );
 
 	tinymce.PluginManager.add( 'wplink', function( editor ) {
 		var toolbar;
@@ -93,10 +93,15 @@
 		var doingUndoRedo;
 		var doingUndoRedoTimer;
 		var $ = window.jQuery;
+		var emailRegex = /^(mailto:)?[a-z0-9._%+-]+@[a-z0-9][a-z0-9.-]*\.[a-z]{2,63}$/i;
+		var urlRegex1 = /^https?:\/\/([^\s/?.#-][^\s\/?.#]*\.?)+(\/[^\s"]*)?$/i;
+		var urlRegex2 = /^https?:\/\/[^\/]+\.[^\/]+($|\/)/i;
+		var speak = ( typeof window.wp !== 'undefined' && window.wp.a11y && window.wp.a11y.speak ) ? window.wp.a11y.speak : function() {};
+		var hasLinkError = false;
 
 		function getSelectedLink() {
 			var href, html,
-				node = editor.selection.getNode(),
+				node = editor.selection.getStart(),
 				link = editor.dom.getParent( node, 'a[href]' );
 
 			if ( ! link ) {
@@ -131,11 +136,38 @@
 		}
 
 		function removePlaceholderStrings( content, dataAttr ) {
-			if ( dataAttr ) {
-				content = content.replace( / data-wplink-edit="true"/g, '' );
+			return content.replace( /(<a [^>]+>)([\s\S]*?)<\/a>/g, function( all, tag, text ) {
+				if ( tag.indexOf( ' href="_wp_link_placeholder"' ) > -1 ) {
+					return text;
+				}
+
+				if ( dataAttr ) {
+					tag = tag.replace( / data-wplink-edit="true"/g, '' );
+				}
+
+				tag = tag.replace( / data-wplink-url-error="true"/g, '' );
+
+				return tag + text + '</a>';
+			});
+		}
+
+		function checkLink( node ) {
+			var $link = editor.$( node );
+			var href = $link.attr( 'href' );
+
+			if ( ! href || typeof $ === 'undefined' ) {
+				return;
 			}
 
-			return content.replace( /<a [^>]*?href="_wp_link_placeholder"[^>]*>([\s\S]+)<\/a>/g, '$1' );
+			hasLinkError = false;
+
+			if ( /^http/i.test( href ) && ( ! urlRegex1.test( href ) || ! urlRegex2.test( href ) ) ) {
+				hasLinkError = true;
+				$link.attr( 'data-wplink-url-error', 'true' );
+				speak( editor.translate( 'Warning: the link has been inserted but may have errors. Please test it.' ), 'assertive' );
+			} else {
+				$link.removeAttr( 'data-wplink-url-error' );
+			}
 		}
 
 		editor.on( 'preinit', function() {
@@ -158,7 +190,7 @@
 				editToolbar = editor.wp._createToolbar( editButtons, true );
 
 				editToolbar.on( 'show', function() {
-					if ( ! tinymce.$( document.body ).hasClass( 'modal-open' ) ) {
+					if ( typeof window.wpLink === 'undefined' || ! window.wpLink.modalOpen ) {
 						window.setTimeout( function() {
 							var element = editToolbar.$el.find( 'input.ui-autocomplete-input' )[0],
 								selection = linkNode && ( linkNode.textContent || linkNode.innerText );
@@ -194,15 +226,15 @@
 			linkNode = getSelectedLink();
 			editToolbar.tempHide = false;
 
-			if ( linkNode ) {
-				editor.dom.setAttribs( linkNode, { 'data-wplink-edit': true } );
-			} else {
+			if ( ! linkNode ) {
 				removePlaceholders();
 				editor.execCommand( 'mceInsertLink', false, { href: '_wp_link_placeholder' } );
 
 				linkNode = editor.$( 'a[href="_wp_link_placeholder"]' )[0];
 				editor.nodeChanged();
 			}
+
+			editor.dom.setAttribs( linkNode, { 'data-wplink-edit': true } );
 		} );
 
 		editor.addCommand( 'wp_link_apply', function() {
@@ -217,12 +249,19 @@
 				text = inputInstance.getLinkText();
 				editor.focus();
 
+				var parser = document.createElement( 'a' );
+				parser.href = href;
+
+				if ( 'javascript:' === parser.protocol || 'data:' === parser.protocol ) { // jshint ignore:line
+					href = '';
+				}
+
 				if ( ! href ) {
 					editor.dom.remove( linkNode, true );
 					return;
 				}
 
-				if ( ! /^(?:[a-z]+:|#|\?|\.|\/)/.test( href ) ) {
+				if ( ! /^(?:[a-z]+:|#|\?|\.|\/)/.test( href ) && ! emailRegex.test( href ) ) {
 					href = 'http://' + href;
 				}
 
@@ -231,29 +270,37 @@
 				if ( ! tinymce.trim( linkNode.innerHTML ) ) {
 					editor.$( linkNode ).text( text || href );
 				}
+
+				checkLink( linkNode );
 			}
 
 			inputInstance.reset();
 			editor.nodeChanged();
 
 			// Audible confirmation message when a link has been inserted in the Editor.
-			if ( typeof window.wp !== 'undefined' && window.wp.a11y && typeof window.wpLinkL10n !== 'undefined' ) {
-				window.wp.a11y.speak( window.wpLinkL10n.linkInserted );
+			if ( typeof window.wpLinkL10n !== 'undefined' && ! hasLinkError ) {
+				speak( window.wpLinkL10n.linkInserted );
 			}
 		} );
 
 		editor.addCommand( 'wp_link_cancel', function() {
+			inputInstance.reset();
+
 			if ( ! editToolbar.tempHide ) {
-				inputInstance.reset();
 				removePlaceholders();
-				editor.focus();
-				editToolbar.tempHide = false;
 			}
 		} );
 
-		// WP default shortcut
+		editor.addCommand( 'wp_unlink', function() {
+			editor.execCommand( 'unlink' );
+			editToolbar.tempHide = false;
+			editor.execCommand( 'wp_link_cancel' );
+		} );
+
+		// WP default shortcuts.
 		editor.addShortcut( 'access+a', '', 'WP_Link' );
-		// The "de-facto standard" shortcut, see #27305
+		editor.addShortcut( 'access+s', '', 'wp_unlink' );
+		// The "de-facto standard" shortcut, see #27305.
 		editor.addShortcut( 'meta+k', '', 'WP_Link' );
 
 		editor.addButton( 'link', {
@@ -313,6 +360,10 @@
 		// When doing undo and redo with keyboard shortcuts (Ctrl|Cmd+Z, Ctrl|Cmd+Shift+Z, Ctrl|Cmd+Y),
 		// set a flag to not focus the inline dialog. The editor has to remain focused so the users can do consecutive undo/redo.
 		editor.on( 'keydown', function( event ) {
+			if ( event.keyCode === 27 ) { // Esc
+				editor.execCommand( 'wp_link_cancel' );
+			}
+
 			if ( event.altKey || ( tinymce.Env.mac && ( ! event.metaKey || event.ctrlKey ) ) ||
 				( ! tinymce.Env.mac && ! event.ctrlKey ) ) {
 
@@ -386,10 +437,9 @@
 							$input.val( ui.item.permalink );
 							$( element.firstChild.nextSibling ).val( ui.item.title );
 
-							if ( 9 === event.keyCode && typeof window.wp !== 'undefined' &&
-								window.wp.a11y && typeof window.wpLinkL10n !== 'undefined' ) {
+							if ( 9 === event.keyCode && typeof window.wpLinkL10n !== 'undefined' ) {
 								// Audible confirmation message when a link has been selected.
-								window.wp.a11y.speak( window.wpLinkL10n.linkSelected );
+								speak( window.wpLinkL10n.linkSelected );
 							}
 
 							return false;
@@ -419,8 +469,11 @@
 							}
 						}
 					} ).autocomplete( 'instance' )._renderItem = function( ul, item ) {
+						var fallbackTitle = ( typeof window.wpLinkL10n !== 'undefined' ) ? window.wpLinkL10n.noTitle : '',
+							title = item.title ? item.title : fallbackTitle;
+
 						return $( '<li role="option" id="mce-wp-autocomplete-' + item.ID + '">' )
-						.append( '<span>' + item.title + '</span>&nbsp;<span class="wp-editor-float-right">' + item.info + '</span>' )
+						.append( '<span>' + title + '</span>&nbsp;<span class="wp-editor-float-right">' + item.info + '</span>' )
 						.appendTo( ul );
 					};
 
@@ -475,7 +528,7 @@
 			var linkNode = editor.dom.getParent( event.element, 'a' ),
 				$linkNode, href, edit;
 
-			if ( tinymce.$( document.body ).hasClass( 'modal-open' ) ) {
+			if ( typeof window.wpLink !== 'undefined' && window.wpLink.modalOpen ) {
 				editToolbar.tempHide = true;
 				return;
 			}
@@ -488,7 +541,7 @@
 				edit = $linkNode.attr( 'data-wplink-edit' );
 
 				if ( href === '_wp_link_placeholder' || edit ) {
-					if ( edit && ! inputInstance.getURL() ) {
+					if ( href !== '_wp_link_placeholder' && ! inputInstance.getURL() ) {
 						inputInstance.setURL( href );
 					}
 
@@ -498,20 +551,29 @@
 					previewInstance.setURL( href );
 					event.element = linkNode;
 					event.toolbar = toolbar;
+
+					if ( $linkNode.attr( 'data-wplink-url-error' ) === 'true' ) {
+						toolbar.$el.find( '.wp-link-preview a' ).addClass( 'wplink-url-error' );
+					} else {
+						toolbar.$el.find( '.wp-link-preview a' ).removeClass( 'wplink-url-error' );
+						hasLinkError = false;
+					}
 				}
+			} else if ( editToolbar.visible() ) {
+				editor.execCommand( 'wp_link_cancel' );
 			}
 		} );
 
 		editor.addButton( 'wp_link_edit', {
-			tooltip: 'Edit ', // trailing space is needed, used for context
+			tooltip: 'Edit|button', // '|button' is not displayed, only used for context.
 			icon: 'dashicon dashicons-edit',
 			cmd: 'WP_Link'
 		} );
 
 		editor.addButton( 'wp_link_remove', {
-			tooltip: 'Remove',
-			icon: 'dashicon dashicons-no',
-			cmd: 'unlink'
+			tooltip: 'Remove link',
+			icon: 'dashicon dashicons-editor-unlink',
+			cmd: 'wp_unlink'
 		} );
 
 		editor.addButton( 'wp_link_advanced', {
@@ -522,24 +584,10 @@
 					var url = inputInstance.getURL() || null,
 						text = inputInstance.getLinkText() || null;
 
-					/*
-					 * Accessibility note: moving focus back to the editor confuses
-					 * screen readers. They will announce again the Editor ARIA role
-					 * `application` and the iframe `title` attribute.
-					 *
-					 * Unfortunately IE looses the selection when the editor iframe
-					 * looses focus, so without returning focus to the editor, the code
-					 * in the modal will not be able to get the selection, place the caret
-					 * at the same location, etc.
-					 */
-					if ( tinymce.Env.ie ) {
-						editor.focus(); // Needed for IE
-					}
-
-					window.wpLink.open( editor.id, url, text, linkNode );
+					window.wpLink.open( editor.id, url, text );
 
 					editToolbar.tempHide = true;
-					inputInstance.reset();
+					editToolbar.hide();
 				}
 			}
 		} );
@@ -555,7 +603,8 @@
 			close: function() {
 				editToolbar.tempHide = false;
 				editor.execCommand( 'wp_link_cancel' );
-			}
+			},
+			checkLink: checkLink
 		};
 	} );
 } )( window.tinymce );

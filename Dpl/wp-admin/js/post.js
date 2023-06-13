@@ -1,180 +1,268 @@
-/* global postL10n, ajaxurl, wpAjax, setPostThumbnailL10n, postboxes, pagenow, tinymce, alert, deleteUserSetting */
-/* global theList:true, theExtraList:true, getUserSetting, setUserSetting, commentReply */
+/**
+ * @file Contains all dynamic functionality needed on post and term pages.
+ *
+ * @output wp-admin/js/post.js
+ */
 
-var commentsBox, WPSetThumbnailHTML, WPSetThumbnailID, WPRemoveThumbnail, wptitlehint, makeSlugeditClickable, editPermalink;
-// Back-compat: prevent fatal errors
-makeSlugeditClickable = editPermalink = function(){};
+ /* global ajaxurl, wpAjax, postboxes, pagenow, tinymce, alert, deleteUserSetting, ClipboardJS */
+ /* global theList:true, theExtraList:true, getUserSetting, setUserSetting, commentReply, commentsBox */
+ /* global WPSetThumbnailHTML, wptitlehint */
 
+// Backward compatibility: prevent fatal errors.
+window.makeSlugeditClickable = window.editPermalink = function(){};
+
+// Make sure the wp object exists.
 window.wp = window.wp || {};
 
 ( function( $ ) {
-	var titleHasFocus = false;
+	var titleHasFocus = false,
+		__ = wp.i18n.__;
 
-commentsBox = {
-	st : 0,
+	/**
+	 * Control loading of comments on the post and term edit pages.
+	 *
+	 * @type {{st: number, get: commentsBox.get, load: commentsBox.load}}
+	 *
+	 * @namespace commentsBox
+	 */
+	window.commentsBox = {
+		// Comment offset to use when fetching new comments.
+		st : 0,
 
-	get : function(total, num) {
-		var st = this.st, data;
-		if ( ! num )
-			num = 20;
+		/**
+		 * Fetch comments using Ajax and display them in the box.
+		 *
+		 * @memberof commentsBox
+		 *
+		 * @param {number} total Total number of comments for this post.
+		 * @param {number} num   Optional. Number of comments to fetch, defaults to 20.
+		 * @return {boolean} Always returns false.
+		 */
+		get : function(total, num) {
+			var st = this.st, data;
+			if ( ! num )
+				num = 20;
 
-		this.st += num;
-		this.total = total;
-		$( '#commentsdiv .spinner' ).addClass( 'is-active' );
+			this.st += num;
+			this.total = total;
+			$( '#commentsdiv .spinner' ).addClass( 'is-active' );
 
-		data = {
-			'action' : 'get-comments',
-			'mode' : 'single',
-			'_ajax_nonce' : $('#add_comment_nonce').val(),
-			'p' : $('#post_ID').val(),
-			'start' : st,
-			'number' : num
-		};
+			data = {
+				'action' : 'get-comments',
+				'mode' : 'single',
+				'_ajax_nonce' : $('#add_comment_nonce').val(),
+				'p' : $('#post_ID').val(),
+				'start' : st,
+				'number' : num
+			};
 
-		$.post(ajaxurl, data,
-			function(r) {
-				r = wpAjax.parseAjaxResponse(r);
-				$('#commentsdiv .widefat').show();
-				$( '#commentsdiv .spinner' ).removeClass( 'is-active' );
+			$.post(
+				ajaxurl,
+				data,
+				function(r) {
+					r = wpAjax.parseAjaxResponse(r);
+					$('#commentsdiv .widefat').show();
+					$( '#commentsdiv .spinner' ).removeClass( 'is-active' );
 
-				if ( 'object' == typeof r && r.responses[0] ) {
-					$('#the-comment-list').append( r.responses[0].data );
+					if ( 'object' == typeof r && r.responses[0] ) {
+						$('#the-comment-list').append( r.responses[0].data );
 
-					theList = theExtraList = null;
-					$( 'a[className*=\':\']' ).unbind();
+						theList = theExtraList = null;
+						$( 'a[className*=\':\']' ).off();
 
-					if ( commentsBox.st > commentsBox.total )
-						$('#show-comments').hide();
-					else
-						$('#show-comments').show().children('a').html(postL10n.showcomm);
+						// If the offset is over the total number of comments we cannot fetch any more, so hide the button.
+						if ( commentsBox.st > commentsBox.total )
+							$('#show-comments').hide();
+						else
+							$('#show-comments').show().children('a').text( __( 'Show more comments' ) );
 
-					return;
-				} else if ( 1 == r ) {
-					$('#show-comments').html(postL10n.endcomm);
-					return;
+						return;
+					} else if ( 1 == r ) {
+						$('#show-comments').text( __( 'No more comments found.' ) );
+						return;
+					}
+
+					$('#the-comment-list').append('<tr><td colspan="2">'+wpAjax.broken+'</td></tr>');
 				}
+			);
 
-				$('#the-comment-list').append('<tr><td colspan="2">'+wpAjax.broken+'</td></tr>');
-			}
-		);
+			return false;
+		},
 
-		return false;
-	},
-
-	load: function(total){
-		this.st = jQuery('#the-comment-list tr.comment:visible').length;
-		this.get(total);
-	}
-};
-
-WPSetThumbnailHTML = function(html){
-	$('.inside', '#postimagediv').html(html);
-};
-
-WPSetThumbnailID = function(id){
-	var field = $('input[value="_thumbnail_id"]', '#list-table');
-	if ( field.length > 0 ) {
-		$('#meta\\[' + field.attr('id').match(/[0-9]+/) + '\\]\\[value\\]').text(id);
-	}
-};
-
-WPRemoveThumbnail = function(nonce){
-	$.post(ajaxurl, {
-		action: 'set-post-thumbnail', post_id: $( '#post_ID' ).val(), thumbnail_id: -1, _ajax_nonce: nonce, cookie: encodeURIComponent( document.cookie )
-	}, function(str){
-		if ( str == '0' ) {
-			alert( setPostThumbnailL10n.error );
-		} else {
-			WPSetThumbnailHTML(str);
+		/**
+		 * Load the next batch of comments.
+		 *
+		 * @memberof commentsBox
+		 *
+		 * @param {number} total Total number of comments to load.
+		 */
+		load: function(total){
+			this.st = jQuery('#the-comment-list tr.comment:visible').length;
+			this.get(total);
 		}
-	}
-	);
-};
+	};
 
-$(document).on( 'heartbeat-send.refresh-lock', function( e, data ) {
-	var lock = $('#active_post_lock').val(),
-		post_id = $('#post_ID').val(),
-		send = {};
+	/**
+	 * Overwrite the content of the Featured Image postbox
+	 *
+	 * @param {string} html New HTML to be displayed in the content area of the postbox.
+	 *
+	 * @global
+	 */
+	window.WPSetThumbnailHTML = function(html){
+		$('.inside', '#postimagediv').html(html);
+	};
 
-	if ( ! post_id || ! $('#post-lock-dialog').length )
-		return;
-
-	send.post_id = post_id;
-
-	if ( lock )
-		send.lock = lock;
-
-	data['wp-refresh-post-lock'] = send;
-
-}).on( 'heartbeat-tick.refresh-lock', function( e, data ) {
-	// Post locks: update the lock string or show the dialog if somebody has taken over editing
-	var received, wrap, avatar;
-
-	if ( data['wp-refresh-post-lock'] ) {
-		received = data['wp-refresh-post-lock'];
-
-		if ( received.lock_error ) {
-			// show "editing taken over" message
-			wrap = $('#post-lock-dialog');
-
-			if ( wrap.length && ! wrap.is(':visible') ) {
-				if ( wp.autosave ) {
-					// Save the latest changes and disable
-					$(document).one( 'heartbeat-tick', function() {
-						wp.autosave.server.suspend();
-						wrap.removeClass('saving').addClass('saved');
-						$(window).off( 'beforeunload.edit-post' );
-					});
-
-					wrap.addClass('saving');
-					wp.autosave.server.triggerSave();
-				}
-
-				if ( received.lock_error.avatar_src ) {
-					avatar = $( '<img class="avatar avatar-64 photo" width="64" height="64" alt="" />' ).attr( 'src', received.lock_error.avatar_src.replace( /&amp;/g, '&' ) );
-					wrap.find('div.post-locked-avatar').empty().append( avatar );
-				}
-
-				wrap.show().find('.currently-editing').text( received.lock_error.text );
-				wrap.find('.wp-tab-first').focus();
-			}
-		} else if ( received.new_lock ) {
-			$('#active_post_lock').val( received.new_lock );
+	/**
+	 * Set the Image ID of the Featured Image
+	 *
+	 * @param {number} id The post_id of the image to use as Featured Image.
+	 *
+	 * @global
+	 */
+	window.WPSetThumbnailID = function(id){
+		var field = $('input[value="_thumbnail_id"]', '#list-table');
+		if ( field.length > 0 ) {
+			$('#meta\\[' + field.attr('id').match(/[0-9]+/) + '\\]\\[value\\]').text(id);
 		}
-	}
-}).on( 'before-autosave.update-post-slug', function() {
-	titleHasFocus = document.activeElement && document.activeElement.id === 'title';
-}).on( 'after-autosave.update-post-slug', function() {
-	// Create slug area only if not already there
-	// and the title field was not focused (user was not typing a title) when autosave ran
-	if ( ! $('#edit-slug-box > *').length && ! titleHasFocus ) {
-		$.post( ajaxurl, {
-				action: 'sample-permalink',
-				post_id: $('#post_ID').val(),
-				new_title: $('#title').val(),
-				samplepermalinknonce: $('#samplepermalinknonce').val()
-			},
-			function( data ) {
-				if ( data != '-1' ) {
-					$('#edit-slug-box').html(data);
-				}
+	};
+
+	/**
+	 * Remove the Featured Image
+	 *
+	 * @param {string} nonce Nonce to use in the request.
+	 *
+	 * @global
+	 */
+	window.WPRemoveThumbnail = function(nonce){
+		$.post(ajaxurl, {
+			action: 'set-post-thumbnail', post_id: $( '#post_ID' ).val(), thumbnail_id: -1, _ajax_nonce: nonce, cookie: encodeURIComponent( document.cookie )
+		},
+			/**
+			 * Handle server response
+			 *
+			 * @param {string} str Response, will be '0' when an error occurred otherwise contains link to add Featured Image.
+			 */
+			function(str){
+			if ( str == '0' ) {
+				alert( __( 'Could not set that as the thumbnail image. Try a different attachment.' ) );
+			} else {
+				WPSetThumbnailHTML(str);
 			}
+		}
 		);
-	}
-});
+	};
+
+	/**
+	 * Heartbeat locks.
+	 *
+	 * Used to lock editing of an object by only one user at a time.
+	 *
+	 * When the user does not send a heartbeat in a heartbeat-time
+	 * the user is no longer editing and another user can start editing.
+	 */
+	$(document).on( 'heartbeat-send.refresh-lock', function( e, data ) {
+		var lock = $('#active_post_lock').val(),
+			post_id = $('#post_ID').val(),
+			send = {};
+
+		if ( ! post_id || ! $('#post-lock-dialog').length )
+			return;
+
+		send.post_id = post_id;
+
+		if ( lock )
+			send.lock = lock;
+
+		data['wp-refresh-post-lock'] = send;
+
+	}).on( 'heartbeat-tick.refresh-lock', function( e, data ) {
+		// Post locks: update the lock string or show the dialog if somebody has taken over editing.
+		var received, wrap, avatar;
+
+		if ( data['wp-refresh-post-lock'] ) {
+			received = data['wp-refresh-post-lock'];
+
+			if ( received.lock_error ) {
+				// Show "editing taken over" message.
+				wrap = $('#post-lock-dialog');
+
+				if ( wrap.length && ! wrap.is(':visible') ) {
+					if ( wp.autosave ) {
+						// Save the latest changes and disable.
+						$(document).one( 'heartbeat-tick', function() {
+							wp.autosave.server.suspend();
+							wrap.removeClass('saving').addClass('saved');
+							$(window).off( 'beforeunload.edit-post' );
+						});
+
+						wrap.addClass('saving');
+						wp.autosave.server.triggerSave();
+					}
+
+					if ( received.lock_error.avatar_src ) {
+						avatar = $( '<img />', {
+							'class': 'avatar avatar-64 photo',
+							width: 64,
+							height: 64,
+							alt: '',
+							src: received.lock_error.avatar_src,
+							srcset: received.lock_error.avatar_src_2x ? received.lock_error.avatar_src_2x + ' 2x' : undefined
+						} );
+						wrap.find('div.post-locked-avatar').empty().append( avatar );
+					}
+
+					wrap.show().find('.currently-editing').text( received.lock_error.text );
+					wrap.find('.wp-tab-first').trigger( 'focus' );
+				}
+			} else if ( received.new_lock ) {
+				$('#active_post_lock').val( received.new_lock );
+			}
+		}
+	}).on( 'before-autosave.update-post-slug', function() {
+		titleHasFocus = document.activeElement && document.activeElement.id === 'title';
+	}).on( 'after-autosave.update-post-slug', function() {
+
+		/*
+		 * Create slug area only if not already there
+		 * and the title field was not focused (user was not typing a title) when autosave ran.
+		 */
+		if ( ! $('#edit-slug-box > *').length && ! titleHasFocus ) {
+			$.post( ajaxurl, {
+					action: 'sample-permalink',
+					post_id: $('#post_ID').val(),
+					new_title: $('#title').val(),
+					samplepermalinknonce: $('#samplepermalinknonce').val()
+				},
+				function( data ) {
+					if ( data != '-1' ) {
+						$('#edit-slug-box').html(data);
+					}
+				}
+			);
+		}
+	});
 
 }(jQuery));
 
+/**
+ * Heartbeat refresh nonces.
+ */
 (function($) {
 	var check, timeout;
 
+	/**
+	 * Only allow to check for nonce refresh every 30 seconds.
+	 */
 	function schedule() {
 		check = false;
 		window.clearTimeout( timeout );
 		timeout = window.setTimeout( function(){ check = true; }, 300000 );
 	}
 
-	$(document).on( 'heartbeat-send.wp-refresh-nonces', function( e, data ) {
+	$( function() {
+		schedule();
+	}).on( 'heartbeat-send.wp-refresh-nonces', function( e, data ) {
 		var post_id,
 			$authCheck = $('#wp-auth-check-wrap');
 
@@ -200,14 +288,14 @@ $(document).on( 'heartbeat-send.refresh-lock', function( e, data ) {
 			if ( nonces.heartbeatNonce )
 				window.heartbeatSettings.nonce = nonces.heartbeatNonce;
 		}
-	}).ready( function() {
-		schedule();
 	});
 }(jQuery));
 
-jQuery(document).ready( function($) {
+/**
+ * All post and postbox controls and functionality.
+ */
+jQuery( function($) {
 	var stamp, visibility, $submitButtons, updateVisibility, updateText,
-		sticky = '',
 		$textarea = $('#content'),
 		$document = $(document),
 		postId = $('#post_ID').val() || 0,
@@ -216,36 +304,44 @@ jQuery(document).ready( function($) {
 		$postVisibilitySelect = $('#post-visibility-select'),
 		$timestampdiv = $('#timestampdiv'),
 		$postStatusSelect = $('#post-status-select'),
-		isMac = window.navigator.platform ? window.navigator.platform.indexOf( 'Mac' ) !== -1 : false;
+		isMac = window.navigator.platform ? window.navigator.platform.indexOf( 'Mac' ) !== -1 : false,
+		copyAttachmentURLClipboard = new ClipboardJS( '.copy-attachment-url.edit-media' ),
+		copyAttachmentURLSuccessTimeout,
+		__ = wp.i18n.__, _x = wp.i18n._x;
 
 	postboxes.add_postbox_toggles(pagenow);
 
-	// Clear the window name. Otherwise if this is a former preview window where the user navigated to edit another post,
-	// and the first post is still being edited, clicking Preview there will use this window to show the preview.
+	/*
+	 * Clear the window name. Otherwise if this is a former preview window where the user navigated to edit another post,
+	 * and the first post is still being edited, clicking Preview there will use this window to show the preview.
+	 */
 	window.name = '';
 
 	// Post locks: contain focus inside the dialog. If the dialog is shown, focus the first item.
 	$('#post-lock-dialog .notification-dialog').on( 'keydown', function(e) {
+		// Don't do anything when [Tab] is pressed.
 		if ( e.which != 9 )
 			return;
 
 		var target = $(e.target);
 
+		// [Shift] + [Tab] on first tab cycles back to last tab.
 		if ( target.hasClass('wp-tab-first') && e.shiftKey ) {
-			$(this).find('.wp-tab-last').focus();
+			$(this).find('.wp-tab-last').trigger( 'focus' );
 			e.preventDefault();
+		// [Tab] on last tab cycles back to first tab.
 		} else if ( target.hasClass('wp-tab-last') && ! e.shiftKey ) {
-			$(this).find('.wp-tab-first').focus();
+			$(this).find('.wp-tab-first').trigger( 'focus' );
 			e.preventDefault();
 		}
-	}).filter(':visible').find('.wp-tab-first').focus();
+	}).filter(':visible').find('.wp-tab-first').trigger( 'focus' );
 
-	// Set the heartbeat interval to 15 sec. if post lock dialogs are enabled
+	// Set the heartbeat interval to 15 seconds if post lock dialogs are enabled.
 	if ( wp.heartbeat && $('#post-lock-dialog').length ) {
 		wp.heartbeat.interval( 15 );
 	}
 
-	// The form is being submitted by the user
+	// The form is being submitted by the user.
 	$submitButtons = $submitpost.find( ':submit, a.submitdelete, #post-preview' ).on( 'click.edit-post', function( event ) {
 		var $button = $(this);
 
@@ -265,12 +361,20 @@ jQuery(document).ready( function($) {
 				return;
 			}
 
-			// Stop autosave
+			// Stop auto save.
 			if ( wp.autosave ) {
 				wp.autosave.server.suspend();
 			}
 
 			if ( typeof commentReply !== 'undefined' ) {
+				/*
+				 * Warn the user they have an unsaved comment before submitting
+				 * the post data for update.
+				 */
+				if ( ! commentReply.discardCommentChanges() ) {
+					return false;
+				}
+
 				/*
 				 * Close the comment edit/reply form if open to stop the form
 				 * action from interfering with the post's form action.
@@ -291,7 +395,7 @@ jQuery(document).ready( function($) {
 		});
 	});
 
-	// Submit the form saving a draft or an autosave, and show a preview in a new tab
+	// Submit the form saving a draft or an autosave, and show a preview in a new tab.
 	$('#post-preview').on( 'click.post-preview', function( event ) {
 		var $this = $(this),
 			$form = $('form#post'),
@@ -310,7 +414,7 @@ jQuery(document).ready( function($) {
 		}
 
 		$previewField.val('dopreview');
-		$form.attr( 'target', target ).submit().attr( 'target', '' );
+		$form.attr( 'target', target ).trigger( 'submit' ).attr( 'target', '' );
 
 		// Workaround for WebKit bug preventing a form submitting twice to the same action.
 		// https://bugs.webkit.org/show_bug.cgi?id=28633
@@ -333,7 +437,7 @@ jQuery(document).ready( function($) {
 			if ( editor && ! editor.isHidden() ) {
 				editor.focus();
 			} else if ( $textarea.length ) {
-				$textarea.focus();
+				$textarea.trigger( 'focus' );
 			} else {
 				return;
 			}
@@ -342,16 +446,16 @@ jQuery(document).ready( function($) {
 		}
 	});
 
-	// Autosave new posts after a title is typed
+	// Auto save new posts after a title is typed.
 	if ( $( '#auto_draft' ).val() ) {
-		$( '#title' ).blur( function() {
+		$( '#title' ).on( 'blur', function() {
 			var cancel;
 
 			if ( ! this.value || $('#edit-slug-box > *').length ) {
 				return;
 			}
 
-			// Cancel the autosave when the blur was triggered by the user submitting the form
+			// Cancel the auto save when the blur was triggered by the user submitting the form.
 			$('form#post').one( 'submit', function() {
 				cancel = true;
 			});
@@ -371,7 +475,7 @@ jQuery(document).ready( function($) {
 			$submitButtons.removeClass( 'disabled' );
 		}
 	}).on( 'before-autosave.edit-post', function() {
-		$( '.autosave-message' ).text( postL10n.savingText );
+		$( '.autosave-message' ).text( __( 'Saving Draft…' ) );
 	}).on( 'after-autosave.edit-post', function( event, data ) {
 		$( '.autosave-message' ).text( data.message );
 
@@ -380,39 +484,75 @@ jQuery(document).ready( function($) {
 		}
 	});
 
-	$(window).on( 'beforeunload.edit-post', function() {
-		var editor = typeof tinymce !== 'undefined' && tinymce.get('content');
+	/*
+	 * When the user is trying to load another page, or reloads current page
+	 * show a confirmation dialog when there are unsaved changes.
+	 */
+	$( window ).on( 'beforeunload.edit-post', function( event ) {
+		var editor  = window.tinymce && window.tinymce.get( 'content' );
+		var changed = false;
 
-		if ( ( editor && ! editor.isHidden() && editor.isDirty() ) ||
-			( wp.autosave && wp.autosave.server.postChanged() ) ) {
+		if ( wp.autosave ) {
+			changed = wp.autosave.server.postChanged();
+		} else if ( editor ) {
+			changed = ( ! editor.isHidden() && editor.isDirty() );
+		}
 
-			return postL10n.saveAlert;
+		if ( changed ) {
+			event.preventDefault();
+			// The return string is needed for browser compat.
+			// See https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event.
+			return __( 'The changes you made will be lost if you navigate away from this page.' );
 		}
 	}).on( 'unload.edit-post', function( event ) {
 		if ( ! releaseLock ) {
 			return;
 		}
 
-		// Unload is triggered (by hand) on removing the Thickbox iframe.
-		// Make sure we process only the main document unload.
+		/*
+		 * Unload is triggered (by hand) on removing the Thickbox iframe.
+		 * Make sure we process only the main document unload.
+		 */
 		if ( event.target && event.target.nodeName != '#document' ) {
 			return;
 		}
 
-		$.ajax({
-			type: 'POST',
-			url: ajaxurl,
-			async: false,
-			data: {
-				action: 'wp-remove-post-lock',
-				_wpnonce: $('#_wpnonce').val(),
-				post_ID: $('#post_ID').val(),
-				active_post_lock: $('#active_post_lock').val()
+		var postID = $('#post_ID').val();
+		var postLock = $('#active_post_lock').val();
+
+		if ( ! postID || ! postLock ) {
+			return;
+		}
+
+		var data = {
+			action: 'wp-remove-post-lock',
+			_wpnonce: $('#_wpnonce').val(),
+			post_ID: postID,
+			active_post_lock: postLock
+		};
+
+		if ( window.FormData && window.navigator.sendBeacon ) {
+			var formData = new window.FormData();
+
+			$.each( data, function( key, value ) {
+				formData.append( key, value );
+			});
+
+			if ( window.navigator.sendBeacon( ajaxurl, formData ) ) {
+				return;
 			}
+		}
+
+		// Fall back to a synchronous POST request.
+		// See https://developer.mozilla.org/en-US/docs/Web/API/Navigator/sendBeacon
+		$.post({
+			async: false,
+			data: data,
+			url: ajaxurl
 		});
 	});
 
-	// multi-taxonomies
+	// Multiple taxonomies.
 	if ( $('#tagsdiv-post_tag').length ) {
 		window.tagBox && window.tagBox.init();
 	} else {
@@ -424,7 +564,7 @@ jQuery(document).ready( function($) {
 		});
 	}
 
-	// categories
+	// Handle categories.
 	$('.categorydiv').each( function(){
 		var this_id = $(this).attr('id'), catAddBefore, catAddAfter, taxonomyParts, taxonomy, settingName;
 
@@ -432,44 +572,74 @@ jQuery(document).ready( function($) {
 		taxonomyParts.shift();
 		taxonomy = taxonomyParts.join('-');
 		settingName = taxonomy + '_tab';
-		if ( taxonomy == 'category' )
-			settingName = 'cats';
 
-		// TODO: move to jQuery 1.3+, support for multiple hierarchical taxonomies, see wp-lists.js
-		$('a', '#' + taxonomy + '-tabs').click( function( e ) {
+		if ( taxonomy == 'category' ) {
+			settingName = 'cats';
+		}
+
+		// @todo Move to jQuery 1.3+, support for multiple hierarchical taxonomies, see wp-lists.js.
+		$('a', '#' + taxonomy + '-tabs').on( 'click', function( e ) {
 			e.preventDefault();
 			var t = $(this).attr('href');
 			$(this).parent().addClass('tabs').siblings('li').removeClass('tabs');
 			$('#' + taxonomy + '-tabs').siblings('.tabs-panel').hide();
 			$(t).show();
-			if ( '#' + taxonomy + '-all' == t )
+			if ( '#' + taxonomy + '-all' == t ) {
 				deleteUserSetting( settingName );
-			else
+			} else {
 				setUserSetting( settingName, 'pop' );
+			}
 		});
 
 		if ( getUserSetting( settingName ) )
-			$('a[href="#' + taxonomy + '-pop"]', '#' + taxonomy + '-tabs').click();
+			$('a[href="#' + taxonomy + '-pop"]', '#' + taxonomy + '-tabs').trigger( 'click' );
 
-		// Ajax Cat
-		$( '#new' + taxonomy ).one( 'focus', function() { $( this ).val( '' ).removeClass( 'form-input-tip' ); } );
+		// Add category button controls.
+		$('#new' + taxonomy).one( 'focus', function() {
+			$( this ).val( '' ).removeClass( 'form-input-tip' );
+		});
 
-		$('#new' + taxonomy).keypress( function(event){
+		// On [Enter] submit the taxonomy.
+		$('#new' + taxonomy).on( 'keypress', function(event){
 			if( 13 === event.keyCode ) {
 				event.preventDefault();
-				$('#' + taxonomy + '-add-submit').click();
+				$('#' + taxonomy + '-add-submit').trigger( 'click' );
 			}
 		});
-		$('#' + taxonomy + '-add-submit').click( function(){ $('#new' + taxonomy).focus(); });
 
+		// After submitting a new taxonomy, re-focus the input field.
+		$('#' + taxonomy + '-add-submit').on( 'click', function() {
+			$('#new' + taxonomy).trigger( 'focus' );
+		});
+
+		/**
+		 * Before adding a new taxonomy, disable submit button.
+		 *
+		 * @param {Object} s Taxonomy object which will be added.
+		 *
+		 * @return {Object}
+		 */
 		catAddBefore = function( s ) {
-			if ( !$('#new'+taxonomy).val() )
+			if ( !$('#new'+taxonomy).val() ) {
 				return false;
+			}
+
 			s.data += '&' + $( ':checked', '#'+taxonomy+'checklist' ).serialize();
 			$( '#' + taxonomy + '-add-submit' ).prop( 'disabled', true );
 			return s;
 		};
 
+		/**
+		 * Re-enable submit button after a taxonomy has been added.
+		 *
+		 * Re-enable submit button.
+		 * If the taxonomy has a parent place the taxonomy underneath the parent.
+		 *
+		 * @param {Object} r Response.
+		 * @param {Object} s Taxonomy data.
+		 *
+		 * @return {void}
+		 */
 		catAddAfter = function( r, s ) {
 			var sup, drop = $('#new'+taxonomy+'_parent');
 
@@ -487,44 +657,74 @@ jQuery(document).ready( function($) {
 			addAfter: catAddAfter
 		});
 
-		$('#' + taxonomy + '-add-toggle').click( function( e ) {
+		// Add new taxonomy button toggles input form visibility.
+		$('#' + taxonomy + '-add-toggle').on( 'click', function( e ) {
 			e.preventDefault();
 			$('#' + taxonomy + '-adder').toggleClass( 'wp-hidden-children' );
-			$('a[href="#' + taxonomy + '-all"]', '#' + taxonomy + '-tabs').click();
-			$('#new'+taxonomy).focus();
+			$('a[href="#' + taxonomy + '-all"]', '#' + taxonomy + '-tabs').trigger( 'click' );
+			$('#new'+taxonomy).trigger( 'focus' );
 		});
 
+		// Sync checked items between "All {taxonomy}" and "Most used" lists.
 		$('#' + taxonomy + 'checklist, #' + taxonomy + 'checklist-pop').on( 'click', 'li.popular-category > label input[type="checkbox"]', function() {
 			var t = $(this), c = t.is(':checked'), id = t.val();
 			if ( id && t.parents('#taxonomy-'+taxonomy).length )
 				$('#in-' + taxonomy + '-' + id + ', #in-popular-' + taxonomy + '-' + id).prop( 'checked', c );
 		});
 
-	}); // end cats
+	}); // End cats.
 
-	// Custom Fields
+	// Custom Fields postbox.
 	if ( $('#postcustom').length ) {
-		$( '#the-list' ).wpList( { addAfter: function() {
-			$('table#list-table').show();
-		}, addBefore: function( s ) {
-			s.data += '&post_id=' + $('#post_ID').val();
-			return s;
-		}
+		$( '#the-list' ).wpList( {
+			/**
+			 * Add current post_ID to request to fetch custom fields
+			 *
+			 * @ignore
+			 *
+			 * @param {Object} s Request object.
+			 *
+			 * @return {Object} Data modified with post_ID attached.
+			 */
+			addBefore: function( s ) {
+				s.data += '&post_id=' + $('#post_ID').val();
+				return s;
+			},
+			/**
+			 * Show the listing of custom fields after fetching.
+			 *
+			 * @ignore
+			 */
+			addAfter: function() {
+				$('table#list-table').show();
+			}
 		});
 	}
 
-	// submitdiv
+	/*
+	 * Publish Post box (#submitdiv)
+	 */
 	if ( $('#submitdiv').length ) {
 		stamp = $('#timestamp').html();
 		visibility = $('#post-visibility-display').html();
 
+		/**
+		 * When the visibility of a post changes sub-options should be shown or hidden.
+		 *
+		 * @ignore
+		 *
+		 * @return {void}
+		 */
 		updateVisibility = function() {
+			// Show sticky for public posts.
 			if ( $postVisibilitySelect.find('input:radio:checked').val() != 'public' ) {
 				$('#sticky').prop('checked', false);
 				$('#sticky-span').hide();
 			} else {
 				$('#sticky-span').show();
 			}
+
+			// Show password input field for password protected post.
 			if ( $postVisibilitySelect.find('input:radio:checked').val() != 'password' ) {
 				$('#password-span').hide();
 			} else {
@@ -532,6 +732,13 @@ jQuery(document).ready( function($) {
 			}
 		};
 
+		/**
+		 * Make sure all labels represent the current settings.
+		 *
+		 * @ignore
+		 *
+		 * @return {boolean} False when an invalid timestamp has been selected, otherwise True.
+		 */
 		updateText = function() {
 
 			if ( ! $timestampdiv.length )
@@ -545,6 +752,7 @@ jQuery(document).ready( function($) {
 			originalDate = new Date( $('#hidden_aa').val(), $('#hidden_mm').val() -1, $('#hidden_jj').val(), $('#hidden_hh').val(), $('#hidden_mn').val() );
 			currentDate = new Date( $('#cur_aa').val(), $('#cur_mm').val() -1, $('#cur_jj').val(), $('#cur_hh').val(), $('#cur_mn').val() );
 
+			// Catch unexpected date problems.
 			if ( attemptedDate.getFullYear() != aa || (1 + attemptedDate.getMonth()) != mm || attemptedDate.getDate() != jj || attemptedDate.getMinutes() != mn ) {
 				$timestampdiv.find('.timestamp-wrap').addClass('form-invalid');
 				return false;
@@ -552,22 +760,27 @@ jQuery(document).ready( function($) {
 				$timestampdiv.find('.timestamp-wrap').removeClass('form-invalid');
 			}
 
+			// Determine what the publish should be depending on the date and post status.
 			if ( attemptedDate > currentDate && $('#original_post_status').val() != 'future' ) {
-				publishOn = postL10n.publishOnFuture;
-				$('#publish').val( postL10n.schedule );
+				publishOn = __( 'Schedule for:' );
+				$('#publish').val( _x( 'Schedule', 'post action/button label' ) );
 			} else if ( attemptedDate <= currentDate && $('#original_post_status').val() != 'publish' ) {
-				publishOn = postL10n.publishOn;
-				$('#publish').val( postL10n.publish );
+				publishOn = __( 'Publish on:' );
+				$('#publish').val( __( 'Publish' ) );
 			} else {
-				publishOn = postL10n.publishOnPast;
-				$('#publish').val( postL10n.update );
+				publishOn = __( 'Published on:' );
+				$('#publish').val( __( 'Update' ) );
 			}
-			if ( originalDate.toUTCString() == attemptedDate.toUTCString() ) { //hack
+
+			// If the date is the same, set it to trigger update events.
+			if ( originalDate.toUTCString() == attemptedDate.toUTCString() ) {
+				// Re-set to the current value.
 				$('#timestamp').html(stamp);
 			} else {
 				$('#timestamp').html(
 					'\n' + publishOn + ' <b>' +
-					postL10n.dateFormat
+					// translators: 1: Month, 2: Day, 3: Year, 4: Hour, 5: Minute.
+					__( '%1$s %2$s, %3$s at %4$s:%5$s' )
 						.replace( '%1$s', $( 'option[value="' + mm + '"]', '#mm' ).attr( 'data-text' ) )
 						.replace( '%2$s', parseInt( jj, 10 ) )
 						.replace( '%3$s', aa )
@@ -577,12 +790,13 @@ jQuery(document).ready( function($) {
 				);
 			}
 
+			// Add "privately published" to post status when applies.
 			if ( $postVisibilitySelect.find('input:radio:checked').val() == 'private' ) {
-				$('#publish').val( postL10n.update );
+				$('#publish').val( __( 'Update' ) );
 				if ( 0 === optPublish.length ) {
-					postStatus.append('<option value="publish">' + postL10n.privatelyPublished + '</option>');
+					postStatus.append('<option value="publish">' + __( 'Privately Published' ) + '</option>');
 				} else {
-					optPublish.html( postL10n.privatelyPublished );
+					optPublish.html( __( 'Privately Published' ) );
 				}
 				$('option[value="publish"]', postStatus).prop('selected', true);
 				$('#misc-publishing-actions .edit-post-status').hide();
@@ -593,82 +807,103 @@ jQuery(document).ready( function($) {
 						postStatus.val($('#hidden_post_status').val());
 					}
 				} else {
-					optPublish.html( postL10n.published );
+					optPublish.html( __( 'Published' ) );
 				}
 				if ( postStatus.is(':hidden') )
 					$('#misc-publishing-actions .edit-post-status').show();
 			}
-			$('#post-status-display').html($('option:selected', postStatus).text());
+
+			// Update "Status:" to currently selected status.
+			$('#post-status-display').text(
+				// Remove any potential tags from post status text.
+				wp.sanitize.stripTagsAndEncodeText( $('option:selected', postStatus).text() )
+			);
+
+			// Show or hide the "Save Draft" button.
 			if ( $('option:selected', postStatus).val() == 'private' || $('option:selected', postStatus).val() == 'publish' ) {
 				$('#save-post').hide();
 			} else {
 				$('#save-post').show();
 				if ( $('option:selected', postStatus).val() == 'pending' ) {
-					$('#save-post').show().val( postL10n.savePending );
+					$('#save-post').show().val( __( 'Save as Pending' ) );
 				} else {
-					$('#save-post').show().val( postL10n.saveDraft );
+					$('#save-post').show().val( __( 'Save Draft' ) );
 				}
 			}
 			return true;
 		};
 
-		$( '#visibility .edit-visibility').click( function( e ) {
+		// Show the visibility options and hide the toggle button when opened.
+		$( '#visibility .edit-visibility').on( 'click', function( e ) {
 			e.preventDefault();
 			if ( $postVisibilitySelect.is(':hidden') ) {
 				updateVisibility();
 				$postVisibilitySelect.slideDown( 'fast', function() {
-					$postVisibilitySelect.find( 'input[type="radio"]' ).first().focus();
+					$postVisibilitySelect.find( 'input[type="radio"]' ).first().trigger( 'focus' );
 				} );
 				$(this).hide();
 			}
 		});
 
-		$postVisibilitySelect.find('.cancel-post-visibility').click( function( event ) {
+		// Cancel visibility selection area and hide it from view.
+		$postVisibilitySelect.find('.cancel-post-visibility').on( 'click', function( event ) {
 			$postVisibilitySelect.slideUp('fast');
 			$('#visibility-radio-' + $('#hidden-post-visibility').val()).prop('checked', true);
 			$('#post_password').val($('#hidden-post-password').val());
 			$('#sticky').prop('checked', $('#hidden-post-sticky').prop('checked'));
 			$('#post-visibility-display').html(visibility);
-			$('#visibility .edit-visibility').show().focus();
+			$('#visibility .edit-visibility').show().trigger( 'focus' );
 			updateText();
 			event.preventDefault();
 		});
 
-		$postVisibilitySelect.find('.save-post-visibility').click( function( event ) { // crazyhorse - multiple ok cancels
+		// Set the selected visibility as current.
+		$postVisibilitySelect.find('.save-post-visibility').on( 'click', function( event ) { // Crazyhorse - multiple OK cancels.
+			var visibilityLabel = '', selectedVisibility = $postVisibilitySelect.find('input:radio:checked').val();
+
 			$postVisibilitySelect.slideUp('fast');
-			$('#visibility .edit-visibility').show().focus();
+			$('#visibility .edit-visibility').show().trigger( 'focus' );
 			updateText();
 
-			if ( $postVisibilitySelect.find('input:radio:checked').val() != 'public' ) {
+			if ( 'public' !== selectedVisibility ) {
 				$('#sticky').prop('checked', false);
-			} // WEAPON LOCKED
-
-			if ( $('#sticky').prop('checked') ) {
-				sticky = 'Sticky';
-			} else {
-				sticky = '';
 			}
 
-			$('#post-visibility-display').html(	postL10n[ $postVisibilitySelect.find('input:radio:checked').val() + sticky ]	);
+			switch ( selectedVisibility ) {
+				case 'public':
+					visibilityLabel = $( '#sticky' ).prop( 'checked' ) ? __( 'Public, Sticky' ) : __( 'Public' );
+					break;
+				case 'private':
+					visibilityLabel = __( 'Private' );
+					break;
+				case 'password':
+					visibilityLabel = __( 'Password Protected' );
+					break;
+			}
+
+			$('#post-visibility-display').text( visibilityLabel );
 			event.preventDefault();
 		});
 
-		$postVisibilitySelect.find('input:radio').change( function() {
+		// When the selection changes, update labels.
+		$postVisibilitySelect.find('input:radio').on( 'change', function() {
 			updateVisibility();
 		});
 
-		$timestampdiv.siblings('a.edit-timestamp').click( function( event ) {
+		// Edit publish time click.
+		$timestampdiv.siblings('a.edit-timestamp').on( 'click', function( event ) {
 			if ( $timestampdiv.is( ':hidden' ) ) {
 				$timestampdiv.slideDown( 'fast', function() {
-					$( 'input, select', $timestampdiv.find( '.timestamp-wrap' ) ).first().focus();
+					$( 'input, select', $timestampdiv.find( '.timestamp-wrap' ) ).first().trigger( 'focus' );
 				} );
 				$(this).hide();
 			}
 			event.preventDefault();
 		});
 
-		$timestampdiv.find('.cancel-timestamp').click( function( event ) {
-			$timestampdiv.slideUp('fast').siblings('a.edit-timestamp').show().focus();
+		// Cancel editing the publish time and hide the settings.
+		$timestampdiv.find('.cancel-timestamp').on( 'click', function( event ) {
+			$timestampdiv.slideUp('fast').siblings('a.edit-timestamp').show().trigger( 'focus' );
 			$('#mm').val($('#hidden_mm').val());
 			$('#jj').val($('#hidden_jj').val());
 			$('#aa').val($('#hidden_aa').val());
@@ -678,14 +913,16 @@ jQuery(document).ready( function($) {
 			event.preventDefault();
 		});
 
-		$timestampdiv.find('.save-timestamp').click( function( event ) { // crazyhorse - multiple ok cancels
+		// Save the changed timestamp.
+		$timestampdiv.find('.save-timestamp').on( 'click', function( event ) { // Crazyhorse - multiple OK cancels.
 			if ( updateText() ) {
 				$timestampdiv.slideUp('fast');
-				$timestampdiv.siblings('a.edit-timestamp').show().focus();
+				$timestampdiv.siblings('a.edit-timestamp').show().trigger( 'focus' );
 			}
 			event.preventDefault();
 		});
 
+		// Cancel submit when an invalid timestamp has been selected.
 		$('#post').on( 'submit', function( event ) {
 			if ( ! updateText() ) {
 				event.preventDefault();
@@ -699,31 +936,41 @@ jQuery(document).ready( function($) {
 			}
 		});
 
-		$postStatusSelect.siblings('a.edit-post-status').click( function( event ) {
+		// Post Status edit click.
+		$postStatusSelect.siblings('a.edit-post-status').on( 'click', function( event ) {
 			if ( $postStatusSelect.is( ':hidden' ) ) {
 				$postStatusSelect.slideDown( 'fast', function() {
-					$postStatusSelect.find('select').focus();
+					$postStatusSelect.find('select').trigger( 'focus' );
 				} );
 				$(this).hide();
 			}
 			event.preventDefault();
 		});
 
-		$postStatusSelect.find('.save-post-status').click( function( event ) {
-			$postStatusSelect.slideUp( 'fast' ).siblings( 'a.edit-post-status' ).show().focus();
+		// Save the Post Status changes and hide the options.
+		$postStatusSelect.find('.save-post-status').on( 'click', function( event ) {
+			$postStatusSelect.slideUp( 'fast' ).siblings( 'a.edit-post-status' ).show().trigger( 'focus' );
 			updateText();
 			event.preventDefault();
 		});
 
-		$postStatusSelect.find('.cancel-post-status').click( function( event ) {
-			$postStatusSelect.slideUp( 'fast' ).siblings( 'a.edit-post-status' ).show().focus();
+		// Cancel Post Status editing and hide the options.
+		$postStatusSelect.find('.cancel-post-status').on( 'click', function( event ) {
+			$postStatusSelect.slideUp( 'fast' ).siblings( 'a.edit-post-status' ).show().trigger( 'focus' );
 			$('#post_status').val( $('#hidden_post_status').val() );
 			updateText();
 			event.preventDefault();
 		});
-	} // end submitdiv
+	}
 
-	// permalink
+	/**
+	 * Handle the editing of the post_name. Create the required HTML elements and
+	 * update the changes via Ajax.
+	 *
+	 * @global
+	 *
+	 * @return {void}
+	 */
 	function editPermalink() {
 		var i, slug_value,
 			$el, revert_e,
@@ -737,118 +984,142 @@ jQuery(document).ready( function($) {
 			buttonsOrig = buttons.html(),
 			full = $('#editable-post-name-full');
 
-		// Deal with Twemoji in the post-name
+		// Deal with Twemoji in the post-name.
 		full.find( 'img' ).replaceWith( function() { return this.alt; } );
 		full = full.html();
 
 		permalink.html( permalinkInner );
+
+		// Save current content to revert to when cancelling.
 		$el = $( '#editable-post-name' );
 		revert_e = $el.html();
 
-		buttons.html( '<button type="button" class="save button button-small">' + postL10n.ok + '</button> <button type="button" class="cancel button-link">' + postL10n.cancel + '</button>' );
-		buttons.children( '.save' ).click( function() {
+		buttons.html( '<button type="button" class="save button button-small">' + __( 'OK' ) + '</button> <button type="button" class="cancel button-link">' + __( 'Cancel' ) + '</button>' );
+
+		// Save permalink changes.
+		buttons.children( '.save' ).on( 'click', function() {
 			var new_slug = $el.children( 'input' ).val();
 
 			if ( new_slug == $('#editable-post-name-full').text() ) {
-				buttons.children('.cancel').click();
+				buttons.children('.cancel').trigger( 'click' );
 				return;
 			}
-			$.post(ajaxurl, {
-				action: 'sample-permalink',
-				post_id: postId,
-				new_slug: new_slug,
-				new_title: $('#title').val(),
-				samplepermalinknonce: $('#samplepermalinknonce').val()
-			}, function(data) {
-				var box = $('#edit-slug-box');
-				box.html(data);
-				if (box.hasClass('hidden')) {
-					box.fadeIn('fast', function () {
-						box.removeClass('hidden');
-					});
-				}
 
-				buttons.html(buttonsOrig);
-				permalink.html(permalinkOrig);
-				real_slug.val(new_slug);
-				$( '.edit-slug' ).focus();
-				wp.a11y.speak( postL10n.permalinkSaved );
-			});
+			$.post(
+				ajaxurl,
+				{
+					action: 'sample-permalink',
+					post_id: postId,
+					new_slug: new_slug,
+					new_title: $('#title').val(),
+					samplepermalinknonce: $('#samplepermalinknonce').val()
+				},
+				function(data) {
+					var box = $('#edit-slug-box');
+					box.html(data);
+					if (box.hasClass('hidden')) {
+						box.fadeIn('fast', function () {
+							box.removeClass('hidden');
+						});
+					}
+
+					buttons.html(buttonsOrig);
+					permalink.html(permalinkOrig);
+					real_slug.val(new_slug);
+					$( '.edit-slug' ).trigger( 'focus' );
+					wp.a11y.speak( __( 'Permalink saved' ) );
+				}
+			);
 		});
 
-		buttons.children( '.cancel' ).click( function() {
+		// Cancel editing of permalink.
+		buttons.children( '.cancel' ).on( 'click', function() {
 			$('#view-post-btn').show();
 			$el.html(revert_e);
 			buttons.html(buttonsOrig);
 			permalink.html(permalinkOrig);
 			real_slug.val(revert_slug);
-			$( '.edit-slug' ).focus();
+			$( '.edit-slug' ).trigger( 'focus' );
 		});
 
+		// If more than 1/4th of 'full' is '%', make it empty.
 		for ( i = 0; i < full.length; ++i ) {
 			if ( '%' == full.charAt(i) )
 				c++;
 		}
-
 		slug_value = ( c > full.length / 4 ) ? '' : full;
-		$el.html( '<input type="text" id="new-post-slug" value="' + slug_value + '" autocomplete="off" />' ).children( 'input' ).keydown( function( e ) {
+
+		$el.html( '<input type="text" id="new-post-slug" value="' + slug_value + '" autocomplete="off" />' ).children( 'input' ).on( 'keydown', function( e ) {
 			var key = e.which;
-			// On enter, just save the new slug, don't save the post.
+			// On [Enter], just save the new slug, don't save the post.
 			if ( 13 === key ) {
 				e.preventDefault();
-				buttons.children( '.save' ).click();
+				buttons.children( '.save' ).trigger( 'click' );
 			}
+			// On [Esc] cancel the editing.
 			if ( 27 === key ) {
-				buttons.children( '.cancel' ).click();
+				buttons.children( '.cancel' ).trigger( 'click' );
 			}
-		} ).keyup( function() {
+		} ).on( 'keyup', function() {
 			real_slug.val( this.value );
-		}).focus();
+		}).trigger( 'focus' );
 	}
 
 	$( '#titlediv' ).on( 'click', '.edit-slug', function() {
 		editPermalink();
 	});
 
-	wptitlehint = function(id) {
+	/**
+	 * Adds screen reader text to the title label when needed.
+	 *
+	 * Use the 'screen-reader-text' class to emulate a placeholder attribute
+	 * and hide the label when entering a value.
+	 *
+	 * @param {string} id Optional. HTML ID to add the screen reader helper text to.
+	 *
+	 * @global
+	 *
+	 * @return {void}
+	 */
+	window.wptitlehint = function( id ) {
 		id = id || 'title';
 
-		var title = $('#' + id), titleprompt = $('#' + id + '-prompt-text');
+		var title = $( '#' + id ), titleprompt = $( '#' + id + '-prompt-text' );
 
-		if ( '' === title.val() )
-			titleprompt.removeClass('screen-reader-text');
+		if ( '' === title.val() ) {
+			titleprompt.removeClass( 'screen-reader-text' );
+		}
 
-		titleprompt.click(function(){
-			$(this).addClass('screen-reader-text');
-			title.focus();
-		});
+		title.on( 'input', function() {
+			if ( '' === this.value ) {
+				titleprompt.removeClass( 'screen-reader-text' );
+				return;
+			}
 
-		title.blur(function(){
-			if ( '' === this.value )
-				titleprompt.removeClass('screen-reader-text');
-		}).focus(function(){
-			titleprompt.addClass('screen-reader-text');
-		}).keydown(function(e){
-			titleprompt.addClass('screen-reader-text');
-			$(this).unbind(e);
-		});
+			titleprompt.addClass( 'screen-reader-text' );
+		} );
 	};
 
 	wptitlehint();
 
-	// Resize the visual and text editors
+	// Resize the WYSIWYG and plain text editors.
 	( function() {
 		var editor, offset, mce,
 			$handle = $('#post-status-info'),
 			$postdivrich = $('#postdivrich');
 
-		// No point for touch devices
+		// If there are no textareas or we are on a touch device, we can't do anything.
 		if ( ! $textarea.length || 'ontouchstart' in window ) {
-			// Hide the resize handle
+			// Hide the resize handle.
 			$('#content-resize-handle').hide();
 			return;
 		}
 
+		/**
+		 * Handle drag event.
+		 *
+		 * @param {Object} event Event containing details about the drag.
+		 */
 		function dragging( event ) {
 			if ( $postdivrich.hasClass( 'wp-editor-expand' ) ) {
 				return;
@@ -863,6 +1134,9 @@ jQuery(document).ready( function($) {
 			event.preventDefault();
 		}
 
+		/**
+		 * When the dragging stopped make sure we return focus and do a sanity check on the height.
+		 */
 		function endDrag() {
 			var height, toolbarHeight;
 
@@ -880,13 +1154,13 @@ jQuery(document).ready( function($) {
 
 				height = parseInt( $('#content_ifr').css('height'), 10 ) + toolbarHeight - 28;
 			} else {
-				$textarea.focus();
+				$textarea.trigger( 'focus' );
 				height = parseInt( $textarea.css('height'), 10 );
 			}
 
 			$document.off( '.wp-editor-resize' );
 
-			// sanity check
+			// Sanity check: normalize height to stay within acceptable ranges.
 			if ( height && height > 50 && height < 5000 ) {
 				setUserSetting( 'ed_size', height );
 			}
@@ -903,7 +1177,7 @@ jQuery(document).ready( function($) {
 			} else {
 				mce = false;
 				offset = $textarea.height() - event.pageY;
-				$textarea.blur();
+				$textarea.trigger( 'blur' );
 			}
 
 			$document.on( 'mousemove.wp-editor-resize', dragging )
@@ -913,8 +1187,9 @@ jQuery(document).ready( function($) {
 		}).on( 'mouseup.wp-editor-resize', endDrag );
 	})();
 
+	// TinyMCE specific handling of Post Format changes to reflect in the editor.
 	if ( typeof tinymce !== 'undefined' ) {
-		// When changing post formats, change the editor body class
+		// When changing post formats, change the editor body class.
 		$( '#post-formats-select input.post-format' ).on( 'change.set-editor-class', function() {
 			var editor, body, format = this.id;
 
@@ -925,10 +1200,28 @@ jQuery(document).ready( function($) {
 				$( document ).trigger( 'editor-classchange' );
 			}
 		});
+
+		// When changing page template, change the editor body class.
+		$( '#page_template' ).on( 'change.set-editor-class', function() {
+			var editor, body, pageTemplate = $( this ).val() || '';
+
+			pageTemplate = pageTemplate.substr( pageTemplate.lastIndexOf( '/' ) + 1, pageTemplate.length )
+				.replace( /\.php$/, '' )
+				.replace( /\./g, '-' );
+
+			if ( pageTemplate && ( editor = tinymce.get( 'content' ) ) ) {
+				body = editor.getBody();
+				body.className = body.className.replace( /\bpage-template-[^ ]+/, '' );
+				editor.dom.addClass( body, 'page-template-' + pageTemplate );
+				$( document ).trigger( 'editor-classchange' );
+			}
+		});
+
 	}
 
-	// Save on pressing Ctrl/Command + S in the Text editor
+	// Save on pressing [Ctrl]/[Command] + [S] in the Text editor.
 	$textarea.on( 'keydown.wp-autosave', function( event ) {
+		// Key [S] has code 83.
 		if ( event.which === 83 ) {
 			if ( event.shiftKey || event.altKey || ( isMac && ( ! event.metaKey || event.ctrlKey ) ) || ( ! isMac && ! event.ctrlKey ) ) {
 				return;
@@ -939,6 +1232,7 @@ jQuery(document).ready( function($) {
 		}
 	});
 
+	// If the last status was auto-draft and the save is triggered, edit the current URL.
 	if ( $( '#original_post_status' ).val() === 'auto-draft' && window.history.replaceState ) {
 		var location;
 
@@ -950,8 +1244,42 @@ jQuery(document).ready( function($) {
 			window.history.replaceState( null, null, location );
 		});
 	}
-});
 
+	/**
+	 * Copies the attachment URL in the Edit Media page to the clipboard.
+	 *
+	 * @since 5.5.0
+	 *
+	 * @param {MouseEvent} event A click event.
+	 *
+	 * @return {void}
+	 */
+	copyAttachmentURLClipboard.on( 'success', function( event ) {
+		var triggerElement = $( event.trigger ),
+			successElement = $( '.success', triggerElement.closest( '.copy-to-clipboard-container' ) );
+
+		// Clear the selection and move focus back to the trigger.
+		event.clearSelection();
+		// Handle ClipboardJS focus bug, see https://github.com/zenorocha/clipboard.js/issues/680
+		triggerElement.trigger( 'focus' );
+
+		// Show success visual feedback.
+		clearTimeout( copyAttachmentURLSuccessTimeout );
+		successElement.removeClass( 'hidden' );
+
+		// Hide success visual feedback after 3 seconds since last success.
+		copyAttachmentURLSuccessTimeout = setTimeout( function() {
+			successElement.addClass( 'hidden' );
+		}, 3000 );
+
+		// Handle success audible feedback.
+		wp.a11y.speak( __( 'The file URL has been copied to your clipboard' ) );
+	} );
+} );
+
+/**
+ * TinyMCE word count display
+ */
 ( function( $, counter ) {
 	$( function() {
 		var $content = $( '#content' ),
@@ -959,6 +1287,9 @@ jQuery(document).ready( function($) {
 			prevCount = 0,
 			contentEditor;
 
+		/**
+		 * Get the word count from TinyMCE and display it
+		 */
 		function update() {
 			var text, count;
 
@@ -977,6 +1308,12 @@ jQuery(document).ready( function($) {
 			prevCount = count;
 		}
 
+		/**
+		 * Bind the word count update triggers.
+		 *
+		 * When a node change in the main TinyMCE editor has been triggered.
+		 * When a key has been released in the plain text content editor.
+		 */
 		$( document ).on( 'tinymce-editor-init', function( event, editor ) {
 			if ( editor.id !== 'content' ) {
 				return;
@@ -991,4 +1328,5 @@ jQuery(document).ready( function($) {
 
 		update();
 	} );
+
 } )( jQuery, new wp.utils.WordCounter() );

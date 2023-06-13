@@ -11,7 +11,7 @@
  * @since         0.4.2 Modified multistage logic
  * @since         0.7.2 Modified logic and structure
  *
- * @version       0.10.8
+ * @version       0.11.15
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -297,7 +297,7 @@ do_action( 'anwpfl/tmpl-competition/before_wrapper', $competition_post_id );
 												$match_week = 0;
 												foreach ( $matches as $match ) :
 
-													if ( (int) $match->competition_id !== $competition->ID || (int) $match->group_id !== $group->id ) {
+													if ( (int) $match->competition_id !== $competition->ID || (int) $match->group_id !== (int) $group->id ) {
 														continue;
 													}
 

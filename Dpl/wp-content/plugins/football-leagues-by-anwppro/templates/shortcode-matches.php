@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.4.3
  *
- * @version       0.11.12
+ * @version       0.12.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,6 +23,7 @@ $args = (object) wp_parse_args(
 		'competition_id'        => '',
 		'show_secondary'        => 0,
 		'season_id'             => '',
+		'league_id'             => '',
 		'group_id'              => '',
 		'type'                  => '',
 		'limit'                 => 0,
@@ -45,6 +46,8 @@ $args = (object) wp_parse_args(
 		'competition_logo'      => '1',
 		'outcome_id'            => '',
 		'no_data_text'          => '',
+		'home_club'             => '',
+		'away_club'             => '',
 	]
 );
 
@@ -77,7 +80,7 @@ if ( empty( $matches ) ) {
 					$group_text    = get_post_meta( $list_match->competition_id, '_anwpfl_stage_title', true );
 					$group_current = $list_match->competition_id;
 				} elseif ( 'competition' === $args->group_by && $group_current !== $list_match->competition_id ) {
-					$group_text    = get_post( $list_match->competition_id )->post_title;
+					$group_text    = anwp_football_leagues()->competition->get_competition_title( $list_match->competition_id );
 					$group_current = $list_match->competition_id;
 				} elseif ( 'matchweek' === $args->group_by && $group_current !== $list_match->match_week && '0' !== $list_match->match_week ) {
 					$group_text    = anwp_football_leagues()->competition->tmpl_get_matchweek_round_text( $list_match->match_week, $list_match->competition_id );
@@ -86,14 +89,14 @@ if ( empty( $matches ) ) {
 					$day_to_compare = date( 'Y-m-d', strtotime( $list_match->kickoff ) );
 
 					if ( $day_to_compare !== $group_current ) {
-						$group_text    = date( 'j M Y', strtotime( $list_match->kickoff ) );
+						$group_text    = date_i18n( 'j M Y', strtotime( $list_match->kickoff ) );
 						$group_current = $day_to_compare;
 					}
 				} elseif ( 'month' === $args->group_by ) {
 					$month_to_compare = date( 'Y-m', strtotime( $list_match->kickoff ) );
 
 					if ( $month_to_compare !== $group_current ) {
-						$group_text    = date( 'M Y', strtotime( $list_match->kickoff ) );
+						$group_text    = date_i18n( 'M Y', strtotime( $list_match->kickoff ) );
 						$group_current = $month_to_compare;
 					}
 				}

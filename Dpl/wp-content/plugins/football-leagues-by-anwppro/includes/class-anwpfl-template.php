@@ -159,6 +159,17 @@ class AnWPFL_Template extends Gamajo_Template_Loader {
 	 */
 	public function widget_loader( $widget, $atts ) {
 
+		$atts = wp_parse_args(
+			$atts,
+			[
+				'before_widget' => '',
+				'after_widget'  => '',
+				'before_title'  => '',
+				'title'         => '',
+				'after_title'   => '',
+			]
+		);
+
 		// Start an output buffer.
 		ob_start();
 

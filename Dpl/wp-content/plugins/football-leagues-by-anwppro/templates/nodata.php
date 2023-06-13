@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $data = (object) wp_parse_args(
 	$data,
 	[
-		'no_data_text' => 0,
+		'no_data_text' => '',
 	]
 );
 

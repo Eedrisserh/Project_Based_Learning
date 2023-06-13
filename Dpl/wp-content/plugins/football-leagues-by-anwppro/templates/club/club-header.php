@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.8.4
  *
- * @version       0.11.13
+ * @version       0.13.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -34,6 +34,9 @@ $data = (object) wp_parse_args(
 		'youtube'     => '',
 		'facebook'    => '',
 		'instagram'   => '',
+		'vk'          => '',
+		'tiktok'      => '',
+		'linkedin'    => '',
 	]
 );
 
@@ -53,7 +56,7 @@ do_action( 'anwpfl/tmpl-club/before_header', $data );
 
 		<?php if ( $data->logo_big ) : ?>
 			<div class="anwp-col-sm-auto">
-				<img class="club__main-logo" src="<?php echo esc_attr( $data->logo_big ); ?>" alt="club logo">
+				<img class="club__main-logo" src="<?php echo esc_attr( $data->logo_big ); ?>" alt="<?php echo get_post_meta( $club->_anwpfl_logo_big_id, '_wp_attachment_image_alt', true ) ?: 'club logo'; ?>">
 			</div>
 		<?php endif; ?>
 
@@ -165,7 +168,7 @@ do_action( 'anwpfl/tmpl-club/before_header', $data );
 				}
 				?>
 
-				<?php if ( $data->twitter || $data->facebook || $data->youtube || $data->instagram ) : ?>
+				<?php if ( $data->twitter || $data->facebook || $data->youtube || $data->instagram || $data->vk || $data->linkedin || $data->tiktok ) : ?>
 					<tr>
 						<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'club__header__social', __( 'Social', 'anwp-football-leagues' ) ) ); ?></th>
 						<td class="options-list__value">
@@ -194,6 +197,27 @@ do_action( 'anwpfl/tmpl-club/before_header', $data );
 								<a href="<?php echo esc_url( $data->instagram ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
 									<svg class="anwp-icon anwp-icon--s24">
 										<use xlink:href="#icon-instagram"></use>
+									</svg>
+								</a>
+							<?php endif; ?>
+							<?php if ( $data->vk ) : ?>
+								<a href="<?php echo esc_url( $data->vk ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
+									<svg class="anwp-icon anwp-icon--s24">
+										<use xlink:href="#icon-vk"></use>
+									</svg>
+								</a>
+							<?php endif; ?>
+							<?php if ( $data->tiktok ) : ?>
+								<a href="<?php echo esc_url( $data->tiktok ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
+									<svg class="anwp-icon anwp-icon--s24">
+										<use xlink:href="#icon-tiktok"></use>
+									</svg>
+								</a>
+							<?php endif; ?>
+							<?php if ( $data->linkedin ) : ?>
+								<a href="<?php echo esc_url( $data->linkedin ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
+									<svg class="anwp-icon anwp-icon--s24">
+										<use xlink:href="#icon-linkedin"></use>
 									</svg>
 								</a>
 							<?php endif; ?>

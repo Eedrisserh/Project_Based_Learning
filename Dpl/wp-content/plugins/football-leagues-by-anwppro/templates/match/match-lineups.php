@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.6.1
  *
- * @version       0.11.13
+ * @version       0.12.7
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -149,8 +149,12 @@ if ( $home_line_up || $away_line_up ) :
 								</div>
 
 								<?php if ( ! empty( $home_squad[ $player_id ] ) && isset( $positions_l10n[ $home_squad[ $player_id ]['position'] ] ) ) : ?>
-									<div class="match__player-position mr-1">
+									<div class="match__player-position mr-1 text-nowrap">
 										<?php echo esc_html( $positions_l10n[ $home_squad[ $player_id ]['position'] ] ); ?>
+									</div>
+								<?php elseif ( ! empty( $player->position ) && isset( $positions_l10n[ $player->position ] ) ) : ?>
+									<div class="match__player-position mr-1">
+										<?php echo esc_html( $positions_l10n[ $player->position ] ); ?>
 									</div>
 								<?php endif; ?>
 
@@ -214,8 +218,12 @@ if ( $home_line_up || $away_line_up ) :
 								</div>
 
 								<?php if ( ! empty( $home_squad[ $player_id ] ) && isset( $positions_l10n[ $home_squad[ $player_id ]['position'] ] ) ) : ?>
-									<div class="match__player-position mr-1">
+									<div class="match__player-position mr-1 text-nowrap">
 										<?php echo esc_html( $positions_l10n[ $home_squad[ $player_id ]['position'] ] ); ?>
+									</div>
+								<?php elseif ( ! empty( $player->position ) && isset( $positions_l10n[ $player->position ] ) ) : ?>
+									<div class="match__player-position mr-1">
+										<?php echo esc_html( $positions_l10n[ $player->position ] ); ?>
 									</div>
 								<?php endif; ?>
 
@@ -318,8 +326,12 @@ if ( $home_line_up || $away_line_up ) :
 								</div>
 
 								<?php if ( ! empty( $away_squad[ $player_id ] ) && isset( $positions_l10n[ $away_squad[ $player_id ]['position'] ] ) ) : ?>
-									<div class="match__player-position mr-1">
+									<div class="match__player-position mr-1 text-nowrap">
 										<?php echo esc_html( $positions_l10n[ $away_squad[ $player_id ]['position'] ] ); ?>
+									</div>
+								<?php elseif ( ! empty( $player->position ) && isset( $positions_l10n[ $player->position ] ) ) : ?>
+									<div class="match__player-position mr-1">
+										<?php echo esc_html( $positions_l10n[ $player->position ] ); ?>
 									</div>
 								<?php endif; ?>
 
@@ -383,8 +395,12 @@ if ( $home_line_up || $away_line_up ) :
 								</div>
 
 								<?php if ( ! empty( $away_squad[ $player_id ] ) && isset( $positions_l10n[ $away_squad[ $player_id ]['position'] ] ) ) : ?>
-									<div class="match__player-position mr-1">
+									<div class="match__player-position mr-1 text-nowrap">
 										<?php echo esc_html( $positions_l10n[ $away_squad[ $player_id ]['position'] ] ); ?>
+									</div>
+								<?php elseif ( ! empty( $player->position ) && isset( $positions_l10n[ $player->position ] ) ) : ?>
+									<div class="match__player-position mr-1">
+										<?php echo esc_html( $positions_l10n[ $player->position ] ); ?>
 									</div>
 								<?php endif; ?>
 

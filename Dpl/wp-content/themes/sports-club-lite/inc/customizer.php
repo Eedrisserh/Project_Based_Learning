@@ -565,9 +565,33 @@ function sports_club_lite_custom_css(){
 		 blockquote	        
             { border-color:<?php echo esc_html( get_theme_mod('sports_club_lite_color_scheme','#ec4613')); ?>;}	
 			
+		#layout_forsite a:focus,
+		button:focus,
+		input[type="button"]:focus,
+		input[type="reset"]:focus,
+		input[type="submit"]:focus,
+		input[type="text"]:focus,
+		input[type="email"]:focus,
+		input[type="url"]:focus,
+		input[type="password"]:focus,
+		input[type="search"]:focus,
+		input[type="number"]:focus,
+		input[type="tel"]:focus,
+		input[type="range"]:focus,
+		input[type="date"]:focus,
+		input[type="month"]:focus,
+		input[type="week"]:focus,
+		input[type="time"]:focus,
+		input[type="datetime"]:focus,
+		input[type="datetime-local"]:focus,
+		input[type="color"]:focus,
+		textarea:focus,
+		a:focus   
+            { outline:thin dotted <?php echo esc_html( get_theme_mod('sports_club_lite_color_scheme','#ec4613')); ?>;}			
+			
          	
     </style> 
-<?php                                
+<?php                                 
 }
          
 add_action('wp_head','sports_club_lite_custom_css');	 

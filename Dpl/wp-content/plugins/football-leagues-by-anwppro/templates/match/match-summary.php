@@ -46,7 +46,7 @@ do_action( 'anwpfl/tmpl-match/summary_before', $data );
 	</div>
 
 	<div class="match__summary">
-		<?php echo do_shortcode( wp_kses_post( wpautop( $data->summary ) ) ); ?>
+		<?php echo do_shortcode( wpautop( $data->summary ) ); ?>
 	</div>
 </div>
 

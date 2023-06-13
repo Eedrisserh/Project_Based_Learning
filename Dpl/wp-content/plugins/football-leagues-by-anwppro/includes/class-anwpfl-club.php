@@ -141,8 +141,6 @@ class AnWPFL_Club extends CPT_Core {
 
 		// Create CMB2 Metabox
 		add_action( 'cmb2_admin_init', [ $this, 'init_cmb2_metaboxes' ] );
-		add_action( 'cmb2_before_post_form_anwp_club_info_metabox', [ $this, 'cmb2_before_metabox' ] );
-		add_action( 'cmb2_after_post_form_anwp_club_info_metabox', [ $this, 'cmb2_after_metabox' ] );
 
 		// Create & save Squad metabox
 		add_action( 'load-post.php', [ $this, 'init_metaboxes' ] );
@@ -213,7 +211,7 @@ class AnWPFL_Club extends CPT_Core {
 	 *
 	 * @param string $hook_suffix The current admin page.
 	 *
-	 * @since 0.2.0 (2018-01-25)
+	 * @since 0.2.0
 	 */
 	public function admin_enqueue_scripts( $hook_suffix ) {
 
@@ -221,17 +219,86 @@ class AnWPFL_Club extends CPT_Core {
 
 		if ( in_array( $hook_suffix, [ 'post.php', 'post-new.php' ], true ) && 'anwp_club' === $current_screen->id ) {
 
+			$l10n = [
+				'append_to_the'                 => esc_html__( 'Append to the', 'anwp-football-leagues' ),
+				'actions'                       => esc_html__( 'Actions', 'anwp-football-leagues' ),
+				'are_you_sure'                  => esc_html__( 'Are you sure?', 'anwp-football-leagues' ),
+				'attach_person_to_staff'        => esc_html__( 'Attach Person to Staff', 'anwp-football-leagues' ),
+				'attach_player_to_squad'        => esc_html__( 'Attach Player to Squad', 'anwp-football-leagues' ),
+				'attach_to_squad'               => esc_html__( 'Attach to squad', 'anwp-football-leagues' ),
+				'bottom'                        => esc_html__( 'bottom', 'anwp-football-leagues' ),
+				'cancel'                        => esc_html__( 'Cancel', 'anwp-football-leagues' ),
+				'close'                         => esc_html__( 'Close', 'anwp-football-leagues' ),
+				'club_players'                  => esc_html__( 'club players', 'anwp-football-leagues' ),
+				'club_squad'                    => esc_html__( 'Club Squad', 'anwp-football-leagues' ),
+				'club_staff'                    => esc_html__( 'Club Staff', 'anwp-football-leagues' ),
+				'confirm_delete'                => esc_html__( 'Confirm Delete', 'anwp-football-leagues' ),
+				'change_current_club'           => esc_html__( 'Change Current Club', 'anwp-football-leagues' ),
+				'change_current_club_to'        => esc_html__( 'Change current club to', 'anwp-football-leagues' ),
+				'create_new_transfer'           => esc_html__( 'Create New Transfer', 'anwp-football-leagues' ),
+				'current_club'                  => esc_html__( 'Current Club', 'anwp-football-leagues' ),
+				'delete'                        => esc_html__( 'Delete', 'anwp-football-leagues' ),
+				'in_club'                       => esc_html__( 'in club', 'anwp-football-leagues' ),
+				'job'                           => esc_html__( 'Job', 'anwp-football-leagues' ),
+				'left_club'                     => esc_html__( 'left club', 'anwp-football-leagues' ),
+				'next'                          => esc_html__( 'Next', 'anwp-football-leagues' ),
+				'none'                          => esc_html__( 'none', 'anwp-football-leagues' ),
+				'number'                        => esc_html__( 'Number', 'anwp-football-leagues' ),
+				'number_of_players_in_squad'    => esc_html__( 'Number of players in Squad', 'anwp-football-leagues' ),
+				'on_loan'                       => esc_html__( 'on loan', 'anwp-football-leagues' ),
+				'on_trial'                      => esc_html__( 'on trial', 'anwp-football-leagues' ),
+				'other_seasons'                 => esc_html__( 'Other Seasons', 'anwp-football-leagues' ),
+				'player_name'                   => esc_html__( 'Player Name', 'anwp-football-leagues' ),
+				'position'                      => esc_html__( 'Position', 'anwp-football-leagues' ),
+				'prev'                          => esc_html__( 'Prev', 'anwp-football-leagues' ),
+				'really_want_delete_from_squad' => esc_html__( 'Do you really want to delete from current squad', 'anwp-football-leagues' ),
+				'remove'                        => esc_html__( 'Remove', 'anwp-football-leagues' ),
+				'saving_data_error'             => esc_html__( 'Saving Data Error', 'anwp-football-leagues' ),
+				'search_by_name'                => esc_html__( 'search by name', 'anwp-football-leagues' ),
+				'season'                        => esc_html__( 'Season', 'anwp-football-leagues' ),
+				'select'                        => esc_html__( 'Select', 'anwp-football-leagues' ),
+				'staff_name'                    => esc_html__( 'Staff Name', 'anwp-football-leagues' ),
+				'status'                        => esc_html__( 'Status', 'anwp-football-leagues' ),
+				'top'                           => esc_html__( 'top', 'anwp-football-leagues' ),
+				'transfers_history'             => esc_html__( 'Transfers History', 'anwp-football-leagues' ),
+				'use_separate_group'            => esc_html__( 'Use separate group', 'anwp-football-leagues' ),
+			];
+
+			$positions = $this->plugin->data->get_positions();
+
+			foreach ( [ 'goalkeeper', 'defender', 'midfielder', 'forward' ] as $position ) {
+				if ( anwp_football_leagues()->get_option_value( 'text_single_' . $position ) ) {
+					$positions[ mb_substr( $position, 0, 1 ) ] = anwp_football_leagues()->get_option_value( 'text_single_' . $position );
+				}
+			}
+
 			$post_id = get_the_ID();
+
+			$squad_data = [
+				'club_squad'    => get_post_meta( $post_id, '_anwpfl_squad', true ),
+				'club_staff'    => get_post_meta( $post_id, '_anwpfl_staff', true ),
+				'currentClub'   => $post_id,
+				'players'       => $this->plugin->player->get_players_list(),
+				'staffs'        => $this->plugin->staff->get_staff_list(),
+				'default_photo' => anwp_football_leagues()->helper->get_default_player_photo(),
+				'clubs_map'     => $this->get_clubs_options(),
+				'l10n'          => $l10n,
+				'positions'     => $positions,
+				'seasons_list'  => $this->plugin->season->get_seasons_list(),
+				'loader'        => includes_url( 'js/tinymce/skins/lightgray/img/loader.gif' ),
+			];
+
+			/**
+			 * Modify player data
+			 *
+			 * @since 0.12.6
+			 */
+			$squad_data = apply_filters( 'anwpfl/club/squad_app_data', $squad_data );
 
 			wp_localize_script(
 				'anwpfl_admin_vue',
-				'anwpSquad',
-				[
-					'squad'       => get_post_meta( $post_id, '_anwpfl_squad', true ),
-					'staff'       => get_post_meta( $post_id, '_anwpfl_staff', true ),
-					'currentClub' => $post_id,
-					'players'     => $this->plugin->player->get_players_list(),
-				]
+				'anwpSquadData',
+				$squad_data
 			);
 		}
 	}
@@ -279,16 +346,120 @@ class AnWPFL_Club extends CPT_Core {
 		);
 
 		if ( $seasons ) :
+
+			$is_menu_collapsed = 'yes' === get_user_setting( 'anwp-fl-collapsed-menu' );
+
 			// Add nonce for security and authentication.
 			wp_nonce_field( 'anwp_save_metabox_' . $post->ID, 'anwp_metabox_nonce' );
 			?>
 			<div class="anwp-b-wrap anwpfl-squad-metabox-wrapper">
-				<div id="anwpfl-app-squad"></div>
+				<div class="d-flex mt-2" id="anwp-fl-metabox-page-nav">
+					<div class="anwp-fl-menu-wrapper mr-3 d-none d-md-block sticky-top align-self-start anwp-flex-none <?php echo esc_attr( $is_menu_collapsed ? 'anwp-fl-collapsed-menu' : '' ); ?>" style="top: 50px;">
+
+						<button id="anwp-fl-publish-click-proxy" class="w-100 button button-primary py-2 mb-4 d-flex align-items-center justify-content-center" type="submit">
+							<svg class="anwp-icon anwp-icon--feather anwp-icon--s16"><use xlink:href="#icon-save"></use></svg>
+							<span class="ml-2"><?php echo esc_html__( 'Save', 'anwp-football-leagues' ); ?></span>
+							<span class="spinner m-0"></span>
+						</button>
+
+						<ul class="m-0 p-0 list-unstyled">
+
+						<?php
+							$nav_items = [
+								[
+									'icon'  => 'gear',
+									'label' => __( 'General', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-general-metabox',
+								],
+								[
+									'icon'  => 'device-camera',
+									'label' => __( 'Media', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-media-metabox',
+								],
+								[
+									'icon'  => 'repo-forked',
+									'label' => __( 'Social', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-social-metabox',
+								],
+								[
+									'icon'  => 'note',
+									'label' => __( 'Info', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-desc-metabox',
+								],
+								[
+									'icon'  => 'server',
+									'label' => __( 'Custom Fields', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-custom_fields-metabox',
+								],
+								[
+									'icon'  => 'repo-push',
+									'label' => __( 'Bottom Content', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-bottom_content-metabox',
+								],
+								[
+									'icon'  => 'jersey',
+									'label' => __( 'Squad', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-squad-metabox',
+								],
+								[
+									'icon'  => 'organization',
+									'label' => __( 'Staff', 'anwp-football-leagues' ),
+									'slug'  => 'anwp-fl-staff-metabox',
+								],
+							];
+
+							/**
+							 * Modify metabox nav items
+							 *
+							 * @since 0.12.6
+							 */
+							$nav_items = apply_filters( 'anwpfl/club/metabox_nav_items', $nav_items );
+
+							// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo anwp_football_leagues()->helper->create_metabox_navigation( $nav_items );
+
+							/**
+							 * Fires at the bottom of Metabox Nav.
+							 *
+							 * @since 0.12.6
+							 */
+							do_action( 'anwpfl/club/metabox_nav_bottom' );
+							?>
+						</ul>
+					</div>
+
+					<div class="flex-grow-1 anwp-min-width-0 mb-4">
+
+						<?php cmb2_metabox_form( 'anwp_club_info_metabox' ); ?>
+
+						<div id="anwpfl-app-squad"></div>
+
+						<?php
+						/**
+						 * Fires at the bottom of Metabox.
+						 *
+						 * @since 0.12.6
+						 */
+						do_action( 'anwpfl/club/metabox_bottom' );
+						?>
+					</div>
+				</div>
 			</div>
 		<?php else : ?>
 			<div class="anwp-b-wrap">
-				<div class="alert alert-warning mt-4" role="alert">
-					Please, create a season first.
+				<div class="anwp-border anwp-border-gray-500">
+					<div class="anwp-border-bottom anwp-border-gray-500 bg-white d-flex align-items-center px-3 py-2 anwp-text-gray-700 anwp-font-semibold">
+						<svg class="anwp-icon anwp-icon--octi anwp-icon--s16 mr-2 anwp-fill-current">
+							<use xlink:href="#icon-jersey"></use>
+						</svg>
+						<?php echo esc_html__( 'Club Squad', 'anwp-football-leagues' ); ?>
+					</div>
+
+					<div class="bg-white p-3">
+						<div class="alert alert-warning my-0" role="alert">
+							<?php echo esc_html__( 'Please, create a season first.', 'anwp-football-leagues' ); ?>
+						</div>
+					</div>
 				</div>
 			</div>
 			<?php
@@ -363,6 +534,16 @@ class AnWPFL_Club extends CPT_Core {
 			update_post_meta( $post_id, '_anwpfl_staff', wp_slash( $staff ) );
 		}
 
+		/**
+		 * Trigger on save club data.
+		 *
+		 * @param array $post_id
+		 * @param array $_POST
+		 *
+		 * @since 0.12.6
+		 */
+		do_action( 'anwpfl/club/on_save', $post_id, $_POST );
+
 		return $post_id;
 	}
 
@@ -381,13 +562,14 @@ class AnWPFL_Club extends CPT_Core {
 		 */
 		$cmb = new_cmb2_box(
 			[
-				'id'           => 'anwp_club_info_metabox',
-				'title'        => esc_html__( 'Club Info', 'anwp-football-leagues' ),
-				'object_types' => [ 'anwp_club' ], // Post type
-				'context'      => 'normal',
-				'priority'     => 'high',
-				'classes'      => 'anwp-b-wrap',
-				'show_names'   => true,
+				'id'              => 'anwp_club_info_metabox',
+				'object_types'    => [ 'anwp_club' ],
+				'context'         => 'advanced',
+				'priority'        => 'high',
+				'classes'         => 'anwp-b-wrap',
+				'save_button'     => '',
+				'show_names'      => true,
+				'remove_box_wrap' => true,
 			]
 		);
 
@@ -397,7 +579,13 @@ class AnWPFL_Club extends CPT_Core {
 				'name'       => esc_html__( 'Abbreviation', 'anwp-football-leagues' ),
 				'id'         => $prefix . 'abbr',
 				'type'       => 'text',
-				'before_row' => '<div id="anwp-tabs-general-club_metabox" class="anwp-metabox-tabs__content-item">',
+				'before_row' => anwp_football_leagues()->helper->create_metabox_header(
+					[
+						'icon'  => 'gear',
+						'label' => __( 'General', 'anwp-football-leagues' ),
+						'slug'  => 'anwp-fl-general-metabox',
+					]
+				),
 			]
 		);
 
@@ -448,10 +636,23 @@ class AnWPFL_Club extends CPT_Core {
 
 		$cmb->add_field(
 			[
-				'name'      => esc_html__( 'Founded', 'anwp-football-leagues' ),
-				'id'        => $prefix . 'founded',
-				'type'      => 'text',
-				'after_row' => '</div>',
+				'name' => esc_html__( 'Founded', 'anwp-football-leagues' ),
+				'id'   => $prefix . 'founded',
+				'type' => 'text',
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'      => esc_html__( 'National Team', 'anwp-football-leagues' ),
+				'id'        => $prefix . 'is_national_team',
+				'type'      => 'select',
+				'default'   => '',
+				'options'   => [
+					''    => esc_html__( 'no', 'anwp-football-leagues' ),
+					'yes' => esc_html__( 'yes', 'anwp-football-leagues' ),
+				],
+				'after_row' => '</div></div>',
 			]
 		);
 
@@ -461,7 +662,13 @@ class AnWPFL_Club extends CPT_Core {
 				'name'         => esc_html__( 'Logo Small', 'anwp-football-leagues' ),
 				'id'           => $prefix . 'logo',
 				'type'         => 'file',
-				'before_row'   => '<div id="anwp-tabs-media-club_metabox" class="anwp-metabox-tabs__content-item d-none">',
+				'before_row'   => anwp_football_leagues()->helper->create_metabox_header(
+					[
+						'icon'  => 'device-camera',
+						'label' => __( 'Media', 'anwp-football-leagues' ),
+						'slug'  => 'anwp-fl-media-metabox',
+					]
+				),
 				'options'      => [
 					'url' => false,
 				],
@@ -536,7 +743,7 @@ class AnWPFL_Club extends CPT_Core {
 				'name'      => esc_html__( 'Text below gallery', 'anwp-football-leagues' ),
 				'id'        => $prefix . 'gallery_notes',
 				'type'      => 'textarea_small',
-				'after_row' => '</div>',
+				'after_row' => '</div></div>',
 			]
 		);
 
@@ -549,7 +756,13 @@ class AnWPFL_Club extends CPT_Core {
 			[
 				'name'       => esc_html__( 'Twitter', 'anwp-football-leagues' ),
 				'id'         => $prefix . 'twitter',
-				'before_row' => '<div id="anwp-tabs-social-club_metabox" class="anwp-metabox-tabs__content-item d-none">',
+				'before_row' => anwp_football_leagues()->helper->create_metabox_header(
+					[
+						'icon'  => 'repo-forked',
+						'label' => __( 'Social', 'anwp-football-leagues' ),
+						'slug'  => 'anwp-fl-social-metabox',
+					]
+				),
 				'type'       => 'text_url',
 				'protocols'  => [ 'http', 'https' ],
 			]
@@ -575,11 +788,38 @@ class AnWPFL_Club extends CPT_Core {
 
 		$cmb->add_field(
 			[
+				'name'      => esc_html__( 'LinkedIn', 'anwp-football-leagues' ),
+				'id'        => $prefix . 'linkedin',
+				'type'      => 'text_url',
+				'protocols' => [ 'http', 'https' ],
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'      => esc_html__( 'TikTok', 'anwp-football-leagues' ),
+				'id'        => $prefix . 'tiktok',
+				'type'      => 'text_url',
+				'protocols' => [ 'http', 'https' ],
+			]
+		);
+
+		$cmb->add_field(
+			[
+				'name'      => esc_html__( 'VKontakte', 'anwp-football-leagues' ),
+				'id'        => $prefix . 'vk',
+				'type'      => 'text_url',
+				'protocols' => [ 'http', 'https' ],
+			]
+		);
+
+		$cmb->add_field(
+			[
 				'name'      => esc_html__( 'Instagram', 'anwp-football-leagues' ),
 				'id'        => $prefix . 'instagram',
 				'type'      => 'text_url',
 				'protocols' => [ 'http', 'https' ],
-				'after_row' => '</div>',
+				'after_row' => '</div></div>',
 			]
 		);
 
@@ -605,8 +845,14 @@ class AnWPFL_Club extends CPT_Core {
 				],
 				'show_names'      => false,
 				'sanitization_cb' => false,
-				'before_row'      => '<div id="anwp-tabs-desc-club_metabox" class="anwp-metabox-tabs__content-item d-none">',
-				'after_row'       => '</div>',
+				'before_row'      => anwp_football_leagues()->helper->create_metabox_header(
+					[
+						'icon'  => 'note',
+						'label' => __( 'Info', 'anwp-football-leagues' ),
+						'slug'  => 'anwp-fl-desc-metabox',
+					]
+				),
+				'after_row'       => '</div></div>',
 			]
 		);
 
@@ -619,7 +865,13 @@ class AnWPFL_Club extends CPT_Core {
 			[
 				'name'       => esc_html__( 'Title', 'anwp-football-leagues' ) . ' #1',
 				'id'         => $prefix . 'custom_title_1',
-				'before_row' => '<div id="anwp-tabs-custom_fields-club_metabox" class="anwp-metabox-tabs__content-item d-none">',
+				'before_row' => anwp_football_leagues()->helper->create_metabox_header(
+					[
+						'icon'  => 'server',
+						'label' => __( 'Custom Fields', 'anwp-football-leagues' ),
+						'slug'  => 'anwp-fl-custom_fields-metabox',
+					]
+				),
 				'type'       => 'text',
 			]
 		);
@@ -671,7 +923,7 @@ class AnWPFL_Club extends CPT_Core {
 				'id'          => $prefix . 'custom_fields',
 				'type'        => 'anwp_fl_custom_fields',
 				'option_slug' => 'club_custom_fields',
-				'after_row'   => '</div>',
+				'after_row'   => '</div></div>',
 				'before_row'  => '<hr>',
 			]
 		);
@@ -692,8 +944,14 @@ class AnWPFL_Club extends CPT_Core {
 					'quicktags'     => true, // load Quicktags, can be used to pass settings directly to Quicktags using an array()
 				],
 				'show_names' => false,
-				'before_row' => '<div id="anwp-tabs-bottom_content-club_metabox" class="anwp-metabox-tabs__content-item d-none">',
-				'after_row'  => '</div>',
+				'before_row' => anwp_football_leagues()->helper->create_metabox_header(
+					[
+						'icon'  => 'repo-push',
+						'label' => __( 'Bottom Content', 'anwp-football-leagues' ),
+						'slug'  => 'anwp-fl-bottom_content-metabox',
+					]
+				),
+				'after_row'  => '</div></div>',
 			]
 		);
 
@@ -755,7 +1013,7 @@ class AnWPFL_Club extends CPT_Core {
 	 * @since 0.2.0 (2018-01-20)
 	 * @return array $output_data -
 	 */
-	public function get_club_season_players( $data ) {
+	public function get_club_season_players( $data, $output = '' ) {
 
 		$output_data = [];
 
@@ -777,6 +1035,10 @@ class AnWPFL_Club extends CPT_Core {
 
 		if ( ! empty( $squad_all->{'s:' . $season_id} ) ) {
 			$output_data = $squad_all->{'s:' . $season_id};
+
+			if ( 'short' === $output ) {
+				return $output_data;
+			}
 
 			// Prepare players cache
 			anwp_football_leagues()->player->prepare_squad_players_cache( $output_data );
@@ -857,6 +1119,36 @@ class AnWPFL_Club extends CPT_Core {
 	}
 
 	/**
+	 * Helper function, returns national Teams map with id and title
+	 *
+	 * @since 0.12.2
+	 * @return array $output_data - Array of clubs data (id => title)
+	 */
+	public function get_national_team_options() {
+
+		static $options = null;
+
+		if ( null === $options ) {
+			global $wpdb;
+
+			$clubs = $wpdb->get_results(
+				"
+				SELECT m.post_id, p.post_title
+				FROM $wpdb->postmeta m
+				LEFT JOIN $wpdb->posts p ON m.post_id = p.ID
+				WHERE m.meta_key = '_anwpfl_is_national_team' AND m.meta_value = 'yes'
+				"
+			);
+
+			foreach ( $clubs as $club ) {
+				$options[ $club->post_id ] = $club->post_title;
+			}
+		}
+
+		return $options;
+	}
+
+	/**
 	 * Helper function to cache clubs data.
 	 *
 	 * @since 0.7.5
@@ -864,9 +1156,21 @@ class AnWPFL_Club extends CPT_Core {
 	private function cache_clubs_data() {
 
 		if ( null === self::$clubs_map || null === self::$clubs_links ) {
+
+			global $wpdb;
+
 			$map_abbr   = [];
 			$map_data   = [];
 			$links_data = [];
+
+			$club_abbrs = $wpdb->get_results(
+				"
+				SELECT post_id, meta_value
+				FROM $wpdb->postmeta
+				WHERE meta_key = '_anwpfl_abbr' AND meta_value != ''
+				",
+				OBJECT_K
+			);
 
 			$all_clubs = get_posts(
 				[
@@ -876,14 +1180,15 @@ class AnWPFL_Club extends CPT_Core {
 					'post_status'      => 'publish',
 					'order'            => 'ASC',
 					'orderby'          => 'title',
+					'cache_results'    => false,
 				]
 			);
 
 			/** @var WP_Post $club */
 			foreach ( $all_clubs as $club ) {
 				$map_data[ $club->ID ]   = $club->post_title;
-				$map_abbr[ $club->ID ]   = $club->_anwpfl_abbr ?: $club->post_title;
-				$links_data[ $club->ID ] = get_permalink( $club->ID );
+				$map_abbr[ $club->ID ]   = empty( $club_abbrs[ $club->ID ]->meta_value ) ? $club->post_title : $club_abbrs[ $club->ID ]->meta_value;
+				$links_data[ $club->ID ] = get_permalink( $club );
 			}
 
 			self::$clubs_map   = $map_data;
@@ -1281,74 +1586,6 @@ class AnWPFL_Club extends CPT_Core {
 	}
 
 	/**
-	 * Renders tabs for metabox. Helper HTML before.
-	 *
-	 * @since 0.9.0
-	 */
-	public function cmb2_before_metabox() {
-		// @formatter:off
-		ob_start();
-		?>
-		<div class="anwp-b-wrap">
-			<div class="anwp-metabox-tabs d-sm-flex">
-				<div class="anwp-metabox-tabs__controls d-flex flex-sm-column flex-wrap">
-					<div class="p-3 anwp-metabox-tabs__control-item" data-target="#anwp-tabs-general-club_metabox">
-						<svg class="anwp-icon anwp-icon--octi d-inline-block"><use xlink:href="#icon-gear"></use></svg>
-						<span class="d-block"><?php echo esc_html__( 'General', 'anwp-football-leagues' ); ?></span>
-					</div>
-					<div class="p-3 anwp-metabox-tabs__control-item" data-target="#anwp-tabs-media-club_metabox">
-						<svg class="anwp-icon anwp-icon--octi d-inline-block"><use xlink:href="#icon-device-camera"></use></svg>
-						<span class="d-block"><?php echo esc_html__( 'Media', 'anwp-football-leagues' ); ?></span>
-					</div>
-					<div class="p-3 anwp-metabox-tabs__control-item" data-target="#anwp-tabs-social-club_metabox">
-						<svg class="anwp-icon anwp-icon--octi d-inline-block"><use xlink:href="#icon-repo-forked"></use></svg>
-						<span class="d-block"><?php echo esc_html__( 'Social', 'anwp-football-leagues' ); ?></span>
-					</div>
-					<div class="p-3 anwp-metabox-tabs__control-item" data-target="#anwp-tabs-desc-club_metabox">
-						<svg class="anwp-icon anwp-icon--octi d-inline-block"><use xlink:href="#icon-note"></use></svg>
-						<span class="d-block"><?php echo esc_html__( 'Info', 'anwp-football-leagues' ); ?></span>
-					</div>
-					<div class="p-3 anwp-metabox-tabs__control-item" data-target="#anwp-tabs-custom_fields-club_metabox">
-						<svg class="anwp-icon anwp-icon--octi d-inline-block"><use xlink:href="#icon-server"></use></svg>
-						<span class="d-block"><?php echo esc_html__( 'Custom Fields', 'anwp-football-leagues' ); ?></span>
-					</div>
-					<div class="p-3 anwp-metabox-tabs__control-item" data-target="#anwp-tabs-bottom_content-club_metabox">
-						<svg class="anwp-icon anwp-icon--octi d-inline-block"><use xlink:href="#icon-repo-push"></use></svg>
-						<span class="d-block"><?php echo esc_html__( 'Bottom Content', 'anwp-football-leagues' ); ?></span>
-					</div>
-					<?php
-					/**
-					 * Fires in the bottom of club tabs.
-					 *
-					 * @since 0.9.0
-					 */
-					do_action( 'anwpfl/cmb2_tabs_control/club' );
-					?>
-				</div>
-				<div class="anwp-metabox-tabs__content pl-4 pb-4">
-		<?php
-		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		// @formatter:on
-	}
-
-	/**
-	 * Renders tabs for metabox. Helper HTML after.
-	 *
-	 * @since 0.9.0
-	 */
-	public function cmb2_after_metabox() {
-		// @formatter:off
-		ob_start();
-		?>
-				</div>
-			</div>
-		</div>
-		<?php
-		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		// @formatter:on
-	}
-
-	/**
 	 * Get Club abbr by id
 	 *
 	 * @param int $club_id - Club id
@@ -1372,5 +1609,22 @@ class AnWPFL_Club extends CPT_Core {
 		$clubs_options = self::$abbr_map;
 
 		return empty( $clubs_options[ $club_id ] ) ? '' : $clubs_options[ $club_id ];
+	}
+
+	/**
+	 * Check national team
+	 *
+	 * @param int $club_id - Club id
+	 *
+	 * @return bool
+	 * @since 0.13.2
+	 */
+	public function is_national_team( $club_id ) {
+
+		if ( ! absint( $club_id ) ) {
+			return false;
+		}
+
+		return 'yes' === get_post_meta( $club_id, '_anwpfl_is_national_team', true );
 	}
 }

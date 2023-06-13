@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.8.3
  *
- * @version       0.11.13
+ * @version       0.13.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -30,6 +30,9 @@ $data = (object) wp_parse_args(
 		'youtube'       => '',
 		'facebook'      => '',
 		'instagram'     => '',
+		'linkedin'      => '',
+		'tiktok'        => '',
+		'vk'            => '',
 	]
 );
 
@@ -43,13 +46,19 @@ $player->place_of_birth   = get_post_meta( $data->player_id, '_anwpfl_place_of_b
 $player->country_of_birth = get_post_meta( $data->player_id, '_anwpfl_country_of_birth', true );
 $player->nationality      = maybe_unserialize( get_post_meta( $data->player_id, '_anwpfl_nationality', true ) );
 $player->birth_date       = get_post_meta( $data->player_id, '_anwpfl_date_of_birth', true );
+$player->death_date       = get_post_meta( $data->player_id, '_anwpfl_date_of_death', true );
 $player->full_name        = get_post_meta( $data->player_id, '_anwpfl_full_name', true );
+$player->club_id          = get_post_meta( $data->player_id, '_anwpfl_current_club', true );
+$player->national_team    = get_post_meta( $data->player_id, '_anwpfl_national_team', true );
 
 // Socials
 $player->twitter   = get_post_meta( $data->player_id, '_anwpfl_twitter', true );
 $player->youtube   = get_post_meta( $data->player_id, '_anwpfl_youtube', true );
 $player->facebook  = get_post_meta( $data->player_id, '_anwpfl_facebook', true );
 $player->instagram = get_post_meta( $data->player_id, '_anwpfl_instagram', true );
+$player->vk        = get_post_meta( $data->player_id, '_anwpfl_vk', true );
+$player->linkedin  = get_post_meta( $data->player_id, '_anwpfl_linkedin', true );
+$player->tiktok    = get_post_meta( $data->player_id, '_anwpfl_tiktok', true );
 
 // Check position translation
 $translated_position = '';
@@ -129,10 +138,37 @@ do_action( 'anwpfl/tmpl-player/before_header', $player, $data );
 					</tr>
 				<?php endif; ?>
 
-				<?php if ( $data->club_title ) : ?>
+				<?php
+				if ( $player->national_team && anwp_football_leagues()->club->get_club_title_by_id( $player->national_team ) && anwp_football_leagues()->club->is_national_team( $player->national_team ) ) :
+					$club_logo = anwp_football_leagues()->club->get_club_logo_by_id( $player->national_team );
+					?>
+					<tr data-fl-option="national_team_title">
+						<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'player__header__national_team', __( 'National Team', 'anwp-football-leagues' ) ) ); ?></th>
+						<td class="options-list__value">
+							<div class="d-flex align-items-center">
+								<?php if ( $club_logo ) : ?>
+									<img class="anwp-w-30 anwp-h-30 mr-2 anwp-object-contain" src="<?php echo esc_attr( $club_logo ); ?>" alt="club logo">
+								<?php endif; ?>
+								<a class="anwp-leading-1-25" href="<?php echo esc_url( anwp_football_leagues()->club->get_club_link_by_id( $player->national_team ) ); ?>"><?php echo esc_html( anwp_football_leagues()->club->get_club_title_by_id( $player->national_team ) ); ?></a>
+							</div>
+						</td>
+					</tr>
+				<?php endif; ?>
+
+				<?php
+				if ( $player->club_id && anwp_football_leagues()->club->get_club_title_by_id( $player->club_id ) ) :
+					$club_logo = anwp_football_leagues()->club->get_club_logo_by_id( $player->club_id );
+					?>
 					<tr data-fl-option="club_title">
 						<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'player__header__current_club', __( 'Current Club', 'anwp-football-leagues' ) ) ); ?></th>
-						<td class="options-list__value"><a href="<?php echo esc_url( $data->club_link ); ?>"><?php echo esc_html( $data->club_title ); ?></a></td>
+						<td class="options-list__value">
+							<div class="d-flex align-items-center">
+								<?php if ( $club_logo ) : ?>
+									<img class="anwp-w-30 anwp-h-30 mr-2 anwp-object-contain" src="<?php echo esc_attr( $club_logo ); ?>" alt="club logo">
+								<?php endif; ?>
+								<a class="anwp-leading-1-25" href="<?php echo esc_url( anwp_football_leagues()->club->get_club_link_by_id( $player->club_id ) ); ?>"><?php echo esc_html( anwp_football_leagues()->club->get_club_title_by_id( $player->club_id ) ); ?></a>
+							</div>
+						</td>
 					</tr>
 				<?php endif; ?>
 
@@ -168,16 +204,36 @@ do_action( 'anwpfl/tmpl-player/before_header', $player, $data );
 						<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'player__header__date_of_birth', __( 'Date Of Birth', 'anwp-football-leagues' ) ) ); ?></th>
 						<td class="options-list__value"><?php echo esc_html( date_i18n( get_option( 'date_format' ), strtotime( $player->birth_date ) ) ); ?></td>
 					</tr>
-
 					<?php
-					$birth_date_obj = DateTime::createFromFormat( 'Y-m-d', $player->birth_date );
-					$interval       = $birth_date_obj ? $birth_date_obj->diff( new DateTime() )->y : '-';
-					?>
-					<tr data-fl-option="age">
-						<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'player__header__age', __( 'Age', 'anwp-football-leagues' ) ) ); ?></th>
-						<td class="options-list__value"><?php echo esc_html( $interval ); ?></td>
-					</tr>
+					if ( ! $player->death_date ) :
+						$birth_date_obj = DateTime::createFromFormat( 'Y-m-d', $player->birth_date );
+						$interval       = $birth_date_obj ? $birth_date_obj->diff( new DateTime() )->y : '-';
+						?>
+						<tr data-fl-option="age">
+							<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'player__header__age', __( 'Age', 'anwp-football-leagues' ) ) ); ?></th>
+							<td class="options-list__value"><?php echo esc_html( $interval ); ?></td>
+						</tr>
+					<?php endif; ?>
+				<?php endif; ?>
 
+				<?php
+				if ( $player->death_date ) :
+
+					$death_age = '';
+
+					if ( $player->birth_date ) {
+						$birth_date_obj = DateTime::createFromFormat( 'Y-m-d', $player->birth_date );
+						$death_age      = $birth_date_obj ? $birth_date_obj->diff( DateTime::createFromFormat( 'Y-m-d', $player->death_date ) )->y : '-';
+					}
+
+					?>
+					<tr data-fl-option="death_date">
+						<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'player__header__date_of_death', __( 'Date Of Death', 'anwp-football-leagues' ) ) ); ?></th>
+						<td class="options-list__value">
+							<?php echo esc_html( date_i18n( get_option( 'date_format' ), strtotime( $player->death_date ) ) ); ?>
+							<?php echo intval( $death_age ) ? ( ' (' . intval( $death_age ) . ')' ) : ''; ?>
+						</td>
+					</tr>
 				<?php endif; ?>
 
 				<?php if ( $player->weight ) : ?>
@@ -229,7 +285,7 @@ do_action( 'anwpfl/tmpl-player/before_header', $player, $data );
 				}
 				?>
 
-				<?php if ( $player->twitter || $player->facebook || $player->youtube || $player->instagram ) : ?>
+				<?php if ( $player->twitter || $player->facebook || $player->youtube || $player->instagram || $player->vk || $player->linkedin || $player->tiktok ) : ?>
 					<tr>
 						<th scope="row" class="options-list__term"><?php echo esc_html( AnWPFL_Text::get_value( 'club__header__social', __( 'Social', 'anwp-football-leagues' ) ) ); ?></th>
 						<td class="options-list__value">
@@ -258,6 +314,27 @@ do_action( 'anwpfl/tmpl-player/before_header', $player, $data );
 								<a href="<?php echo esc_url( $player->instagram ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
 									<svg class="anwp-icon anwp-icon--s24">
 										<use xlink:href="#icon-instagram"></use>
+									</svg>
+								</a>
+							<?php endif; ?>
+							<?php if ( $player->linkedin ) : ?>
+								<a href="<?php echo esc_url( $player->linkedin ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
+									<svg class="anwp-icon anwp-icon--s24">
+										<use xlink:href="#icon-linkedin"></use>
+									</svg>
+								</a>
+							<?php endif; ?>
+							<?php if ( $player->tiktok ) : ?>
+								<a href="<?php echo esc_url( $player->tiktok ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
+									<svg class="anwp-icon anwp-icon--s24">
+										<use xlink:href="#icon-tiktok"></use>
+									</svg>
+								</a>
+							<?php endif; ?>
+							<?php if ( $player->vk ) : ?>
+								<a href="<?php echo esc_url( $player->vk ); ?>" class="anwp-link-without-effects ml-1 d-inline-block" target="_blank">
+									<svg class="anwp-icon anwp-icon--s24">
+										<use xlink:href="#icon-vk"></use>
 									</svg>
 								</a>
 							<?php endif; ?>

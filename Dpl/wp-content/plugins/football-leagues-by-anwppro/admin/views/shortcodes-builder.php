@@ -12,8 +12,20 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-?>
 
+/**
+ * Get all core shortcode options.
+ *
+ * @param array $data Options
+ *
+ * @since 0.12.7
+ */
+$available_core_shortcodes = apply_filters( 'anwpfl/shortcode/get_shortcode_options', [] );
+
+if ( ! empty( $available_core_shortcodes ) && is_array( $available_core_shortcodes ) ) {
+	asort( $available_core_shortcodes );
+}
+?>
 <div class="anwp-b-wrap">
 	<div class="inside p-3" style="max-width: 800px;">
 		<h1 class="mb-4"><?php echo esc_html__( 'Shortcode Builder', 'anwp-football-leagues' ); ?></h1>
@@ -22,17 +34,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<label for="anwp-shortcode-builder__selector"><?php echo esc_html__( 'Shortcode', 'anwp-football-leagues' ); ?></label>
 			<select id="anwp-shortcode-builder__selector" class="mx-2">
 				<option value="">- <?php echo esc_html__( 'select', 'anwp-football-leagues' ); ?> -</option>
-				<option value="cards"><?php echo esc_html__( 'Cards', 'anwp-football-leagues' ); ?></option>
-				<option value="competition-header"><?php echo esc_html__( 'Competition Header', 'anwp-football-leagues' ); ?></option>
-				<option value="clubs"><?php echo esc_html__( 'Clubs', 'anwp-football-leagues' ); ?></option>
-				<option value="match"><?php echo esc_html__( 'Match', 'anwp-football-leagues' ); ?></option>
-				<option value="matches"><?php echo esc_html__( 'Matches', 'anwp-football-leagues' ); ?></option>
-				<option value="player"><?php echo esc_html__( 'Player Card', 'anwp-football-leagues' ); ?></option>
-				<option value="player-data"><?php echo esc_html__( 'Player Data', 'anwp-football-leagues' ); ?></option>
-				<option value="players"><?php echo esc_html__( 'Players', 'anwp-football-leagues' ); ?></option>
-				<option value="squad"><?php echo esc_html__( 'Squad', 'anwp-football-leagues' ); ?></option>
-				<option value="standing"><?php echo esc_html__( 'Standing Table', 'anwp-football-leagues' ); ?></option>
-				<?php
+
+				<?php foreach ( $available_core_shortcodes as $shortcode_slug => $shortcode_name ) : ?>
+					<option value="<?php echo esc_attr( $shortcode_slug ); ?>"><?php echo esc_html( $shortcode_name ); ?></option>
+					<?php
+				endforeach;
+
 				/**
 				 * Hook: anwpfl/shortcodes/selector_bottom
 				 *

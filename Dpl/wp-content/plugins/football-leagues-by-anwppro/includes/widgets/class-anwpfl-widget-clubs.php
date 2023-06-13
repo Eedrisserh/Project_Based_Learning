@@ -63,12 +63,11 @@ class AnWPFL_Widget_Clubs extends AnWPFL_Widget {
 				'default' => esc_html_x( 'Clubs', 'widget default title', 'anwp-football-leagues' ),
 			],
 			[
-				'id'         => 'competition_id',
-				'type'       => 'select',
-				'label'      => esc_html__( 'Competition', 'anwp-football-leagues' ),
-				'show_empty' => esc_html__( '- select competition -', 'anwp-football-leagues' ),
-				'default'    => '',
-				'options_cb' => [ anwp_football_leagues()->competition, 'get_competition_options' ],
+				'id'      => 'competition_id',
+				'type'    => 'competition_id',
+				'default' => '',
+				'label'   => esc_html__( 'Competition ID', 'anwp-football-leagues' ),
+				'single'  => 'yes',
 			],
 			[
 				'id'      => 'logo_size',

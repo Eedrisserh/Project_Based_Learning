@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.10.9
  *
- * @version       0.10.23
+ * @version       0.13.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,6 +35,8 @@ if ( empty( $gallery ) || ! is_array( $gallery ) ) {
 	return;
 }
 
+$gallery_alts = anwp_football_leagues()->data->get_image_alt( array_keys( $gallery ) );
+
 /**
  * Hook: anwpfl/tmpl-player/before_gallery
  *
@@ -51,8 +53,8 @@ do_action( 'anwpfl/tmpl-player/before_gallery', $player );
 	<?php endif; ?>
 
 	<div class="anwpfl-not-ready-0 anwp-justified-gallery" id="player__gallery" data-featherlight-gallery data-featherlight-filter="a">
-		<?php foreach ( $gallery as $image ) : ?>
-			<a href="<?php echo esc_attr( $image ); ?>"><img src="<?php echo esc_url( $image ); ?>" alt=""></a>
+		<?php foreach ( $gallery as $image_id => $image ) : ?>
+			<a href="<?php echo esc_attr( $image ); ?>"><img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( isset( $gallery_alts[ $image_id ] ) ? $gallery_alts[ $image_id ] : '' ); ?>"></a>
 		<?php endforeach; ?>
 	</div>
 

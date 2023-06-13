@@ -33,22 +33,24 @@ spl_autoload_register( 'anwp_football_leagues_autoload_classes' );
 /**
  * Main initiation class.
  *
- * @property-read AnWPFL_Club        $club
- * @property-read AnWPFL_Competition $competition
- * @property-read AnWPFL_Data        $data
- * @property-read AnWPFL_Helper      $helper
- * @property-read AnWPFL_League      $league
- * @property-read AnWPFL_Match       $match
- * @property-read AnWPFL_Options     $options
- * @property-read AnWPFL_Player      $player
- * @property-read AnWPFL_Season      $season
- * @property-read AnWPFL_Staff       $staff
- * @property-read AnWPFL_Referee     $referee
- * @property-read AnWPFL_Standing    $standing
- * @property-read AnWPFL_Stadium     $stadium
- * @property-read AnWPFL_Template    $template
- * @property-read AnWPFL_Text        $text
- * @property-read string             $path     Path of plugin directory
+ * @property-read AnWPFL_Club           $club
+ * @property-read AnWPFL_Competition    $competition
+ * @property-read AnWPFL_Data           $data
+ * @property-read AnWPFL_Health         $health
+ * @property-read AnWPFL_Helper         $helper
+ * @property-read AnWPFL_League         $league
+ * @property-read AnWPFL_Match          $match
+ * @property-read AnWPFL_Options        $options
+ * @property-read AnWPFL_Player         $player
+ * @property-read AnWPFL_Season         $season
+ * @property-read AnWPFL_Staff          $staff
+ * @property-read AnWPFL_Referee        $referee
+ * @property-read AnWPFL_Standing       $standing
+ * @property-read AnWPFL_Stadium        $stadium
+ * @property-read AnWPFL_Template       $template
+ * @property-read AnWPFL_Text           $text
+ * @property-read AnWPFL_Text_Countries $text_countries
+ * @property-read string                $path     Path of plugin directory
  *
  * @since  0.1.0
  */
@@ -60,7 +62,7 @@ final class AnWP_Football_Leagues {
 	 * @var    string
 	 * @since  0.1.0
 	 */
-	const VERSION = '0.11.13';
+	const VERSION = '0.13.2';
 
 	/**
 	 * Current DB structure version.
@@ -177,6 +179,14 @@ final class AnWP_Football_Leagues {
 	protected $stadium;
 
 	/**
+	 * Instance of AnWPFL_Health
+	 *
+	 * @since 0.13.2
+	 * @var AnWPFL_Health
+	 */
+	protected $health;
+
+	/**
 	 * Instance of AnWPFL_Helper
 	 *
 	 * @since 0.2.0
@@ -223,6 +233,14 @@ final class AnWP_Football_Leagues {
 	 * @var AnWPFL_Text
 	 */
 	protected $text;
+
+	/**
+	 * Instance of AnWPFL_Text_Countries
+	 *
+	 * @since 0.12.3
+	 * @var AnWPFL_Text_Countries
+	 */
+	protected $text_countries;
 
 	/**
 	 * Instance of AnWPFL_Data
@@ -323,10 +341,12 @@ final class AnWP_Football_Leagues {
 		$this->standing    = new AnWPFL_Standing( $this );
 
 		// Others
-		$this->data     = new AnWPFL_Data( $this );
-		$this->helper   = new AnWPFL_Helper( $this );
-		$this->template = new AnWPFL_Template( $this );
-		$this->text     = new AnWPFL_Text( $this );
+		$this->data           = new AnWPFL_Data( $this );
+		$this->helper         = new AnWPFL_Helper( $this );
+		$this->health         = new AnWPFL_Health( $this );
+		$this->template       = new AnWPFL_Template( $this );
+		$this->text           = new AnWPFL_Text( $this );
+		$this->text_countries = new AnWPFL_Text_Countries( $this );
 
 		// Shortcodes
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode.php' );
@@ -337,10 +357,15 @@ final class AnWP_Football_Leagues {
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-match.php' );
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-squad.php' );
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-competition-header.php' );
+		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-competition-list.php' );
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-players.php' );
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-cards.php' );
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-player.php' );
+		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-staff.php' );
+		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-referee.php' );
 		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-player-data.php' );
+		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-match-next.php' );
+		require self::dir( 'includes/shortcodes/class-anwpfl-shortcode-match-last.php' );
 
 	} // END OF PLUGIN CLASSES FUNCTION
 
@@ -385,6 +410,13 @@ final class AnWP_Football_Leagues {
 		 * @since 0.2.0 (2017-10-28)
 		 */
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_enqueue_scripts' ] );
+
+		/**
+		 * Enqueue admin scripts in Elementor
+		 *
+		 * @since 0.12.7
+		 */
+		add_action( 'elementor/editor/after_enqueue_styles', [ $this, 'admin_enqueue_scripts_elementor' ] );
 
 		/**
 		 * Add svg icons to the footer
@@ -935,7 +967,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 		|--------------------------------------------------------------------------
 		*/
 		$submenu_pages = [
-			'tutorials'  => [
+			'tutorials'     => [
 				'parent_slug' => 'anwp-football-leagues',
 				'page_title'  => esc_html__( 'Documentation', 'anwp-football-leagues' ),
 				'menu_title'  => esc_html__( 'Documentation', 'anwp-football-leagues' ),
@@ -943,7 +975,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 				'menu_slug'   => 'anwp-football-leagues',
 				'output_func' => '',
 			],
-			'shortcodes' => [
+			'shortcodes'    => [
 				'parent_slug' => 'anwp-football-leagues',
 				'page_title'  => esc_html__( 'Shortcodes', 'anwp-football-leagues' ),
 				'menu_title'  => esc_html__( 'Shortcodes', 'anwp-football-leagues' ),
@@ -951,15 +983,23 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 				'menu_slug'   => 'anwpfl-shortcodes',
 				'output_func' => [ $this, 'render_shortcode_page' ],
 			],
-			'support'    => [
+			'support'       => [
 				'parent_slug' => 'anwp-football-leagues',
 				'page_title'  => esc_html__( 'Support', 'anwp-football-leagues' ),
 				'menu_title'  => esc_html__( 'Support', 'anwp-football-leagues' ),
 				'capability'  => 'manage_options',
-				'menu_slug'   => 'support',
+				'menu_slug'   => 'anwpfl-support',
 				'output_func' => [ $this, 'render_support_page' ],
 			],
-			'premium'    => [
+			'plugin-health' => [
+				'parent_slug' => 'anwp-football-leagues',
+				'page_title'  => esc_html__( 'Plugin Health', 'anwp-football-leagues' ),
+				'menu_title'  => esc_html__( 'Plugin Health', 'anwp-football-leagues' ),
+				'capability'  => 'manage_options',
+				'menu_slug'   => 'anwpfl-plugin-health',
+				'output_func' => [ $this, 'render_health_page' ],
+			],
+			'premium'       => [
 				'parent_slug' => 'anwp-football-leagues',
 				'page_title'  => '',
 				'menu_title'  => '<span style="color: #fd7e14">' . esc_html__( 'Go Premium', 'anwp-football-leagues' ) . '</span>',
@@ -1073,6 +1113,21 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 		}
 
 		self::include_file( 'admin/views/support' );
+	}
+
+	/**
+	 * Rendering Plugin Health Page
+	 *
+	 * @since 0.13.2
+	 */
+	public function render_health_page() {
+
+		//must check that the user has the required capability
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'anwp-football-leagues' ) );
+		}
+
+		self::include_file( 'admin/views/plugin-health' );
 	}
 
 	/**
@@ -1295,11 +1350,11 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 				<h3 style="margin: 0">AnWP Selector: <span id="anwp-fl-selector-modaal__header-context"></span></h3>
 			</div>
 			<div class="anwpfl-shortcode-modal__content" id="anwp-fl-selector-modaal__search-bar">
-				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--player anwp-fl-selector-modaal__bar-group--club anwp-mr-2 anwp-mt-2">
+				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--player anwp-fl-selector-modaal__bar-group--staff anwp-fl-selector-modaal__bar-group--referee anwp-fl-selector-modaal__bar-group--club anwp-fl-selector-modaal__bar-group--competition anwp-fl-selector-modaal__bar-group--league anwp-fl-selector-modaal__bar-group--season anwp-mr-2 anwp-mt-2">
 					<label for="anwp-fl-selector-modaal__search"><?php echo esc_html__( 'start typing name or title ...', 'anwp-football-leagues' ); ?></label>
 					<input name="s" type="text" id="anwp-fl-selector-modaal__search" value="" class="fl-shortcode-attr code">
 				</div>
-				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--player anwp-mr-2 anwp-mt-2">
+				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--player anwp-fl-selector-modaal__bar-group--staff anwp-mr-2 anwp-mt-2">
 					<label for="anwp-fl-selector-modaal__search-club"><?php echo esc_html__( 'Club', 'anwp-football-leagues' ); ?></label>
 					<select name="clubs" id="anwp-fl-selector-modaal__search-club" class="anwp-selector-select2">
 						<option value="">- select -</option>
@@ -1317,13 +1372,25 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 						<option value="">- select -</option>
 					</select>
 				</div>
-				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--match anwp-mr-2 anwp-mt-2">
+				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--match anwp-fl-selector-modaal__bar-group--competition anwp-mr-2 anwp-mt-2">
 					<label for="anwp-fl-selector-modaal__search-season"><?php echo esc_html__( 'Season', 'anwp-football-leagues' ); ?></label>
 					<select name="seasons" id="anwp-fl-selector-modaal__search-season" class="anwp-selector-select2">
 						<option value="">- select -</option>
 					</select>
 				</div>
-				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--player anwp-fl-selector-modaal__bar-group--club anwp-mr-2 anwp-mt-2">
+				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--competition anwp-mr-2 anwp-mt-2">
+					<label for="anwp-fl-selector-modaal__search-league"><?php echo esc_html__( 'League', 'anwp-football-leagues' ); ?></label>
+					<select name="leagues" id="anwp-fl-selector-modaal__search-league" class="anwp-selector-select2">
+						<option value="">- select -</option>
+					</select>
+				</div>
+				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--competition anwp-mr-2 anwp-mt-2">
+					<label for="anwp-fl-selector-modaal__stages">
+						<input type="checkbox" id="anwp-fl-selector-modaal__stages" value="yes">
+						<?php echo esc_html__( 'Include secondary stages', 'anwp-football-leagues' ); ?>
+					</label>
+				</div>
+				<div class="anwp-fl-selector-modaal__bar-group d-none anwp-fl-selector-modaal__bar-group--player anwp-fl-selector-modaal__bar-group--referee anwp-fl-selector-modaal__bar-group--club anwp-mr-2 anwp-mt-2">
 					<label for="anwp-fl-selector-modaal__search-country"><?php echo esc_html__( 'Country/Nationality', 'anwp-football-leagues' ); ?></label>
 					<select name="countries" id="anwp-fl-selector-modaal__search-country" class="anwp-selector-select2">
 						<option value="">- select -</option>
@@ -1462,8 +1529,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 		|--------------------------------------------------------------------------
 		*/
 		if ( apply_filters( 'anwpfl/config/load_justified_gallery', true ) && is_singular( [ 'anwp_stadium', 'anwp_club', 'anwp_player', 'anwp_match' ] ) ) {
-			wp_enqueue_style( 'anwpfl_justified_gallery', self::url( 'vendor/justified-gallery/justifiedGallery.min.css' ), [], '3.7.0' );
-			wp_enqueue_script( 'anwpfl_justified_gallery', self::url( 'vendor/justified-gallery/jquery.justifiedGallery.min.js' ), [ 'jquery' ], '3.7.0', true );
+			wp_enqueue_script( 'anwpfl_justified_gallery', self::url( 'vendor/justified-gallery/jquery.justifiedGallery.min.js' ), [ 'jquery' ], '3.8.1', true );
 		}
 
 		/*
@@ -1567,6 +1633,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 				'countries'    => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->data->cb_get_countries() ),
 				'clubs'        => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->club->get_clubs_options() ),
 				'seasons'      => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->season->get_seasons_options() ),
+				'leagues'      => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->league->get_league_options() ),
 			]
 		);
 
@@ -1611,6 +1678,10 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 			'settings-tools_page_anwp_fl_text',
 			$page_settings_prefix . '_page_anwp_fl_text',
 
+			// Countries page
+			'settings-tools_page_anwp_fl_text_countries',
+			$page_settings_prefix . '_page_anwp_fl_text_countries',
+
 			// Tools page
 			'settings-tools_page_anwp-settings-tools',
 			$page_settings_prefix . '_page_anwp-settings-tools',
@@ -1626,6 +1697,10 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 			// Shortcodes page
 			'football-leagues_page_anwpfl-shortcodes',
 			$page_prefix . '_page_anwpfl-shortcodes',
+
+			// Plugin Health
+			'football-leagues_page_anwpfl-plugin-health',
+			$page_prefix . '_page_anwpfl-plugin-health',
 
 			// Match Admin List
 			'edit-anwp_match',
@@ -1646,6 +1721,8 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 		// Load Common files
 		if ( in_array( $current_screen->id, $plugin_pages, true ) ) {
 
+			wp_enqueue_media();
+
 			/*
 			|--------------------------------------------------------------------------
 			| CSS Styles
@@ -1663,6 +1740,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 			|--------------------------------------------------------------------------
 			*/
 			wp_enqueue_style( 'anwpfl_flags', self::url( 'vendor/world-flags-sprite/stylesheets/flags32.css' ), [], self::VERSION );
+			wp_enqueue_style( 'anwpfl_flags_16', self::url( 'vendor/world-flags-sprite/stylesheets/flags16.css' ), [], self::VERSION );
 
 			/*
 			|--------------------------------------------------------------------------
@@ -1678,7 +1756,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 			|--------------------------------------------------------------------------
 			*/
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-			wp_enqueue_script( 'vuejs', self::url( 'vendor/vuejs/vue' . $suffix . '.js' ), [], '2.6.12', false );
+			wp_enqueue_script( 'vuejs', self::url( 'vendor/vuejs/vue' . $suffix . '.js' ), [], '2.6.14', false );
 
 			/*
 			|--------------------------------------------------------------------------
@@ -1741,10 +1819,6 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 					'admin_url'    => admin_url(),
 					'clubs_map'    => $this->club->get_clubs_options(),
 					'seasons_list' => $this->season->get_seasons_list(),
-					'competitions' => $this->competition->get_competitions(),
-					'main_stages'  => $this->competition->get_main_competition_options(),
-					'staff'        => $this->staff->get_staff_list(),
-					'referee'      => $this->referee->get_referee_list(),
 					'positions'    => $this->data->get_positions(),
 					'activeSeason' => $this->get_active_season(),
 				]
@@ -1775,16 +1849,16 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 
 		/*
 		|--------------------------------------------------------------------------
-		| jExcel
+		| Jspreadsheet CE (jExcel)
 		| * Author: Paul Hodel <paul.hodel@gmail.com>
-		| * Website: https://bossanova.uk/jexcel/
+		| * Website: https://github.com/jspreadsheet/ce
 		| * MIT License
 		|--------------------------------------------------------------------------
 		*/
-		wp_enqueue_style( 'jexcel-v4', self::url( 'vendor/jexcel/jexcel.css' ), [], '4.2.1' );
-		wp_enqueue_script( 'jexcel-v4', self::url( 'vendor/jexcel/jexcel.js' ), [ 'jexcel-suites-v4' ], '4.2.1', true );
-		wp_enqueue_style( 'jexcel-suites-v4', self::url( 'vendor/jexcel/jsuites.css' ), [], '3.0' );
-		wp_enqueue_script( 'jexcel-suites-v4', self::url( 'vendor/jexcel/jsuites.js' ), [], '3.0', true );
+		wp_enqueue_style( 'jexcel-v4', self::url( 'vendor/jexcel/jexcel.css' ), [], '4.7.5' );
+		wp_enqueue_script( 'jexcel-v4', self::url( 'vendor/jexcel/jexcel.js' ), [ 'jexcel-suites-v4' ], '4.7.5', true );
+		wp_enqueue_style( 'jexcel-suites-v4', self::url( 'vendor/jexcel/jsuites.css' ), [], '4.7.3' );
+		wp_enqueue_script( 'jexcel-suites-v4', self::url( 'vendor/jexcel/jsuites.js' ), [], '4.7.3', true );
 
 		if ( false !== mb_strpos( $current_screen->id, '_page_anwp-settings-tools' ) ) {
 
@@ -1798,6 +1872,52 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 		if ( 'edit-anwp_match' === $current_screen->id ) {
 			wp_enqueue_script( 'jquery-ui-datepicker' );
 		}
+	}
+
+	/**
+	 * Load admin scripts and styles in Elementor
+	 *
+	 * @since 0.12.7
+	 */
+	public function admin_enqueue_scripts_elementor() {
+
+		// Load global styles
+		if ( is_rtl() ) {
+			wp_enqueue_style( 'anwpfl_styles_global_rtl', self::url( 'admin/css/global-rtl.css' ), [], self::VERSION );
+			wp_enqueue_style( 'anwpfl_styles_global_rtl_extra', self::url( 'admin/css/global-rtl-extra.css' ), [], self::VERSION );
+		} else {
+			wp_enqueue_style( 'anwpfl_styles_global', self::url( 'admin/css/global.css' ), [], self::VERSION );
+		}
+
+		/*
+		|--------------------------------------------------------------------------
+		| Modaal
+		|
+		| @license  MIT
+		| @link     https://github.com/humaan/Modaal
+		|--------------------------------------------------------------------------
+		*/
+		wp_enqueue_script( 'modaal', self::url( 'vendor/modaal/modaal.min.js' ), [ 'jquery', 'underscore' ], self::VERSION, false );
+
+		/*
+		|--------------------------------------------------------------------------
+		| Global JS
+		|--------------------------------------------------------------------------
+		*/
+		wp_enqueue_script( 'anwp-fl-js-global', self::url( 'admin/js/anwp-fl-global.js' ), [ 'jquery', 'underscore', 'modaal' ], self::VERSION, false );
+
+		wp_localize_script(
+			'anwp-fl-js-global',
+			'anwpflGlobals',
+			[
+				'ajaxNonce'    => wp_create_nonce( 'ajax_anwpfl_nonce' ),
+				'selectorHtml' => $this->include_selector_modaal(),
+				'countries'    => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->data->cb_get_countries() ),
+				'clubs'        => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->club->get_clubs_options() ),
+				'seasons'      => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->season->get_seasons_options() ),
+				'leagues'      => anwp_football_leagues()->helper->get_select2_formatted_options( anwp_football_leagues()->league->get_league_options() ),
+			]
+		);
 	}
 
 	/**
@@ -1819,6 +1939,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 		self::include_file( 'includes/widgets/class-anwpfl-widget-next-match' );
 		self::include_file( 'includes/widgets/class-anwpfl-widget-last-match' );
 		self::include_file( 'includes/widgets/class-anwpfl-widget-video' );
+		self::include_file( 'includes/widgets/class-anwpfl-widget-competition-list' );
 
 		// register widgets
 		register_widget( 'AnWPFL_Widget_Standing' );
@@ -1831,6 +1952,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 		register_widget( 'AnWPFL_Widget_Next_Match' );
 		register_widget( 'AnWPFL_Widget_Last_Match' );
 		register_widget( 'AnWPFL_Widget_Video' );
+		register_widget( 'AnWPFL_Widget_Competition_List' );
 	}
 
 	/**
@@ -1857,6 +1979,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 			case 'competition':
 			case 'club':
 			case 'stadium':
+			case 'health':
 			case 'helper':
 			case 'player':
 			case 'staff':
@@ -1864,6 +1987,7 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 			case 'standing':
 			case 'template':
 			case 'text':
+			case 'text_countries':
 			case 'data':
 				return $this->$field;
 			default:
@@ -2109,6 +2233,50 @@ CREATE TABLE {$wpdb->prefix}anwpfl_missing_players (
 
 		return (int) $season_id;
 	}
+
+	/**
+	 * Get active referee's season.
+	 *
+	 * @param int $referee_id
+	 *
+	 * @return int
+	 * @since 0.11.17
+	 */
+	public function get_active_referee_season( $referee_id ) {
+
+		// Get season ID from plugin options.
+		$season_id = $this->get_option_value( 'active_season' );
+
+		if ( 'yes' !== AnWPFL_Options::get_value( 'hide_not_used_seasons' ) ) {
+			if ( ! $season_id ) {
+				$season_options = anwp_football_leagues()->season->get_seasons_options();
+
+				if ( ! empty( $season_options ) && is_array( $season_options ) ) {
+					$season_id = max( array_keys( $season_options ) );
+				}
+			}
+		} elseif ( absint( $referee_id ) ) {
+
+			$filtered_season_slugs = anwp_football_leagues()->helper->get_filtered_seasons( 'referee', $referee_id );
+
+			// Check if active system season exists in player seasons
+			if ( $season_id ) {
+				$season_slug = anwp_football_leagues()->season->get_season_slug_by_id( $season_id );
+
+				if ( in_array( $season_slug, $filtered_season_slugs, true ) ) {
+					return (int) $season_id;
+				}
+			}
+
+			if ( ! empty( $filtered_season_slugs ) ) {
+				rsort( $filtered_season_slugs, SORT_NUMERIC );
+				$season_id = anwp_football_leagues()->season->get_season_id_by_slug( $filtered_season_slugs[0] );
+			}
+		}
+
+		return (int) $season_id;
+	}
+
 
 	/**
 	 * Overrides CMB2 label layout.

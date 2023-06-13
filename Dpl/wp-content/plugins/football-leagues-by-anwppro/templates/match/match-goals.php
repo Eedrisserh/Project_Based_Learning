@@ -114,7 +114,7 @@ do_action( 'anwpfl/tmpl-match/goals_before', $data );
 									?>
 									<span class="mx-1 text-nowrap">
 										(<span class="text-lowercase text-muted small"><?php echo esc_html( AnWPFL_Text::get_value( 'match__goals__assistant', __( 'Assistant', 'anwp-football-leagues' ) ) ); ?></span>:
-										<a class="anwp-link anwp-link-without-effects" href="<?php echo esc_url( $player->link ); ?>"><?php echo esc_html( $assistant->name_short ); ?></a>)
+										<a class="anwp-link anwp-link-without-effects" href="<?php echo esc_url( $assistant->link ); ?>"><?php echo esc_html( $assistant->name_short ); ?></a>)
 									</span>
 								<?php endif; ?>
 							</div>
@@ -172,7 +172,7 @@ do_action( 'anwpfl/tmpl-match/goals_before', $data );
 									?>
 									<span class="mx-1 text-nowrap">
 										(<span class="text-lowercase text-muted small"><?php echo esc_html( AnWPFL_Text::get_value( 'match__goals__assistant', __( 'Assistant', 'anwp-football-leagues' ) ) ); ?>:</span>
-										<a class="anwp-link anwp-link-without-effects" href="<?php echo esc_url( $player->link ); ?>"><?php echo esc_html( $assistant->name_short ); ?></a>)
+										<a class="anwp-link anwp-link-without-effects" href="<?php echo esc_url( $assistant->link ); ?>"><?php echo esc_html( $assistant->name_short ); ?></a>)
 									</span>
 								<?php endif; ?>
 							</div>

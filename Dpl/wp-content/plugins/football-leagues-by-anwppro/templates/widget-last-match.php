@@ -10,7 +10,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.10.13
  *
- * @version       0.11.13
+ * @version       0.11.15
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -93,15 +93,15 @@ $show_name = anwp_football_leagues()->helper->string_to_bool( $args->show_club_n
 			?>
 		</div>
 
-		<div class="match-card__clubs anwp-row no-gutters my-3">
-			<div class="anwp-col d-flex flex-column anwp-text-center">
+		<div class="match-card__clubs d-flex anwp-no-gutters my-3">
+			<div class="anwp-col d-flex flex-column anwp-text-center anwp-min-width-0 px-1">
 				<?php if ( $show_name ) : ?>
 					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_home_logo ); ?>')"></div>
-					<div class="match__club mt-1 d-inline-block">
+					<div class="match__club mt-1 d-inline-block text-truncate">
 						<?php echo esc_html( $data->club_home_title ); ?>
 					</div>
 				<?php else : ?>
-					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_home_logo ); ?>')"
+					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto text-truncate" style="background-image: url('<?php echo esc_attr( $data->club_home_logo ); ?>')"
 						data-toggle="anwp-tooltip" data-tippy-content="<?php echo esc_attr( $data->club_home_title ); ?>"></div>
 				<?php endif; ?>
 			</div>
@@ -109,14 +109,14 @@ $show_name = anwp_football_leagues()->helper->string_to_bool( $args->show_club_n
 				<span class="match-list__scores-number match-list__scores--home d-inline-block mr-1 anwp-text-center h3 p-1"><?php echo (int) $data->home_goals; ?></span>
 				<span class="match-list__scores-number match-list__scores--away d-inline-block anwp-text-center h3 p-1"><?php echo (int) $data->away_goals; ?></span>
 			</div>
-			<div class="anwp-col d-flex flex-column anwp-text-center">
+			<div class="anwp-col d-flex flex-column anwp-text-center anwp-min-width-0 px-1">
 				<?php if ( $show_name ) : ?>
 					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_away_logo ); ?>')"></div>
-					<div class="match__club mt-1 d-inline-block">
+					<div class="match__club mt-1 d-inline-block text-truncate">
 						<?php echo esc_html( $data->club_away_title ); ?>
 					</div>
 				<?php else : ?>
-					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto" style="background-image: url('<?php echo esc_attr( $data->club_away_logo ); ?>')"
+					<div class="club-logo__cover club-logo__cover--xlarge d-block mx-auto text-truncate" style="background-image: url('<?php echo esc_attr( $data->club_away_logo ); ?>')"
 						data-toggle="anwp-tooltip" data-tippy-content="<?php echo esc_attr( $data->club_away_title ); ?>"></div>
 				<?php endif; ?>
 			</div>

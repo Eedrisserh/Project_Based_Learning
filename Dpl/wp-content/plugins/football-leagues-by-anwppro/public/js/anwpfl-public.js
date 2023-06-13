@@ -259,6 +259,7 @@ window.AnWPFootballLeagues = window.AnWPFootballLeagues || {};
 		plugin.initStadiumJustifiedGallery();
 		plugin.initVideoPlayers();
 		plugin.initSeasonDropdown();
+		plugin.initCompetitionList();
 	};
 
 	plugin.initSeasonDropdown = function() {
@@ -281,6 +282,27 @@ window.AnWPFootballLeagues = window.AnWPFootballLeagues || {};
 		tippy( '[data-toggle="anwp-tooltip"]', {
 			arrow: true,
 			zIndex: 100600
+		} );
+	};
+
+	plugin.initCompetitionList = function() {
+
+		if ( ! $c.body.find( '.competition-list__country_collapsed' ).length ) {
+			return false;
+		}
+
+		$c.body.find( '.competition-list' ).on( 'click', '.competition-list__country_collapsed', function( e ) {
+
+			var $this = $( this );
+			e.preventDefault();
+
+			if ( $this.hasClass( 'list__country_collapsed--active' ) ) {
+				$this.removeClass( 'list__country_collapsed--active' );
+				$this.siblings( '.competition-list__competition[data-anwp-country="' + $this.data( 'anwp-country' ) + '"]' ).addClass( 'd-none' );
+			} else {
+				$this.addClass( 'list__country_collapsed--active' );
+				$this.siblings( '.competition-list__competition[data-anwp-country="' + $this.data( 'anwp-country' ) + '"]' ).removeClass( 'd-none' );
+			}
 		} );
 	};
 

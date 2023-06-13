@@ -12,7 +12,7 @@
  * @package       AnWP-Football-Leagues/Templates
  * @since         0.7.3
  *
- * @version       0.11.13
+ * @version       0.13.0
  */
 
 // phpcs:disable WordPress.NamingConventions.ValidVariableName
@@ -97,7 +97,7 @@ do_action( 'anwpfl/tmpl-match/referees_before', $data );
 
 		<?php if ( ! empty( $data->assistant_1 ) ) : ?>
 			<div class="match__referee-wrapper d-flex align-items-center mr-4">
-				<span class="text-muted font-weight-bold mr-2"><?php echo esc_html( AnWPFL_Text::get_value( 'match__referees__assistant', __( 'Assistant', 'anwp-football-leagues' ) ) ); ?>:</span>
+				<span class="text-muted font-weight-bold mr-2"><?php echo esc_html( AnWPFL_Text::get_value( 'match__referees__assistant', __( 'Assistant Referee', 'anwp-football-leagues' ) ) ); ?> 1:</span>
 
 				<?php
 				// Nationality
@@ -122,7 +122,7 @@ do_action( 'anwpfl/tmpl-match/referees_before', $data );
 
 		<?php if ( ! empty( $data->assistant_2 ) ) : ?>
 			<div class="match__referee-wrapper d-flex align-items-center mr-4">
-				<span class="text-muted font-weight-bold mr-2"><?php echo esc_html( AnWPFL_Text::get_value( 'match__referees__assistant', __( 'Assistant', 'anwp-football-leagues' ) ) ); ?>:</span>
+				<span class="text-muted font-weight-bold mr-2"><?php echo esc_html( AnWPFL_Text::get_value( 'match__referees__assistant', __( 'Assistant Referee', 'anwp-football-leagues' ) ) ); ?> 2:</span>
 
 				<?php
 				// Nationality
