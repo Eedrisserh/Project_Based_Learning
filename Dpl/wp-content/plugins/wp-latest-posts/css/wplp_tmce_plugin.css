@@ -1,9 +1,0 @@
-@CHARSET "UTF-8";
-
-/** in tinyMce Editor **/
-.wplped {
-	border: 1px dashed #888;
-	background: rgb(154, 151, 123) url('../img/wplp-tmce-placeholder.png') no-repeat scroll center center;
-	width: 99%;
-	height: 200px;
-}
